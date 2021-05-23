@@ -1,0 +1,986 @@
+---
+title: "Tarea 02"
+author: "Acha-Moreno Rosa, Prudencio-Paredes Fernando, Quinto-Calderon Elizabeth, Rosales-Quispe Edgar, Soto-Becerra Percy, Ulloa-DelaCruz Denis, Vila-Ortega Benhur, Yunpanqui-Andrade Martin"
+date: "`r Sys.Date()`"
+output: 
+  rmdformats::robobook:
+    self_contained: true
+---
+
+```{=html}
+<style>
+body {
+text-align: justify}
+</style>
+```
+```{r setup, include=FALSE}
+if (!require("pacman")) {
+  install.packages("pacman")
+}
+
+pacman::p_unload(
+  pacman::p_loaded(),
+  character.only = TRUE
+)
+
+pacman::p_load(
+  tidyverse, formatR, knitr, rmdformats, pander, corrplot,
+  haven, labelled, mice, VIM, skimr, missForest, adegenet, ade4, ggpubr,
+  funModeling, foreign, labelled, MVN, factoextra, psych, nFactors,
+  paran, lattice, cptcity, latticeExtra, ICSNP, FactoClass, mvnormtest,
+  PerformanceAnalytics, rela, readxl, magrittr, ca, FactoMineR, gplots,
+  fastGraph, gmodels
+)
+
+## Global options
+options(max.print = "75")
+opts_chunk$set(
+  echo = TRUE,
+  cache = TRUE,
+  prompt = FALSE,
+  tidy = TRUE,
+  comment = NA,
+  message = FALSE,
+  warning = FALSE
+)
+opts_knit$set(width = 75)
+
+## Remove objects
+rm(list = ls())
+
+# tricks styling: https://holtzy.github.io/Pimp-my-rmd/
+# Math Rmd: https://rpruim.github.io/s341/S19/from-class/MathinRmd.html
+```
+# Caso I: Análisis de nutrientes de pizzas
+El dataset fue obtenido de `U.S. Government Works` a traves del repositorio `www.kaggle.com`.
+
+## Descripción
+La pizza es una preparación culinaria que consiste en un pan plano habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con una salsa de tomate, queso y otros muchos ingredientes posibles, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.
+
+Es un alimento rico en carbohidratos (25.8 gramos/100 gramos), grasa (11.5 gramos/100 gramos) y proteína (8.8 gramos/100 gramos). Se estima que, en promedio, 100 gramos de pizza aportan unas 234 calorías.
+
+------------------------------------------------------------------------
+
+## Pregunta 1
+### Realice el análisis exploratorio de datos (use las principales medidas y gráficos).
+
+Los datos se encuentran en el archivo: `pizza.csv`, los cuales se importan a R mediante la siguiente función:
+
+```{r importa data}
+data_pizza <-
+  read.csv(
+    file = "pizza.csv",
+    header = T,
+    stringsAsFactors = T
+  )
+
+glimpse(data_pizza)
+```
+
+Mostramos el `porcentaje de observaciones por Marca (brand) de pizza`
+
+```{r descripcion de marcas, echo=FALSE}
+marcas_pizza <- round(prop.table(table(data_pizza$brand)) * 100, 1)
+df_marca <- data.frame(
+  categorias = names(marcas_pizza),
+  porcentaje = as.numeric(marcas_pizza)
+)
+
+ggplot(df_marca, aes(x = "", y = porcentaje,fill = categorias)) +
+  geom_bar(stat = "identity", color = "white") +
+  geom_text(
+    aes(label = porcentaje),
+    position = position_stack(vjust = 0.5),
+    color = "white", size = 6
+  ) +
+  coord_polar(theta = "y")
+```
+
+A continuación detectamos la cantidad de `missing values` por variable
+
+```{r detectar el número de missing values}
+mice::md.pattern(data_pizza, rotate.names = TRUE)
+```
+
+A continuación se `describen las varibales`
+
+- **Marca (brand)**        : marca de pizza (etiqueta de clase)
+- **Identificador (id)**   : Muestra analizada
+- **Humedad (mois)**       : Cantidad de agua por 100 gramos en la muestra
+- **Proteínas (prot)**     : Cantidad de proteína por 100 gramos en la muestra
+- **Grasa (fat)**          : Cantidad de grasa por 100 gramos en la muestra
+- **Cenizas (ash)**        : Cantidad de ceniza por 100 gramos en la muestra
+- **Sodio (sodium)**       : Cantidad de sodio por 100 gramos en la muestra
+- **Carbohidratos (carb)** : cantidad de carbohidratos por cada 100 gramos en la muestra
+- **Calorías (cal)**       : Cantidad de calorías por cada 100 gramos en la muestra
+
+Caracterización de `variables a través de histogramas`
+
+```{r echo=FALSE}
+data_hist <- dplyr::select(data_pizza, -brand, -id)
+par(mfrow = c(2, 4), mai = c(0.3, 0.4, 0.3, 0.1), las = 1)
+for (i in 1:7) graphics::hist(data_hist[, i], main = names(data_hist)[i])
+```
+
+Caracterización de variables por `marca de pizza`
+
+```{r Caracterización de variables por marca de pizza, echo=FALSE}
+par(mfrow = c(2, 4), mai = c(0.3, 0.4, 0.3, 0.1), las = 1)
+boxplot(data_pizza$mois ~ data_pizza$brand,
+  main = "Variable Humedad", xlab = "Marca de pizza",
+  ylab = "agua/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$prot ~ data_pizza$brand,
+  main = "Variable Proteina", xlab = "Marca de pizza",
+  ylab = "Proteina/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$fat ~ data_pizza$brand,
+  main = "Variable Grasa", xlab = "Marca de pizza",
+  ylab = "Grasa/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$ash ~ data_pizza$brand,
+  main = "Variable Cenizas", xlab = "Marca de pizza",
+  ylab = "Cenizas/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$sodium ~ data_pizza$brand,
+  main = "Variable Sodio", xlab = "Marca de pizza",
+  ylab = "Sodio/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$carb ~ data_pizza$brand,
+  main = "Variable Carboidrato", xlab = "Marca de pizza",
+  ylab = "carbohidratos/100g muestra", col = c(4, 15)
+)
+boxplot(data_pizza$cal ~ data_pizza$brand,
+  main = "Variable Caloria", xlab = "Marca de pizza",
+  ylab = "calorias/100g muestra", col = c(4, 15)
+)
+```
+
+Evaluando la multicolinealidad (interdependencia) entre variables a partir de una matriz de correlaciones
+
+```{r matriz de correlaciones, echo=FALSE, warning=FALSE}
+lattice::levelplot(
+  cor(dplyr::select(data_pizza, -brand, -id), method = "pearson"),
+  scales = list(
+    x = list(rot = 90),
+    draw = T
+  ),
+  pretty = T,
+  at = seq(-1, 1, 0.2),
+  colorkey = list(
+    at = seq(-1, 1, 0.2), height = .8, width = 1.1,
+    space = "top", tck = .3, # location of legend
+    labels = list(at = seq(-1, 1, 0.2), cex = .7),
+    font = list(family = "Source Sans Pro"),
+    axis.line = list(lwd = 1, col = "black")
+  ),
+  col.regions = cptcity::cpt("cb_div_RdBu_11"),
+  xlab = NULL,
+  ylab = NULL
+)
+```
+
+De las 15 correlaciones, 6 son mayores a 0.75 siendo estas ash-prot, carb-prot, fat-ash, fat-sodium, ash-sodium, ash-carb. Lo que se nota en los diagramas de dispersión y densidades kernel.
+
+`Diagramas de dispersión y densidades kernel` de los niveles alimento por marca.
+
+```{r Diagramas de dispersión y densidades kernel}
+FactoClass::plotpairs(dplyr::select(data_pizza, -id, -brand), maxg = 8)
+```
+
+Del gráfico describimos, visualmente, posibles correlaciones entre varaibles (inferior derecha), el histograma de cada variable numérica (traza o diagonal) y agrupuaciones entre pares de varaibles, lo que denota en un posible análisis de cluster.
+
+------------------------------------------------------------------------
+
+## Pregunta 2
+### En caso se pueda, haga el Análisis de Componentes Principales Mixto.
+
+```{r seleccionando solo variables cuantitativas}
+data_pizza_pca <- dplyr::select(data_pizza, -id)
+```
+
+Se aprecia que se tiene la variable categórica, politómica, marca (`brand`) la cual junto con las demás variables podría ser reducida a un conjunto más pequeño de componentes principales. Para hacer un ACP que incluya a una o más variables categóricas se puede realizar un `análisis de componentes principales mixto` con la función `FAMD` de la librería {FactorMineR}.
+
+El resultado de la función `FAMD()` se lista a continuación:
+
+```{r FA}
+res.famd <- FactoMineR::FAMD(data_pizza_pca, ncp = 20, graph = FALSE)
+print(res.famd)
+```
+
+Los autovalores se muestran a continuación: 
+
+Podemos observar que tenemos 16 dimensiones, esto se debe a que la variabla `brand`, cuenta con  10 marcas de pizza, por lo que se crean 9 variables dicotomicas y adicionalmente se cuentan con las 7 variables cuantitativas, esto nos da las 16 dimensiones que se muestran a continuación:
+
+
+```{r eigenvalues}
+eig.val <- get_eigenvalue(res.famd)
+as.data.frame(eig.val)
+fviz_screeplot(res.famd)
+```
+
+Se aprecia que el primer componente explica el 32.2% de la varibilidad de las variables originales. Asimismo, los 2 primeros componentes explican el 52.6% de la variabilidad de las variables originales, por lo tanto decidimos retener las 2 primeras componentes.
+
+También podemos interpretar la contribución relativa y absoluta para las variables categoricas y las variables cuantitavas :
+
+- La variable proteina tiene una contribución relativa a la componente 1 del 11.7%, así mismo esta componente tiene una contribución absoluta a la variabilidad total de proteina del 60.5%.
+
+
+```{r remedy001}
+summary(res.famd)
+```
+
+Se muestran las gráficas de las variables:
+
+Con el primer gráfico podemos observar que las variables `prot`, `carb`, `fat`, `sodium` y `ash` están más relacionadas con la componente 1, mientras que las variables `mois` y `cal` están más relacionadas con la componente 2.
+
+Un caso particular es la variable `brand` debido a que para ambas componentes esta altamente relacionada, por lo tanto, observamos la contribución de la variables en las componentes, notandose que `brand` presenta una mayor contribución en la componenete 2.
+
+
+```{r remedy002}
+par(mfrow = c(2, 2))
+fviz_famd_var(res.famd, repel = TRUE)
+fviz_contrib(res.famd, "var", axes = 1)
+fviz_contrib(res.famd, "var", axes = 2)
+```
+
+Gráficos para variables cualitativas: 
+
+Observamos que al analizar la contribución relativa y la contribución absoluta, reafirmamos las variables asociadas a cada uno de los componentes.
+
+```{r Gráficos1}
+quanti.var <- get_famd_var(res.famd, "quanti.var")
+quanti.var
+```
+```{r Gráficos2}
+fviz_famd_var(
+  res.famd, "quanti.var",
+  col.var = "contrib",
+  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+  repel = TRUE
+)
+```
+
+```{r Gráficos3}
+fviz_famd_var(
+  res.famd, "quanti.var",
+  col.var = "cos2",
+  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+  repel = TRUE
+)
+```
+
+Gráficos para variables cualitativas:
+
+Ahora, al analizar esta variable podemos observar que de las 10 marcas, hay algunas con relacion a la dimensión  1 y otras con la dimensión 2, y esto es por lo que en la decisión tuvimos que revisar las contribuciones para definir a que componente corresponde `brand`, ahora la marca `A` tiene una alta relación con ambas componentes, probablemente esta sea la culpable de lo dificil de la decisión, pero en su mayoría las variables están a aportar a la componente 2.
+
+```{r Gráficos4}
+quali.var <- get_famd_var(res.famd, "quali.var")
+quali.var
+```
+
+Gráfico para la variable cualitativa brand:
+
+```{r Gráficos5}
+fviz_famd_var(
+  res.famd, "quali.var",
+  col.var = "contrib",
+  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07")
+)
+```
+
+Gráfico de individuos:
+
+Observamos que las marcas **G y F** tienen Mmucho en común observando su contribución , y esto sucede también en las marcas **H y E** y **B, D y C**.
+
+```{r Gráficos6}
+ind <- get_famd_ind(res.famd)
+ind
+```
+
+```{r remedy003}
+fviz_famd_ind(
+  res.famd,
+  col.ind = "cos2",
+  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+  repel = TRUE
+)
+```
+
+De la misma forma, observamos los individuos, que ya hemos visto anteriormente con su respectiva gráfica.
+
+```{r remedy004}
+fviz_mfa_ind(
+  res.famd,
+  habullage = "brand",
+  palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+  addEllipses = TRUE, ellipse.type = "confidence",
+  repel = TRUE
+)
+```
+
+```{r remedy005}
+factoextra::fviz_ellipses(res.famd, c("brand"), repel = TRUE)
+```
+
+------------------------------------------------------------------------
+
+## Pregunta 3
+### Con la data de pizza lleve a cabo el Análisis Factorial.
+
+Descripción numérica de las varaibles
+
+```{r Descripción numérica de las varaibles}
+data_pizza <- dplyr::select(data_pizza, -brand, -id)
+describe(data_pizza)
+```
+
+Detección de outliers multivariado
+
+```{r detección de outliers2, echo=TRUE}
+#par(mfrow = c(1, 2), mai = c(0.3, 0.4, 0.3, 0.1), las = 1)
+## Outlier Multivariado
+# Distancia de Mahalanobis(Fig 1)
+#MVN::mvn(data = as.data.frame(data_pizza), multivariateOutlierMethod = "quan")
+# Distancia ajustada de Mahalanobis(Fig2)
+#MVN::mvn(data = as.data.frame(data_pizza), multivariateOutlierMethod = "adj")
+```
+
+En la `Figura 1 y 2`, la distancia de Mahalanobis declara 2 observaciones como valor atípico multivariado, mientras que la distancia Mahalanobis ajustada no declara ninguna de los 300 datos. 
+
+Ahora, realizamos el Analisis Factorial con 7 Variables:
+mois, prot, fat, ash, sodium, carb, cal
+
+Evaluando los supuestos para saber si la matriz es factorizable
+
+```{r Evaluando los supuestos}
+# Normalidad multivariada:
+# a.Prueba de Shapiro Wilk
+shapiro <- mvnormtest::mshapiro.test(t(data_pizza))
+shapiro
+# b.Henze-Zirkler's MVN test
+Henze <- MVN::mvn(data = data_pizza, mvnTest = "hz")
+Henze$multivariateNormality
+# c.Doornik-Hansen's MVN test
+Doornik <- MVN::mvn(data = data_pizza, mvnTest = "dh")
+Doornik$multivariateNormality
+```
+
+La última columna de la prueba Henze-Zirkler's y Doornik-Hansen's indica que los datos `NO` siguen una normalidad multivariada al `nivel 5% de significación`.Lo mismo sucede para `Shapiro Wilk p(2.2e-16)<0.05`. Por lo tanto, se concluye que no existe normalidad multivariada, pero como en este ejercicio no se van a realizar inferencias con los SCORE RETENIDOS, entonces no es necesario que sean multinormal.
+
+Matriz de correlación
+
+```{r correlaciones entre variables}
+PerformanceAnalytics::chart.Correlation(data_pizza, histogram = TRUE, pch = 20)
+```
+
+Si están marcadas son significativas, como hay varias existe alta correlacion (en el gráfico) por lo que se usará `Bartlett` y `KMO`.
+
+Haremos una prueba de `Esfericidad de Bartlett`, aplicamos el test para probar:
+
+- `Ho:` las variables no están correlacionadas en la población.
+- `H1:` las variables están correlacionadas en la población.
+
+```{r prueba de esfericidad de Barlett}
+options(scipen = 0)
+esfer <- psych::cortest.bartlett(cor(data_pizza), n = dim(data_pizza))
+str(esfer)
+esfer$p.value[1]
+```
+
+El resultado  muestra que el `estadistico Chi-Cuadrado obtenido es alto (7135.1)` con `grados de libertad igual a 21`. Su `p(0.00 6.48e-07)<0.05`, lo que nos permite decir que su matriz de correlación no corresponde a la matriz identidad o rechaza la hipotesis nula. Hasta aquí parece indicar que es posible realizar el AF con las 7 variables.
+
+Probando el indicador `Kaiser-Meyer-Olkin KMO y MSA`
+
+```{r prueba KMO-MSA 1er}
+# 1era corrida
+kmo1 <- psych::KMO(data_pizza)
+kmo1$MSA
+kmo1$MSAi
+```
+
+como mínimo debe de ser 0.5, es mejor si es más cercano a 1, es más útil para el análisis `quitar la variable mois` y volverla a correr.
+
+```{r prueba KMO-MSA 2da}
+#2da corrida
+pizza.facto <- dplyr::select(data_pizza, -mois)
+head(pizza.facto)
+kmo2 <- psych::KMO(pizza.facto)
+kmo2$MSA
+kmo2$MSAi
+kmo1
+kmo2
+psych::KMO(pizza.facto)
+```
+
+`Se decide quedarse con 6 variables dado que su KMO = 0.51 es aceptable`.
+
+Se concluye que se `quedan con 6 variables`, con los cuales el índice de `KMO y Bartlett` son aceptables. Por lo tanto se procederá a realizar el AF.
+
+Ahora iniciaremos con el AF sin rotación y luego analizaremos la necesidad de rotar o no.
+
+Analisis Factorial `sin rotación` con función principal.
+
+```{r AF sin rotacion}
+facto.sin.rota <- psych::principal(r = pizza.facto, nfactors = 4, rotate = "none")
+facto.sin.rota
+```
+
+Cálculo manual de la comunalidad
+
+```{r Calculo de comunalidad manual}
+A <- c(0.76, -0.54, 0.36, 0.03)
+sum(A^2)
+```
+
+Cálculo el número ideal de factores a retener `(criterio de Autovalores)`
+
+```{r Cálculo el número ideal de factores a retener}
+facto.sin.rota$values
+sum(facto.sin.rota$values)
+```
+
+Se deben de retener 2 factores porque sus autovalores son mayores a 1. Además, se observa que la suma de los autovalores nos da 6 (de n variables). Para determinar el número de factores a retener usamos el gráfico de sedimentación con el criterio de media aritmetica.
+
+```{r gráfico de sedimentación}
+plot(facto.sin.rota$values, type = "b", pch = 20, col = "steelblue")
+abline(h = 1, lty = 3, col = "tomato")
+```
+
+Se aprecia que el punto de autovalores mayores a 1 es a partir del tercer  componente por lo que se procederá a retener los 2 primeros componentes por el criterio de la media aritmética.
+
+Comunalidades obtenidas del AF
+
+```{r Comunalidades}
+facto.sin.rota$communality
+```
+
+Ordenando las comunalidades
+
+```{r Ordenando las comunalidades}
+data.frame(comunalidad = facto.sin.rota$communality) %>%
+  arrange(desc(comunalidad))
+```
+
+El 99.99% de la variabilidad de la variable `carb` explicada por los factores comunes en esas 6 variables siendo su complemento `0.01%` su especificidad que es aquella parte de la varibilidad de `carb`  que es propia de la variabilidad o que no es compartida con otras variables
+
+Observamos las cargas factoriales o correlaciones entre los factores comunes y las variables.
+
+```{r }
+facto.sin.rota$loadings
+```
+
+De las correlaciones obtenidas se aprecia que la variable `prot` tiene una correlacion alta con el factor comun `PC1 y PC2` respectivamente `(0.758 -0.538)`. Con la finalidad de mejorar la interpretacion de esta variable procedemos a realizar un Analisis Factorial `con rotacion varimax`.
+
+Analisis Factorial `con rotación` con funcion principal
+
+```{r }
+facto.con.rota <- psych::principal(r = pizza.facto, nfactors = 4, rotate = "varimax")
+facto.con.rota
+```
+
+Conclusiones:
+
+En la base de la matriz de correlaciones o de cargas podemos asociar las variables a los factores comunes
+
+- prot:proteínas
+- fat:grasa
+- ash:cenizas
+- sodium:sodio
+- carb:carbohidratos
+- cal:calorias
+
+Factor1: sodio
+
+Factor2: calorias, grasa (hipercalórica e hiperlipídica)
+
+Factor3: proteinas, cenizas, carbohidratos (hiperprotéica e hiperglúcida)
+
+------------------------------------------------------------------------
+
+# Caso II: Programas académicos de las universidades Licenciadas en el Perú
+El dataset se obtuvo de la forma nacional de datos abiertos del Gobierno del Perú: `Superintendencia Nacional de Educación Superior Universitaria`.
+
+## Descripción
+Programas académicos de las universidades Licenciadas
+
+- La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es un organismo adscrito al Ministerio de Educación con autonomía técnica, funcional, administrativa, económica y financiera.
+- SUNEDU asegura una oferta educativa de calidad en favor de los estudiantes, a través del licenciamiento y supervisión de este servicio público
+- Tiene como finalidad el licenciamiento, supervisión de la calidad, fiscalización del servicio educativo superior universitario.
+
+<font size="3.5"> ***Considere sólo las cuatro siguientes variables para responder a las preguntas de abajo*** </font>
+
+- **TIPO_GESTION:** Tipo de gestión de la entidad de estudios: Las instituciones de educación superior pueden ser `Público` y `Privado`
+
+- **PERIODO_LICENCIAMIENTO:** Periodo de licenciamiento de la entidad de estudios: `6`, `8` y `10` años. Ello depende de la producción científica, según lo ha establecido la SUNEDU, basado en que la comunidad universitaria está orientada a la investigación y la docencia, como una función esencial y obligatoria.
+
+- **TIPO_NIVEL_ACADEMICO:** Tipo de nivel académico del programa de estudios: `Pregrado` y `Postgrado`.
+
+- **NIVEL ACADEMICO:** Nivel académico del programa de estudios: `Carrera Profesional`, `Maestría`, `Doctorado` y `Segunda Especialidad`.
+
+------------------------------------------------------------------------
+
+## Pregunta 1
+### Realice el análisis exploratorio de datos de las cuatro variables de interés (use las principales medidas y gráficos).
+
+Se procede a importar datos que se encuentran en el archivo `prog_uni.xlsx` y se revisan las 10 primeras filas con las columnas que se trabajarán:
+
+```{r Importando información}
+data_uni <-
+  read_xlsx("prog_uni.xlsx") %>%
+  dplyr::select(
+    TIPO_GESTION,
+    PERIODO_LICENCIAMIENTO,
+    TIPO_NIVEL_ACADEMICO,
+    NIVEL_ACADEMICO
+  )
+head(data_uni, 10)
+```
+
+A continuación se procede a explorar los datos importados, el cual está compuesto por `4` columnas, donde podemos observar que las variables `TIPO_GESTION`, `TIPO_NIVEL_ACADEMICO` y `NIVEL_ACADEMICO` son de tipo caracter, por lo que se procede a convertir a factor dichas variables:
+
+```{r Eploring dataset 1}
+glimpse(data_uni)
+data_uni <-
+  data_uni %>%
+  mutate(
+    TIPO_GESTION = factor(TIPO_GESTION, labels = c("PRIVADO", "PUBLICO")),
+    PERIODO_LICENCIAMIENTO = factor(PERIODO_LICENCIAMIENTO, labels = c("6", "8", "10")),
+    TIPO_NIVEL_ACADEMICO = factor(TIPO_NIVEL_ACADEMICO, labels = c("PREGRADO", "POSGRADO")),
+    NIVEL_ACADEMICO = factor(NIVEL_ACADEMICO, levels = c("CARRERA PROFESIONAL", "MAESTRÍA", "DOCTORADO", "SEGUNDA ESPECIALIDAD")),
+  )
+```
+
+Observamos que tenemos \r sum(is.na(Data_Uni))\ datos perdidos de las 7218 observaciones:
+
+```{r echo = TRUE}
+data_uni %>% 
+  mice::md.pattern(rotate.names = TRUE)
+```
+
+Revisando un poco las variables y dando un analisis de las variables, podemos observar que tenemos programas académicos donde el `40%` son universidades públicas y el `60%` son universidades privadas. Según la variable **TIPO_NIVEL_ACADEMICO** observamos un `57%` de licenciamientos otorgados a POSGRADO y un `43%` a PREGRADO, De igual forma en la variable **NIVEL_ACADEMICO** tenemos un `43%` de CARRERA PROFESIONAL, `5%` en DOCTORADO, `28%` MAESTRIA y un `24%` de SEGUNDA ESPECIALIDAD y por último la variable **PERIODO LICENCIAMIENTO** teniendo un 65% de 6 años, 13% de 8 años y 22% de 10 años.
+
+```{r echo = TRUE}
+list(
+  round(prop.table(table(data_uni$TIPO_GESTION)), 2),
+  round(prop.table(table(data_uni$PERIODO_LICENCIAMIENTO)), 2),
+  round(prop.table(table(data_uni$TIPO_NIVEL_ACADEMICO)), 2),
+  round(prop.table(table(data_uni$NIVEL_ACADEMICO)), 2)
+)
+```
+
+```{r echo = FALSE}
+data_uni %<>% data.frame()
+
+par(mfrow = c(2, 2), mai = c(0.1, 0, 0.2, 0))
+for (i in 1:4) {
+  cat <- attributes(data_uni[, i])$ levels
+  per <- tabulate(data_uni[, i]) / nrow(data_uni) * 100
+  paste(cat, round(per, 1), sep = " ") -> eti
+  pie(summary(data_uni[, i]), eti,
+    col = hcl.colors(4, "Set3"),
+    main = colnames(data_uni)[i]
+  )
+}
+```
+
+Además, dentro de los programas académicos de las universidades privadas que se les otorgó el licenciamiento por un período `N`, el `75.3%` de estas son licenciamientos de 6 años, el `2.8%` son licenciamientos de 8 años y el otro `21.9%` de licenciamientos otorgados a las universidades  privadas son de 10 años.
+
+Por otro lado, los programas académicos de las universidad públicas, el `48.9%` de los licenciamientos otorgados fueron de 6 años, el `28.1%` de 8 años y las otras `23.1%` de licenciaturas fueron de 10 años.
+
+```{r echo = TRUE}
+round(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$TIPO_GESTION
+    ),
+    2
+  ) * 100, 1
+)
+```
+
+```{r echo = FALSE}
+dotchart(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$TIPO_GESTION
+    ), 2
+  ),
+  pt.cex = 2,
+  pch = c(8, 20),
+  color = c("Darkred", "#68896B"),
+  lcolor = "Black",
+  xlab = "Porcentaje",
+  xlim = c(0, 1),
+  main = "Distribución de licenciamientos otorgados por entidad de estudios"
+)
+```
+
+Un análisis parecido al anterior también podemos observar cuando revisamos el periodo de licenciamiento por tipo de nivel académico (**POSGRADO**, **PREGRADO**).
+Podemos observar que en **POSGRADO** el `51.5%` de los licenciamientos otorgados fueron de 6 años, `15.8%` de 8 años y pos último `32.7%` licenciamientos por 10 años.
+
+Mientras que en **PREGRADO** el `82.5%` de los licenciamientos otorgados fueron de 6 años, `8.8%` de 8 años y por último `8.6%` licenciamientos de 10 años.
+
+Con esto podemos observar que POSGRADO presenta con licenciamientos otorgados por una mayor cantidad de años que en PREGRADO.
+
+```{r echo = TRUE}
+round(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$TIPO_NIVEL_ACADEMICO
+    ), 2
+  ) * 100, 1
+)
+```
+
+```{r echo = FALSE}
+dotchart(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$TIPO_NIVEL_ACADEMICO
+    ), 2
+  ),
+  pt.cex = 2,
+  pch = c(8, 20),
+  color = c("Darkred", "#68896B"),
+  lcolor = "Black",
+  xlab = "Porcentaje",
+  xlim = c(0, 1),
+  main = "Distribución de licenciamientos otorgados por nivel académico"
+)
+```
+
+Por último, también podemos revisar cuál es el comportamiento de los periodos de licenciamientos otorgados con el nivel académico del programa de estudios; En este caso tenemos un análisis parecido que los anteriores, por lo que se explicará los detalles más relevantes y el resto será describo por el expositor.
+
+Podemos observar en este caso, una gran similitud por parte de como se distribuyen los tiempos de licenciamiento otorgados para cada programa de estudios, a excepción de **CARRERA PROFESIONAL** que presenta un `80%` de licenciamientos con un periodo de 6 años. 
+
+```{r echo = TRUE}
+round(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$NIVEL_ACADEMICO
+    ), 2
+  ), 1
+)
+```
+
+```{r echo = FALSE}
+dotchart(
+  prop.table(
+    table(
+      data_uni$PERIODO_LICENCIAMIENTO,
+      data_uni$NIVEL_ACADEMICO
+    ), 2
+  ),
+  pt.cex = 2,
+  pch = c(8, 20),
+  color = c("Darkred", "#68896B"),
+  lcolor = "Black",
+  xlab = "Porcentaje",
+  xlim = c(0, 1),
+  main = "Distribución de licenciamientos otorgados por programa de estudios"
+)
+```
+
+------------------------------------------------------------------------
+
+## Pregunta 2
+### Haga el Análisis de Correspondencia Múltiple.
+
+Para el análisis de correspondencia múltiple se construye una tabla binaria representada por Z, esta con la finalidad de la contrucción de la tabla de **Burt** o tabla de contingencias múltiples obtenida por `B=Z'Z`.
+También podremos observar que tenemos `7218` individuos y  `11` categorias, siendo la suma de las categorias de las 4 variables.
+
+```{r echo = TRUE}
+Z <- ade4::acm.disjonctif(data_uni)
+head(Z, 14)
+dim(Z)
+```
+
+Ahora presentamos la **tabla de burt** en la cual podremos observar el cruce de las 11 categorias de las 4 variables en estudio.
+Algunas interpretaciones son:
+
+- Existen `4351 programas académicos en universidades privadas`, mientras que `2867 programas académicos en universidades públicas`.
+- Los programas académinos de las Universidades privadas `obtuvieron 120 licenciamientos` con un periodo de 8 años.
+- Existen `214 licenciamientos con un periodo de 6 años otorgados` al nivel académico de Doctorado.
+
+```{r echo = TRUE}
+B <- ade4::acm.burt(data_uni, data_uni)
+B
+```
+
+Ahora para conocer las masas marginales:
+
+- Marginal fila sería **fi. = 1/n**, siendo esto `fi. = 1/7218 = 0.00014`.
+- Marginal columna sería **f.j = nj/n.s** siendo `s` el número de varibales y `nj` el número de individuos que asume la categoriía j, como ejemplo utilizaremos a **TIPO_GESTION_PRIVADO** siendo `f.j = 4351/7214*4 = 0.15069964`.
+
+Para el calculo de estos valores, nos apoyaremos de la librería `ac` y obtendremos las masas para fila y columna.
+
+```{r echo = TRUE}
+cm <- ca::mjca(data_uni, lambda = "indicator")
+head(cm$rowmass) # masa de fila
+cm$colmass # masa de columna
+```
+
+Para realizar el análisis de correspondencia múltiple, se necesita conocer cuál va a ser el número de ejes a tomar en cuenta, esto se calcula basicamente con la resta de `(p-s)`, siendo p el número de categorias y s el número de variables iniciales; Siendo `(11-4) = 7`, por lo que utilizamos 7 ejes, también se sabe que debemo tener 7 valores propios mayores que cero.
+
+Tambien observamos los valores propios que en este caso no podemos decidir por los autovalores mayores que cero si no donde la diferencia entre autovalores sea minima, en este caso podemos decicidir por retener a los 2 primeros ejes, acaparando el 52% de la inercia.
+
+Otro criterio en ACM es que la suma de los auto valores no es igual al número de autovalores que se tienen, como se veía en CP.
+
+```{r echo = TRUE}
+acm <- ade4::dudi.acm(data_uni, scannf = FALSE, nf = 7)
+barplot((acm$eig), col = "#68896B", main = "Valores Propios")
+eiglst <-
+  data.frame(
+    vp = acm$eig,
+    porce = acm$eig * 100 / sum(acm$eig),
+    acupor = cumsum(acm$eig) * 100 / sum(acm$eig)
+  )
+eiglst
+sum(eiglst$vp)
+```
+
+También observamos que si bien es cierto, por el criterio antes analizado nosotros pedimos 7 ejes, pero el software nos devuelve solo 6, por lo que se deduce que con 6 ejes ya se observa el 100% de la variabilidad explicada.
+
+Y para corroborar esto, anteriormente para el calculo de las masas utilizamos una librería que también nos obtienes los autovalores `ac`, donde podemos observar que al eje 7 le asigna un valor de 0.
+
+```{r echo = TRUE}
+cm <- ca::mjca(data_uni, lambda = "indicator")
+cm
+```
+
+ahora para un mayor análisis podemos observar los siguientes gráficos:
+
+Primero se seleccionaron a una muestra (1 de cada 25) para que la gráfica no se vea sobrepoblada, luego en la primera gráfica podemos observar que se presentan el porcentaje de variabilidad explicada de cada dimensión, por ejemplo en la dimensión 1 tenemos un `31.9%`, mientras que en la dimensión 2 un `20.4%`, además el individuo en este caso universidad 4025 podemos decir que está altamente correlacionado con la dimensión 1 y una baja relación con la dimensión 2, mientras que la universidad 3300 está altamente relacionado con la dimensión 2 mientras que tiene una baja relación con la dimensión 1.
+
+```{r echo = TRUE}
+selin <- seq(100, 7218, 25)
+plot(
+  acm, Tcol = FALSE,
+  roweti = as.character(selin),
+  cframe = 1, cex.row = 0.6,
+  cex.global = 0.8, gg = TRUE
+)
+```
+
+Y en esta gráfica observamos como se sobreponen las categorias, para poder entender cómo los programas académicos presentan ciertas categorías:
+
+Por ejemplo:
+
+- Los programas académicos (filas 2950, 6550, 4025, 2650 y 4675) se encuentran o con **NIVEL ACADEMICO MAESTRIA ** o **NIVEL ACADEMICO DOCTORADO** siendo de un **TIPO DE GESTION PUBLICO**.
+
+```{r echo = TRUE}
+plot(
+  acm,
+  Tcol = TRUE,
+  roweti = as.character(selin),
+  cframe = 1, cex.row = 0.6,
+  cex.global = 0.8, gg = TRUE
+)
+```
+
+También podemos observar como nuestras 4 variables se distribuyen en las 2 dimensiones, podemos observar que las variables **TIPO_NIVEL_ACADEMICO** y **NIVEL_ACADEMICO** están asociados a la dimensión 1, mientras que **TIPO_GESTION** y **PERIODO_LICENCIAMIENTO**  están más asociados a la dimensión 2.
+
+```{r echo = TRUE}
+fit2 <- FactoMineR::MCA(data_uni)
+```
+
+Además también podemos dar algunas interpretaciones hacia la contribución relativa y absoluto:
+
+Para Individuos:
+
+- La contribución relativa `(ctr)` para el individuo 1 nos dice que, el individuo 1 explica el 0.023% de la variabilidad total de la dimensión 1.
+- Y la contribución absoluta `(cos2)` para el individuo 1 nos dice. El 94.7% de la variabilidad total del individuo está explicado por la dimensión 1.
+
+Para Categorias:
+
+- La categoría **PRIVADO** explica el 1.546% de la variabilidad total de la dimensión 1.
+- Mientras que la dimensión 1 explica el 8.7% de la variabilidad total de la categoría **PRIVADO**
+
+```{r echo = TRUE}
+summary(fit2, nb.dec = 3, ncp = 2)
+```
+
+Con el apoyo de la librería `factoextra` podemos observar como las categorías se distribuyen dentro de las dimensiones.
+
+Además también podemos observar el % de contribución de las categorías para la dimensión 1, para la dimensión 2 y cuando observamos ambas dimensiones juntas.
+
+```{r echo = TRUE}
+fviz_mca_var(fit2, col.var = "darkorchid")
+fviz_contrib(fit2,
+  choice = "var", axes = 1,
+  fill = "#264671",
+  color = "mediumorchid4"
+)
+fviz_contrib(fit2,
+  choice = "var",
+  axes = 2, fill = "#68896B",
+  color = "lightcoral"
+)
+fviz_contrib(fit2,
+  choice = "var",
+  axes = 1:2, fill = "darkred",
+  color = "indianred1"
+)
+```
+
+------------------------------------------------------------------------
+
+## Pregunta 3
+### Realice el Análisis de Correspondencia Simple entre las variables `TIPO_GESTION` y `PERIODO_LICENCIAMIENTO`.
+
+```{r construir datos para el analisis discriminante}
+datos.acs <-
+  dplyr::select(
+    data_uni,
+    TIPO_GESTION,
+    PERIODO_LICENCIAMIENTO
+  ) %>%
+  dplyr::rename(
+    Gestion = TIPO_GESTION,
+    Periodo = PERIODO_LICENCIAMIENTO
+  ) %>%
+  table() %>%
+  as.matrix()
+addmargins(datos.acs)
+```
+
+Analisis: Visualizacion de una Tabla de Contingencia usando una Matriz Grafica
+
+Primera forma - Balloonplots
+
+```{r Tabla de Contingencia}
+# Convertir los datos en una tabla
+dt <- as.table(datos.acs)
+dt
+str(dt)
+# Para graficarlo con % fila (Perfiles columna)
+dt1 <- prop.table(dt, margin = 2)
+dt2 <- addmargins(dt)
+round(dt1, 3)
+gplots::balloonplot(
+  t(dt1),
+  main = "Periodo de licenciamiento y tipo de gestion",
+  xlab = "Periodo",
+  ylab = "Gestion",
+  dotcolor = "skyblue",
+  label = F, cum.margins = F,
+  label.lines = F, show.margins = FALSE
+)
+```
+
+Interpretación:
+
+- El 70,1% de los programas académicos de las universidades licenciadas con un periodo 6 años de licenciamiento son de Universidades privadas.
+- El 13,0% de los programas académicos de las universidades licenciadas con un periodo 8 años de licenciamiento son de Universidades privadas.
+-El 59,1% de los programas académicos de las universidades licenciadas con un periodo 10 años de licenciamiento son de Universidades privadas.
+
+Para graficarlo con `%` columna (Perfiles fila)
+
+```{r Perfiles fila}
+dt3 <- prop.table(dt, margin = 1)
+dt4 <- addmargins(dt)
+round(dt3, 3)
+gplots::balloonplot(
+  t(dt3),
+  main = "Periodo de licenciamiento y tipo de gestion",
+  xlab = "Periodo",
+  ylab = "Gestion",
+  dotcolor = "bisque2",
+  label = F, cum.margins = F,
+  label.lines = F, show.margins = FALSE
+)
+```
+
+Interpretación:
+
+- El 75,3% de los programas académicos de las universidades privadas son de universidades con un periodo de licenciamiento de 6 años.
+- El 2,8% de los programas  académicos de las universidades privadas son de universidades con un periodo de licenciamiento de 8 años.
+- El 21,9% de los programas académicos de las universidades privadas son de universidades con un periodo de licenciamiento de 10 años.
+
+Prueba de Independencia:
+
+```{r Prueba de Independencia}
+tabla1 <- table(data_uni$TIPO_GESTION, data_uni$PERIODO_LICENCIAMIENTO)
+addmargins(tabla1)
+prueba <- chisq.test(tabla1)
+prueba
+```
+
+- H0: El tipo de gestión es independiente (no está relacionado)  con el periodo de licenciamiento.
+- H1: El tipo de gestión no es independiente (está relacionado)  con el periodo de licenciamiento.
+
+Interpretación:
+
+A un nivel de significación de 0.05 se rechaza Ho (p-value = 2.2e-16) y se acepta la hipótesis alterna, es decir El tipo de gestión no es independiente (está relacionado)  con el periodo de licenciamiento.
+
+Considerando que el periodo de licenciamiento depende de la producción científica, basado en la comunidada universitaria dirigida a la investigación y docencia, según el procedimiento de licenciamiento institucional 
+
+otra forma:
+
+```{r }
+qchisq(0.05, 2, lower.tail = FALSE)
+fastGraph::shadeDist(5.991465, "dchisq", 2, lower.tail = FALSE, col = c("black", "steelblue"))
+```
+
+Decisión estadística: 
+
+Si (X2)c > (X2)((0.05,2)),  entonces  se rechaza Ho
+
+Interpretación:
+
+El estadístico Chi-cuadrado calculado (X2)c > (X2)((0.05,2)) por lo que se rechaza Ho (X2)c > (X2)((0.05,2))=5.99) , es decir las variables de tipo de gestión y periodo de licenciamiento no son independientes (están relacionadas) por lo que se podría realizar un análisis de correspondencia simple.
+
+```{r Perfiles Fila}
+# Perfiles Fila y masa de la columna 2.
+addmargins(datos.acs)
+prop.table(datos.acs, 1)
+```
+
+Interpretación:
+El 21,9% de los programas academicos en las universidades privadas cuentan con un periodo de licenciamiento de 10 años.
+
+```{r Perfiles Columna}
+# Perfiles Columna y masa de la fila 3.
+addmargins(datos.acs)
+prop.table(datos.acs, 2)
+```
+
+Interpretación:
+El 40,9% de los programas academicos en las universidades con un periodo de licenciamiento de 10 años son de gestión pública.
+
+```{r Tabla con el paquete gmodels}
+# Tabla con el paquete gmodels y funcion CrossTable()
+gmodels::CrossTable(
+  datos.acs,
+  prop.t = FALSE,
+  prop.r = TRUE,
+  prop.c = TRUE,
+  prop.chisq = FALSE
+)
+```
+
+De la tabla que contiene el total de programas academicos, el 2% proviene de una universidad de gestión privada con 8 años de licenciamiento.
+
+```{r ACS con el paquete FactoMiner}
+# ACS con el paquete FactoMiner
+res.ca <-
+  FactoMineR::CA(
+    datos.acs,
+    ncp = 1,
+    graph = FALSE,
+    col.sup = 3
+  )
+print(res.ca)
+# summary(res.ca)
+# Scree Plot de los Autovalores
+factoextra::get_eigenvalue(res.ca)
+factoextra::fviz_screeplot(res.ca, addlabels = TRUE, ylim = c(0, 120))
+```
+
+Solo existe una dimensión.
