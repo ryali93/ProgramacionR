@@ -1,0 +1,30 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">Programación II</a></li>
+      after: |
+        <li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
+    toolbar:
+      position: fixed
+    edit : null
+    download: ["pdf", "epub", "mobi"]
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      github: yes
+      twitter: yes
+      linkedin: yes
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+    info: yes
+

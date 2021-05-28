@@ -1,0 +1,66 @@
+# LECCIÓN 03
+## Rmarkdown
+## Git y Github
+## ¿Cómo puedo hacer un README?
+## Instalar paquetes desde GitHub (Devtools, remotes)
+
+------------------------------------------------------------------------
+
+# LECCIÓN 04
+## Análisis exploratorio de datos (EDA)
+## Distribución de las variables (histogramas, boxplots violinplots)
+## Detección de missing values
+## Detección de outliers (1q - 1.5RI, 3q + 1.5RI)
+## Autocolinealidad
+
+------------------------------------------------------------------------
+
+# LECCIÓN 05
+## Introducción a datos espaciales
+## GDAL
+## ¿Qué es OGR y OSGeo?
+## Principales paquetes para datos espaciales
+## Lectura/Escritura de datos espaciales
+## Principales herramientas de geoprocesamiento (dissolve, clip, merge, union)
+## Principales herramientas para la manipulación de datos grillados (raster, brick, stack, mask, crop, ## resample, projectRaster)
+
+------------------------------------------------------------------------
+
+# LECCIÓN 06-07
+## Estimación de densidad de Kernel 2D
+## Introducción a Geoestadística
+## Variogramas
+## Interpolación (IDW, Spline, Kriging)
+
+------------------------------------------------------------------------
+
+# LECCIÓN 08 - Examen Parcial
+
+------------------------------------------------------------------------
+
+# LECCIÓN 09
+## Análisis de dependencia espacial
+## Regresión pondera geográficamente (GWR)
+
+------------------------------------------------------------------------
+
+# LECCIÓN 10-11
+## RGEE
+
+------------------------------------------------------------------------
+
+# LECCIÓN 12-13
+## Introducción al análisis multivariado
+## Modelos de análisis cluster (Hclus, k-means, k-means++, k-medoides, DBscan)
+## Análisis de componentes principales (PCA)
+
+------------------------------------------------------------------------
+
+# LECCIÓN 14-15
+## Desarrollo de aplicaciones
+
+------------------------------------------------------------------------
+
+# LECCIÓN 16 - Examen Final
+
+------------------------------------------------------------------------
