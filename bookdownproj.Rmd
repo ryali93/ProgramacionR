@@ -1,3 +1,34 @@
+--- 
+title: "Programación"
+author: "Yali-Samaniego Roy & Prudencio-Paredes Fernando"
+date: "`r Sys.Date()`"
+documentclass: krantz
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+graphics: yes
+lot: yes
+lof: yes
+fontsize: 10pt
+mainfont: Palatino
+site: bookdown::bookdown_site
+output:
+  html_document:
+    toc: true
+    toc_depth: 1
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+# Introducción
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
 # Introducción a R
 
 ## Instalación de R, RStudio y RTools
@@ -533,3 +564,54 @@ Crear un data frame que tenga todos los distritos de la región Ancash e Ica sin
 ## Tarea 1:
 Crear un repositorio del curso en `Github`, copiar el enlace en la plataforma de google classroom
 [<u>https://github.com/tonsky/FiraCode</u>](https://github.com/tonsky/FiraCode)
+
+<!--chapter:end:semana1.Rmd-->
+
+# LECCIÓN 02
+## Operadores lógicos (==, &, |, <, >, otros)
+## Condicionales (if, else)
+## Bucles (while, for)
+## Controles de flujo (Break, continue, tryCatch, options)
+## Funciones
+## Funciones de la familia apply
+## Gráficos
+## Estilo tidyverse
+
+<!--chapter:end:semana2.Rmd-->
+
+
+# LECCIÓN 03
+
+Placeholder
+
+
+## Rmarkdown
+## Git y Github
+## ¿Cómo puedo hacer un README?
+## Instalar paquetes desde GitHub (Devtools, remotes)
+## Análisis exploratorio de datos (EDA)
+## Distribución de las variables (histogramas, boxplots violinplots)
+## Detección de missing values
+## Detección de outliers (1q - 1.5RI, 3q + 1.5RI)
+## Autocolinealidad
+## Introducción a datos espaciales
+## GDAL
+## ¿Qué es OGR y OSGeo?
+## Principales paquetes para datos espaciales
+## Lectura/Escritura de datos espaciales
+## Principales herramientas de geoprocesamiento (dissolve, clip, merge, union)
+## Principales herramientas para la manipulación de datos grillados (raster, brick, stack, mask, crop, ## resample, projectRaster)
+## Estimación de densidad de Kernel 2D
+## Introducción a Geoestadística
+## Variogramas
+## Interpolación (IDW, Spline, Kriging)
+## Análisis de dependencia espacial
+## Regresión pondera geográficamente (GWR)
+## RGEE
+## Introducción al análisis multivariado
+## Modelos de análisis cluster (Hclus, k-means, k-means++, k-medoides, DBscan)
+## Análisis de componentes principales (PCA)
+## Desarrollo de aplicaciones
+
+<!--chapter:end:semana3.Rmd-->
+

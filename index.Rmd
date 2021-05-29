@@ -1,5 +1,5 @@
 --- 
-title: "Programación II"
+title: "Programación"
 author: "Yali-Samaniego Roy & Prudencio-Paredes Fernando"
 date: "`r Sys.Date()`"
 documentclass: krantz

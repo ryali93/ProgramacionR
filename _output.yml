@@ -5,7 +5,7 @@ bookdown::gitbook:
       collapse: section
       scroll_highlight: yes
       before: |
-        <li><a href="./">Programación II</a></li>
+        <li><a href="./">Programación</a></li>
       after: |
         <li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
     toolbar:

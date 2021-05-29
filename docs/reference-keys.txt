@@ -109,3 +109,10 @@ texto
 rds
 rdata
 lectura-escritura-de-datos-.csv-.xlsx.-rdata-.rds
+diferencias-entre-paquetes-y-librerías
+tipos-de-datos-en-r
+tipos-de-estructuras-de-datos
+tarea-1
+ejercicios
+ejercicio-1
+ejercicio-2
