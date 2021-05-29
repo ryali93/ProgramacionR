@@ -62,7 +62,7 @@ rm(list = ls())
 # Math Rmd: https://rpruim.github.io/s341/S19/from-class/MathinRmd.html
 ```
 
-# Introducción
+# Introducción al curso
 
 ![Tus días a partir de ahora](https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71eEjdm71yL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png){width=50%}
 
@@ -76,5 +76,5 @@ Estas incluyen:
 - Producir visualizaciones de datos simples y efectivas que hacen que sus resultados sean accesibles y fáciles de entender.
 
 
-En la segunda parte de este curso nos enfocaremos principalmente en el la aplicación de estas herramientas en **$\color{blue}{\text{Spatial data analyst}}$**, **$\color{blue}{\text{multivariate data analysis}}$** y **$\color{blue}{\text{GIS development}}$**.
+En la segunda parte de este curso nos enfocaremos principalmente en la aplicación de estas herramientas en **$\color{blue}{\text{Spatial data analyst}}$**, **$\color{blue}{\text{multivariate data analysis}}$** y **$\color{blue}{\text{GIS development}}$**.
 

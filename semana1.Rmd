@@ -171,7 +171,12 @@ print("Hello world")
 
 ### Asignación de objetos
 
-
+```{r}
+obj <- c(5, 2, 6, 58, 456, 56, 5)
+obj
+c(5, 2, 6, 58, 456, 56, 5) -> obj
+obj
+```
 
 ### Vector
 
@@ -516,20 +521,37 @@ load("stuff.RData")
 - Nota 2: Fijense en su directorio de trabajo (working directory)
 
 Cargar el set de datos "data/earthquakes.csv" (ojo con el separador!).
+
 Cuantos registros y columnas tiene?
+
 Imprimir la columna Magnitude y luego el registro numero 10 de esa columna
 
 ### Ejercicio 2:
 
 - Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.
 - Nota 2: Fijense en su directorio de trabajo (working directory)
-- Nota 3: Copia para no perder los datos originales (buena practica)
+- Nota 3: Copia para no perder los datos originales (buena práctica)
 
-Obtener un dataset con todos los distritos que tienen 0 en la columna Incidencia. (tener cargado el dataset data/pobreza_extrema.csv)
+Obtener un dataset con todos los distritos que tienen 0 en la columna Incidencia. **(tener cargado el dataset data/pobreza_extrema.csv)**
+
 Convertir al distrito "Los Olivos" en el de más extrema pobreza la variable Incidencia. Luego explorar los datos.
+
 Crear un data frame que tenga todos los distritos de la región Ancash e Ica sin población en extrema pobreza
 
+### Ejercicio 3:
 
-## Tarea 1:
-Crear un repositorio del curso en `Github`, copiar el enlace en la plataforma de google classroom
-[<u>https://github.com/tonsky/FiraCode</u>](https://github.com/tonsky/FiraCode)
+- Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.
+
+- Nota 2: Fijense en su directorio de trabajo (working directory)
+
+Cargar el set de datos **“data/earthquakes.csv”**. Los datos historicos reprentan la ubicación de los terremotos.
+
+Hacer una descripcion visual y numérica de la variable `Magnitude`.
+
+¿Se observa algo raro?, ¿Qué variables parecen tener valores extremos o outliers?
+
+¿Hay nulos (NA)?
+
+Quedarse con los datos con valores extremos (superior a la media mas 3 veces la desviación estandar).
+
+Calcular percentil 98 

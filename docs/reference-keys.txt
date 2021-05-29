@@ -116,3 +116,6 @@ tarea-1
 ejercicios
 ejercicio-1
 ejercicio-2
+ejercicio-2-1
+ejercicio-3
+introducción-al-curso
