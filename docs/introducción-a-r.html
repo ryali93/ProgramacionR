@@ -173,19 +173,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.11.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Data Frame</a></li>
 <li class="chapter" data-level="2.11.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#listas"><i class="fa fa-check"></i><b>2.11.6</b> Listas</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx.-rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx. RData, .rds)</a>
+<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a>
 <ul>
 <li class="chapter" data-level="2.12.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#csv"><i class="fa fa-check"></i><b>2.12.1</b> CSV</a></li>
 <li class="chapter" data-level="2.12.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#excel"><i class="fa fa-check"></i><b>2.12.2</b> EXCEL</a></li>
 <li class="chapter" data-level="2.12.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rds"><i class="fa fa-check"></i><b>2.12.3</b> RDS</a></li>
 <li class="chapter" data-level="2.12.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rdata"><i class="fa fa-check"></i><b>2.12.4</b> RDATA</a></li>
 </ul></li>
-<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-de-r-base-sum-cor-mean-sd-quantile"><i class="fa fa-check"></i><b>2.13</b> Funciones de R base (sum, cor, mean, sd, quantile)</a></li>
-<li class="chapter" data-level="2.14" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.14</b> Ejercicios:</a>
+<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a>
 <ul>
-<li class="chapter" data-level="2.14.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.14.1</b> Ejercicio 1:</a></li>
-<li class="chapter" data-level="2.14.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.14.2</b> Ejercicio 2:</a></li>
-<li class="chapter" data-level="2.14.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.14.3</b> Ejercicio 3:</a></li>
+<li class="chapter" data-level="2.13.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.13.1</b> Ejercicio 1:</a></li>
+<li class="chapter" data-level="2.13.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.13.2</b> Ejercicio 2:</a></li>
+<li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -283,7 +282,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </ul>
 <p style='text-align: justify;'>
 <ul>
-<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕚 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
+<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕣 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
 </p></li>
 </ul>
 <p style='text-align: justify;'>
@@ -872,8 +871,8 @@ La lista, en el ejemplo, tiene tres elementos de diferentes tipos de datos. <cod
 </p>
 </div>
 </div>
-<div id="lectura-escritura-de-datos-.csv-.xlsx.-rdata-.rds" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Lectura / escritura de datos (.csv, .xlsx. RData, .rds)</h2>
+<div id="lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds" class="section level2" number="2.12">
+<h2><span class="header-section-number">2.12</span> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</h2>
 <p style="text-align: justify;">
 En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</strong> podemos importar conjuntos de datos o datasets con el asistente de importación. No es recomendable cuando debemos importar varios archivos o si se van a leer archivos grandes. Para lo cual es más eficiente usar código.
 </p>
@@ -962,13 +961,10 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="introducción-a-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;stuff.RData&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="funciones-de-r-base-sum-cor-mean-sd-quantile" class="section level2" number="2.13">
-<h2><span class="header-section-number">2.13</span> Funciones de R base (sum, cor, mean, sd, quantile)</h2>
-</div>
-<div id="ejercicios" class="section level2" number="2.14">
-<h2><span class="header-section-number">2.14</span> Ejercicios:</h2>
-<div id="ejercicio-1" class="section level3" number="2.14.1">
-<h3><span class="header-section-number">2.14.1</span> Ejercicio 1:</h3>
+<div id="ejercicios" class="section level2" number="2.13">
+<h2><span class="header-section-number">2.13</span> Ejercicios:</h2>
+<div id="ejercicio-1" class="section level3" number="2.13.1">
+<h3><span class="header-section-number">2.13.1</span> Ejercicio 1:</h3>
 <ul>
 <li>Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.</li>
 <li>Nota 2: Fijense en su directorio de trabajo (working directory)</li>
@@ -977,8 +973,8 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <p>Cuantos registros y columnas tiene?</p>
 <p>Imprimir la columna Magnitude y luego el registro numero 10 de esa columna</p>
 </div>
-<div id="ejercicio-2" class="section level3" number="2.14.2">
-<h3><span class="header-section-number">2.14.2</span> Ejercicio 2:</h3>
+<div id="ejercicio-2" class="section level3" number="2.13.2">
+<h3><span class="header-section-number">2.13.2</span> Ejercicio 2:</h3>
 <ul>
 <li>Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.</li>
 <li>Nota 2: Fijense en su directorio de trabajo (working directory)</li>
@@ -988,8 +984,8 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <p>Convertir al distrito “Los Olivos” en el de más extrema pobreza la variable Incidencia. Luego explorar los datos.</p>
 <p>Crear un data frame que tenga todos los distritos de la región Ancash e Ica sin población en extrema pobreza</p>
 </div>
-<div id="ejercicio-3" class="section level3" number="2.14.3">
-<h3><span class="header-section-number">2.14.3</span> Ejercicio 3:</h3>
+<div id="ejercicio-3" class="section level3" number="2.13.3">
+<h3><span class="header-section-number">2.13.3</span> Ejercicio 3:</h3>
 <ul>
 <li><p>Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.</p></li>
 <li><p>Nota 2: Fijense en su directorio de trabajo (working directory)</p></li>

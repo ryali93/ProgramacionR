@@ -417,7 +417,7 @@ class(point[[1]])
 
 <p style='text-align: justify;'> La lista, en el ejemplo, tiene tres elementos de diferentes tipos de datos. `id` es numérico, `coord` es otra lista y `spatial.reference` es una cadena de caracteres. La lista `coord` contiene dos elementos numéricos, `x` e `y`. Generalmente, se accede a los elementos de la lista usando su nombre, en lugar de número. En particular, muchas estructuras de datos tienen elementos con nombre a los que se puede acceder utilizando los operadores `$` o `@`.</p>
 
-## Lectura / escritura de datos (.csv, .xlsx. RData, .rds)
+## Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)
 
 <p style='text-align: justify;'> En la pestaña en Entorno **(Environment)** de **RStudio** podemos importar conjuntos de datos o datasets con el asistente de importación. No es recomendable cuando debemos importar varios archivos o si se van a leer archivos grandes. Para lo cual es más eficiente usar código.</p>
 
@@ -506,11 +506,6 @@ Puede abrir un archivo RData con `load`:
 
 ```{r}
 load("stuff.RData")
-```
-
-## Funciones de R base (sum, cor, mean, sd, quantile)
-```{r Funciones de R base}
-
 ```
 
 ## Ejercicios:
