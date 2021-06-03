@@ -120,3 +120,16 @@ ejercicio-2-1
 ejercicio-3
 introducción-al-curso
 lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds
+programando-con-r
+control-de-flujo
+operadores-lógicos
+consultas-lógicas
+for
+while
+ejercicios-1
+apply
+tapply
+lapply-sapply-vapply
+sapply
+vapply
+rapply

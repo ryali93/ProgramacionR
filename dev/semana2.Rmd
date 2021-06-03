@@ -1,9 +1,0 @@
-# LECCIÓN 02
-## Operadores lógicos (==, &, |, <, >, otros)
-## Condicionales (if, else)
-## Bucles (while, for)
-## Controles de flujo (Break, continue, tryCatch, options)
-## Funciones
-## Funciones de la familia apply
-## Gráficos
-## Estilo tidyverse
