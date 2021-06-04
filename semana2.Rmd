@@ -218,10 +218,12 @@ suma(a, b)
 
 ### Ejercicios
 
-####Ejercicio 1:
+#### Ejercicio 1:
+
 Cree una función que, dado un vector, imprima por pantalla la media y la desviación estándar, opcionalmente también imprimirá la mediana.
 
-####Ejercicio 2:
+#### Ejercicio 2:
+
 - Agregar un argumento adicional, llamado `print_info`, que sea `TRUE` por defecto
 - Crea una condicional alrededor de la función `print()`, la cual debe ser ejecutada sólo si `print_info` es `TRUE`
 - Prueba el código
@@ -296,7 +298,6 @@ levels(as.factor(d$Source))
 sapply(levels(as.factor(d$Source)), funcion_nueva, simplify = F)
 ```
 
-
 ### vapply()
 SIMILAR, PERO DEVUELVE UNA SALIDA PREDETERMINADA QUE PODRIA RESULTAR MAS AGIL
 ```{r eval=FALSE}
@@ -323,12 +324,12 @@ estaciones <- c(rep("verano",2), rep("otoño",3), rep("invierno",3), rep("primav
 df <- data.frame(x, y, estaciones)
 
 plot(df$x, df$y, type="o", pch=14,xlab = "Mes", 
-     ylab = "Temperatura (°C)", main="Lima, Temperatura anual")
+     ylab = "Temperatura [°C]", main="Lima, Temperatura mensual promedio")
 ```
 
 ```{r}
 plot(df$x, df$y, type="o", pch=20, xlab="Mes", 
-     ylab="Temperatura media (°C)", main="Lima, Temperatura anual", col = "#F47E40")
+     ylab="Temperatura [°C]", main="Lima, Temperatura mensual promedio", col = "#F47E40")
 
 df["colores"] = c(rep("black",2), rep("green",3), rep("red",3), rep("blue",3), "red")
 legend("top", legend = levels(factor(estaciones)),
@@ -349,5 +350,14 @@ hist(cars$dist, freq = T, col = "skyblue", labels = T)
 ```
 
 ## Estilo tidyverse
+Primero necesitarás instalar algunos paquetes de R. Un paquete R es una colección de funciones, datos y documentación que amplía las capacidades de **R base**. El uso de paquetes es clave para el uso exitoso de R. La mayoría de los paquetes que aprenderá en este apartado son parte del llamado **tidyverse**. Los paquetes de tidyverse comparten una filosofía común de programación de datos y R, y están diseñados para trabajar juntos de forma natural.
+
+Puedes instalar tidyverse completo con una sola línea de código:
+
+`install.packages("tidyverse")`
+
+```{r}
+
+```
 
 

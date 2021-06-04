@@ -512,7 +512,7 @@ load("stuff.RData")
 
 ### Ejercicio 1:
 
-- Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.
+- Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.
 - Nota 2: Fijense en su directorio de trabajo (working directory)
 
 Cargar el set de datos "data/earthquakes.csv" (ojo con el separador!).
@@ -523,7 +523,7 @@ Imprimir la columna Magnitude y luego el registro numero 10 de esa columna
 
 ### Ejercicio 2:
 
-- Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.
+- Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.
 - Nota 2: Fijense en su directorio de trabajo (working directory)
 - Nota 3: Copia para no perder los datos originales (buena práctica)
 
@@ -535,7 +535,7 @@ Crear un data frame que tenga todos los distritos de la región Ancash e Ica sin
 
 ### Ejercicio 3:
 
-- Nota 1: Recuerden cargar todas las librerias necesarias si no lo hicieron.
+- Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.
 
 - Nota 2: Fijense en su directorio de trabajo (working directory)
 
