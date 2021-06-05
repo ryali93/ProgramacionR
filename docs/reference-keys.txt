@@ -139,3 +139,7 @@ nycfights13
 dplyr-basics
 filter-rows-with-filter
 filtrar-filas-con-filter
+operadores-relacionales-y-lógicos
+lapply
+gráficos-de-dispersión
+gráficos-de-líneas

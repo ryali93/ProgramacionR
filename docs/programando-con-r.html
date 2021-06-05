@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Programando con R | Programación</title>
+  <meta name="description" content="3 Programando con R | Programación" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Programando con R | Programación" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Programando con R | Programación" />
+  
+  
+  
+
+<meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
+
+
+<meta name="date" content="2021-06-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción-a-r.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Programación</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso</a></li>
+<li class="chapter" data-level="2" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a><ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-r-rstudio-y-rtools"><i class="fa fa-check"></i><b>2.1</b> Instalación de R, RStudio y RTools</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#r"><i class="fa fa-check"></i><b>2.1.1</b> R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Rstudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rtools"><i class="fa fa-check"></i><b>2.1.3</b> RTools</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-r"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-rstudio"><i class="fa fa-check"></i><b>2.3</b> ¿Qué es RStudio?</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-otros-ides-existen-para-r"><i class="fa fa-check"></i><b>2.4</b> ¿Qué otros IDE’s existen para R?</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#diferencias-entre-paquetes-y-librerías"><i class="fa fa-check"></i><b>2.5</b> Diferencias entre paquetes y librerías</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-lenguajes-de-programación"><i class="fa fa-check"></i><b>2.6</b> Tipos de lenguajes de programación</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-compilado"><i class="fa fa-check"></i><b>2.6.1</b> Lenguaje compilado</a></li>
+<li class="chapter" data-level="2.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-interpretado"><i class="fa fa-check"></i><b>2.6.2</b> Lenguaje interpretado</a></li>
+<li class="chapter" data-level="2.6.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-intermedio"><i class="fa fa-check"></i><b>2.6.3</b> Lenguaje intermedio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#paradigmas-de-programación"><i class="fa fa-check"></i><b>2.7</b> Paradigmas de programación</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-orientado-a-objetos"><i class="fa fa-check"></i><b>2.7.1</b> Programación Orientado a Objetos</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-funcional"><i class="fa fa-check"></i><b>2.7.2</b> Programación Funcional</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ambiente-de-trabajo-en-rstudio"><i class="fa fa-check"></i><b>2.8</b> Ambiente de trabajo en RStudio</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#mi-primer-hello-world"><i class="fa fa-check"></i><b>2.9</b> Mi primer “Hello world”</a></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos-en-r"><i class="fa fa-check"></i><b>2.10</b> Tipos de datos en R</a></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructuras-de-datos"><i class="fa fa-check"></i><b>2.11</b> Tipos de estructuras de datos</a><ul>
+<li class="chapter" data-level="2.11.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#asignación-de-objetos"><i class="fa fa-check"></i><b>2.11.1</b> Asignación de objetos</a></li>
+<li class="chapter" data-level="2.11.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#vector"><i class="fa fa-check"></i><b>2.11.2</b> Vector</a></li>
+<li class="chapter" data-level="2.11.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#factor"><i class="fa fa-check"></i><b>2.11.3</b> Factor</a></li>
+<li class="chapter" data-level="2.11.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#matrix"><i class="fa fa-check"></i><b>2.11.4</b> Matrix</a></li>
+<li class="chapter" data-level="2.11.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Data Frame</a></li>
+<li class="chapter" data-level="2.11.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#listas"><i class="fa fa-check"></i><b>2.11.6</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#csv"><i class="fa fa-check"></i><b>2.12.1</b> CSV</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#excel"><i class="fa fa-check"></i><b>2.12.2</b> EXCEL</a></li>
+<li class="chapter" data-level="2.12.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rds"><i class="fa fa-check"></i><b>2.12.3</b> RDS</a></li>
+<li class="chapter" data-level="2.12.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rdata"><i class="fa fa-check"></i><b>2.12.4</b> RDATA</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a><ul>
+<li class="chapter" data-level="2.13.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.13.1</b> Ejercicio 1:</a></li>
+<li class="chapter" data-level="2.13.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.13.2</b> Ejercicio 2:</a></li>
+<li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="programando-con-r.html"><a href="programando-con-r.html"><i class="fa fa-check"></i><b>3</b> Programando con R</a><ul>
+<li class="chapter" data-level="3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#operadores-relacionales-y-lógicos"><i class="fa fa-check"></i><b>3.1</b> Operadores relacionales y lógicos</a></li>
+<li class="chapter" data-level="3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#consultas-lógicas"><i class="fa fa-check"></i><b>3.2</b> Consultas lógicas</a></li>
+<li class="chapter" data-level="3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo"><i class="fa fa-check"></i><b>3.3</b> Control de flujo</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#condicionales-if-else"><i class="fa fa-check"></i><b>3.3.1</b> Condicionales (if, else)</a></li>
+<li class="chapter" data-level="3.3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#bucles-while-for"><i class="fa fa-check"></i><b>3.3.2</b> Bucles (while, for)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#controles-de-flujo-break-continue-trycatch-options"><i class="fa fa-check"></i><b>3.3.3</b> Controles de flujo (Break, continue, tryCatch, options)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones"><i class="fa fa-check"></i><b>3.4</b> Funciones</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="programando-con-r.html"><a href="programando-con-r.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4.1</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones-de-la-familia-apply"><i class="fa fa-check"></i><b>3.5</b> Funciones de la familia apply</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="programando-con-r.html"><a href="programando-con-r.html#apply"><i class="fa fa-check"></i><b>3.5.1</b> apply():</a></li>
+<li class="chapter" data-level="3.5.2" data-path="programando-con-r.html"><a href="programando-con-r.html#tapply"><i class="fa fa-check"></i><b>3.5.2</b> tapply()</a></li>
+<li class="chapter" data-level="3.5.3" data-path="programando-con-r.html"><a href="programando-con-r.html#lapply"><i class="fa fa-check"></i><b>3.5.3</b> lapply()</a></li>
+<li class="chapter" data-level="3.5.4" data-path="programando-con-r.html"><a href="programando-con-r.html#sapply"><i class="fa fa-check"></i><b>3.5.4</b> sapply()</a></li>
+<li class="chapter" data-level="3.5.5" data-path="programando-con-r.html"><a href="programando-con-r.html#vapply"><i class="fa fa-check"></i><b>3.5.5</b> vapply()</a></li>
+<li class="chapter" data-level="3.5.6" data-path="programando-con-r.html"><a href="programando-con-r.html#rapply"><i class="fa fa-check"></i><b>3.5.6</b> rapply()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos"><i class="fa fa-check"></i><b>3.6</b> Gráficos</a></li>
+<li class="chapter" data-level="3.7" data-path="programando-con-r.html"><a href="programando-con-r.html#estilo-tidyverse"><i class="fa fa-check"></i><b>3.7</b> Estilo tidyverse</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="programando-con-r.html"><a href="programando-con-r.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.7.1</b> Data Transformation con dplyr</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
+<li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Programación</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="programando-con-r" class="section level1">
+<h1><span class="header-section-number">3</span> Programando con R</h1>
+<div id="operadores-relacionales-y-lógicos" class="section level2">
+<h2><span class="header-section-number">3.1</span> Operadores relacionales y lógicos</h2>
+<p>Los operadores de comparación o relacionales están diseñados para comparar objetos. El resultado de estas comparaciones son de tipo booleano. La siguiente tabla resume los operadores relacionales de R.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="programando-con-r.html#cb1-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Operador</th>
+<th align="center">Resultado</th>
+<th align="center">Comparación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>x &gt; 3</code></td>
+<td align="center"><code>c(F, F, F, T, T)</code></td>
+<td align="center">Mayor que</td>
+</tr>
+<tr class="even">
+<td align="center"><code>x &gt;= 3</code></td>
+<td align="center"><code>c(F, F, T, T, T)</code></td>
+<td align="center">Mayor o igual que</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>x &lt; 3</code></td>
+<td align="center"><code>c(T, T, F, F, F)</code></td>
+<td align="center">Menor que</td>
+</tr>
+<tr class="even">
+<td align="center"><code>x &lt;= 3</code></td>
+<td align="center"><code>c(T, T, T, F, F)</code></td>
+<td align="center">Menor o igual que</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>x == 3</code></td>
+<td align="center"><code>c(F, F, T, F, F)</code></td>
+<td align="center">Igual a</td>
+</tr>
+<tr class="even">
+<td align="center"><code>x != 3</code></td>
+<td align="center"><code>c(T, T, F, T, T)</code></td>
+<td align="center">Diferente de</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>x = 3</code></td>
+<td align="center"></td>
+<td align="center">Igual que &lt;-</td>
+</tr>
+</tbody>
+</table>
+<p>Se puede utilizar <code>%in%</code> para preguntar si uno o varios elementos se encuentran en otro, devolviendo lógicos.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="programando-con-r.html#cb2-1"></a><span class="dv">1</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>) </span>
+<span id="cb2-2"><a href="programando-con-r.html#cb2-2"></a><span class="dv">1</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb2-3"><a href="programando-con-r.html#cb2-3"></a><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>) </span></code></pre></div>
+<p>Los operadores booleanos o lógicos en R se utilizan para especificar múltiples condiciones entre objetos. Estas comparaciones devuelven valores <code>TRUE</code> o <code>FALSE</code>.</p>
+<p>Puedes combinar evaluaciones lógicas con <strong>&amp;</strong>, <strong>|</strong>, <strong>xor</strong>, <strong>!</strong>, <strong>any</strong>, y
+<strong>all</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="programando-con-r.html#cb3-1"></a>x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">9</span></span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Operador</th>
+<th align="center">Evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>a &amp; b</code></td>
+<td align="center">Tanto a como b son VERDADEROS</td>
+</tr>
+<tr class="even">
+<td align="center"><code>a | b</code></td>
+<td align="center">Al menos uno de a y b es VERDADERO (o)</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>xor(a, b)</code></td>
+<td align="center">a es VERDADERO o b es VERDADERO, pero no ambos</td>
+</tr>
+<tr class="even">
+<td align="center"><code>!a</code></td>
+<td align="center">No a (VERDADERO va a FALSO, FALSO va a VERDADERO)</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>any(a, b, c)</code></td>
+<td align="center">Al menos uno de a, b o c es VERDADERO</td>
+</tr>
+<tr class="even">
+<td align="center"><code>all(a, b, c)</code></td>
+<td align="center">Cada uno de a, b y c es VERDADERO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="consultas-lógicas" class="section level2">
+<h2><span class="header-section-number">3.2</span> Consultas lógicas</h2>
+<p>Combinar pruebas lógicas con subconjuntos es una práctica común</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="programando-con-r.html#cb4-1"></a>x_ceros &lt;-<span class="st"> </span>diamonds<span class="op">$</span>x <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb4-2"><a href="programando-con-r.html#cb4-2"></a>diamonds[x_ceros,]</span></code></pre></div>
+<pre><code>## # A tibble: 8 x 10
+##   carat cut       color clarity depth table price     x     y     z
+##   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  1.07 Ideal     F     SI2      61.6    56  4954     0  6.62     0
+## 2  1    Very Good H     VS2      63.3    53  5139     0  0        0
+## 3  1.14 Fair      G     VS1      57.5    67  6381     0  0        0
+## 4  1.56 Ideal     G     VS2      62.2    54 12800     0  0        0
+## 5  1.2  Premium   D     VVS1     62.1    59 15686     0  0        0
+## 6  2.25 Premium   H     SI2      62.8    59 18034     0  0        0
+## 7  0.71 Good      F     SI2      64.1    60  2130     0  0        0
+## 8  0.71 Good      F     SI2      64.1    60  2130     0  0        0</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="programando-con-r.html#cb6-1"></a><span class="co"># Ver resultados</span></span>
+<span id="cb6-2"><a href="programando-con-r.html#cb6-2"></a>diamonds[diamonds<span class="op">$</span>x <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>, ]</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 10
+##   carat cut       color clarity depth table price     x     y     z
+##   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  4.01 Premium   I     I1       61      61 15223  10.1 10.1   6.17
+## 2  4.01 Premium   J     I1       62.5    62 15223  10.0  9.94  6.24
+## 3  4    Very Good I     I1       63.3    58 15984  10.0  9.94  6.31
+## 4  5.01 Fair      J     I1       65.5    59 18018  10.7 10.5   6.98
+## 5  4.5  Fair      J     I1       65.8    58 18531  10.2 10.2   6.72</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="programando-con-r.html#cb8-1"></a><span class="co"># Guardar un nuevo data.frame</span></span>
+<span id="cb8-2"><a href="programando-con-r.html#cb8-2"></a>big &lt;-<span class="st"> </span>diamonds[diamonds<span class="op">$</span>x <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>, ]</span>
+<span id="cb8-3"><a href="programando-con-r.html#cb8-3"></a><span class="co"># Sobreescribir el dataset existente (Cuidado!)</span></span>
+<span id="cb8-4"><a href="programando-con-r.html#cb8-4"></a>diamonds &lt;-<span class="st"> </span>diamonds[diamonds<span class="op">$</span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>,]</span></code></pre></div>
+</div>
+<div id="control-de-flujo" class="section level2">
+<h2><span class="header-section-number">3.3</span> Control de flujo</h2>
+<p>¿Quieres saltar este capítulo? Hazlo si puedes responder estas preguntas.</p>
+<ul>
+<li>Cuál es la diferencia entre <code>if</code> e <code>ifelse()</code>?</li>
+<li>En el siguiente código, cuál será el valor de <code>y</code> si <code>x</code> es <code>TRUE</code>? Y cuál sería si <code>x</code> es <code>FALSE</code>? Y cuál si <code>x</code> es <code>NA</code>?</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="programando-con-r.html#cb9-1"></a>y &lt;-<span class="st"> </span><span class="cf">if</span> (x) <span class="dv">3</span></span></code></pre></div>
+<ul>
+<li>¿Qué retorna de <code>switch("x", x = , y = 2, z = 3)</code>?</li>
+</ul>
+<p style="text-align: justify;">
+Los comandos de control de flujo son una forma de modificar la secuencia de ejecución del código. Existen 2 herramientas principales de flujo de control: Opciones y bucles. Las opciones, como las declaraciones condicionales <code>if</code> y las llamadas <code>switch()</code>, permiten ejecutar código diferente según la entrada. Los bucles, como <code>for</code> y <code>while</code>, le permiten ejecutar código repetidamente, generalmente con opciones cambiantes.
+</p>
+<div id="condicionales-if-else" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Condicionales (if, else)</h3>
+<p>La toma de decisiones es una parte importante de la programación. Esto se puede lograr en la programación R usando la nomenclatura condicional if else.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="programando-con-r.html#cb10-1"></a><span class="cf">if</span> (expresion) {</span>
+<span id="cb10-2"><a href="programando-con-r.html#cb10-2"></a>    declaracion1</span>
+<span id="cb10-3"><a href="programando-con-r.html#cb10-3"></a>  }<span class="cf">else</span>{</span>
+<span id="cb10-4"><a href="programando-con-r.html#cb10-4"></a>    declaracion2</span>
+<span id="cb10-5"><a href="programando-con-r.html#cb10-5"></a>}</span></code></pre></div>
+<ul>
+<li>Si expresion es <code>TRUE</code>, la instrucción se ejecuta. Pero si es <code>FALSO</code>, no pasa nada.</li>
+<li>Aquí, expresion puede ser un vector lógico o numérico, pero solo se tiene en cuenta el primer elemento.</li>
+<li>En el caso del vector numérico, cero se toma como <code>FALSO</code>, el resto como VERDADERO.</li>
+<li>La parte <strong>else</strong> es opcional y solo se evalúa si <strong>expresion</strong> es <code>FALSE</code>.</li>
+<li>Es importante tener en cuenta que <strong>else</strong> debe estar en la misma línea que las llaves de cierre de la instrucción if.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="programando-con-r.html#cb11-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb11-2"><a href="programando-con-r.html#cb11-2"></a><span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb11-3"><a href="programando-con-r.html#cb11-3"></a>  <span class="kw">print</span>(<span class="st">&quot;Numero negativo&quot;</span>)</span>
+<span id="cb11-4"><a href="programando-con-r.html#cb11-4"></a>}<span class="cf">else</span> <span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb11-5"><a href="programando-con-r.html#cb11-5"></a>  <span class="kw">print</span>(<span class="st">&quot;Numero positivo&quot;</span>)</span>
+<span id="cb11-6"><a href="programando-con-r.html#cb11-6"></a>} <span class="cf">else</span> {</span>
+<span id="cb11-7"><a href="programando-con-r.html#cb11-7"></a>  <span class="kw">print</span>(<span class="st">&quot;Cero&quot;</span>)</span>
+<span id="cb11-8"><a href="programando-con-r.html#cb11-8"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;Cero&quot;</code></pre>
+<p>Comparación entre Python y R</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="programando-con-r.html#cb13-1"></a><span class="co">## PYTHON</span></span>
+<span id="cb13-2"><a href="programando-con-r.html#cb13-2"></a>temp <span class="op">=</span> [<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">30</span>]</span>
+<span id="cb13-3"><a href="programando-con-r.html#cb13-3"></a>suelo<span class="op">=</span> [<span class="st">&quot;seco&quot;</span>, <span class="st">&quot;humedo&quot;</span>, <span class="st">&quot;charcos&quot;</span>]</span>
+<span id="cb13-4"><a href="programando-con-r.html#cb13-4"></a>valtemp <span class="op">=</span> temp[<span class="dv">0</span>]</span>
+<span id="cb13-5"><a href="programando-con-r.html#cb13-5"></a>valsuelo<span class="op">=</span> suelo[<span class="dv">2</span>]</span>
+<span id="cb13-6"><a href="programando-con-r.html#cb13-6"></a><span class="cf">if</span> <span class="dv">12</span><span class="op">&lt;=</span> valtemp <span class="op">&lt;</span> <span class="dv">22</span> <span class="kw">and</span> valsuelo <span class="op">==</span><span class="st">&quot;seco&quot;</span>: </span>
+<span id="cb13-7"><a href="programando-con-r.html#cb13-7"></a>  <span class="bu">print</span>(<span class="st">&quot;Cielo despejado&quot;</span>)</span>
+<span id="cb13-8"><a href="programando-con-r.html#cb13-8"></a><span class="cf">elif</span> valtemp <span class="op">==</span> <span class="dv">22</span> <span class="kw">or</span> valsuelo <span class="op">==</span> <span class="st">&quot;humedo&quot;</span>:</span>
+<span id="cb13-9"><a href="programando-con-r.html#cb13-9"></a>  <span class="bu">print</span>(<span class="st">&quot;lluvia leve&quot;</span>)</span>
+<span id="cb13-10"><a href="programando-con-r.html#cb13-10"></a><span class="cf">elif</span> valtemp <span class="op">&gt;</span> <span class="dv">22</span> <span class="kw">and</span> valsuelo<span class="op">==</span><span class="st">&quot;charcos&quot;</span>:</span>
+<span id="cb13-11"><a href="programando-con-r.html#cb13-11"></a>  <span class="bu">print</span>(<span class="st">&quot;lluvia severa&quot;</span>)</span>
+<span id="cb13-12"><a href="programando-con-r.html#cb13-12"></a><span class="cf">else</span>:</span>
+<span id="cb13-13"><a href="programando-con-r.html#cb13-13"></a>  <span class="bu">print</span>(<span class="st">&quot; Faltan datos&quot;</span>)</span></code></pre></div>
+<pre><code>##  Faltan datos</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="programando-con-r.html#cb15-1"></a><span class="co">## R</span></span>
+<span id="cb15-2"><a href="programando-con-r.html#cb15-2"></a>temp &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">30</span>)</span>
+<span id="cb15-3"><a href="programando-con-r.html#cb15-3"></a>suelo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;seco&quot;</span>, <span class="st">&quot;humedo&quot;</span>, <span class="st">&quot;charcos&quot;</span>)</span>
+<span id="cb15-4"><a href="programando-con-r.html#cb15-4"></a>valtemp &lt;-<span class="st"> </span>temp[<span class="dv">1</span>]</span>
+<span id="cb15-5"><a href="programando-con-r.html#cb15-5"></a>valsuelo &lt;-<span class="st"> </span>suelo[<span class="dv">3</span>]</span>
+<span id="cb15-6"><a href="programando-con-r.html#cb15-6"></a><span class="cf">if</span> (valtemp <span class="op">%in%</span><span class="st"> </span><span class="dv">12</span><span class="op">:</span><span class="dv">22</span> <span class="op">&amp;</span><span class="st"> </span>valsuelo <span class="op">==</span><span class="st">&quot;seco&quot;</span>) {</span>
+<span id="cb15-7"><a href="programando-con-r.html#cb15-7"></a>  <span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Cielo despejado&quot;</span>)</span>
+<span id="cb15-8"><a href="programando-con-r.html#cb15-8"></a>} <span class="cf">else</span> <span class="cf">if</span> (valtemp <span class="op">==</span><span class="st"> </span><span class="dv">22</span> <span class="op">|</span><span class="st"> </span>valsuelo <span class="op">==</span><span class="st"> &quot;humedo&quot;</span>){</span>
+<span id="cb15-9"><a href="programando-con-r.html#cb15-9"></a>  <span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">lluvia leve&quot;</span>)</span>
+<span id="cb15-10"><a href="programando-con-r.html#cb15-10"></a>} <span class="cf">else</span> <span class="cf">if</span> (valtemp <span class="op">&gt;</span><span class="st"> </span><span class="dv">22</span> <span class="op">&amp;</span><span class="st"> </span>valsuelo<span class="op">==</span><span class="st">&quot;charcos&quot;</span>){</span>
+<span id="cb15-11"><a href="programando-con-r.html#cb15-11"></a>  <span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">lluvia severa&quot;</span>)</span>
+<span id="cb15-12"><a href="programando-con-r.html#cb15-12"></a>} <span class="cf">else</span> {</span>
+<span id="cb15-13"><a href="programando-con-r.html#cb15-13"></a>  <span class="kw">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Faltan datos&quot;</span>)</span>
+<span id="cb15-14"><a href="programando-con-r.html#cb15-14"></a>  }</span></code></pre></div>
+<pre><code>## [1] &quot;\nFaltan datos&quot;</code></pre>
+</div>
+<div id="bucles-while-for" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Bucles (while, for)</h3>
+<p style="text-align: justify;">
+Los bucles son una de las estructuras fundamentales en la programación. Los bucles permiten iterar sobre cada elemento en una secuencia, uno a la vez, y hacer algo con esos elementos.
+</p>
+<div id="for" class="section level4">
+<h4><span class="header-section-number">3.3.2.1</span> for</h4>
+<p style="text-align: justify;">
+Un bucle <strong>for</strong> es muy valioso cuando necesitamos iterar sobre una lista de elementos o un rango de números. Loop se puede usar para iterar sobre una lista, marco de datos, vector, matriz o cualquier otro objeto. Los tirantes y el corchete son obligatorios.
+</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="programando-con-r.html#cb17-1"></a><span class="cf">for</span> (valor <span class="cf">in</span> secuencia)</span>
+<span id="cb17-2"><a href="programando-con-r.html#cb17-2"></a>  {</span>
+<span id="cb17-3"><a href="programando-con-r.html#cb17-3"></a>    cuerpo</span>
+<span id="cb17-4"><a href="programando-con-r.html#cb17-4"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="programando-con-r.html#cb18-1"></a><span class="co"># Creando un vector de frutas</span></span>
+<span id="cb18-2"><a href="programando-con-r.html#cb18-2"></a>frutas &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Apple&#39;</span>, <span class="st">&#39;Orange&#39;</span>, <span class="st">&#39;Passion fruit&#39;</span>, <span class="st">&#39;Banana&#39;</span>)</span>
+<span id="cb18-3"><a href="programando-con-r.html#cb18-3"></a><span class="co"># Declarando el bucle for</span></span>
+<span id="cb18-4"><a href="programando-con-r.html#cb18-4"></a><span class="cf">for</span> ( i <span class="cf">in</span> frutas){ </span>
+<span id="cb18-5"><a href="programando-con-r.html#cb18-5"></a> <span class="kw">print</span>(i)</span>
+<span id="cb18-6"><a href="programando-con-r.html#cb18-6"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;Apple&quot;
+## [1] &quot;Orange&quot;
+## [1] &quot;Passion fruit&quot;
+## [1] &quot;Banana&quot;</code></pre>
+</div>
+<div id="while" class="section level4">
+<h4><span class="header-section-number">3.3.2.2</span> while</h4>
+<p>Un bucle <strong>while</strong> es una declaración que continúa ejecutándose <strong>mientras</strong> se cumple una condición. La sintaxis para un ciclo while es la siguiente:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="programando-con-r.html#cb20-1"></a><span class="cf">while</span> (condición)</span>
+<span id="cb20-2"><a href="programando-con-r.html#cb20-2"></a>  {</span>
+<span id="cb20-3"><a href="programando-con-r.html#cb20-3"></a>    cuerpo</span>
+<span id="cb20-4"><a href="programando-con-r.html#cb20-4"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="programando-con-r.html#cb21-1"></a><span class="co"># creando la expresión con valor 1</span></span>
+<span id="cb21-2"><a href="programando-con-r.html#cb21-2"></a>inicio &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb21-3"><a href="programando-con-r.html#cb21-3"></a><span class="co"># Creando el loop</span></span>
+<span id="cb21-4"><a href="programando-con-r.html#cb21-4"></a><span class="cf">while</span> (inicio <span class="op">&lt;=</span><span class="st"> </span><span class="dv">5</span>){</span>
+<span id="cb21-5"><a href="programando-con-r.html#cb21-5"></a>  <span class="co"># Ver donde estamos</span></span>
+<span id="cb21-6"><a href="programando-con-r.html#cb21-6"></a>  <span class="kw">cat</span>(<span class="st">&#39;Este es el ciclo número &#39;</span>, inicio)</span>
+<span id="cb21-7"><a href="programando-con-r.html#cb21-7"></a>  <span class="co"># Agregar 1 a la variable inicio despues de cada iteracion</span></span>
+<span id="cb21-8"><a href="programando-con-r.html#cb21-8"></a>  inicio &lt;-<span class="st"> </span>inicio <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb21-9"><a href="programando-con-r.html#cb21-9"></a>  <span class="kw">print</span>(inicio)</span>
+<span id="cb21-10"><a href="programando-con-r.html#cb21-10"></a>}</span></code></pre></div>
+<pre><code>## Este es el ciclo número  1[1] 2
+## Este es el ciclo número  2[1] 3
+## Este es el ciclo número  3[1] 4
+## Este es el ciclo número  4[1] 5
+## Este es el ciclo número  5[1] 6</code></pre>
+</div>
+</div>
+<div id="controles-de-flujo-break-continue-trycatch-options" class="section level3">
+<h3><span class="header-section-number">3.3.3</span> Controles de flujo (Break, continue, tryCatch, options)</h3>
+</div>
+</div>
+<div id="funciones" class="section level2">
+<h2><span class="header-section-number">3.4</span> Funciones</h2>
+<p style="text-align: justify;">
+Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.
+</p>
+<p>Una función debería ser:</p>
+<ul>
+<li>Escrito para llevar a cabo una tarea específica</li>
+<li>Puede o no incluir argumentos</li>
+<li>Contener un cuerpo</li>
+<li>Puede o no devolver uno o más valores</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="programando-con-r.html#cb23-1"></a><span class="cf">function</span> (argumentos)</span>
+<span id="cb23-2"><a href="programando-con-r.html#cb23-2"></a>  {</span>
+<span id="cb23-3"><a href="programando-con-r.html#cb23-3"></a>    <span class="co"># cuerpo de la funcion</span></span>
+<span id="cb23-4"><a href="programando-con-r.html#cb23-4"></a>    resultado &lt;-<span class="st"> </span>cuerpo</span>
+<span id="cb23-5"><a href="programando-con-r.html#cb23-5"></a>  </span>
+<span id="cb23-6"><a href="programando-con-r.html#cb23-6"></a>    <span class="kw">return</span>(resultado)</span>
+<span id="cb23-7"><a href="programando-con-r.html#cb23-7"></a>  }</span></code></pre></div>
+<p>Ejemplo:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="programando-con-r.html#cb24-1"></a>a &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb24-2"><a href="programando-con-r.html#cb24-2"></a>b &lt;-<span class="st"> </span><span class="dv">6</span></span>
+<span id="cb24-3"><a href="programando-con-r.html#cb24-3"></a>suma &lt;-<span class="st"> </span><span class="cf">function</span>(valor1, valor2){</span>
+<span id="cb24-4"><a href="programando-con-r.html#cb24-4"></a>  resultado &lt;-<span class="st"> </span>valor1 <span class="op">+</span><span class="st"> </span>valor2</span>
+<span id="cb24-5"><a href="programando-con-r.html#cb24-5"></a>  <span class="kw">return</span>(resultado)</span>
+<span id="cb24-6"><a href="programando-con-r.html#cb24-6"></a>}</span>
+<span id="cb24-7"><a href="programando-con-r.html#cb24-7"></a><span class="kw">suma</span>(a, b)</span></code></pre></div>
+<pre><code>## [1] 11</code></pre>
+<div id="ejercicios-1" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Ejercicios</h3>
+<div id="ejercicio-1-1" class="section level4">
+<h4><span class="header-section-number">3.4.1.1</span> Ejercicio 1:</h4>
+<p style="text-align: justify;">
+Cree una función que, dado un vector, imprima por pantalla la media y la desviación estándar, opcionalmente también imprimirá la mediana.
+</p>
+</div>
+<div id="ejercicio-2-1" class="section level4">
+<h4><span class="header-section-number">3.4.1.2</span> Ejercicio 2:</h4>
+<ul>
+<li>Agregar un argumento adicional, llamado <code>print_info</code>, que sea <code>TRUE</code> por defecto</li>
+<li>Crea una condicional alrededor de la función <code>print()</code>, la cual debe ser ejecutada sólo si <code>print_info</code> es <code>TRUE</code></li>
+<li>Prueba el código</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="programando-con-r.html#cb26-1"></a><span class="co"># Finaliza la funcion pow_two()</span></span>
+<span id="cb26-2"><a href="programando-con-r.html#cb26-2"></a>pow_two &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb26-3"><a href="programando-con-r.html#cb26-3"></a>  y &lt;-<span class="st"> </span>x <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb26-4"><a href="programando-con-r.html#cb26-4"></a>  <span class="kw">print</span>(<span class="kw">paste</span>(x, <span class="st">&quot;to the power two equals&quot;</span>, y))</span>
+<span id="cb26-5"><a href="programando-con-r.html#cb26-5"></a>  <span class="kw">return</span>(y)</span>
+<span id="cb26-6"><a href="programando-con-r.html#cb26-6"></a>}</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="funciones-de-la-familia-apply" class="section level2">
+<h2><span class="header-section-number">3.5</span> Funciones de la familia apply</h2>
+Los apply: apply, tapply, lapply, sapply, vapply, rapply
+<p style="text-align: justify;">
+Entonces, ¿cuáles son estas maravillosas funciones de aplicación y cómo funcionan? Creo que la mejor manera de descubrir cualquier cosa en R es aprender mediante la experimentación, utilizando datos y funciones vergonzosamente triviales.
+</p>
+<p>If you fire up your R console, type “??apply” and scroll down to the functions in the base package, you’ll see something like this:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="programando-con-r.html#cb27-1"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/earthquakes.csv&quot;</span>)</span>
+<span id="cb27-2"><a href="programando-con-r.html#cb27-2"></a><span class="kw">str</span>(d)</span>
+<span id="cb27-3"><a href="programando-con-r.html#cb27-3"></a><span class="kw">head</span>(d)</span></code></pre></div>
+<div id="apply" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> apply():</h3>
+<p>Crea resúmenes sobre los ejes. 1: Sobre filas, 2: Sobre columnas</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="programando-con-r.html#cb28-1"></a><span class="kw">apply</span>(d[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">2</span>, mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb28-2"><a href="programando-con-r.html#cb28-2"></a><span class="kw">apply</span>(d[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">2</span>, median, <span class="dt">na.rm =</span> T)</span>
+<span id="cb28-3"><a href="programando-con-r.html#cb28-3"></a><span class="kw">apply</span>(d[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], <span class="dv">2</span>, summary)</span></code></pre></div>
+</div>
+<div id="tapply" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> tapply()</h3>
+<p>Esta función trabaja sobre matrices o tablas desiguales y usa una variable de agrupamiento o índice.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="programando-con-r.html#cb29-1"></a><span class="kw">unique</span>(d<span class="op">$</span>Source)</span>
+<span id="cb29-2"><a href="programando-con-r.html#cb29-2"></a><span class="kw">tapply</span>(d<span class="op">$</span>Magnitude, d<span class="op">$</span>Latitude, mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb29-3"><a href="programando-con-r.html#cb29-3"></a><span class="kw">tapply</span>(d<span class="op">$</span>Magnitude, d<span class="op">$</span>Source, mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb29-4"><a href="programando-con-r.html#cb29-4"></a><span class="kw">with</span>(d, <span class="kw">tapply</span>(Magnitude, Latitude, mean, <span class="dt">na.rm =</span> T))</span>
+<span id="cb29-5"><a href="programando-con-r.html#cb29-5"></a><span class="kw">with</span>(d, <span class="kw">tapply</span>(Magnitude, Longitude, summary))</span>
+<span id="cb29-6"><a href="programando-con-r.html#cb29-6"></a><span class="kw">with</span>(d, <span class="kw">tapply</span>(Magnitude, Source, summary))</span></code></pre></div>
+</div>
+<div id="lapply" class="section level3">
+<h3><span class="header-section-number">3.5.3</span> lapply()</h3>
+<p>Esta función es aplicable a vectores y listas y permite generar resúmenes como listas</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="programando-con-r.html#cb30-1"></a><span class="kw">str</span>(d)</span>
+<span id="cb30-2"><a href="programando-con-r.html#cb30-2"></a><span class="kw">head</span>(d)</span>
+<span id="cb30-3"><a href="programando-con-r.html#cb30-3"></a><span class="kw">lapply</span>(d, mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb30-4"><a href="programando-con-r.html#cb30-4"></a><span class="kw">lapply</span>(<span class="kw">data.frame</span>(<span class="dt">a=</span><span class="dv">10</span><span class="op">:</span><span class="dv">20</span>,<span class="dt">b=</span><span class="dv">15</span><span class="op">:</span><span class="dv">25</span>), mean)</span>
+<span id="cb30-5"><a href="programando-con-r.html#cb30-5"></a>d[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,]</span>
+<span id="cb30-6"><a href="programando-con-r.html#cb30-6"></a>d[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)]</span>
+<span id="cb30-7"><a href="programando-con-r.html#cb30-7"></a><span class="kw">lapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb30-8"><a href="programando-con-r.html#cb30-8"></a><span class="kw">lapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], summary, <span class="dt">na.rm =</span> T)</span></code></pre></div>
+</div>
+<div id="sapply" class="section level3">
+<h3><span class="header-section-number">3.5.4</span> sapply()</h3>
+<p>Crea resúmenes como vector o tabla</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="programando-con-r.html#cb31-1"></a><span class="kw">levels</span>(<span class="kw">as.factor</span>(d<span class="op">$</span>Source))</span>
+<span id="cb31-2"><a href="programando-con-r.html#cb31-2"></a><span class="kw">sapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], mean, <span class="dt">na.rm =</span> T)</span>
+<span id="cb31-3"><a href="programando-con-r.html#cb31-3"></a><span class="kw">sapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], summary, <span class="dt">na.rm =</span> T)</span>
+<span id="cb31-4"><a href="programando-con-r.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="programando-con-r.html#cb31-5"></a>funcion_nueva &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb31-6"><a href="programando-con-r.html#cb31-6"></a>  <span class="kw">sapply</span>(d[d<span class="op">$</span>Source<span class="op">==</span>x, <span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], summary)</span>
+<span id="cb31-7"><a href="programando-con-r.html#cb31-7"></a>}</span>
+<span id="cb31-8"><a href="programando-con-r.html#cb31-8"></a><span class="kw">levels</span>(<span class="kw">as.factor</span>(d<span class="op">$</span>Source))</span>
+<span id="cb31-9"><a href="programando-con-r.html#cb31-9"></a><span class="kw">sapply</span>(<span class="kw">levels</span>(<span class="kw">as.factor</span>(d<span class="op">$</span>Source)), funcion_nueva, <span class="dt">simplify =</span> F)</span></code></pre></div>
+</div>
+<div id="vapply" class="section level3">
+<h3><span class="header-section-number">3.5.5</span> vapply()</h3>
+<p>Similar al anterior, pero devuelve una salida predeterminada (puede ser más práctico)</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="programando-con-r.html#cb32-1"></a><span class="kw">vapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], mean, <span class="dt">na.rm =</span> T, <span class="kw">c</span>(<span class="st">&#39;Mean&#39;</span>=<span class="dv">0</span>))</span>
+<span id="cb32-2"><a href="programando-con-r.html#cb32-2"></a><span class="kw">vapply</span>(d[,<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)], fivenum, <span class="dt">na.rm =</span> T, <span class="kw">c</span>(<span class="st">&quot;Min.&quot;</span>=<span class="dv">0</span>,<span class="st">&quot;1st Qu.&quot;</span>=<span class="dv">0</span>, <span class="st">&quot;Median&quot;</span>=<span class="dv">0</span>, <span class="st">&quot;3rd Qu.&quot;</span>=<span class="dv">0</span>, <span class="st">&quot;Max.&quot;</span>=<span class="dv">0</span>)) </span></code></pre></div>
+</div>
+<div id="rapply" class="section level3">
+<h3><span class="header-section-number">3.5.6</span> rapply()</h3>
+<p>Similar al anterior, per devuelve una salida que conserva la estructura original</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="programando-con-r.html#cb33-1"></a><span class="kw">rapply</span>(d[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], summary)</span>
+<span id="cb33-2"><a href="programando-con-r.html#cb33-2"></a><span class="kw">rapply</span>(d[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], summary, <span class="dt">how =</span> <span class="st">&#39;list&#39;</span>)</span></code></pre></div>
+<ul>
+<li>Para profundizar, se recomienda seguir esta <a href="https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/">Fuente</a></li>
+</ul>
+</div>
+</div>
+<div id="gráficos" class="section level2">
+<h2><span class="header-section-number">3.6</span> Gráficos</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="programando-con-r.html#cb34-1"></a><span class="co"># Scatter plots</span></span>
+<span id="cb34-2"><a href="programando-con-r.html#cb34-2"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span></span>
+<span id="cb34-3"><a href="programando-con-r.html#cb34-3"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">26</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">23</span>)</span>
+<span id="cb34-4"><a href="programando-con-r.html#cb34-4"></a>estaciones &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;verano&quot;</span>,<span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;otoño&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;invierno&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;primavera&quot;</span>,<span class="dv">3</span>), <span class="st">&quot;verano&quot;</span>)</span>
+<span id="cb34-5"><a href="programando-con-r.html#cb34-5"></a></span>
+<span id="cb34-6"><a href="programando-con-r.html#cb34-6"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(x, y, estaciones)</span>
+<span id="cb34-7"><a href="programando-con-r.html#cb34-7"></a></span>
+<span id="cb34-8"><a href="programando-con-r.html#cb34-8"></a><span class="kw">plot</span>(df<span class="op">$</span>x, df<span class="op">$</span>y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>, <span class="dt">pch=</span><span class="dv">14</span>,<span class="dt">xlab =</span> <span class="st">&quot;Mes&quot;</span>, </span>
+<span id="cb34-9"><a href="programando-con-r.html#cb34-9"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Temperatura [°C]&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Lima, Temperatura mensual promedio&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="programando-con-r.html#cb35-1"></a><span class="kw">plot</span>(df<span class="op">$</span>x, df<span class="op">$</span>y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">xlab=</span><span class="st">&quot;Mes&quot;</span>, </span>
+<span id="cb35-2"><a href="programando-con-r.html#cb35-2"></a>     <span class="dt">ylab=</span><span class="st">&quot;Temperatura [°C]&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Lima, Temperatura mensual promedio&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;#F47E40&quot;</span>)</span>
+<span id="cb35-3"><a href="programando-con-r.html#cb35-3"></a></span>
+<span id="cb35-4"><a href="programando-con-r.html#cb35-4"></a>df[<span class="st">&quot;colores&quot;</span>] =<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;black&quot;</span>,<span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;green&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;red&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;blue&quot;</span>,<span class="dv">3</span>), <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb35-5"><a href="programando-con-r.html#cb35-5"></a><span class="kw">legend</span>(<span class="st">&quot;top&quot;</span>, <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">factor</span>(estaciones)),</span>
+<span id="cb35-6"><a href="programando-con-r.html#cb35-6"></a>       <span class="dt">col =</span>  <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>),</span>
+<span id="cb35-7"><a href="programando-con-r.html#cb35-7"></a>       <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">18</span>) )</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="programando-con-r.html#cb36-1"></a><span class="kw">data</span>(cars)</span>
+<span id="cb36-2"><a href="programando-con-r.html#cb36-2"></a><span class="kw">plot</span>(cars<span class="op">$</span>speed, cars<span class="op">$</span>dist, <span class="dt">xlab =</span> <span class="st">&quot;Velocidad&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Distancia&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Velocidad vs distancia&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="programando-con-r.html#cb37-1"></a><span class="co"># Histogram</span></span>
+<span id="cb37-2"><a href="programando-con-r.html#cb37-2"></a><span class="co"># hist(cars$speed)</span></span>
+<span id="cb37-3"><a href="programando-con-r.html#cb37-3"></a><span class="co"># hist(cars$speed, breaks = 10)</span></span>
+<span id="cb37-4"><a href="programando-con-r.html#cb37-4"></a><span class="kw">hist</span>(cars<span class="op">$</span>dist, <span class="dt">freq =</span> T, <span class="dt">col =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="dt">labels =</span> T)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="estilo-tidyverse" class="section level2">
+<h2><span class="header-section-number">3.7</span> Estilo tidyverse</h2>
+<p style="text-align: justify;">
+Primero necesitarás instalar algunos paquetes de R. Un paquete R es una colección de funciones, datos y documentación que amplía las capacidades de <strong>R base</strong>. El uso de paquetes es clave para el uso exitoso de R. La mayoría de los paquetes que aprenderá en este apartado son parte del llamado <strong>tidyverse</strong>. Los paquetes de tidyverse comparten una filosofía común de programación de datos y R, y están diseñados para trabajar juntos de forma natural.
+</p>
+<p>Puedes instalar tidyverse completo con una sola línea de código:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="programando-con-r.html#cb38-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p style="text-align: justify;">
+En su propia computadora, escriba esa línea de código en la consola y luego presione Entrar para ejecutarlo. R descargará los paquetes de CRAN y los instalará en su computadora. Si tiene problemas con la instalación, asegúrese de estar conectado a Internet y de que <strong><a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a></strong> no esté bloqueado por su firewall o proxy.
+</p>
+<p style="text-align: justify;">
+No podrá utilizar las funciones, los objetos y los archivos de ayuda de un paquete hasta que lo cargue con <strong><code>library()</code></strong>. Una vez que haya instalado un paquete, puede cargarlo con la función <strong><code>library()</code></strong>:
+</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="programando-con-r.html#cb39-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</code></pre>
+<pre><code>## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.1     v dplyr   1.0.5
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.0.4</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p style="text-align: justify;">
+Esto le indica que tidyverse está cargando los paquetes <strong>ggplot2, tibble, tidyr, readr, purrr y dplyr</strong>. Estos consideran los núcleo del tidyverse porque los usará en casi todos los análisis.
+</p>
+<p style="text-align: justify;">
+Los paquetes del tidyverse cambian con bastante frecuencia. Puede ver si hay actualizaciones disponibles y, opcionalmente, instalarlas, ejecutando <strong><code>tidyverse_update()</code></strong>.
+</p>
+<p style="text-align: justify;">
+Toma nota del mensaje de conflictos que se imprime cuando cargas el tidyverse. Te dice que dplyr sobrescribe algunas funciones en base R. Si desea usar la versión base de estas funciones después de cargar dplyr, deberá usar sus nombres completos: <strong><code>stats::filter()</code></strong> y <strong><code>stats::lag()</code></strong>
+</p>
+<div id="data-transformation-con-dplyr" class="section level3">
+<h3><span class="header-section-number">3.7.1</span> Data Transformation con dplyr</h3>
+<p style="text-align: justify;">
+La visualización es una herramienta importante para la generación de información, pero es raro que obtenga los datos exactamente en la forma correcta que necesita. A menudo, necesitará crear algunas variables o resúmenes nuevos, o tal vez solo desee cambiar el nombre de las variables o reordenar las observaciones para que sea un poco más fácil trabajar con los datos. Aprenderá a hacer todo eso <strong>(¡y más!)</strong> en este apartado, que le enseñará cómo transformar sus datos utilizando el <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf"><strong>paquete dplyr</strong></a> y un nuevo conjunto de datos sobre vuelos que parten de la ciudad de Nueva York en 2013.
+</p>
+<p align="center">
+<img width="300" src="https://ih1.redbubble.net/image.508899495.5477/st,small,507x507-pad,600x600,f8f8f8.jpg">
+</p>
+<p style="text-align: justify;">
+En este capítulo, nos centraremos en cómo usar el paquete <strong>dplyr</strong>, otro miembro central de tidyverse. Ilustraremos las ideas clave usando datos del paquete <strong>nycflights13</strong> y usar <strong>ggplot2</strong> para ayudarnos a comprender los datos.
+</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="programando-con-r.html#cb50-1"></a><span class="kw">library</span>(nycflights13)</span></code></pre></div>
+<pre><code>## Warning: package &#39;nycflights13&#39; was built under R version 4.0.5</code></pre>
+<div id="nycfights13" class="section level4">
+<h4><span class="header-section-number">3.7.1.1</span> <strong>nycfights13</strong></h4>
+<p style="text-align: justify;">
+Para explorar los verbos básicos de manipulación de datos de <strong>dplyr</strong>, usaremos <strong><code>nycflights13::flights</code></strong>. Este marco de datos contiene los <strong>336,776</strong> vuelos que partieron de la ciudad de Nueva York en 2013. Los datos provienen de la <span style="color:blue">oficina Oficina de Estadísticas de Transporte de EE. UU</span>, y están documentados en <strong><code>?flights</code></strong>:
+</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="programando-con-r.html#cb52-1"></a>flights</span></code></pre></div>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p style="text-align: justify;">
+Es posible que observe que este <strong>dataframe</strong> se imprima un poco diferente de otros <strong>dataframe</strong> que podría haber usado en el pasado: solo muestra las primeras filas y todas las columnas que caben en una pantalla. (Para ver el conjunto de datos completo, puede ejecutar <strong><code>View(flights)</code></strong>, que abrirá el conjunto de datos en el visor de RStudio). Se imprime de manera diferente porque es un <strong>tibble</strong>. Tibbles son <strong>dataframe</strong>, pero ligeramente modificados para que funcionen mejor en <strong>tidyverse</strong>. Por ahora, no necesita preocuparse por las diferencias; volveremos a tibbles con más detalle en la Parte II del libro de <a href="https://drive.google.com/file/d/1Kd-pCPpAkaC5R5HzVqds5pau6zly3-u4/view?usp=sharing"><strong>Hadley Wickham y Garrett Grolemund (2017)</strong></a>.
+</p>
+<p style="text-align: justify;">
+También puede haber notado la fila de abreviaturas de tres (o cuatro) letras debajo de los nombres de las columnas. <span style="color:blue">Estos describen el tipo de cada variable:</span>
+</p>
+<ul>
+<li><strong>int</strong> significa enteros.</li>
+<li><strong>dbl</strong> significa dobles o números reales.</li>
+<li><strong>chr</strong> significa vectores de caracteres o cadenas.</li>
+<li><strong>dttm</strong> significa fecha y hora (una fecha + una hora).</li>
+</ul>
+<p style="text-align: justify;">
+Hay <strong>otros tres tipos comunes</strong> de variables que no se utilizan en este conjunto de datos, pero los encontrará más adelante en el libro de libro de <a href="https://drive.google.com/file/d/1Kd-pCPpAkaC5R5HzVqds5pau6zly3-u4/view?usp=sharing"><strong>Hadley Wickham y Garrett Grolemund (2017)</strong></a>:
+</p>
+<ul>
+<li><strong>lgl</strong> significa vectores lógicos que contienen solo VERDADERO o FALSO.</li>
+<li><strong>fctr</strong> significa factores, que R usa para representar categóricos variables con valores posibles fijos.</li>
+<li><strong>date</strong> representa fechas.</li>
+</ul>
+</div>
+<div id="dplyr-basics" class="section level4">
+<h4><span class="header-section-number">3.7.1.2</span> dplyr Basics</h4>
+<p>En este capítulo, aprenderá las cinco funciones clave de dplyr que le permiten resolver la gran mayoría de sus desafíos de manipulación de datos:</p>
+<ul>
+<li>Elija observaciones por sus valores (<strong>filter()</strong>).</li>
+<li>Reordenar las filas (<strong>arrange()</strong>).</li>
+<li>Elija las variables por sus nombres (<strong>select()</strong>).</li>
+<li>Crear nuevas variables con funciones de variables existentes (<strong>mutate()</strong>).</li>
+<li>Colapsar muchos valores en un solo resumen (<strong>summarize()</strong>)</li>
+</ul>
+<p>Todos estos se pueden usar junto con group_by (), que cambia el alcance de cada función de operar en todo el conjunto de datos a operar en él grupo por grupo. Estas seis funciones proporcionan los verbos para un lenguaje de manipulación de datos.</p>
+<p>Todos los verbos funcionan de manera similar:</p>
+<ol style="list-style-type: decimal">
+<li>El primer argumento es un marco de datos.</li>
+<li>Los argumentos siguientes describen qué hacer con el marco de datos, utilizando los nombres de las variables (sin comillas).</li>
+<li>El resultado es un nuevo marco de datos.</li>
+</ol>
+<p>Juntas, estas propiedades hacen que sea fácil encadenar varios pasos simples para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción-a-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdownproj.pdf", "bookdownproj.epub", "bookdownproj.mobi"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

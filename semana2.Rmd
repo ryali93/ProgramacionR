@@ -3,7 +3,9 @@
 library("tidyverse")
 ```
 
-## Operadores lógicos
+## Operadores relacionales y lógicos
+
+Los operadores de comparación o relacionales están diseñados para comparar objetos. El resultado de estas comparaciones son de tipo booleano. La siguiente tabla resume los operadores relacionales de R.
 
 ```{r}
 x <- c(1, 2, 3, 4)
@@ -11,13 +13,13 @@ x <- c(1, 2, 3, 4)
 
 | Operador | Resultado | Comparación |
 |:---:|:-----:|:----:|
-| `x > 3` |	`c(F, F, F, T, T)`	| Mayor que |
-| `x >= 3` |	`c(F, F, T, T, T)`	| Mayor o igual que |
-| `x < 3` |	`c(T, T, F, F, F)`	| Menor que |
-| `x <= 3` |	`c(T, T, T, F, F)`	| Menor o igual que |
-| `x == 3` |	`c(F, F, T, F, F)`	| Igual a |
-| `x != 3` |	`c(T, T, F, T, T)`	| Diferente de |
-| `x = 3` |		| Igual que <- |
+| `x > 3` | `c(F, F, F, T, T)`  | Mayor que |
+| `x >= 3` |  `c(F, F, T, T, T)`  | Mayor o igual que |
+| `x < 3` | `c(T, T, F, F, F)`  | Menor que |
+| `x <= 3` |  `c(T, T, T, F, F)`  | Menor o igual que |
+| `x == 3` |  `c(F, F, T, F, F)`  | Igual a |
+| `x != 3` |  `c(T, T, F, T, T)`  | Diferente de |
+| `x = 3` |   | Igual que <- |
 
 Se puede utilizar `%in%` para preguntar si uno o varios elementos se encuentran en otro, devolviendo lógicos.
 
@@ -26,6 +28,8 @@ Se puede utilizar `%in%` para preguntar si uno o varios elementos se encuentran 
 1 %in% c(2, 3, 4)
 c(3,4,5,6) %in% c(2, 3, 4) 
 ```
+
+Los operadores booleanos o lógicos en R se utilizan para especificar múltiples condiciones entre objetos. Estas comparaciones devuelven valores `TRUE` o `FALSE`.
 
 Puedes combinar evaluaciones lógicas con **&**, **|**, **xor**, **!**, **any**, y
 **all**
@@ -37,11 +41,11 @@ x > 2 & x < 9
 | Operador | Evaluación |
 |:---:|:-----:
 | `a & b` | Tanto a como b son VERDADEROS |
-| `a | b` |	Al menos uno de a y b es VERDADERO (o) |
-| `xor(a, b)` |	a es VERDADERO o b es VERDADERO, pero no ambos |
-| `!a` |	No a (VERDADERO va a FALSO, FALSO va a VERDADERO) |
-| `any(a, b, c)` |	Al menos uno de a, b o c es VERDADERO |
-| `all(a, b, c)` |	Cada uno de a, b y c es VERDADERO |
+| `a | b` | Al menos uno de a y b es VERDADERO (o) |
+| `xor(a, b)` | a es VERDADERO o b es VERDADERO, pero no ambos |
+| `!a` |  No a (VERDADERO va a FALSO, FALSO va a VERDADERO) |
+| `any(a, b, c)` |  Al menos uno de a, b o c es VERDADERO |
+| `all(a, b, c)` |  Cada uno de a, b y c es VERDADERO |
 
 ## Consultas lógicas
 Combinar pruebas lógicas con subconjuntos es una práctica común
@@ -70,7 +74,6 @@ diamonds <- diamonds[diamonds$x < 10,]
 ```{r eval=FALSE}
 y <- if (x) 3
 ```
-- ¿Qué retorna de `switch("x", x = , y = 2, z = 3)`?
 
 <p style='text-align: justify;'>Los comandos de control de flujo son una forma de modificar la secuencia de ejecución del código. Existen 2 herramientas principales de flujo de control: Opciones y bucles. Las opciones, como las declaraciones condicionales `if` y las llamadas `switch()`, permiten ejecutar código diferente según la entrada. Los bucles, como `for` y `while`, le permiten ejecutar código repetidamente, generalmente con opciones cambiantes.</p>
 
@@ -182,8 +185,6 @@ while (inicio <= 5){
 }
 ```
 
-### Controles de flujo (Break, continue, tryCatch, options)
-
 ## Funciones
 <p style='text-align: justify;'>Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.</p>
 
@@ -249,7 +250,7 @@ head(d)
 ```
 
 ### apply():
-APLICA RESUMENES SOBRE MARGENES. 1=SOBRE FILAS, 2=SOBRE COLUMNAS
+Crea resúmenes sobre los ejes. 1: Sobre filas, 2: Sobre columnas
 
 ```{r eval=FALSE}
 apply(d[,2:5], 2, mean, na.rm = T)
@@ -258,7 +259,7 @@ apply(d[,2:5], 2, summary)
 ```
 
 ### tapply()
-APLICA FUNCION SOBRE MATRICES/TABLAS DESIGUALES EN LAS QUE SE USA UNA VARIABLE DE AGRUPAMIENTO O INDICE
+Esta función trabaja sobre matrices o tablas desiguales y usa una variable de agrupamiento o índice.
 
 ```{r eval=FALSE}
 unique(d$Source)
@@ -269,8 +270,9 @@ with(d, tapply(Magnitude, Longitude, summary))
 with(d, tapply(Magnitude, Source, summary))
 ```
 
-### lapply() sapply() vapply()
-APLICA FUNCION SOBRE VECTORES/LISTAS `lapply()` DEVUELVE UNA LISTA
+### lapply()
+Esta función es aplicable a vectores y listas y permite generar resúmenes como listas
+
 ```{r eval=FALSE}
 str(d)
 head(d)
@@ -283,7 +285,8 @@ lapply(d[,c(12,2:5)], summary, na.rm = T)
 ```
 
 ### sapply() 
-DEVUELVE UN VECTOR O UNA TABLA
+Crea resúmenes como vector o tabla
+
 ```{r eval=FALSE}
 levels(as.factor(d$Source))
 sapply(d[,c(12,2:5)], mean, na.rm = T)
@@ -297,14 +300,14 @@ sapply(levels(as.factor(d$Source)), funcion_nueva, simplify = F)
 ```
 
 ### vapply()
-SIMILAR, PERO DEVUELVE UNA SALIDA PREDETERMINADA QUE PODRIA RESULTAR MAS AGIL
+Similar al anterior, pero devuelve una salida predeterminada (puede ser más práctico)
 ```{r eval=FALSE}
 vapply(d[,c(12,2:5)], mean, na.rm = T, c('Mean'=0))
 vapply(d[,c(12,2:5)], fivenum, na.rm = T, c("Min."=0,"1st Qu."=0, "Median"=0, "3rd Qu."=0, "Max."=0)) 
 ```
 
 ### rapply()
-SIMILAR, PERO DEVUELVE UNA SALIDA QUE PUEDE CONSERVAR ESTRUCTURA ORIGINAL O LISTA
+Similar al anterior, per devuelve una salida que conserva la estructura original
 ```{r eval=FALSE}
 rapply(d[,2:5], summary)
 rapply(d[,2:5], summary, how = 'list')
@@ -313,6 +316,7 @@ rapply(d[,2:5], summary, how = 'list')
 
 ## Gráficos
 
+### Gráficos de dispersión
 ```{r}
 # Scatter plots
 x <- 1:12
@@ -325,6 +329,7 @@ plot(df$x, df$y, type="o", pch=14,xlab = "Mes",
      ylab = "Temperatura [°C]", main="Lima, Temperatura mensual promedio")
 ```
 
+### Gráficos de líneas
 ```{r}
 plot(df$x, df$y, type="o", pch=20, xlab="Mes", 
      ylab="Temperatura [°C]", main="Lima, Temperatura mensual promedio", col = "#F47E40")
@@ -345,6 +350,25 @@ plot(cars$speed, cars$dist, xlab = "Velocidad", ylab = "Distancia", main = "Velo
 # hist(cars$speed)
 # hist(cars$speed, breaks = 10)
 hist(cars$dist, freq = T, col = "skyblue", labels = T)
+```
+
+```{r}
+breaks_hist = hist(cars$dist, breaks = 20, plot =  FALSE)$breaks
+hist(cars$dist, breaks = breaks_hist, col = "blue1")
+```
+
+```{r}
+# Boxplot
+boxplot(cars$speed, cars$dist)
+head(d)
+boxplot(`Magnitude`~`Source`, d, col=palette(rainbow(2)))
+```
+
+```{r}
+# Multiples plots en un grafico
+dev.new()
+dev.off()
+par(mfrow = c(2,2))
 ```
 
 ## Estilo tidyverse
@@ -453,5 +477,4 @@ R imprime los resultados o los guarda en una variable. Si desea hacer ambas cosa
 ```{r}
 (dec25 <- filter(flights, month == 12, day == 25))
 ```
-
 
