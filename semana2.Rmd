@@ -72,8 +72,7 @@ y <- if (x) 3
 ```
 - ¿Qué retorna de `switch("x", x = , y = 2, z = 3)`?
 
-
-Los comandos de control de flujo son una forma de modificar la secuencia de ejecución del código. Existen 2 herramientas principales de flujo de control: Opciones y bucles. Las opciones, como las declaraciones condicionales `if` y las llamadas `switch()`, permiten ejecutar código diferente según la entrada. Los bucles, como `for` y `while`, le permiten ejecutar código repetidamente, generalmente con opciones cambiantes. 
+<p style='text-align: justify;'>Los comandos de control de flujo son una forma de modificar la secuencia de ejecución del código. Existen 2 herramientas principales de flujo de control: Opciones y bucles. Las opciones, como las declaraciones condicionales `if` y las llamadas `switch()`, permiten ejecutar código diferente según la entrada. Los bucles, como `for` y `while`, le permiten ejecutar código repetidamente, generalmente con opciones cambiantes.</p>
 
 ### Condicionales (if, else)
 La toma de decisiones es una parte importante de la programación. Esto se puede lograr en la programación R usando la nomenclatura condicional if else.
@@ -140,10 +139,10 @@ if (valtemp %in% 12:22 & valsuelo =="seco") {
 ```
 
 ### Bucles (while, for)
-Los bucles son una de las estructuras fundamentales en la programación. Los bucles permiten iterar sobre cada elemento en una secuencia, uno a la vez, y hacer algo con esos elementos.
+<p style='text-align: justify;'>Los bucles son una de las estructuras fundamentales en la programación. Los bucles permiten iterar sobre cada elemento en una secuencia, uno a la vez, y hacer algo con esos elementos.</p>
 
 #### for
-Un bucle **for** es muy valioso cuando necesitamos iterar sobre una lista de elementos o un rango de números. Loop se puede usar para iterar sobre una lista, marco de datos, vector, matriz o cualquier otro objeto. Los tirantes y el corchete son obligatorios.
+<p style='text-align: justify;'>Un bucle **for** es muy valioso cuando necesitamos iterar sobre una lista de elementos o un rango de números. Loop se puede usar para iterar sobre una lista, marco de datos, vector, matriz o cualquier otro objeto. Los tirantes y el corchete son obligatorios.</p>
 ```{r eval=FALSE}
 for (valor in secuencia)
   {
@@ -186,7 +185,7 @@ while (inicio <= 5){
 ### Controles de flujo (Break, continue, tryCatch, options)
 
 ## Funciones
-Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.
+<p style='text-align: justify;'>Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.</p>
 
 Una función debería ser:
 
@@ -220,7 +219,7 @@ suma(a, b)
 
 #### Ejercicio 1:
 
-Cree una función que, dado un vector, imprima por pantalla la media y la desviación estándar, opcionalmente también imprimirá la mediana.
+<p style='text-align: justify;'>Cree una función que, dado un vector, imprima por pantalla la media y la desviación estándar, opcionalmente también imprimirá la mediana.</p>
 
 #### Ejercicio 2:
 
@@ -238,9 +237,8 @@ pow_two <- function(x) {
 ```
 
 ## Funciones de la familia apply
-
 Los apply: apply, tapply, lapply, sapply, vapply, rapply
-So, what are these wondrous apply functions and how do they work? I think the best way to figure out anything in R is to learn by experimentation, using embarrassingly trivial data and functions.
+<p style='text-align: justify;'>Entonces, ¿cuáles son estas maravillosas funciones de aplicación y cómo funcionan? Creo que la mejor manera de descubrir cualquier cosa en R es aprender mediante la experimentación, utilizando datos y funciones vergonzosamente triviales.</p>
 
 If you fire up your R console, type “??apply” and scroll down to the functions in the base package, you’ll see something like this:
 
@@ -350,14 +348,89 @@ hist(cars$dist, freq = T, col = "skyblue", labels = T)
 ```
 
 ## Estilo tidyverse
-Primero necesitarás instalar algunos paquetes de R. Un paquete R es una colección de funciones, datos y documentación que amplía las capacidades de **R base**. El uso de paquetes es clave para el uso exitoso de R. La mayoría de los paquetes que aprenderá en este apartado son parte del llamado **tidyverse**. Los paquetes de tidyverse comparten una filosofía común de programación de datos y R, y están diseñados para trabajar juntos de forma natural.
+<p style='text-align: justify;'>Primero necesitarás instalar algunos paquetes de R. Un paquete R es una colección de funciones, datos y documentación que amplía las capacidades de **R base**. El uso de paquetes es clave para el uso exitoso de R. La mayoría de los paquetes que aprenderá en este apartado son parte del llamado **tidyverse**. Los paquetes de tidyverse comparten una filosofía común de programación de datos y R, y están diseñados para trabajar juntos de forma natural.</p>
 
 Puedes instalar tidyverse completo con una sola línea de código:
 
-`install.packages("tidyverse")`
+```{r message=FALSE, warning=FALSE}
+install.packages("tidyverse")
+```
+
+<p style='text-align: justify;'>En su propia computadora, escriba esa línea de código en la consola y luego presione Entrar para ejecutarlo. R descargará los paquetes de CRAN y los instalará en su computadora. Si tiene problemas con la instalación, asegúrese de estar conectado a Internet y de que **https://cloud.r-project.org/** no esté bloqueado por su firewall o proxy.</p>
+
+<p style='text-align: justify;'>No podrá utilizar las funciones, los objetos y los archivos de ayuda de un paquete hasta que lo cargue con **`library()`**. Una vez que haya instalado un paquete, puede cargarlo con la función **`library()`**:</p>
+
+```{r include=FALSE}
+pacman::p_unload(
+  pacman::p_loaded(),
+  character.only = TRUE
+)
+```
+
+```{r message=TRUE, warning=TRUE}
+library(tidyverse)
+```
+
+<p style='text-align: justify;'>Esto le indica que tidyverse está cargando los paquetes **ggplot2, tibble, tidyr, readr, purrr y dplyr**. Estos consideran los núcleo del tidyverse porque los usará en casi todos los análisis.</p>
+
+<p style='text-align: justify;'>Los paquetes del tidyverse cambian con bastante frecuencia. Puede ver si hay actualizaciones disponibles y, opcionalmente, instalarlas, ejecutando **`tidyverse_update()`**.</p>
+
+<p style='text-align: justify;'>Toma nota del mensaje de conflictos que se imprime cuando cargas el tidyverse. Te dice que dplyr sobrescribe algunas funciones en base R. Si desea usar la versión base de estas funciones después de cargar dplyr, deberá usar sus nombres completos: **`stats::filter()`** y **`stats::lag()`**</p>
+
+### Data Transformation con dplyr
+<p style='text-align: justify;'>La visualización es una herramienta importante para la generación de información, pero es raro que obtenga los datos exactamente en la forma correcta que necesita. A menudo, necesitará crear algunas variables o resúmenes nuevos, o tal vez solo desee cambiar el nombre de las variables o reordenar las observaciones para que sea un poco más fácil trabajar con los datos. Aprenderá a hacer todo eso **(¡y más!)** en este apartado, que le enseñará cómo transformar sus datos utilizando el [**paquete dplyr**](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) y un nuevo conjunto de datos sobre vuelos que parten de la ciudad de Nueva York en 2013.</p>
+
+<p align="center">
+  <img width="300" src="https://ih1.redbubble.net/image.508899495.5477/st,small,507x507-pad,600x600,f8f8f8.jpg">
+</p>
+
+<p style='text-align: justify;'>En este capítulo, nos centraremos en cómo usar el paquete **dplyr**, otro miembro central de tidyverse. Ilustraremos las ideas clave usando datos del paquete **nycflights13** y usar **ggplot2** para ayudarnos a comprender los datos.</p>
 
 ```{r}
-
+library(nycflights13)
 ```
+
+#### **nycfights13**
+
+<p style='text-align: justify;'>Para explorar los verbos básicos de manipulación de datos de **dplyr**, usaremos **`nycflights13::flights`**. Este marco de datos contiene los **336,776** vuelos que partieron de la ciudad de Nueva York en 2013. Los datos provienen de la <span style="color:blue">oficina Oficina de Estadísticas de Transporte de EE. UU</span>, y están documentados en **`?flights`**:</p>
+
+```{r}
+flights
+```
+
+<p style='text-align: justify;'>Es posible que observe que este **dataframe** se imprima un poco diferente de otros **dataframe** que podría haber usado en el pasado: solo muestra las primeras filas y todas las columnas que caben en una pantalla. (Para ver el conjunto de datos completo, puede ejecutar **`View(flights)`**, que abrirá el conjunto de datos en el visor de RStudio). Se imprime de manera diferente porque es un **tibble**. Tibbles son **dataframe**, pero ligeramente modificados para que funcionen mejor en **tidyverse**. Por ahora, no necesita preocuparse por las diferencias; volveremos a tibbles con más detalle en la Parte II del libro de [**Hadley Wickham y Garrett Grolemund (2017)**](https://drive.google.com/file/d/1Kd-pCPpAkaC5R5HzVqds5pau6zly3-u4/view?usp=sharing).</p>
+
+<p style='text-align: justify;'>También puede haber notado la fila de abreviaturas de tres (o cuatro) letras debajo de los nombres de las columnas. <span style="color:blue">Estos describen el tipo de cada variable:</span></p>
+
+- **int** significa enteros.
+- **dbl** significa dobles o números reales.
+- **chr** significa vectores de caracteres o cadenas.
+- **dttm** significa fecha y hora (una fecha + una hora).
+
+<p style='text-align: justify;'>Hay **otros tres tipos comunes** de variables que no se utilizan en este conjunto de datos, pero los encontrará más adelante en el libro de libro de [**Hadley Wickham y Garrett Grolemund (2017)**](https://drive.google.com/file/d/1Kd-pCPpAkaC5R5HzVqds5pau6zly3-u4/view?usp=sharing):</p>
+
+- **lgl** significa vectores lógicos que contienen solo VERDADERO o FALSO.
+- **fctr** significa factores, que R usa para representar categóricos variables con valores posibles fijos.
+- **date** representa fechas.
+
+#### dplyr Basics
+En este capítulo, aprenderá las cinco funciones clave de dplyr que le permiten resolver la gran mayoría de sus desafíos de manipulación de datos:
+
+- Elija observaciones por sus valores (**filter()**).
+- Reordenar las filas (**arrange()**).
+- Elija las variables por sus nombres (**select()**).
+- Crear nuevas variables con funciones de variables existentes (**mutate()**).
+- Colapsar muchos valores en un solo resumen (**summarize()**)
+
+Todos estos se pueden usar junto con group_by (), que cambia el alcance de cada función de operar en todo el conjunto de datos a operar en él grupo por grupo. Estas seis funciones proporcionan los verbos para un lenguaje de manipulación de datos.
+
+Todos los verbos funcionan de manera similar:
+
+1. El primer argumento es un marco de datos.
+2. Los argumentos siguientes describen qué hacer con el marco de datos, utilizando los nombres de las variables (sin comillas).
+3. El resultado es un nuevo marco de datos.
+
+Juntas, estas propiedades hacen que sea fácil encadenar varios pasos simples para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.
+
 
 

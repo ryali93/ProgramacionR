@@ -134,3 +134,6 @@ sapply
 vapply
 rapply
 ejercicio-1-1
+data-transformation-con-dplyr
+nycfights13
+dplyr-basics

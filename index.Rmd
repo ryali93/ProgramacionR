@@ -76,5 +76,5 @@ Estas incluyen:
 - Producir visualizaciones de datos simples y efectivas que hacen que sus resultados sean accesibles y fáciles de entender.
 
 
-En la segunda parte de este curso nos enfocaremos principalmente en la aplicación de estas herramientas en **$\color{blue}{\text{Spatial data analyst}}$**, **$\color{blue}{\text{multivariate data analysis}}$** y **$\color{blue}{\text{GIS development}}$**.
+En la segunda parte de este curso nos enfocaremos principalmente en la aplicación de estas herramientas en **<span style="color:blue">Spatial data analyst</span>**, **<span style="color:blue">multivariate data analysis</span>** y **<span style="color:blue">GIS development</span>**.
 
