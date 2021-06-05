@@ -367,7 +367,7 @@ pacman::p_unload(
 )
 ```
 
-```{r message=TRUE, warning=TRUE}
+```{r message=TRUE, warning=FALSE}
 library(tidyverse)
 ```
 
@@ -390,7 +390,7 @@ library(tidyverse)
 library(nycflights13)
 ```
 
-#### **nycfights13**
+#### nycfights13
 
 <p style='text-align: justify;'>Para explorar los verbos básicos de manipulación de datos de **dplyr**, usaremos **`nycflights13::flights`**. Este marco de datos contiene los **336,776** vuelos que partieron de la ciudad de Nueva York en 2013. Los datos provienen de la <span style="color:blue">oficina Oficina de Estadísticas de Transporte de EE. UU</span>, y están documentados en **`?flights`**:</p>
 
@@ -414,23 +414,44 @@ flights
 - **date** representa fechas.
 
 #### dplyr Basics
-En este capítulo, aprenderá las cinco funciones clave de dplyr que le permiten resolver la gran mayoría de sus desafíos de manipulación de datos:
+En este capítulo, aprenderá las cinco funciones clave de **dplyr** que le permiten resolver la gran mayoría de sus desafíos de manipulación de datos:
 
-- Elija observaciones por sus valores (**filter()**).
-- Reordenar las filas (**arrange()**).
-- Elija las variables por sus nombres (**select()**).
-- Crear nuevas variables con funciones de variables existentes (**mutate()**).
-- Colapsar muchos valores en un solo resumen (**summarize()**)
+- Elija observaciones por sus valores (**`filter()`**).
+- Reordenar las filas (**`arrange()`**).
+- Elija las variables por sus nombres (**`select()`**).
+- Crear nuevas variables con funciones de variables existentes (**`mutate()`**).
+- Colapsar muchos valores en un solo resumen (**`summarize()`**)
 
-Todos estos se pueden usar junto con group_by (), que cambia el alcance de cada función de operar en todo el conjunto de datos a operar en él grupo por grupo. Estas seis funciones proporcionan los verbos para un lenguaje de manipulación de datos.
+<p style='text-align: justify;'>Todos estos se pueden usar junto con **`group_by()`**, que cambia el alcance de cada función de operar en todo el conjunto de datos a operar en él grupo por grupo. Estas seis funciones proporcionan los **verbos** para un lenguaje de manipulación de datos.</p>
 
 Todos los verbos funcionan de manera similar:
 
 1. El primer argumento es un marco de datos.
-2. Los argumentos siguientes describen qué hacer con el marco de datos, utilizando los nombres de las variables (sin comillas).
-3. El resultado es un nuevo marco de datos.
+2. Los argumentos siguientes describen qué hacer con el marco de datos, utilizando los nombres de las variables **(sin comillas)**.
+3. El resultado es un nuevo dataframe.
 
-Juntas, estas propiedades hacen que sea fácil encadenar varios pasos simples para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.
+<p style='text-align: justify;'>Juntas, estas propiedades hacen que sea fácil encadenar varios pasos simples para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.</p>
 
+#### Filtrar filas con filter()
+**filter()** le permite crear subconjuntos de observaciones en función de sus valores. El primer argumento es el nombre del marco de datos. El segundo argumento y los siguientes son las expresiones que filtran el marco de datos.
+
+Por ejemplo, podemos seleccionar todos los **vuelos para el 1 de enero** con:
+
+```{r}
+filter(flights, month == 1, day == 1)
+```
+
+Cuando ejecuta esa línea de código, dplyr ejecuta la operación de filtrado y devuelve un nuevo marco de datos. Las funciones de dplyr nunca modifican sus entradas, por lo que si desea guardar el resultado, deberá usar la
+operador de asignación, <-:
+
+```{r}
+jan1 <- filter(flights, month == 1, day == 1)
+```
+
+R imprime los resultados o los guarda en una variable. Si desea hacer ambas cosas, puede envolver la tarea entre paréntesis:}
+
+```{r}
+(dec25 <- filter(flights, month == 12, day == 25))
+```
 
 

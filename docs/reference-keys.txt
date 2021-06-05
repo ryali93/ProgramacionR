@@ -137,3 +137,5 @@ ejercicio-1-1
 data-transformation-con-dplyr
 nycfights13
 dplyr-basics
+filter-rows-with-filter
+filtrar-filas-con-filter
