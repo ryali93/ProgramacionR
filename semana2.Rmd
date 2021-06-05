@@ -52,7 +52,7 @@ Combinar pruebas lógicas con subconjuntos es una práctica común
 
 ```{r}
 x_ceros <- diamonds$x == 0
-diamonds[x_ceros,]
+diamonds[x_ceros, ]
 ```
 
 ```{r}
@@ -61,7 +61,7 @@ diamonds[diamonds$x > 10, ]
 # Guardar un nuevo data.frame
 big <- diamonds[diamonds$x > 10, ]
 # Sobreescribir el dataset existente (Cuidado!)
-diamonds <- diamonds[diamonds$x < 10,]
+diamonds <- diamonds[diamonds$x < 10, ]
 ```
 
 ## Control de flujo
@@ -82,9 +82,9 @@ La toma de decisiones es una parte importante de la programación. Esto se puede
 
 ```{r eval=FALSE}
 if (expresion) {
-    declaracion1
-  }else{
-    declaracion2
+  declaracion1
+} else {
+  declaracion2
 }
 ```
 
@@ -98,7 +98,7 @@ if (expresion) {
 x <- 0
 if (x < 0) {
   print("Numero negativo")
-}else if (x > 0) {
+} else if (x > 0) {
   print("Numero positivo")
 } else {
   print("Cero")
@@ -110,14 +110,14 @@ Comparación entre Python y R
 ```{python}
 ## PYTHON
 temp = [15, 22, 30]
-suelo= ["seco", "humedo", "charcos"]
+suelo = ["seco", "humedo", "charcos"]
 valtemp = temp[0]
-valsuelo= suelo[2]
+valsuelo = suelo[2]
 if 12<= valtemp < 22 and valsuelo =="seco": 
   print("Cielo despejado")
 elif valtemp == 22 or valsuelo == "humedo":
   print("lluvia leve")
-elif valtemp > 22 and valsuelo=="charcos":
+elif valtemp > 22 and valsuelo =="charcos":
   print("lluvia severa")
 else:
   print(" Faltan datos")
@@ -130,15 +130,15 @@ temp <- c(15, 22, 30)
 suelo <- c("seco", "humedo", "charcos")
 valtemp <- temp[1]
 valsuelo <- suelo[3]
-if (valtemp %in% 12:22 & valsuelo =="seco") {
+if (valtemp %in% 12:22 & valsuelo == "seco") {
   print("\nCielo despejado")
-} else if (valtemp == 22 | valsuelo == "humedo"){
+} else if (valtemp == 22 | valsuelo == "humedo") {
   print("\nlluvia leve")
-} else if (valtemp > 22 & valsuelo=="charcos"){
+} else if (valtemp > 22 & valsuelo == "charcos") {
   print("\nlluvia severa")
 } else {
   print("\nFaltan datos")
-  }
+}
 ```
 
 ### Bucles (while, for)
@@ -148,17 +148,17 @@ if (valtemp %in% 12:22 & valsuelo =="seco") {
 <p style='text-align: justify;'>Un bucle **for** es muy valioso cuando necesitamos iterar sobre una lista de elementos o un rango de números. Loop se puede usar para iterar sobre una lista, marco de datos, vector, matriz o cualquier otro objeto. Los tirantes y el corchete son obligatorios.</p>
 ```{r eval=FALSE}
 for (valor in secuencia)
-  {
-    cuerpo
-  }
+{
+  cuerpo
+}
 ```
 
 ```{r}
 # Creando un vector de frutas
-frutas <- c('Apple', 'Orange', 'Passion fruit', 'Banana')
+frutas <- c("Apple", "Orange", "Passion fruit", "Banana")
 # Declarando el bucle for
-for ( i in frutas){ 
- print(i)
+for (i in frutas) {
+  print(i)
 }
 ```
 
@@ -166,19 +166,18 @@ for ( i in frutas){
 Un bucle **while** es una declaración que continúa ejecutándose **mientras** se cumple una condición. La sintaxis para un ciclo while es la siguiente:
 
 ```{r eval=FALSE}
-while (condición)
-  {
-    cuerpo
-  }
+while (condición) {
+  cuerpo
+}
 ```
 
 ```{r}
 # creando la expresión con valor 1
 inicio <- 1
 # Creando el loop
-while (inicio <= 5){
+while (inicio <= 5) {
   # Ver donde estamos
-  cat('Este es el ciclo número ', inicio)
+  cat("Este es el ciclo número ", inicio)
   # Agregar 1 a la variable inicio despues de cada iteracion
   inicio <- inicio + 1
   print(inicio)
@@ -196,20 +195,19 @@ Una función debería ser:
 - Puede o no devolver uno o más valores
 
 ```{r eval=FALSE}
-function (argumentos)
-  {
-    # cuerpo de la funcion
-    resultado <- cuerpo
-  
-    return(resultado)
-  }
+function(argumentos) {
+  # cuerpo de la funcion
+  resultado <- cuerpo
+
+  return(resultado)
+}
 ```
 
 Ejemplo:
 ```{r}
 a <- 5
 b <- 6
-suma <- function(valor1, valor2){
+suma <- function(valor1, valor2) {
   resultado <- valor1 + valor2
   return(resultado)
 }
@@ -231,7 +229,7 @@ suma(a, b)
 ```{r eval=FALSE}
 # Finaliza la funcion pow_two()
 pow_two <- function(x) {
-  y <- x ^ 2
+  y <- x^2
   print(paste(x, "to the power two equals", y))
   return(y)
 }
@@ -253,9 +251,9 @@ head(d)
 Crea resúmenes sobre los ejes. 1: Sobre filas, 2: Sobre columnas
 
 ```{r eval=FALSE}
-apply(d[,2:5], 2, mean, na.rm = T)
-apply(d[,2:5], 2, median, na.rm = T)
-apply(d[,2:5], 2, summary)
+apply(d[, 2:5], 2, mean, na.rm = T)
+apply(d[, 2:5], 2, median, na.rm = T)
+apply(d[, 2:5], 2, summary)
 ```
 
 ### tapply()
@@ -277,11 +275,11 @@ Esta función es aplicable a vectores y listas y permite generar resúmenes como
 str(d)
 head(d)
 lapply(d, mean, na.rm = T)
-lapply(data.frame(a=10:20,b=15:25), mean)
-d[1:6,]
-d[1:6, c(12,2:5)]
-lapply(d[,c(12,2:5)], mean, na.rm = T)
-lapply(d[,c(12,2:5)], summary, na.rm = T)
+lapply(data.frame(a = 10:20, b = 15:25), mean)
+d[1:6, ]
+d[1:6, c(12, 2:5)]
+lapply(d[, c(12, 2:5)], mean, na.rm = T)
+lapply(d[, c(12, 2:5)], summary, na.rm = T)
 ```
 
 ### sapply() 
@@ -289,11 +287,11 @@ Crea resúmenes como vector o tabla
 
 ```{r eval=FALSE}
 levels(as.factor(d$Source))
-sapply(d[,c(12,2:5)], mean, na.rm = T)
-sapply(d[,c(12,2:5)], summary, na.rm = T)
+sapply(d[, c(12, 2:5)], mean, na.rm = T)
+sapply(d[, c(12, 2:5)], summary, na.rm = T)
 
-funcion_nueva <- function(x){
-  sapply(d[d$Source==x, c(12,2:5)], summary)
+funcion_nueva <- function(x) {
+  sapply(d[d$Source == x, c(12, 2:5)], summary)
 }
 levels(as.factor(d$Source))
 sapply(levels(as.factor(d$Source)), funcion_nueva, simplify = F)
@@ -302,15 +300,15 @@ sapply(levels(as.factor(d$Source)), funcion_nueva, simplify = F)
 ### vapply()
 Similar al anterior, pero devuelve una salida predeterminada (puede ser más práctico)
 ```{r eval=FALSE}
-vapply(d[,c(12,2:5)], mean, na.rm = T, c('Mean'=0))
-vapply(d[,c(12,2:5)], fivenum, na.rm = T, c("Min."=0,"1st Qu."=0, "Median"=0, "3rd Qu."=0, "Max."=0)) 
+vapply(d[, c(12, 2:5)], mean, na.rm = T, c("Mean" = 0))
+vapply(d[, c(12, 2:5)], fivenum, na.rm = T, c("Min." = 0, "1st Qu." = 0, "Median" = 0, "3rd Qu." = 0, "Max." = 0))
 ```
 
 ### rapply()
 Similar al anterior, per devuelve una salida que conserva la estructura original
 ```{r eval=FALSE}
-rapply(d[,2:5], summary)
-rapply(d[,2:5], summary, how = 'list')
+rapply(d[, 2:5], summary)
+rapply(d[, 2:5], summary, how = "list")
 ```
 * Para profundizar, se recomienda seguir esta [Fuente](https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/)
 
@@ -321,28 +319,40 @@ rapply(d[,2:5], summary, how = 'list')
 # Scatter plots
 x <- 1:12
 y <- c(27, 28, 26, 22, 19, 16, 14, 13, 14, 16, 20, 23)
-estaciones <- c(rep("verano",2), rep("otoño",3), rep("invierno",3), rep("primavera",3), "verano")
+estaciones <- c(rep("verano", 2), rep("otoño", 3), rep("invierno", 3), rep("primavera", 3), "verano")
 
 df <- data.frame(x, y, estaciones)
 
-plot(df$x, df$y, type="o", pch=14,xlab = "Mes", 
-     ylab = "Temperatura [°C]", main="Lima, Temperatura mensual promedio")
+plot(
+  df$x, df$y,
+  type = "o", pch = 14, xlab = "Mes",
+  ylab = "Temperatura [°C]", main = "Lima, Temperatura mensual promedio"
+)
 ```
 
 ### Gráficos de líneas
 ```{r}
-plot(df$x, df$y, type="o", pch=20, xlab="Mes", 
-     ylab="Temperatura [°C]", main="Lima, Temperatura mensual promedio", col = "#F47E40")
+plot(
+  df$x, df$y,
+  type = "o", pch = 20, xlab = "Mes",
+  ylab = "Temperatura [°C]", main = "Lima, Temperatura mensual promedio", col = "#F47E40"
+)
 
-df["colores"] = c(rep("black",2), rep("green",3), rep("red",3), rep("blue",3), "red")
-legend("top", legend = levels(factor(estaciones)),
-       col =  c("black", "green", "red", "blue"),
-       pch = c(16, 17, 18) )
+df["colores"] <- c(rep("black", 2), rep("green", 3), rep("red", 3), rep("blue", 3), "red")
+legend("top",
+  legend = levels(factor(estaciones)),
+  col = c("black", "green", "red", "blue"),
+  pch = c(16, 17, 18)
+)
 ```
 
 ```{r}
 data(cars)
-plot(cars$speed, cars$dist, xlab = "Velocidad", ylab = "Distancia", main = "Velocidad vs distancia")
+plot(
+  cars$speed, cars$dist,
+  xlab = "Velocidad",
+  ylab = "Distancia", main = "Velocidad vs distancia"
+)
 ```
 
 ```{r}
@@ -353,22 +363,22 @@ hist(cars$dist, freq = T, col = "skyblue", labels = T)
 ```
 
 ```{r}
-breaks_hist = hist(cars$dist, breaks = 20, plot =  FALSE)$breaks
+breaks_hist <- hist(cars$dist, breaks = 20, plot = FALSE)$breaks
 hist(cars$dist, breaks = breaks_hist, col = "blue1")
 ```
 
 ```{r}
+equakes <- read.csv("data/earthquakes.csv")
 # Boxplot
 boxplot(cars$speed, cars$dist)
-head(d)
-boxplot(`Magnitude`~`Source`, d, col=palette(rainbow(2)))
+boxplot(`Magnitude` ~ `Source`, equakes, col = palette(rainbow(2)))
 ```
 
 ```{r}
 # Multiples plots en un grafico
 dev.new()
 dev.off()
-par(mfrow = c(2,2))
+par(mfrow = c(2, 2))
 ```
 
 ## Estilo tidyverse
@@ -457,24 +467,497 @@ Todos los verbos funcionan de manera similar:
 <p style='text-align: justify;'>Juntas, estas propiedades hacen que sea fácil encadenar varios pasos simples para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.</p>
 
 #### Filtrar filas con filter()
-**filter()** le permite crear subconjuntos de observaciones en función de sus valores. El primer argumento es el nombre del marco de datos. El segundo argumento y los siguientes son las expresiones que filtran el marco de datos.
+**filter()** te permite filtrar un subconjunto de observaciones según sus valores. El primer argumento es el nombre del data frame. El segundo y los siguientes argumentos son las expresiones que lo filtran.
 
-Por ejemplo, podemos seleccionar todos los **vuelos para el 1 de enero** con:
-
-```{r}
-filter(flights, month == 1, day == 1)
-```
-
-Cuando ejecuta esa línea de código, dplyr ejecuta la operación de filtrado y devuelve un nuevo marco de datos. Las funciones de dplyr nunca modifican sus entradas, por lo que si desea guardar el resultado, deberá usar la
-operador de asignación, <-:
+Por ejemplo, podemos seleccionar todos los **vuelos del 1 de enero** con:
 
 ```{r}
-jan1 <- filter(flights, month == 1, day == 1)
+dplyr::filter(flights, month == 1, day == 1)
 ```
 
-R imprime los resultados o los guarda en una variable. Si desea hacer ambas cosas, puede envolver la tarea entre paréntesis:}
+Cuando ejecutas esa línea de código, dplyr ejecuta la operación de filtrado y devuelve un nuevo data frame. Las funciones de dplyr nunca modifican su input, por lo que si deseas guardar el resultado, necesitarás usar el operador de asignación, <-:
 
 ```{r}
-(dec25 <- filter(flights, month == 12, day == 25))
+filter01 <- dplyr::filter(flights, month == 1, day == 1)
 ```
+
+de otro modo usar el operador **"%<>%"** de la librería **magrittr**.
+
+R imprime los resultados o los guarda en una variable. Si desea hacer ambas cosas, puede envolver la tarea **entre paréntesis**:
+
+```{r df-drop-ok, class.source="bg-success"}
+(filter02 <- dplyr::filter(flights, month == 12, day == 25))
+```
+
+##### Comparaciones
+Para usar el filtrado de manera efectiva, debes saber cómo seleccionar las observaciones que deseas utilizando los operadores de comparación. R proporciona el conjunto estándar: `>`, `>=`, `<`, `<=`, `!=` (no igual) y `==` (igual).
+
+Cuando comienzas con R, el error más fácil de cometer es usar `=` en lugar de `==` cuando se busca igualdad. Cuando esto suceda, obtendrás un error informativo:
+
+
+```{r echo=TRUE, message=TRUE, warning=TRUE, error=TRUE}
+dplyr::filter(flights, month = 1)
+```
+
+Hay otro problema común que puedes encontrar al usar `==`: los números de coma flotante. **¡Estos resultados pueden sorprenderte!**
+
+```{r}
+sqrt(2)^2 == 2
+1 / 49 * 49 == 1
+```
+
+Las computadoras usan **aritmética de precisión finita** (obviamente, **NO** pueden **almacenar** una **cantidad infinita de dígitos**), así que recuerda que cada número que observas es una aproximación. En lugar de confiar en **`==`**, usa **`near()`** (cercano, en inglés):
+
+```{r}
+near(sqrt(2)^2, 2)
+near(1 / 49 * 49, 1)
+```
+
+##### Operadores lógicos
+
+Si tienes múltiples argumentos para **`filter()`** estos se combinan con **“y”**: cada expresión debe ser verdadera para que una fila se incluya en el output. Para otros tipos de combinaciones necesitarás usar operadores Booleanos: **& es “y”**, **| es “o”**, y **! es “no”**. La siguiente figura
+muestra el conjunto completo de operaciones **Booleanas**.
+
+<p align="center">
+  <img width="500" src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/transform-logical.svg">
+</p>
+
+El siguiente código sirve para encontrar todos los vuelos que partieron en noviembre o diciembre:
+
+```{r}
+dplyr::filter(flights, month == 11 | month == 12)
+```
+
+El orden de las operaciones no funciona como en español. No puedes escribir **`filter(flights, month == (11 | 12))`**, que literalmente puede traducirse como **“encuentra todos los vuelos que partieron en noviembre o diciembre”**. En cambio, encontrará todos los meses que son iguales a **11 | 12**, una expresión que resulta en **‘TRUE’** (verdadero). En un contexto numérico (como aquí), **‘TRUE’ se convierte en uno**, por lo que **encuentra** todos los **vuelos en enero**, **NO** en **noviembre o diciembre**. ¡Esto es bastante confuso!
+
+Una manera rápida y útil para resolver este problema es **`x %in% y`** (es decir, x en y). Esto **seleccionará cada fila donde x es uno de los valores en y**. Podríamos usarlo para reescribir el código de arriba:
+
+```{r}
+dplyr::filter(flights, month %in% c(11, 12))
+```
+
+A veces puedes simplificar subconjuntos complicados al recordar **la ley de De Morgan**: **!(x & y)** es lo mismo que **!x | !y**, y **!(x | y)** es lo mismo que **!x & !y*. Por ejemplo, si deseas encontrar vuelos que no se retrasaron (en llegada o partida) en más de dos horas, puedes usar cualquiera de los dos filtros siguientes:
+
+```{r}
+dplyr::filter(flights, !(arr_delay > 120 | dep_delay > 120))
+dplyr::filter(flights, arr_delay <= 120, dep_delay <= 120)
+```
+
+Una característica importante de R que puede hacer que la **comparación sea difícil son los valores faltantes**, o **NA's** (del inglés “no disponibles”). NA representa un valor desconocido, lo que hace que los valores perdidos sean “contagiosos”: casi cualquier operación que involucre un valor desconocido también será desconocida.
+
+Si deseas determinar si falta un valor, usa **`is.na()`**:
+
+```{r}
+is.na(5)
+is.na(NA)
+```
+
+**`filter()`** solo incluye filas donde la condición es **TRUE**; **excluye** tanto los valores **FALSE como NA**. Si deseas conservar valores perdidos, solicítalos explícitamente:
+
+```{r}
+df <- tibble(x = c(1, NA, 3))
+dplyr::filter(df, x > 1)
+dplyr::filter(df, is.na(x) | x > 1)
+```
+
+Siempre que empieces a usar en `filter()` expresiones complejas que tengan varias partes, considera convertirlas en variables explícitas. Eso hace que sea mucho más fácil verificar tu trabajo. Aprenderás cómo crear nuevas variables en breve.
+
+<span style="color:blue">**Ejercicios**</span>
+
+<span style="color:blue">1.Encuentra todos los vuelos que:</span>
+
+<span style="color:blue">- Tuvieron un retraso de llegada de dos o más horas</span>
+
+<span style="color:blue">- Volaron a Houston (IAH oHOU)</span>
+
+<span style="color:blue">- Fueron operados por United, American o Delta</span>
+
+<span style="color:blue">- Partieron en invierno del hemisferio sur (julio, agosto y septiembre)</span>
+
+<span style="color:blue">- Llegaron más de dos horas tarde, pero no salieron tarde</span>
+
+<span style="color:blue">- Se retrasaron por lo menos una hora, pero repusieron más de 30 minutos en vuelo</span>
+
+<span style="color:blue">- Partieron entre la medianoche y las 6 a.m. (incluyente)</span>
+
+<span style="color:blue">2. Otra función de **`dplyr`** que es útil para usar filtros es `between()`. ¿Qué hace? ¿Puedes usarla para simplificar el código necesario para responder a los desafíos anteriores?</span>
+
+<span style="color:blue">3. ¿Cuántos vuelos tienen datos faltantes en horario_salida? ¿Qué otras variables tienen valores faltantes? ¿Qué representan estas filas?</span>
+
+<span style="color:blue">4. ¿Por qué `NA^0` no es faltante? ¿Por qué `NA | TRUE` no es faltante? ¿Por qué `FALSE & NA` no es faltante? ¿Puedes descubrir la regla general? (¡`NA * 0` es un contraejemplo complicado!)</span>
+
+#### Reordenar las filas con arrange()
+**`arrange()** funciona de manera similar a `filter()` excepto que en lugar de seleccionar filas, cambia su orden. La función toma un **dataframe** y un conjunto de nombres de columnas (o expresiones más complicadas) para ordenar según ellas. Si proporcionas más de un nombre de columna, cada columna adicional se utilizará para romper empates en los valores de las columnas anteriores:
+
+```{r}
+arrange(flights, year, month, day)
+```
+
+Usa **`desc()`** para reordenar por una columna en orden descendente:
+
+```{r}
+arrange(flights, desc(arr_delay))
+```
+
+Los valores faltantes siempre se ordenan al final:
+
+```{r}
+df <- tibble(x = c(5, 2, NA))
+arrange(df, x)
+arrange(df, desc(x))
+```
+
+<span style="color:blue">**Ejercicios**</span>
+
+<span style="color:blue">1. ¿Cómo podrías usar `arrange()` para ordenar todos los valores faltantes al comienzo? (Sugerencia: usa `is.na()`).</span>
+
+<span style="color:blue">2. Ordena vuelos para encontrar los vuelos más retrasados. Encuentra los vuelos que salieron más temprano.</span>
+
+<span style="color:blue">3. Ordena vuelos para encontrar los vuelos más rápidos (que viajaron a mayor velocidad).</span>
+
+<span style="color:blue">4. ¿Cuáles vuelos viajaron más lejos? ¿Cuál viajó más cerca?</span>
+
+#### Seleccionar columnas con select()
+
+No es raro obtener conjuntos de datos con cientos o incluso miles de variables. En este caso, el primer desafío a menudo se reduce a las variables que realmente te interesan. `select()` te permite seleccionar rápidamente un subconjunto útil utilizando operaciones basadas en los nombres de las variables.
+
+`select()` no es muy útil con los datos de los vuelos porque solo tenemos 19 variables, pero de todos modos se entiende la idea general:
+
+```{r}
+# Seleccionar columnas por nombre
+dplyr::select(flights, year, month, day)
+# Seleccionar todas las columnas entre anio y dia (incluyente)
+dplyr::select(flights, year:day)
+# Seleccionar todas las columnas excepto aquellas entre anio en dia (incluyente)
+dplyr::select(flights, -(year:day))
+```
+
+Hay una serie de **funciones auxiliares** que puedes usar dentro de `select()`:
+
+- **`starts_with("abc")`**: coincide con los nombres que comienzan con “abc”.
+- **`ends_with("xyz")`**: coincide con los nombres que terminan con “xyz”.
+- **`contains("ijk")`**: coincide con los nombres que contienen “ijk”.
+- **`matches("(.)\\1")`**: selecciona variables que coinciden con una expresión regular **(regex)**. Esta en particular coincide con cualquier variable que contenga caracteres repetidos.
+- **`num_range("x", 1:3)`**: coincide con x1,x2 y x3.
+
+Consulta `?select` para ver más detalles.
+
+`select()` se puede usar para cambiar el nombre de las variables, pero rara vez es útil porque descarta todas las variables que no se mencionan explícitamente. En su lugar, utiliza **`rename()`**, que es una variante de `select()` que mantiene todas las variables que no se mencionan explícitamente:
+
+```{r}
+names(flights)
+# new name = old name
+df <- rename(flights, tail_num = tailnum)
+names(df)
+```
+
+Otra opción es usar `select()` junto con el auxiliar **`everything()`** (todo, en inglés). Esto es útil si tienes un grupo de variables que te gustaría mover al comienzo del data frame.
+
+```{r}
+dplyr::select(flights, time_hour, air_time, everything())
+```
+
+<span style="color:blue">**Ejercicios**</span>
+
+<span style="color:blue">1. Haz una lluvia de ideas sobre tantas maneras como sea posible para seleccionar `dep_time`, `dep_delay`, `arr_time`, and `arr_delay` de **flights**.</span>
+
+<span style="color:blue">2. ¿Qué sucede si incluyes el nombre de una variable varias veces en una llamada a `select()`?</span>
+
+<span style="color:blue">3. ¿Qué hace la función `any_of()`? ¡¿Por qué podría ser útil en conjunto con este vector?</span>
+
+```{r}
+vars <- c("year", "month", "day", "dep_delay", "arr_delay")
+```
+
+<span style="color:blue">4. ¿Te sorprende el resultado de ejecutar el siguiente código? ¿Cómo tratan por defecto las funciones auxiliares de `select()` a las palabras en mayúsculas o en minúsculas? ¿Cómo puedes cambiar ese comportamiento predeterminado?</span>
+
+```{r eval=FALSE, include=TRUE}
+dplyr::select(flights, contains("TIME"))
+```
+
+#### Añadir nuevas variables con mutate()
+Además de seleccionar conjuntos de columnas existentes, a menudo es útil crear nuevas columnas en función de columnas existentes. Ese es el trabajo de **`mutate()`** (del inglés mutar o transformar).
+
+**`mutate()`** siempre agrega nuevas columnas al final de un conjunto de datos, así que comenzaremos creando un conjunto de datos más pequeño para que podamos ver las nuevas variables. Recuerda que cuando usas **RStudio**, la manera más fácil de ver todas las columnas es **View()**.
+
+```{r}
+flights_sml <-
+  dplyr::select(
+    flights,
+    year:day,
+    ends_with("delay"),
+    distance, air_time
+  )
+mutate(
+  flights_sml,
+  gain = arr_delay - dep_delay,
+  speed = distance / (air_time * 60)
+)
+```
+
+Ten en cuenta que puedes hacer referencia a las columnas que acabas de crear:
+
+```{r}
+mutate(
+  flights_sml,
+  gain = arr_delay - dep_delay,
+  hours = air_time / 60,
+  gain_per_hour = gain / hours
+)
+```
+
+Si solo quieres conservar las nuevas variables, usa **`transmute()`**:
+
+```{r}
+transmute(
+  flights,
+  gain = arr_delay - dep_delay,
+  hours = air_time / 60,
+  gain_per_hour = gain / hours
+)
+```
+
+##### Funciones de creación útiles
+Hay muchas funciones para crear nuevas variables que puedes usar con `mutate()`. La propiedad clave es que la función debe ser vectorizada: debe tomar un vector de valores como input, y devolver un vector con el mismo número de valores como output. No hay forma de enumerar todas las posibles funciones que podrías usar, pero aquí hay una selección de funciones que frecuentemente son útiles:
+
+- Operadores aritméticos: `+`, `-`, `*`, `/`, `^`. Todos están vectorizados usando las llamadas **“reglas de reciclaje”**. Si un parámetro es más corto que el otro, se extenderá automáticamente para tener la misma longitud. Esto es muy útil cuando uno de los argumentos es un solo número: `air_time / 60`, `hours * 60 + minute`, etc.
+Los operadores aritméticos también son útiles junto con las funciones de agregar que aprenderás más adelante. Por ejemplo, `x / sum(x)` calcula la proporción de un total, y `y - mean(y)` calcula la diferencia de la media.
+
+- **Aritmética modular**: **`%/%`** (división entera) y **`%%`** (resto), donde `x == y * (x %/% y) + (x %% y)`. La aritmética modular es una herramienta útil porque te permite dividir enteros en partes. Por ejemplo, en el conjunto de datos de vuelos, puedes calcular hora y minutos de **`dep_time`** con:
+
+```{r}
+transmute(
+  flights,
+  dep_time,
+  hour = dep_time %/% 100,
+  minute = dep_time %% 100
+)
+```
+
+- **Logaritmos:** `log()`, `log2()`, `log10()`. Los logaritmos son increíblemente útiles como transformación para trabajar con datos con múltiples órdenes de magnitud. También convierten las relaciones multiplicativas en aditivas, una característica que retomaremos en los capítulos sobre modelos. En igualdad de condiciones, recomendamos usar `log2()` porque es más fácil de interpretar: una diferencia de 1 en la escala de registro corresponde a la duplicación de la escala original y una diferencia de -1 corresponde a dividir a la mitad.
+
+- **Rezagos:** `lead()` y `lag()` te permiten referirte a un valor adelante o un valor atrás (con rezago). Esto te permite calcular las diferencias móviles (por ejemplo, `x - lag(x)`) o encontrar cuándo cambian los valores `(x! = lag (x))`. Estos comandos son más útiles cuando se utilizan junto con `group_by()`, algo que aprenderás en breve.
+
+```{r}
+(x <- 1:10)
+lag(x)
+lead(x)
+```
+
+- **Agregados acumulativos y móviles:** R proporciona funciones para ejecutar sumas, productos, mínimos y máximos: `cumsum()`, `cumprod()`, `cummin()`, `cummax()`; **dplyr**, por su parte, proporciona `cummean()` para las medias acumuladas. Si necesitas calcular agregados móviles (es decir, una suma calculada en una ventana móvil), prueba el paquete **RcppRoll**.
+
+```{r}
+x
+cumsum(x)
+cummean(x)
+```
+
+- Comparaciones lógicas: `<`, `<=`, `>`, `>=`, `!=` sobre las cuales aprendiste antes. Si estás haciendo una secuencia compleja de operaciones lógicas, es a menudo una buena idea almacenar los valores provisionales en nuevas variables para que puedas comprobar que cada paso funciona como se espera.
+
+- Ordenamiento: hay una serie de funciones de ordenamiento (ranking), pero deberías comenzar con `min_rank()`. Esta función realiza el tipo más común de ordenamiento (por ejemplo, primero, segundo, tercero, etc.). El valor predeterminado otorga la menor posición a los valores más pequeños; usa `desc(x)` para dar la menor posición a los valores más grandes.
+
+```{r}
+y <- c (1, 2, 2, NA, 3, 4)
+min_rank(y)
+min_rank(desc(y))
+```
+
+- Si `min_rank()` no hace lo que necesitas, consulta las variantes `row_number()`, `dense_rank()`, `percent_rank()`, `cume_dist()`, `quantile()`. Revisa sus páginas de ayuda para más detalles.
+
+```{r}
+row_number(y)
+dense_rank(y)
+percent_rank(y)
+cume_dist(y)
+```
+
+**Ejercicios**
+
+<span style="color:blue">1. Las variables horario_salida y salida_programada tienen un formato conveniente para leer, pero es difícil realizar cualquier cálculo con ellas porque no son realmente números continuos. Transfórmalas hacia un formato más conveniente como número de minutos desde la medianoche.
+
+<span style="color:blue">2. Compara tiempo_vuelo con horario_llegada - horario_salida. ¿Qué esperas ver? ¿Qué ves? ¿Qué necesitas hacer para arreglarlo?
+
+<span style="color:blue">3. Compara horario_salida, salida_programada, y atraso_salida. ¿Cómo esperarías que esos tres números estén relacionados?
+
+<span style="color:blue">4. Encuentra los 10 vuelos más retrasados utilizando una función de ordenamiento. ¿Cómo quieres manejar los empates? Lee atentamente la documentación de min_rank().
+
+<span style="color:blue">5. ¿Qué devuelve 1:3 + 1:10? ¿Por qué?
+
+<span style="color:blue">6. ¿Qué funciones trigonométricas proporciona R?
+
+##### Resúmenes agrupados con summarise()
+El último verbo clave es **`summarise()`** (resumir, en inglés). Se encarga de colapsar un data frame en una sola fila:
+
+```{r}
+summarize(flights, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+`summarise()` no es muy útil a menos que lo enlacemos con `group_by()`. Esto cambia la unidad de análisis del conjunto de datos completo a grupos individuales. Luego, cuando uses los verbos **dplyr** en un data frame agrupado, estos se aplicarán automáticamente **“por grupo”**. Por ejemplo, si aplicamos exactamente el mismo código a un dataframe agrupado por fecha, obtenemos el retraso promedio por fecha:
+
+```{r}
+by_day <- group_by(flights, year, month, day)
+summarize(by_day, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+Juntos `group_by()` y `summarise()` proporcionan una de las herramientas que más comúnmente usarás cuando trabajes con dplyr: resúmenes agrupados. Pero antes de ir más allá con esto, tenemos que introducir una idea nueva y poderosa: el `pipe` (pronunciado /paip/, que en inglés significa ducto o tubería).
+
+###### Combinación de múltiples operaciones con el pipe
+Imagina que queremos explorar la relación entre la distancia y el atraso promedio para cada ubicación. Usando lo que sabes acerca de dplyr, podrías escribir un código como este:
+
+```{r warning=FALSE}
+by_dest <- group_by(flights, dest)
+delay <-
+  summarize(
+    by_dest,
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+)
+# Parece que las demoras aumentan con las distancias hasta ~ 750 millas
+# y luego disminuyen. ¿Tal vez a medida que los vuelos se hacen más 
+# largos, hay más habilidad para compensar las demoras en el aire?
+ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
+ geom_point(aes(size = count), alpha = 1/3) +
+ geom_smooth(se = FALSE)
+```
+
+Hay tres pasos para preparar esta información:
+
+Agrupar los vuelos por destino.
+
+Resumir para calcular la distancia, la demora promedio y el número de vuelos en cada grupo.
+
+Filtrar para eliminar puntos ruidosos y el aeropuerto de Honolulu, que está casi dos veces más lejos que el próximo aeropuerto más cercano.
+
+Es un poco frustrante escribir este código porque tenemos que dar un nombre a cada data frame intermedio, incluso si el data frame en sí mismo no nos importa. Nombrar cosas es difícil y enlentece nuestro análisis.
+
+Hay otra forma de abordar el mismo problema con el pipe, %>%:
+
+```{r}
+
+```
+
+Este código se enfoca en las transformaciones, no en lo que se está transformando, lo que hace que sea más fácil de leer. Puedes leerlo como una serie de declaraciones imperativas: agrupa, luego resume y luego filtra. Como sugiere esta lectura, una buena forma de pronunciar %>% cuando se lee el código es “luego”.
+
+Lo que ocurre detrás del código, es que x %>% f(y) se convierte en f(x, y), y x %>% f(y) %>% g(z) se convierte en g(f(x, y), z) y así sucesivamente. Puedes usar el pipe para reescribir múltiples operaciones de forma que puedas leer de izquierda a derecha, de arriba hacia abajo. Usaremos pipes con frecuencia a partir de ahora porque mejora considerablemente la legibilidad del código. Volveremos a este tema con más detalles en pipes.
+
+Trabajar con el pipe es uno de los criterios clave para pertenecer al tidyverse. La única excepción es ggplot2: se escribió antes de que se descubriera el pipe. Lamentablemente, la siguiente iteración de ggplot2, ggvis, que sí utiliza el pipe, aún no está lista para el horario estelar.
+
+###### Valores faltantes
+Es posible que te hayas preguntado sobre el argumento na.rm que utilizamos anteriormente. ¿Qué pasa si no lo configuramos?
+
+```{r}
+
+```
+
+¡Obtenemos muchos valores faltantes! Esto se debe a que las funciones de agregación obedecen la regla habitual de valores faltantes: si hay uno en el input, el output también será un valor faltante. Afortunadamente, todas las funciones de agregación tienen un argumento na.rm que elimina los valores faltantes antes del cálculo:
+
+```{r}
+
+```
+
+En este caso, en el que los valores faltantes representan vuelos cancelados, también podríamos abordar el problema eliminando primero este tipo de vuelos. Guardaremos este conjunto de datos para poder reutilizarlo en los siguientes ejemplos.
+
+```{r}
+
+```
+
+###### Conteos
+Siempre que realices una agregación, es una buena idea incluir un conteo (n()) o un recuento de valores no faltantes (sum(!is.na(x))). De esta forma, puedes verificar que no estás sacando conclusiones basadas en cantidades muy pequeñas de datos. Por ejemplo, veamos los aviones (identificados por su número de cola) que tienen las demoras promedio más altas:
+
+```{r}
+
+```
+
+¡Hay algunos aviones que tienen una demora promedio de 5 horas (300 minutos)!
+
+La historia es en realidad un poco más matizada. Podemos obtener más información si hacemos un diagrama de dispersión del número de vuelos contra la demora promedio:
+
+```{r}
+
+```
+
+No es sorprendente que haya una mayor variación en el promedio de retraso cuando hay pocos vuelos. La forma de este gráfico es muy característica: cuando trazas un promedio (o cualquier otra medida de resumen) contra el tamaño del grupo, verás que la variación decrece a medida que el tamaño de muestra aumenta.
+
+Cuando se observa este tipo de gráficos, resulta útil eliminar los grupos con menor número de observaciones, ya que puedes ver más del patrón y menos de la variación extrema de los grupos pequeños. Esto es lo que hace el siguiente bloque de código. También te ofrece una manera muy útil para integrar ggplot2 en el flujo de trabajo de dplyr. Es un poco incómodo tener que cambiar de %>% a +, pero una vez que entiendas el código, verás que es bastante conveniente.
+
+```{r}
+
+```
+
+RStudio tip: un atajo en tu teclado que puede ser muy útil es Cmd/Ctrl + Shift + P. Este reenvía el fragmento enviado previamente del editor a la consola. Esto es muy útil cuando por ejemplo estás explorando el valor de n en el ejemplo anterior. Envías todo el bloque a la consola una vez con Cmd / Ctrl + Enter, y luego modificas el valor de n y presionas Cmd / Ctrl + Shift + P para reenviar el bloque completo.
+
+Hay otra variación común de este tipo de patrón. Veamos cómo el rendimiento promedio de los bateadores en el béisbol está relacionado con el número de veces que les toca batear. Aquí utilizaremos el conjunto de datos de bateadores para calcular el promedio de bateo (número de bateos / número de intentos) de cada jugador de béisbol de las Grandes Ligas.
+
+Cuando graficamos la habilidad del bateador (medido por el promedio de bateo, pb) contra el número de oportunidades para golpear la pelota (medido por el tiempo al bate,ab), verás dos patrones:
+
+Como en el ejemplo anterior, la variación en nuestro estadístico de resumen disminuye a medida que obtenemos más observaciones.
+
+Existe una correlación positiva entre la habilidad (pb) y las oportunidades para golpear la pelota (ab). Esto se debe a que los equipos controlan quién puede jugar y, obviamente, elegirán a sus mejores jugadores.
+
+```{r}
+
+```
+
+Esto también tiene implicaciones importantes para la clasificación. Si ingenuamente ordenas desc(pb), verás que las personas con los mejores promedios de bateo tienen claramente mucha suerte, pero no son necesariamente hábiles:
+
+Puedes encontrar una buena explicación de este problema en http://varianceexplained.org/r/empirical_bayes_baseball/ y http://www.evanmiller.org/how-not-to-sort-by-average-rating.html.
+
+###### Funciones de resumen útiles
+Solo el uso de medias, conteos y sumas puede llevarte muy lejos, pero R proporciona muchas otras funciones de resumen útiles:
+
+Medidas de centralidad: hemos usado mean(x), pero median(x) también resulta muy útil. La media es la suma dividida por el número de observaciones; la mediana es un valor donde el 50% de x está por encima de él y el 50% está por debajo. A veces es útil combinar agregación con un subconjunto lógico. Todavía no hemos hablado sobre este tipo de subconjuntos, pero aprenderás más al respecto en selección de subconjuntos.
+
+```{r}
+
+```
+
+Medidas de dispersión: sd(x), IQR(x), mad(x). La raíz de la desviación media al cuadrado o desviación estándar sd(x) es una medida estándar de dispersión. El rango intercuartil IQR() y la desviación media absoluta mad(x) son medidas robustas equivalentes que pueden ser más útiles si tienes valores atípicos.
+
+```{r}
+
+```
+
+Medidas de rango: min(x), quantile(x, 0.25), max(x). Los cuantiles son una generalización de la mediana. Por ejemplo, quantile(x, 0.25) encontrará un valor de x que sea mayor a 25% de los valores, y menor que el 75% restante.
+
+```{r}
+
+```
+
+Medidas de posición: first(x), nth(x, 2), last(x). Estas trabajan de forma similar a x[1], x[2] y x[length (x)], pero te permiten establecer un valor predeterminado en el caso de que esa posición no exista (es decir, si estás tratando de obtener el tercer elemento de un grupo que solo tiene dos elementos). Por ejemplo, podemos encontrar la primera (first) y última (last) salida para cada día:
+
+```{r}
+
+```
+
+Estas funciones son complementarias al filtrado en rangos. El filtrado te proporciona todas las variables, con cada observación en una fila distinta:
+
+```{r}
+
+```
+
+Conteos: has visto n(), que no toma argumentos y que devuelve el tamaño del grupo actual. Para contar la cantidad de valores no faltantes, usa sum(!is.na (x)). Para contar la cantidad de valores distintos (únicos), usa n_distinct(x).
+
+```{r}
+
+```
+
+Los conteos son tan útiles que dplyr proporciona un ayudante simple si todo lo que quieres es un conteo:
+
+```{r}
+
+```
+
+Opcionalmente puedes proporcionar una variable de ponderación. Por ejemplo, podrías usar esto para “contar” (sumar) el número total de millas que voló un avión:
+
+```{r}
+
+```
+
+Conteos y proporciones de valores lógicos: sum(x > 10), mean(y == 0). Cuando se usan con funciones numéricas, TRUE se convierte en 1 y FALSE en 0. Esto hace que sum() y mean() sean muy útiles: sum(x) te da la cantidad de TRUE en x, y mean(x) te da la proporción.
+
+```{r}
+
+```
+
 

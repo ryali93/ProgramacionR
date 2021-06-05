@@ -143,3 +143,13 @@ operadores-relacionales-y-lógicos
 lapply
 gráficos-de-dispersión
 gráficos-de-líneas
+comparaciones
+reordenar-las-filas-con-arrange
+seleccionar-columnas-con-select
+añadir-nuevas-variables-con-mutate
+funciones-de-creación-útiles
+resúmenes-agrupados-con-summarise
+combinación-de-múltiples-operaciones-con-el-pipe
+valores-faltantes
+conteos
+funciones-de-resumen-útiles

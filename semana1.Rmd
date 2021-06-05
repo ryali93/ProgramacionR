@@ -9,7 +9,6 @@
   <img width="300" src="https://cran.r-project.org/Rlogo.svg">
 </p>
 
-
 ### Rstudio
 <p style='text-align: justify;'> RStudio es un editor para scripts disponible para usuarios de R en todos los sistemas operativos. - Es considerado como un **<u>entorno de desarrollo integrado (GUI)</u>** que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R. - La versión en pruebas es gratuita y está disponible en [**http://www.rstudio.org/**](http://www.rstudio.org/) - La ventaja de este editor es que ofrece una serie de opciones no existentes en R, entre otras, por ejemplo, comprobar rápidamente que ningún paréntesis queda sin cerrarse o marcar, copiar y pegar columnas. - Pero además nos da un listado de las variables y nos da una descripción de los bancos de datos que hemos introducido. También tiene una lista de los paquetes instalados y los gráficos realizados.</p>
 
@@ -433,7 +432,7 @@ Si conocemos la estructura de nuestros datos (por ejemplo, la primera fila es el
 ```{r}
 # datos será un 'data frame'
 data01 <- read.csv(file = 'file.csv')
-head(data)
+head(data01)
 # datos será un 'tibble'
 data01 <- readr::read_csv(file = 'file.csv')
 data01

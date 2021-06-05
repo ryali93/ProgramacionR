@@ -45,6 +45,8 @@ pacman::p_load(
 ## Global options
 options(max.print = "75")
 opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
   echo = TRUE,
   cache = TRUE,
   prompt = FALSE,
@@ -77,4 +79,3 @@ Estas incluyen:
 
 
 En la segunda parte de este curso nos enfocaremos principalmente en la aplicación de estas herramientas en **<span style="color:blue">Spatial data analyst</span>**, **<span style="color:blue">multivariate data analysis</span>** y **<span style="color:blue">GIS development</span>**.
-

@@ -8,6 +8,7 @@ bookdown::gitbook:
         <li><a href="./">Programación</a></li>
       after: |
         <li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
+        <li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li> 
     toolbar:
       position: fixed
     edit : null
