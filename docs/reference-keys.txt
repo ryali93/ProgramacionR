@@ -177,3 +177,6 @@ configuración
 control-de-flujo-1
 break
 next
+agrupación-por-múltiples-variables
+transformaciones-agrupadas-y-filtros
+desagrupar

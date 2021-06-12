@@ -85,7 +85,8 @@ if (!require("pacman")) {
   install.packages("pacman")
 }
 pacman::p_load(
-  tidyverse, formatR, knitr, rmdformats, pander, labelled, readxl, magrittr, kableExtra
+  tidyverse, formatR, knitr, rmdformats, pander, labelled, readxl, magrittr, kableExtra,
+  Lahman, datos
 )
 ```
 

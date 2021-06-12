@@ -873,23 +873,28 @@ ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
 
 Hay tres pasos para preparar esta información:
 
-Agrupar los vuelos por destino.
+1. Agrupar los vuelos por destino.
+2. Resumir para calcular la distancia, la demora promedio y el número de vuelos en cada grupo.
+3. Filtrar para eliminar puntos ruidosos y el aeropuerto de Honolulu, que está casi dos veces más lejos que el próximo aeropuerto más cercano.
 
-Resumir para calcular la distancia, la demora promedio y el número de vuelos en cada grupo.
+Es un poco frustrante escribir este código porque tenemos que dar un nombre a cada data frame intermedio, incluso si el dataframe en sí mismo no nos importa. Nombrar cosas es difícil y **dilata el tiempo** de nuestro análisis.
 
-Filtrar para eliminar puntos ruidosos y el aeropuerto de Honolulu, que está casi dos veces más lejos que el próximo aeropuerto más cercano.
-
-Es un poco frustrante escribir este código porque tenemos que dar un nombre a cada data frame intermedio, incluso si el data frame en sí mismo no nos importa. Nombrar cosas es difícil y enlentece nuestro análisis.
-
-Hay otra forma de abordar el mismo problema con el pipe, %>%:
+Hay otra forma de abordar el mismo problema con el pipe, **`%>%`**:
 
 ```{r}
-
+delays <- flights %>% 
+  group_by(dest) %>% 
+  summarise(
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+  ) %>% 
+  filter(count > 20, dest != "HNL")
 ```
 
-Este código se enfoca en las transformaciones, no en lo que se está transformando, lo que hace que sea más fácil de leer. Puedes leerlo como una serie de declaraciones imperativas: agrupa, luego resume y luego filtra. Como sugiere esta lectura, una buena forma de pronunciar %>% cuando se lee el código es “luego”.
+Este código se enfoca en las transformaciones, no en lo que se está transformando, lo que hace que sea más fácil de leer. Puedes leerlo como una serie de declaraciones imperativas: **agrupa**, luego **resume** y luego **filtra**. Como sugiere esta lectura, una buena forma de pronunciar **`%>%`** cuando se lee el código es **“luego”**.
 
-Lo que ocurre detrás del código, es que x %>% f(y) se convierte en f(x, y), y x %>% f(y) %>% g(z) se convierte en g(f(x, y), z) y así sucesivamente. Puedes usar el pipe para reescribir múltiples operaciones de forma que puedas leer de izquierda a derecha, de arriba hacia abajo. Usaremos pipes con frecuencia a partir de ahora porque mejora considerablemente la legibilidad del código. Volveremos a este tema con más detalles en pipes.
+Lo que ocurre detrás del código, es que **x %>% f(y)** se convierte en **f(x, y)**, y **x %>% f(y) %>% g(z)** se convierte en **g(f(x, y), z)** y así sucesivamente. Puedes usar el **_pipe_** para reescribir múltiples operaciones de forma que puedas leer de izquierda a derecha, de arriba hacia abajo. **Usaremos pipes con frecuencia a partir de ahora porque mejora considerablemente la legibilidad del código**. Volveremos a este tema con más detalles en pipes.
 
 Trabajar con el pipe es uno de los criterios clave para pertenecer al tidyverse. La única excepción es ggplot2: se escribió antes de que se descubriera el pipe. Lamentablemente, la siguiente iteración de ggplot2, ggvis, que sí utiliza el pipe, aún no está lista para el horario estelar.
 
@@ -897,117 +902,292 @@ Trabajar con el pipe es uno de los criterios clave para pertenecer al tidyverse.
 Es posible que te hayas preguntado sobre el argumento na.rm que utilizamos anteriormente. ¿Qué pasa si no lo configuramos?
 
 ```{r}
-
+flights %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay))
 ```
 
-¡Obtenemos muchos valores faltantes! Esto se debe a que las funciones de agregación obedecen la regla habitual de valores faltantes: si hay uno en el input, el output también será un valor faltante. Afortunadamente, todas las funciones de agregación tienen un argumento na.rm que elimina los valores faltantes antes del cálculo:
+¡Obtenemos muchos valores faltantes! Esto se debe a que las funciones de agregación obedecen la regla habitual de valores faltantes: **si hay uno en el input**, **el output también será un valor faltante**. Afortunadamente, todas las funciones de agregación tienen un argumento **`na.rm`** que elimina los valores faltantes antes del cálculo:
 
 ```{r}
-
+flights %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay, na.rm = TRUE))
 ```
 
 En este caso, en el que los valores faltantes representan vuelos cancelados, también podríamos abordar el problema eliminando primero este tipo de vuelos. Guardaremos este conjunto de datos para poder reutilizarlo en los siguientes ejemplos.
 
 ```{r}
+not_cancelled <- flights %>% 
+  filter(!is.na(dep_delay), !is.na(arr_delay))
 
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay))
 ```
 
 ###### Conteos
-Siempre que realices una agregación, es una buena idea incluir un conteo (n()) o un recuento de valores no faltantes (sum(!is.na(x))). De esta forma, puedes verificar que no estás sacando conclusiones basadas en cantidades muy pequeñas de datos. Por ejemplo, veamos los aviones (identificados por su número de cola) que tienen las demoras promedio más altas:
+Siempre que realices una agregación, es una buena idea incluir un conteo (**n()**) o un recuento de valores no faltantes (**sum(!is.na(x))**). De esta forma, puedes verificar que no estás sacando conclusiones basadas en cantidades muy pequeñas de datos. Por ejemplo, veamos los aviones (identificados por su número de cola) que tienen las demoras promedio más altas:
 
 ```{r}
+delays <- not_cancelled %>% 
+  group_by(tailnum) %>% 
+  summarise(
+    delay = mean(arr_delay)
+  )
 
+ggplot(data = delays, mapping = aes(x = delay)) + 
+  geom_freqpoly(binwidth = 10) +
+  theme_bw()
 ```
 
-¡Hay algunos aviones que tienen una demora promedio de 5 horas (300 minutos)!
+<span style="color:blue">¡Hay algunos aviones que tienen una demora promedio de 5 horas (300 minutos)!</span></p>
 
 La historia es en realidad un poco más matizada. Podemos obtener más información si hacemos un diagrama de dispersión del número de vuelos contra la demora promedio:
 
 ```{r}
+delays <- not_cancelled %>% 
+  group_by(tailnum) %>% 
+  summarise(
+    delay = mean(arr_delay, na.rm = TRUE),
+    n = n()
+  )
 
+ggplot(data = delays, mapping = aes(x = n, y = delay)) + 
+  geom_point(alpha = 1/10) +
+  theme_bw()
 ```
 
 No es sorprendente que haya una mayor variación en el promedio de retraso cuando hay pocos vuelos. La forma de este gráfico es muy característica: cuando trazas un promedio (o cualquier otra medida de resumen) contra el tamaño del grupo, verás que la variación decrece a medida que el tamaño de muestra aumenta.
 
-Cuando se observa este tipo de gráficos, resulta útil eliminar los grupos con menor número de observaciones, ya que puedes ver más del patrón y menos de la variación extrema de los grupos pequeños. Esto es lo que hace el siguiente bloque de código. También te ofrece una manera muy útil para integrar ggplot2 en el flujo de trabajo de dplyr. Es un poco incómodo tener que cambiar de %>% a +, pero una vez que entiendas el código, verás que es bastante conveniente.
+Cuando se observa este tipo de gráficos, resulta útil eliminar los grupos con menor número de observaciones, ya que puedes ver más del patrón y menos de la variación extrema de los grupos pequeños. Esto es lo que hace el siguiente bloque de código. También te ofrece una manera muy útil para integrar ggplot2 en el flujo de trabajo de dplyr. **Es un poco incómodo tener que cambiar de %>% a +**, pero una vez que entiendas el código, verás que es bastante conveniente.
 
 ```{r}
-
+delays %>% 
+  filter(n > 25) %>% 
+  ggplot(mapping = aes(x = n, y = delay)) + 
+    geom_point(alpha = 1/10) +
+    theme_bw()
 ```
 
-RStudio tip: un atajo en tu teclado que puede ser muy útil es Cmd/Ctrl + Shift + P. Este reenvía el fragmento enviado previamente del editor a la consola. Esto es muy útil cuando por ejemplo estás explorando el valor de n en el ejemplo anterior. Envías todo el bloque a la consola una vez con Cmd / Ctrl + Enter, y luego modificas el valor de n y presionas Cmd / Ctrl + Shift + P para reenviar el bloque completo.
+------------------------------------------------------------------------
 
 Hay otra variación común de este tipo de patrón. Veamos cómo el rendimiento promedio de los bateadores en el béisbol está relacionado con el número de veces que les toca batear. Aquí utilizaremos el conjunto de datos de bateadores para calcular el promedio de bateo (número de bateos / número de intentos) de cada jugador de béisbol de las Grandes Ligas.
 
 Cuando graficamos la habilidad del bateador (medido por el promedio de bateo, pb) contra el número de oportunidades para golpear la pelota (medido por el tiempo al bate,ab), verás dos patrones:
 
-Como en el ejemplo anterior, la variación en nuestro estadístico de resumen disminuye a medida que obtenemos más observaciones.
+1. Como en el ejemplo anterior, la variación en nuestro estadístico de resumen disminuye a medida que obtenemos más observaciones.
 
-Existe una correlación positiva entre la habilidad (pb) y las oportunidades para golpear la pelota (ab). Esto se debe a que los equipos controlan quién puede jugar y, obviamente, elegirán a sus mejores jugadores.
+2. Existe una correlación positiva entre la habilidad (pb) y las oportunidades para golpear la pelota (ab). Esto se debe a que los equipos controlan quién puede jugar y, obviamente, elegirán a sus mejores jugadores.
 
 ```{r}
+# Convert to a tibble so it prints nicely
+bateo <- as_tibble(datos::bateadores)
 
+rendimiento_bateadores <- bateo %>% 
+  group_by(id_jugador) %>% 
+  summarise(
+    pb = sum(golpes, na.rm = TRUE) / sum(al_bate, na.rm = TRUE),
+    ab = sum(al_bate, na.rm = TRUE)
+  )
+
+rendimiento_bateadores %>% 
+  filter(ab > 100) %>% 
+  ggplot(mapping = aes(x = ab, y = pb)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  theme_bw()
 ```
 
-Esto también tiene implicaciones importantes para la clasificación. Si ingenuamente ordenas desc(pb), verás que las personas con los mejores promedios de bateo tienen claramente mucha suerte, pero no son necesariamente hábiles:
+Esto también tiene implicaciones importantes para la clasificación. Si ingenuamente ordenas **`desc(pb)`**, verás que las personas con los mejores promedios de bateo tienen claramente mucha suerte, pero no son necesariamente hábiles:
 
-Puedes encontrar una buena explicación de este problema en http://varianceexplained.org/r/empirical_bayes_baseball/ y http://www.evanmiller.org/how-not-to-sort-by-average-rating.html.
+Puedes encontrar una buena explicación de este problema en [http://varianceexplained.org/r/empirical_bayes_baseball/](http://varianceexplained.org/r/empirical_bayes_baseball/) y [http://www.evanmiller.org/how-not-to-sort-by-average-rating.html](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html).
 
 ###### Funciones de resumen útiles
 Solo el uso de medias, conteos y sumas puede llevarte muy lejos, pero R proporciona muchas otras funciones de resumen útiles:
 
-Medidas de centralidad: hemos usado mean(x), pero median(x) también resulta muy útil. La media es la suma dividida por el número de observaciones; la mediana es un valor donde el 50% de x está por encima de él y el 50% está por debajo. A veces es útil combinar agregación con un subconjunto lógico. Todavía no hemos hablado sobre este tipo de subconjuntos, pero aprenderás más al respecto en selección de subconjuntos.
+- **Medidas de posición:** `first(x)`, `nth(x, 2)`, `last(x)`. Estas trabajan de forma similar a `x[1]`, `x[2]` y `x[length (x)]`, pero te permiten establecer un valor predeterminado en el caso de que esa posición no exista (es decir, si estás tratando de obtener el tercer elemento de un grupo que solo tiene dos elementos). Por ejemplo, podemos encontrar la primera (first) y última (last) salida para cada día:
 
-```{r}
-
+```{r message=FALSE}
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(
+    first_dep = first(dep_time), 
+    last_dep = last(dep_time)
+  )
 ```
 
-Medidas de dispersión: sd(x), IQR(x), mad(x). La raíz de la desviación media al cuadrado o desviación estándar sd(x) es una medida estándar de dispersión. El rango intercuartil IQR() y la desviación media absoluta mad(x) son medidas robustas equivalentes que pueden ser más útiles si tienes valores atípicos.
+- **Medidas de centralidad:** hemos usado `mean(x)`, pero `median(x)` también resulta muy útil. La media es la suma dividida por el número de observaciones; la mediana es un valor donde el 50% de x está por encima de él y el 50% está por debajo. A veces es útil combinar agregación con un subconjunto lógico.
 
-```{r}
-
+```{r message=FALSE, warning=FALSE}
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(
+    avg_delay1 = mean(arr_delay),
+    avg_delay2 = mean(arr_delay[arr_delay > 0]) # the average positive delay
+  )
 ```
 
-Medidas de rango: min(x), quantile(x, 0.25), max(x). Los cuantiles son una generalización de la mediana. Por ejemplo, quantile(x, 0.25) encontrará un valor de x que sea mayor a 25% de los valores, y menor que el 75% restante.
+- **Medidas de rango:** `min(x)`, `quantile(x, 0.25)`, `max(x)`. Los cuantiles son una generalización de la mediana. Por ejemplo, `quantile(x, 0.25)` encontrará un valor de x que sea mayor a 25% de los valores, y menor que el 75% restante.
 
 ```{r}
-
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(
+    first = min(dep_time),
+    last = max(dep_time)
+  )
 ```
 
-Medidas de posición: first(x), nth(x, 2), last(x). Estas trabajan de forma similar a x[1], x[2] y x[length (x)], pero te permiten establecer un valor predeterminado en el caso de que esa posición no exista (es decir, si estás tratando de obtener el tercer elemento de un grupo que solo tiene dos elementos). Por ejemplo, podemos encontrar la primera (first) y última (last) salida para cada día:
+- **Medidas de dispersión:** `sd(x)`, `IQR(x)`, `mad(x)`. La raíz cuadrad de la varianza o desviación estándar `sd(x)` es una medida estándar de dispersión. El rango intercuartil `IQR()` y la desviación media absoluta `mad(x`) son medidas robustas equivalentes que pueden ser más útiles si tienes **valores atípicos**.
 
 ```{r}
-
+not_cancelled %>% 
+  group_by(dest) %>% 
+  summarise(distance_sd = sd(distance)) %>% 
+  arrange(desc(distance_sd))
 ```
 
 Estas funciones son complementarias al filtrado en rangos. El filtrado te proporciona todas las variables, con cada observación en una fila distinta:
 
 ```{r}
-
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  mutate(r = min_rank(desc(dep_time))) %>% 
+  filter(r %in% range(r)) %>%
+  dplyr::select(r)
 ```
 
-Conteos: has visto n(), que no toma argumentos y que devuelve el tamaño del grupo actual. Para contar la cantidad de valores no faltantes, usa sum(!is.na (x)). Para contar la cantidad de valores distintos (únicos), usa n_distinct(x).
+- **Conteos:** has visto `n()`, que no toma argumentos y que devuelve el tamaño del grupo actual. Para contar la cantidad de valores no faltantes, usa `sum(!is.na (x))`. Para contar la cantidad de valores distintos (únicos), usa `n_distinct(x)`.
 
 ```{r}
-
+# ¿Qué destinos tienen la mayoría de las aerolíneas?
+not_cancelled %>% 
+  group_by(dest) %>% 
+  summarise(carriers = n_distinct(carrier)) %>% 
+  arrange(desc(carriers))
 ```
 
-Los conteos son tan útiles que dplyr proporciona un ayudante simple si todo lo que quieres es un conteo:
+Los conteos son tan útiles que **dplyr** proporciona un ayudante simple si todo lo que quieres es un conteo:
 
 ```{r}
-
+not_cancelled %>% 
+  count(dest)
 ```
 
-Opcionalmente puedes proporcionar una variable de ponderación. Por ejemplo, podrías usar esto para “contar” (sumar) el número total de millas que voló un avión:
+Opcionalmente puedes proporcionar una variable de ponderación. Por ejemplo, podrías usar esto para **“contar”** (sumar) el número total de millas que voló un avión:
 
 ```{r}
-
+not_cancelled %>% 
+  count(tailnum, wt = distance)
 ```
 
-Conteos y proporciones de valores lógicos: sum(x > 10), mean(y == 0). Cuando se usan con funciones numéricas, TRUE se convierte en 1 y FALSE en 0. Esto hace que sum() y mean() sean muy útiles: sum(x) te da la cantidad de TRUE en x, y mean(x) te da la proporción.
+- **Conteos y proporciones de valores lógicos:** `sum(x > 10)`, `mean(y == 0)`. Cuando se usan con funciones numéricas, `TRUE` se convierte en **1** y `FALSE` en **0**. Esto hace que `sum()` y `mean()` sean muy útiles: `sum(x)` te da la cantidad de `TRUE` en `x`, y `mean(x)` te da la proporción.
 
 ```{r}
-
+# ¿Cuántos vuelos salieron antes de las 5 am? 
+# (estos generalmente son vuelos demorados del día anterior)
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(n_early = sum(dep_time < 500))
+# ¿Qué proporción de vuelos se retrasan más de una hora?
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(hour_prop = mean(arr_delay > 60))
 ```
 
+##### Agrupación por múltiples variables
+Cuando agrupas por múltiples variables, cada resumen se desprende de un nivel de la agrupación. Eso hace que sea más fácil acumular progresivamente en un conjunto de datos:
 
+```{r}
+daily <- group_by(flights, year, month, day)
+(per_day   <- summarise(daily, flights = n()))
+(per_month <- summarise(per_day, flights = sum(flights)))
+(per_year  <- summarise(per_month, flights = sum(flights)))
+```
+
+Ten cuidado al acumular resúmenes progresivamente: está bien para las sumas y los recuentos, pero debes pensar en la ponderación de las medias y las varianzas, además de que no es posible hacerlo exactamente para estadísticas basadas en rangos como la mediana. En otras palabras, la suma de las sumas agrupadas es la suma total, pero la mediana de las medianas agrupadas no es la mediana general.
+
+##### Desagrupar
+Si necesitas eliminar la agrupación y regresar a las operaciones en datos desagrupados, usa ungroup().
+
+```{r}
+daily %>% 
+  ungroup() %>%             # no longer grouped by date
+  summarise(flights = n())  # all flights
+```
+
+<span style="color:blue">**Ejercicios**
+
+<span style="color:blue">1. Haz una lluvia de ideas de al menos 5 formas diferentes de evaluar las características de un retraso típico de un grupo de vuelos. Considera los siguientes escenarios:
+
+<span style="color:blue">- Un vuelo llega 15 minutos antes 50% del tiempo, y 15 minutos tarde 50% del tiempo.
+
+<span style="color:blue">- Un vuelo llega siempre 10 minutos tarde.
+
+<span style="color:blue">- Un vuelo llega 30 minutos antes 50% del tiempo, y 30 minutos tarde 50% del tiempo.
+
+<span style="color:blue">- Un vuelo llega a tiempo en el 99% de los casos. 1% de las veces llega 2 horas tarde.
+
+<span style="color:blue">¿Qué es más importante: retraso de la llegada o demora de salida?
+
+<span style="color:blue">2. Sugiere un nuevo enfoque que te dé el mismo output que no_cancelados %>% count(destino) y no_cancelado %>% count(codigo_cola, wt = distancia) (sin usar count()).
+
+<span style="color:blue">3. Nuestra definición de vuelos cancelados (is.na(atraso_salida) | is.na (atraso_llegada)) es un poco subóptima. ¿Por qué? ¿Cuál es la columna más importante?
+
+<span style="color:blue">4. Mira la cantidad de vuelos cancelados por día. ¿Hay un patrón? ¿La proporción de vuelos cancelados está relacionada con el retraso promedio?
+
+<span style="color:blue">5. ¿Qué compañía tiene los peores retrasos? Desafío: ¿puedes desenredar el efecto de malos aeropuertos vs. el efecto de malas aerolíneas? ¿Por qué o por qué no? (Sugerencia: piensa en vuelos %>% group_by(aerolinea, destino) %>% summarise(n()))
+
+<span style="color:blue">6. ¿Qué hace el argumento sort a count(). ¿Cuándo podrías usarlo?</span>
+
+##### Transformaciones agrupadas (y filtros)
+La agrupación es más útil si se utiliza junto con summarise(), pero también puedes hacer operaciones convenientes con `mutate()` y `filter()`:
+
+- Encuentra los peores miembros de cada grupo:
+
+```{r}
+flights_sml %>% 
+  group_by(year, month, day) %>%
+  filter(rank(desc(arr_delay)) < 10)
+```
+
+Encuentra todos los grupos más grandes que un determinado umbral:
+
+```{r}
+popular_dests <- flights %>% 
+  group_by(dest) %>% 
+  filter(n() > 365)
+popular_dests
+```
+
+- Estandariza para calcular las métricas por grupo:
+
+```{r}
+popular_dests %>% 
+  filter(arr_delay > 0) %>% 
+  mutate(prop_delay = arr_delay / sum(arr_delay)) %>% 
+  select(year:day, dest, arr_delay, prop_delay)
+```
+
+Un filtro agrupado es una transformación agrupada seguida de un filtro desagrupado. En general, preferimos evitarlos, excepto para las manipulaciones rápidas y sucias: de lo contrario, es difícil comprobar que has hecho la manipulación correctamente.
+
+Las funciones que trabajan de forma más natural en transformaciones agrupadas y filtros se conocen como funciones de ventana o window functions (frente a las funciones de resumen utilizadas para los resúmenes). Puedes obtener más información sobre las funciones de ventana útiles en la viñeta correspondiente: `vignette("window-functions")`.
+
+<span style="color:blue">**Ejercicios**
+
+<span style="color:blue">1. Remítete a las listas de funciones útiles de mutación y filtrado. Describe cómo cambia cada operación cuando las combinas con la agrupación.
+
+<span style="color:blue">2. ¿Qué avión (codigo_cola) tiene el peor registro de tiempo?
+
+<span style="color:blue">3. ¿A qué hora del día deberías volar si quieres evitar lo más posible los retrasos?
+
+<span style="color:blue">4. Para cada destino, calcula los minutos totales de demora. Para cada vuelo, calcula la proporción de la demora total para su destino.
+
+<span style="color:blue">5. Los retrasos suelen estar temporalmente correlacionados: incluso una vez que el problema que causó el retraso inicial se ha resuelto, los vuelos posteriores se retrasan para permitir que salgan los vuelos anteriores. Usando lag(), explora cómo el retraso de un vuelo está relacionado con el retraso del vuelo inmediatamente anterior.
+
+<span style="color:blue">6. Mira cada destino. ¿Puedes encontrar vuelos sospechosamente rápidos? (es decir, vuelos que representan un posible error de entrada de datos). Calcula el tiempo en el aire de un vuelo relativo al vuelo más corto a ese destino. ¿Cuáles vuelos se retrasaron más en el aire?
+
+<span style="color:blue">7. Encuentra todos los destinos que son volados por al menos dos operadores. Usa esta información para clasificar a las aerolíneas.
+
+<span style="color:blue">8. Para cada avión, cuenta el número de vuelos antes del primer retraso de más de 1 hora.</span>
