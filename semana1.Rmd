@@ -432,10 +432,10 @@ Si conocemos la estructura de nuestros datos (por ejemplo, la primera fila es el
 
 ```{r}
 # datos será un 'data frame'
-data01 <- read.csv(file = 'file.csv')
+data01 <- read.csv(file = 'data/file.csv')
 head(data01)
 # datos será un 'tibble'
-data01 <- readr::read_csv(file = 'file.csv')
+data01 <- readr::read_csv(file = 'data/file.csv')
 data01
 ```
 
@@ -443,14 +443,13 @@ En otros casos, cuando `";"` es utilizado como el separador de campo y `","` par
 
 ```{r}
 # datos será un 'data frame'
-data02 <- read.csv(file = 'file.csv', sep = ',', header = T)
-data02 <- read.csv(file = 'file.csv', sep = ',', header = F)
+data02 <- read.csv(file = 'data/file.csv', sep = ',', header = T)
 ```
 
 La escritura de datos se realiza de la siguiente manera:
 
 ```{r}
-readr::write_csv(x = data02, file = "csv_data.csv")
+readr::write_csv(x = data02, file = "data/csv_data.csv")
 ```
 
 ### EXCEL
@@ -462,15 +461,15 @@ Es posible leer datos en la forma `.xls` o `.xlsx`. Existen distintos paquetes q
 
 ```{r}
 # datos será un 'data frame'
-data03 <- readxl::read_xls(path = 'file.xls', sheet = 1)
-data03 <- xlsx::read.xlsx(file = "file.xls", 1)
+data03 <- readxl::read_xls(path = "data/file.xls", sheet = 1)
+data03 <- xlsx::read.xlsx(file = "data/file.xls", 1)
 ```
 
 La escritura de datos se realiza de la siguiente manera:
 
 ```{r}
 xlsx::write.xlsx(
-  data03, "xlsx_data.xlsx", sheetName = "Sheet1", 
+  data03, "data/xlsx_data.xlsx", sheetName = "Sheet1", 
   col.names = TRUE, row.names = TRUE, append = FALSE
 )
 ```
@@ -482,13 +481,13 @@ R proporciona dos formatos de archivo propios para almacenar datos, **.RDS** y *
 Puede abrir un archivo RDS con `readRDS`:
 
 ```{r}
-data04 <- readRDS("file.RDS")
+data04 <- readRDS("data/file.RDS")
 ```
 
 La escritura de datos se realiza de la siguiente manera:
 
 ```{r}
-saveRDS(data04, file = "rds_data.RDS")
+saveRDS(data04, file = "data/rds_data.RDS")
 ```
 
 ### RDATA
@@ -499,13 +498,13 @@ La escritura de estos datos se realiza de la siguiente manera:
 a <- 1
 b <- 2
 c <- 3
-save(a, b, c, file = "stuff.RData")
+save(a, b, c, file = "data/stuff.RData")
 ```
 
 Puede abrir un archivo RData con `load`:
 
 ```{r}
-load("stuff.RData")
+load("data/stuff.RData")
 ```
 
 ## Ejercicios:
