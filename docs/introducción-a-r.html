@@ -24,7 +24,7 @@
 <meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
 
 
-<meta name="date" content="2021-06-05" />
+<meta name="date" content="2021-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="programando-con-r.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,23 +50,24 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,10 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso</a></li>
-<li class="chapter" data-level="2" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-r-rstudio-y-rtools"><i class="fa fa-check"></i><b>2.1</b> Instalación de R, RStudio y RTools</a>
-<ul>
+<li class="chapter" data-level="2" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a><ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-r-rstudio-y-rtools"><i class="fa fa-check"></i><b>2.1</b> Instalación de R, RStudio y RTools</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#r"><i class="fa fa-check"></i><b>2.1.1</b> R</a></li>
 <li class="chapter" data-level="2.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Rstudio</a></li>
 <li class="chapter" data-level="2.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rtools"><i class="fa fa-check"></i><b>2.1.3</b> RTools</a></li>
@@ -150,22 +148,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-rstudio"><i class="fa fa-check"></i><b>2.3</b> ¿Qué es RStudio?</a></li>
 <li class="chapter" data-level="2.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-otros-ides-existen-para-r"><i class="fa fa-check"></i><b>2.4</b> ¿Qué otros IDE’s existen para R?</a></li>
 <li class="chapter" data-level="2.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#diferencias-entre-paquetes-y-librerías"><i class="fa fa-check"></i><b>2.5</b> Diferencias entre paquetes y librerías</a></li>
-<li class="chapter" data-level="2.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-lenguajes-de-programación"><i class="fa fa-check"></i><b>2.6</b> Tipos de lenguajes de programación</a>
-<ul>
+<li class="chapter" data-level="2.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-lenguajes-de-programación"><i class="fa fa-check"></i><b>2.6</b> Tipos de lenguajes de programación</a><ul>
 <li class="chapter" data-level="2.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-compilado"><i class="fa fa-check"></i><b>2.6.1</b> Lenguaje compilado</a></li>
 <li class="chapter" data-level="2.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-interpretado"><i class="fa fa-check"></i><b>2.6.2</b> Lenguaje interpretado</a></li>
 <li class="chapter" data-level="2.6.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-intermedio"><i class="fa fa-check"></i><b>2.6.3</b> Lenguaje intermedio</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#paradigmas-de-programación"><i class="fa fa-check"></i><b>2.7</b> Paradigmas de programación</a>
-<ul>
+<li class="chapter" data-level="2.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#paradigmas-de-programación"><i class="fa fa-check"></i><b>2.7</b> Paradigmas de programación</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-orientado-a-objetos"><i class="fa fa-check"></i><b>2.7.1</b> Programación Orientado a Objetos</a></li>
 <li class="chapter" data-level="2.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-funcional"><i class="fa fa-check"></i><b>2.7.2</b> Programación Funcional</a></li>
 </ul></li>
 <li class="chapter" data-level="2.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ambiente-de-trabajo-en-rstudio"><i class="fa fa-check"></i><b>2.8</b> Ambiente de trabajo en RStudio</a></li>
 <li class="chapter" data-level="2.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#mi-primer-hello-world"><i class="fa fa-check"></i><b>2.9</b> Mi primer “Hello world”</a></li>
 <li class="chapter" data-level="2.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos-en-r"><i class="fa fa-check"></i><b>2.10</b> Tipos de datos en R</a></li>
-<li class="chapter" data-level="2.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructuras-de-datos"><i class="fa fa-check"></i><b>2.11</b> Tipos de estructuras de datos</a>
-<ul>
+<li class="chapter" data-level="2.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructuras-de-datos"><i class="fa fa-check"></i><b>2.11</b> Tipos de estructuras de datos</a><ul>
 <li class="chapter" data-level="2.11.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#asignación-de-objetos"><i class="fa fa-check"></i><b>2.11.1</b> Asignación de objetos</a></li>
 <li class="chapter" data-level="2.11.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#vector"><i class="fa fa-check"></i><b>2.11.2</b> Vector</a></li>
 <li class="chapter" data-level="2.11.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#factor"><i class="fa fa-check"></i><b>2.11.3</b> Factor</a></li>
@@ -173,35 +168,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.11.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Data Frame</a></li>
 <li class="chapter" data-level="2.11.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#listas"><i class="fa fa-check"></i><b>2.11.6</b> Listas</a></li>
 </ul></li>
-<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a>
-<ul>
+<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a><ul>
 <li class="chapter" data-level="2.12.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#csv"><i class="fa fa-check"></i><b>2.12.1</b> CSV</a></li>
 <li class="chapter" data-level="2.12.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#excel"><i class="fa fa-check"></i><b>2.12.2</b> EXCEL</a></li>
 <li class="chapter" data-level="2.12.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rds"><i class="fa fa-check"></i><b>2.12.3</b> RDS</a></li>
 <li class="chapter" data-level="2.12.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rdata"><i class="fa fa-check"></i><b>2.12.4</b> RDATA</a></li>
 </ul></li>
-<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a>
-<ul>
+<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a><ul>
 <li class="chapter" data-level="2.13.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.13.1</b> Ejercicio 1:</a></li>
 <li class="chapter" data-level="2.13.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.13.2</b> Ejercicio 2:</a></li>
 <li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="programando-con-r.html"><a href="programando-con-r.html"><i class="fa fa-check"></i><b>3</b> Programando con R</a>
-<ul>
+<li class="chapter" data-level="3" data-path="programando-con-r.html"><a href="programando-con-r.html"><i class="fa fa-check"></i><b>3</b> Programando con R</a><ul>
 <li class="chapter" data-level="3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#operadores-relacionales-y-lógicos"><i class="fa fa-check"></i><b>3.1</b> Operadores relacionales y lógicos</a></li>
 <li class="chapter" data-level="3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#consultas-lógicas"><i class="fa fa-check"></i><b>3.2</b> Consultas lógicas</a></li>
-<li class="chapter" data-level="3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo"><i class="fa fa-check"></i><b>3.3</b> Control de flujo</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo"><i class="fa fa-check"></i><b>3.3</b> Control de flujo</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#condicionales-if-else"><i class="fa fa-check"></i><b>3.3.1</b> Condicionales (if, else)</a></li>
 <li class="chapter" data-level="3.3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#bucles-while-for"><i class="fa fa-check"></i><b>3.3.2</b> Bucles (while, for)</a></li>
+<li class="chapter" data-level="3.3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo-1"><i class="fa fa-check"></i><b>3.3.3</b> Control de flujo</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones"><i class="fa fa-check"></i><b>3.4</b> Funciones</a>
-<ul>
+<li class="chapter" data-level="3.4" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones"><i class="fa fa-check"></i><b>3.4</b> Funciones</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="programando-con-r.html"><a href="programando-con-r.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4.1</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones-de-la-familia-apply"><i class="fa fa-check"></i><b>3.5</b> Funciones de la familia apply</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones-de-la-familia-apply"><i class="fa fa-check"></i><b>3.5</b> Funciones de la familia apply</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="programando-con-r.html"><a href="programando-con-r.html#apply"><i class="fa fa-check"></i><b>3.5.1</b> apply():</a></li>
 <li class="chapter" data-level="3.5.2" data-path="programando-con-r.html"><a href="programando-con-r.html#tapply"><i class="fa fa-check"></i><b>3.5.2</b> tapply()</a></li>
 <li class="chapter" data-level="3.5.3" data-path="programando-con-r.html"><a href="programando-con-r.html#lapply"><i class="fa fa-check"></i><b>3.5.3</b> lapply()</a></li>
@@ -209,14 +199,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5.5" data-path="programando-con-r.html"><a href="programando-con-r.html#vapply"><i class="fa fa-check"></i><b>3.5.5</b> vapply()</a></li>
 <li class="chapter" data-level="3.5.6" data-path="programando-con-r.html"><a href="programando-con-r.html#rapply"><i class="fa fa-check"></i><b>3.5.6</b> rapply()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos"><i class="fa fa-check"></i><b>3.6</b> Gráficos</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos"><i class="fa fa-check"></i><b>3.6</b> Gráficos</a><ul>
 <li class="chapter" data-level="3.6.1" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>3.6.1</b> Gráficos de dispersión</a></li>
 <li class="chapter" data-level="3.6.2" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-líneas"><i class="fa fa-check"></i><b>3.6.2</b> Gráficos de líneas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="programando-con-r.html"><a href="programando-con-r.html#estilo-tidyverse"><i class="fa fa-check"></i><b>3.7</b> Estilo tidyverse</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="programando-con-r.html"><a href="programando-con-r.html#estilo-tidyverse"><i class="fa fa-check"></i><b>3.7</b> Estilo tidyverse</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="programando-con-r.html"><a href="programando-con-r.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.7.1</b> Data Transformation con dplyr</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>4</b> Rmarkdown</a><ul>
+<li class="chapter" data-level="4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>4.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>4.3</b> Inclusión de código R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos-1"><i class="fa fa-check"></i><b>4.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>4.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>4.4</b> Tablas</a></li>
+<li class="chapter" data-level="4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>4.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="4.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>4.6</b> Spin</a></li>
+<li class="chapter" data-level="4.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>4.7</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>5</b> Control de versiones</a><ul>
+<li class="chapter" data-level="5.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>5.1</b> Git</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>5.1.1</b> Configuración</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>5.2</b> Inicializando un repositorio</a></li>
+<li class="chapter" data-level="5.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>5.3</b> Commiting</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>5.3.1</b> Historial de registros</a></li>
+<li class="chapter" data-level="5.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>5.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>5.4</b> Sincronizar RStudio y GitHub</a></li>
+<li class="chapter" data-level="5.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>5.5</b> Pull request</a></li>
+<li class="chapter" data-level="5.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>5.6</b> Merge conflicts</a></li>
+<li class="chapter" data-level="5.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>5.7</b> Resumen</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>5.7.1</b> ¿Cómo puedo hacer un README?</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -240,11 +256,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introducción-a-r" class="section level1" number="2">
+<div id="introducción-a-r" class="section level1">
 <h1><span class="header-section-number">2</span> Introducción a R</h1>
-<div id="instalación-de-r-rstudio-y-rtools" class="section level2" number="2.1">
+<div id="instalación-de-r-rstudio-y-rtools" class="section level2">
 <h2><span class="header-section-number">2.1</span> Instalación de R, RStudio y RTools</h2>
-<div id="r" class="section level3" number="2.1.1">
+<div id="r" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> R</h3>
 <p style="text-align: justify;">
 Distribución e instalación - Para instalar R hay que bajar un fichero ejecutable de la página web del proyecto R: <a href="http://www.r-project.org/"><strong>http://www.r-project.org/</strong></a> - Actualmente (Mayo 2021), la versión más reciente de R para el entorno Windows es la 4.1.0 y el ejecutable de tamaño aproximadamente 86Mb tiene el nombre R-4.1.0-win.exe - Una vez bajado este ejecutable, hay que ejecutarlo y seguir las instrucciones del programa de instalación.
@@ -253,7 +269,7 @@ Distribución e instalación - Para instalar R hay que bajar un fichero ejecutab
 <img width="300" src="https://cran.r-project.org/Rlogo.svg">
 </p>
 </div>
-<div id="rstudio" class="section level3" number="2.1.2">
+<div id="rstudio" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Rstudio</h3>
 <p style="text-align: justify;">
 RStudio es un editor para scripts disponible para usuarios de R en todos los sistemas operativos. - Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R. - La versión en pruebas es gratuita y está disponible en <a href="http://www.rstudio.org/"><strong>http://www.rstudio.org/</strong></a> - La ventaja de este editor es que ofrece una serie de opciones no existentes en R, entre otras, por ejemplo, comprobar rápidamente que ningún paréntesis queda sin cerrarse o marcar, copiar y pegar columnas. - Pero además nos da un listado de las variables y nos da una descripción de los bancos de datos que hemos introducido. También tiene una lista de los paquetes instalados y los gráficos realizados.
@@ -262,7 +278,7 @@ RStudio es un editor para scripts disponible para usuarios de R en todos los sis
 <img width="400" src="fig/s01_rstudio_logo.png">
 </p>
 </div>
-<div id="rtools" class="section level3" number="2.1.3">
+<div id="rtools" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> RTools</h3>
 <p style="text-align: justify;">
 Herramientas para construir paquetes de R. Esto es lo que desea para construir sus propios paquetes en Windows, o para construir R por sí mismo.
@@ -278,7 +294,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </p>
 </div>
 </div>
-<div id="qué-es-r" class="section level2" number="2.2">
+<div id="qué-es-r" class="section level2">
 <h2><span class="header-section-number">2.2</span> ¿Qué es R?</h2>
 <p style='text-align: justify;'>
 <ul>
@@ -306,7 +322,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </p></li>
 </ul>
 </div>
-<div id="qué-es-rstudio" class="section level2" number="2.3">
+<div id="qué-es-rstudio" class="section level2">
 <h2><span class="header-section-number">2.3</span> ¿Qué es RStudio?</h2>
 <p style='text-align: justify;'>
 <ul>
@@ -315,7 +331,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </ul>
 <p style='text-align: justify;'>
 <ul>
-<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕚 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
+<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕖 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
 </p></li>
 </ul>
 <p style='text-align: justify;'>
@@ -334,7 +350,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </p></li>
 </ul>
 </div>
-<div id="qué-otros-ides-existen-para-r" class="section level2" number="2.4">
+<div id="qué-otros-ides-existen-para-r" class="section level2">
 <h2><span class="header-section-number">2.4</span> ¿Qué otros IDE’s existen para R?</h2>
 <ul>
 <li>Tinn-R</li>
@@ -346,7 +362,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 <li>Eclipse</li>
 </ul>
 </div>
-<div id="diferencias-entre-paquetes-y-librerías" class="section level2" number="2.5">
+<div id="diferencias-entre-paquetes-y-librerías" class="section level2">
 <h2><span class="header-section-number">2.5</span> Diferencias entre paquetes y librerías</h2>
 <p>En el caso de la función <code>library()</code>, en muchas ocasiones existe la confusión entre un paquete y una librería, y podemos encontrarnos con gente llamando “librerías” a los paquetes.</p>
 <p>Una cosa es la función <code>library()</code> usada para cargar un paquete, y que se refiere al lugar en dónde el paquete es localizado, habitualmente una carpeta en nuestro ordenador, y otra un paquete que es una colección de funciones y datos empaquetados de forma conveniente.</p>
@@ -355,22 +371,22 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 <img width="400" src="fig/s01_difference_library.png">
 </p>
 <p>De igual manera, para recordar la diferencia es ejecutar la función library() sin argumentos. Esto nos proporcionará una lista de paquetes instalados en diferentes librerías en nuestro ordenador.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducción-a-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages</span></span>
-<span id="cb1-2"><a href="introducción-a-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb1-3"><a href="introducción-a-r.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb1-4"><a href="introducción-a-r.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="introducción-a-r.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># You can also use &quot;pacman&quot; package to install</span></span>
-<span id="cb1-6"><a href="introducción-a-r.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  an loading other packages</span></span>
-<span id="cb1-7"><a href="introducción-a-r.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) {</span>
-<span id="cb1-8"><a href="introducción-a-r.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
-<span id="cb1-9"><a href="introducción-a-r.html#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-10"><a href="introducción-a-r.html#cb1-10" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
-<span id="cb1-11"><a href="introducción-a-r.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  tidyverse, formatR, knitr, rmdformats, pander, labelled, readxl, magrittr, kableExtra</span>
-<span id="cb1-12"><a href="introducción-a-r.html#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducción-a-r.html#cb1-1"></a><span class="co"># Install packages</span></span>
+<span id="cb1-2"><a href="introducción-a-r.html#cb1-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb1-3"><a href="introducción-a-r.html#cb1-3"></a><span class="co"># Load packages</span></span>
+<span id="cb1-4"><a href="introducción-a-r.html#cb1-4"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="introducción-a-r.html#cb1-5"></a><span class="co"># You can also use &quot;pacman&quot; package to install</span></span>
+<span id="cb1-6"><a href="introducción-a-r.html#cb1-6"></a><span class="co">#  an loading other packages</span></span>
+<span id="cb1-7"><a href="introducción-a-r.html#cb1-7"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;pacman&quot;</span>)) {</span>
+<span id="cb1-8"><a href="introducción-a-r.html#cb1-8"></a>  <span class="kw">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb1-9"><a href="introducción-a-r.html#cb1-9"></a>}</span>
+<span id="cb1-10"><a href="introducción-a-r.html#cb1-10"></a>pacman<span class="op">::</span><span class="kw">p_load</span>(</span>
+<span id="cb1-11"><a href="introducción-a-r.html#cb1-11"></a>  tidyverse, formatR, knitr, rmdformats, pander, labelled, readxl, magrittr, kableExtra</span>
+<span id="cb1-12"><a href="introducción-a-r.html#cb1-12"></a>)</span></code></pre></div>
 </div>
-<div id="tipos-de-lenguajes-de-programación" class="section level2" number="2.6">
+<div id="tipos-de-lenguajes-de-programación" class="section level2">
 <h2><span class="header-section-number">2.6</span> Tipos de lenguajes de programación</h2>
-<div id="lenguaje-compilado" class="section level3" number="2.6.1">
+<div id="lenguaje-compilado" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> Lenguaje compilado</h3>
 <p style="text-align: justify;">
 Son aquellos lenguajes de alto nivel que como su nombre lo sugiere, requieren de un compilador (programa que traduce un lenguaje de alto nivel en código máquina o lenguaje máquina) para traducirlo y crear la parte ejecutable.
@@ -380,7 +396,7 @@ Son aquellos lenguajes de alto nivel que como su nombre lo sugiere, requieren de
 <li>Go</li>
 </ul>
 </div>
-<div id="lenguaje-interpretado" class="section level3" number="2.6.2">
+<div id="lenguaje-interpretado" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Lenguaje interpretado</h3>
 <p style="text-align: justify;">
 Son aquellos lenguajes de programación también de alto nivel en donde el código fuente debe ser traducido a un lenguaje que la máquina entienda y pueda realizar, no crean un archivo externo.
@@ -395,7 +411,7 @@ Son aquellos lenguajes de programación también de alto nivel en donde el códi
 Los lenguajes de alto nivel permiten escribir instrucciones en un idioma muy parecido al inglés así como hacer uso de notaciones matemáticas comunes.
 </p>
 </div>
-<div id="lenguaje-intermedio" class="section level3" number="2.6.3">
+<div id="lenguaje-intermedio" class="section level3">
 <h3><span class="header-section-number">2.6.3</span> Lenguaje intermedio</h3>
 <p style="text-align: justify;">
 Los lenguajes intermedios son compilados hacia programas intermedios y luego interpretados, esto permite que pueda ser ejecutado desde cualquier sistema operativo sin necesidad de crear ejecutables.
@@ -409,14 +425,14 @@ Los lenguajes intermedios son compilados hacia programas intermedios y luego int
 </p>
 </div>
 </div>
-<div id="paradigmas-de-programación" class="section level2" number="2.7">
+<div id="paradigmas-de-programación" class="section level2">
 <h2><span class="header-section-number">2.7</span> Paradigmas de programación</h2>
 <p>Un paradigma de programación es una manera o estilo de programación de software. Se trata de un conjunto de métodos sistemáticos aplicables en todos los niveles del diseño de programas para resolver problemas computacionales.</p>
-<div id="programación-orientado-a-objetos" class="section level3" number="2.7.1">
+<div id="programación-orientado-a-objetos" class="section level3">
 <h3><span class="header-section-number">2.7.1</span> Programación Orientado a Objetos</h3>
 <p>Se construyen modelos de objetos que representan elementos (objetos) del problema a resolver, que tienen características y funciones. Permite separar los diferentes componentes de un programa, simplificando así su creación, depuración y posteriores mejoras. La programación orientada a objetos disminuye los errores y promociona la reutilización del código. Es una manera especial de programar, que se acerca de alguna manera a cómo expresaríamos las cosas en la vida real.</p>
 </div>
-<div id="programación-funcional" class="section level3" number="2.7.2">
+<div id="programación-funcional" class="section level3">
 <h3><span class="header-section-number">2.7.2</span> Programación Funcional</h3>
 <p>La programación funcional es un paradigma declarativo. Nos enfocaremos en “qué” estamos haciendo y no en “cómo” se está haciendo que sería el enfoque imperativo. Esto quiere decir que se expresa nuestra lógica sin describir controles de flujo, ni ciclos ni condicionales.</p>
 <p align="center">
@@ -424,18 +440,18 @@ Los lenguajes intermedios son compilados hacia programas intermedios y luego int
 </p>
 </div>
 </div>
-<div id="ambiente-de-trabajo-en-rstudio" class="section level2" number="2.8">
+<div id="ambiente-de-trabajo-en-rstudio" class="section level2">
 <h2><span class="header-section-number">2.8</span> Ambiente de trabajo en RStudio</h2>
 <p align="center">
 <img width="800"src="fig/s01_rstudio_ide.png">
 </p>
 </div>
-<div id="mi-primer-hello-world" class="section level2" number="2.9">
+<div id="mi-primer-hello-world" class="section level2">
 <h2><span class="header-section-number">2.9</span> Mi primer “Hello world”</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introducción-a-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello world&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introducción-a-r.html#cb2-1"></a><span class="kw">print</span>(<span class="st">&quot;Hello world&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello world&quot;</code></pre>
 </div>
-<div id="tipos-de-datos-en-r" class="section level2" number="2.10">
+<div id="tipos-de-datos-en-r" class="section level2">
 <h2><span class="header-section-number">2.10</span> Tipos de datos en R</h2>
 <p style="text-align: justify;">
 R es capaz de manejar una variedad de tipos de datos, que se almacenan en diferentes estructuras como se puede observar en la siguiente tabla:
@@ -487,7 +503,7 @@ R es capaz de manejar una variedad de tipos de datos, que se almacenan en difere
 </tbody>
 </table>
 </div>
-<div id="tipos-de-estructuras-de-datos" class="section level2" number="2.11">
+<div id="tipos-de-estructuras-de-datos" class="section level2">
 <h2><span class="header-section-number">2.11</span> Tipos de estructuras de datos</h2>
 <table>
 <thead>
@@ -535,84 +551,84 @@ R es capaz de manejar una variedad de tipos de datos, que se almacenan en difere
 </tr>
 </tbody>
 </table>
-<div id="asignación-de-objetos" class="section level3" number="2.11.1">
+<div id="asignación-de-objetos" class="section level3">
 <h3><span class="header-section-number">2.11.1</span> Asignación de objetos</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introducción-a-r.html#cb4-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">58</span>, <span class="dv">456</span>, <span class="dv">56</span>, <span class="dv">5</span>)</span>
-<span id="cb4-2"><a href="introducción-a-r.html#cb4-2" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introducción-a-r.html#cb4-1"></a>obj &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">58</span>, <span class="dv">456</span>, <span class="dv">56</span>, <span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="introducción-a-r.html#cb4-2"></a>obj</span></code></pre></div>
 <pre><code>## [1]   5   2   6  58 456  56   5</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introducción-a-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">58</span>, <span class="dv">456</span>, <span class="dv">56</span>, <span class="dv">5</span>) <span class="ot">-&gt;</span> obj</span>
-<span id="cb6-2"><a href="introducción-a-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introducción-a-r.html#cb6-1"></a><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">58</span>, <span class="dv">456</span>, <span class="dv">56</span>, <span class="dv">5</span>) -&gt;<span class="st"> </span>obj</span>
+<span id="cb6-2"><a href="introducción-a-r.html#cb6-2"></a>obj</span></code></pre></div>
 <pre><code>## [1]   5   2   6  58 456  56   5</code></pre>
 </div>
-<div id="vector" class="section level3" number="2.11.2">
+<div id="vector" class="section level3">
 <h3><span class="header-section-number">2.11.2</span> Vector</h3>
 <ul>
 <li>Es el lemento más básico en R.</li>
 <li>Contiene elementos de la misma clase (son atómicos).</li>
 <li>Se crea con la función c(), que significa ‘concatenar’ o ‘combinar’.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a>vector01 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">26</span>)</span>
-<span id="cb8-2"><a href="introducción-a-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a>vector01</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r.html#cb8-1"></a>vector01 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">26</span>)</span>
+<span id="cb8-2"><a href="introducción-a-r.html#cb8-2"></a>vector01</span></code></pre></div>
 <pre><code>## [1]  1  2  4  7 10 11 12 19 26</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introducción-a-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a>vector02 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;g&quot;</span>, <span class="st">&quot;j&quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;s&quot;</span>, <span class="st">&quot;z&quot;</span>)</span>
-<span id="cb10-2"><a href="introducción-a-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a>vector02</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introducción-a-r.html#cb10-1"></a>vector02 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;g&quot;</span>, <span class="st">&quot;j&quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;s&quot;</span>, <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb10-2"><a href="introducción-a-r.html#cb10-2"></a>vector02</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot; &quot;g&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;s&quot; &quot;z&quot;</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introducción-a-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a>vector03 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;jorge&quot;</span>, <span class="st">&quot;roy&quot;</span>, <span class="st">&quot;daniel&quot;</span>, <span class="st">&quot;cesar&quot;</span>, <span class="st">&quot;patin&quot;</span>, <span class="dv">254</span>, <span class="dv">265</span>)</span>
-<span id="cb12-2"><a href="introducción-a-r.html#cb12-2" aria-hidden="true" tabindex="-1"></a>vector03</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introducción-a-r.html#cb12-1"></a>vector03 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;jorge&quot;</span>, <span class="st">&quot;roy&quot;</span>, <span class="st">&quot;daniel&quot;</span>, <span class="st">&quot;cesar&quot;</span>, <span class="st">&quot;patin&quot;</span>, <span class="dv">254</span>, <span class="dv">265</span>)</span>
+<span id="cb12-2"><a href="introducción-a-r.html#cb12-2"></a>vector03</span></code></pre></div>
 <pre><code>## [1] &quot;jorge&quot;  &quot;roy&quot;    &quot;daniel&quot; &quot;cesar&quot;  &quot;patin&quot;  &quot;254&quot;    &quot;265&quot;</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introducción-a-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>vector04 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb14-2"><a href="introducción-a-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a>vector04</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introducción-a-r.html#cb14-1"></a>vector04 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb14-2"><a href="introducción-a-r.html#cb14-2"></a>vector04</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE</code></pre>
-<div id="algunas-operaciones-con-vectores" class="section level4" number="2.11.2.1">
+<div id="algunas-operaciones-con-vectores" class="section level4">
 <h4><span class="header-section-number">2.11.2.1</span> Algunas operaciones con vectores</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introducción-a-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># indexar vectores</span></span>
-<span id="cb16-2"><a href="introducción-a-r.html#cb16-2" aria-hidden="true" tabindex="-1"></a>vector01</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introducción-a-r.html#cb16-1"></a><span class="co"># indexar vectores</span></span>
+<span id="cb16-2"><a href="introducción-a-r.html#cb16-2"></a>vector01</span></code></pre></div>
 <pre><code>## [1]  1  2  4  7 10 11 12 19 26</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introducción-a-r.html#cb18-1" aria-hidden="true" tabindex="-1"></a>vector01[<span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introducción-a-r.html#cb18-1"></a>vector01[<span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introducción-a-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluar la naturaleza del vector</span></span>
-<span id="cb20-2"><a href="introducción-a-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> vector01[<span class="dv">4</span>]</span>
-<span id="cb20-3"><a href="introducción-a-r.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introducción-a-r.html#cb20-1"></a><span class="co"># evaluar la naturaleza del vector</span></span>
+<span id="cb20-2"><a href="introducción-a-r.html#cb20-2"></a>a &lt;-<span class="st"> </span>vector01[<span class="dv">4</span>]</span>
+<span id="cb20-3"><a href="introducción-a-r.html#cb20-3"></a><span class="kw">is.vector</span>(a)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introducción-a-r.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introducción-a-r.html#cb22-1"></a><span class="kw">is.numeric</span>(a)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introducción-a-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introducción-a-r.html#cb24-1"></a><span class="kw">is.integer</span>(a)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introducción-a-r.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># operaciones con vectores</span></span>
-<span id="cb26-2"><a href="introducción-a-r.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(vector01)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introducción-a-r.html#cb26-1"></a><span class="co"># operaciones con vectores</span></span>
+<span id="cb26-2"><a href="introducción-a-r.html#cb26-2"></a><span class="kw">length</span>(vector01)</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="introducción-a-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a>(vector01 <span class="sc">*</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="dv">500</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="introducción-a-r.html#cb28-1"></a>(vector01 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="dv">500</span></span></code></pre></div>
 <pre><code>## [1] 502 504 508 514 520 522 524 538 552</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="introducción-a-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vector01)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="introducción-a-r.html#cb30-1"></a><span class="kw">sum</span>(vector01)</span></code></pre></div>
 <pre><code>## [1] 92</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introducción-a-r.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(vector01 <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="introducción-a-r.html#cb32-1"></a><span class="kw">sqrt</span>(vector01 <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.000000 1.000000 1.732051 2.449490 3.000000 3.162278 3.316625 4.242641
 ## [9] 5.000000</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="introducción-a-r.html#cb34-1" aria-hidden="true" tabindex="-1"></a>vector01 <span class="sc">+</span> (vector01 <span class="sc">*</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="introducción-a-r.html#cb34-1"></a>vector01 <span class="op">+</span><span class="st"> </span>(vector01 <span class="op">*</span><span class="st"> </span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  3  6 12 21 30 33 36 57 78</code></pre>
 </div>
-<div id="secuencias-numéricas" class="section level4" number="2.11.2.2">
+<div id="secuencias-numéricas" class="section level4">
 <h4><span class="header-section-number">2.11.2.2</span> Secuencias numéricas</h4>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="introducción-a-r.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># x:y puede leerse como “secuencia de x a(:) y”</span></span>
-<span id="cb36-2"><a href="introducción-a-r.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="introducción-a-r.html#cb36-1"></a><span class="co"># x:y puede leerse como “secuencia de x a(:) y”</span></span>
+<span id="cb36-2"><a href="introducción-a-r.html#cb36-2"></a><span class="dv">1</span><span class="op">:</span><span class="dv">20</span></span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introducción-a-r.html#cb38-1" aria-hidden="true" tabindex="-1"></a>pi<span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="introducción-a-r.html#cb38-1"></a>pi<span class="op">:</span><span class="dv">10</span></span></code></pre></div>
 <pre><code>## [1] 3.141593 4.141593 5.141593 6.141593 7.141593 8.141593 9.141593</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introducción-a-r.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span><span class="sc">:</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introducción-a-r.html#cb40-1"></a><span class="dv">15</span><span class="op">:</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>##  [1] 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="introducción-a-r.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># seq(x,y,by,length) puede leerse como “secuencia de x a(:) y” con</span></span>
-<span id="cb42-2"><a href="introducción-a-r.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;by&quot; incrementos o &quot;length&quot; de elementos</span></span>
-<span id="cb42-3"><a href="introducción-a-r.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="introducción-a-r.html#cb42-1"></a><span class="co"># seq(x,y,by,length) puede leerse como “secuencia de x a(:) y” con</span></span>
+<span id="cb42-2"><a href="introducción-a-r.html#cb42-2"></a><span class="co"># &quot;by&quot; incrementos o &quot;length&quot; de elementos</span></span>
+<span id="cb42-3"><a href="introducción-a-r.html#cb42-3"></a><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>)</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introducción-a-r.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>, <span class="at">by =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="introducción-a-r.html#cb44-1"></a><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>, <span class="dt">by =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1]  0  3  6  9 12 15 18 21</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introducción-a-r.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>, <span class="at">length =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="introducción-a-r.html#cb46-1"></a><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">21</span>, <span class="dt">length =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##  [1]  0.000000  1.105263  2.210526  3.315789  4.421053  5.526316  6.631579
 ##  [8]  7.736842  8.842105  9.947368 11.052632 12.157895 13.263158 14.368421
 ## [15] 15.473684 16.578947 17.684211 18.789474 19.894737 21.000000</code></pre>
 </div>
 </div>
-<div id="factor" class="section level3" number="2.11.3">
+<div id="factor" class="section level3">
 <h3><span class="header-section-number">2.11.3</span> Factor</h3>
 <p style="text-align: justify;">
 En R, los factores se usan para trabajar con variables categóricas, es decir, variables que tienen un conjunto fijo y conocido de valores posibles. También son útiles cuando quieres mostrar vectores de caracteres en un orden no alfabético.
@@ -624,34 +640,34 @@ Históricamente, los factores eran más sencillos de trabajar que los caracteres
 Si quieres aprender más sobre factores, te recomendamos leer el artículo de Amelia McNamara y Nicholas Horton, <a href="https://peerj.com/preprints/3163/"><strong>Wrangling categorical data in R</strong></a> (el nombre significa Domando/Manejando Datos Categóricos en R). Este artículo cuenta parte de la historia discutida en <a href="https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/"><strong>stringsAsFactors: An unauthorized biography</strong></a> (del inglés cadenasComoFactores: Una Biografía No Autorizada) y <a href="https://notstatschat.tumblr.com/post/124987394001/stringsasfactors-sigh"><strong>stringsAsFactors = <sigh></strong></a> (del inglés cadenasComoFactores = <suspiro>), y compara las propuestas tidy para los datos categóricos demostrados en este libro, en comparación a los métodos de R base. Una versión temprana de este artículo ayudó a motivar y definir el alcance del paquete forcats. ¡Gracias Amelia y Nick!
 </p>
 <p>Imagina que tienes una variable que registra meses:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introducción-a-r.html#cb48-1" aria-hidden="true" tabindex="-1"></a>vect01 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="introducción-a-r.html#cb48-1"></a>vect01 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>)</span></code></pre></div>
 <p>Usar una cadena de caracteres (o string, en inglés) para guardar esta variable tiene dos problemas:</p>
 <ol style="list-style-type: decimal">
 <li>Solo hay doce meses posibles y no hay nada que te resguarde de errores de tipeo:</li>
 </ol>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="introducción-a-r.html#cb49-1" aria-hidden="true" tabindex="-1"></a>vect02 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Jam&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="introducción-a-r.html#cb49-1"></a>vect02 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Jam&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Mar&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>No se ordena de una forma útil:</li>
 </ol>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introducción-a-r.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(vect02)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introducción-a-r.html#cb50-1"></a><span class="kw">sort</span>(vect02)</span></code></pre></div>
 <pre><code>## [1] &quot;Apr&quot; &quot;Dec&quot; &quot;Jam&quot; &quot;Jan&quot; &quot;Mar&quot; &quot;Mar&quot;</code></pre>
 <p>Puedes solucionar ambos problemas con un <code>factor</code>. Para crearlo, debes empezar definiendo una lista con los niveles válidos:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introducción-a-r.html#cb52-1" aria-hidden="true" tabindex="-1"></a>month_levels <span class="ot">&lt;-</span> month.abb</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="introducción-a-r.html#cb52-1"></a>month_levels &lt;-<span class="st"> </span>month.abb</span></code></pre></div>
 <p>Ahora puedes crear un factor:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="introducción-a-r.html#cb53-1" aria-hidden="true" tabindex="-1"></a>factor01 <span class="ot">&lt;-</span> <span class="fu">factor</span>(vect01, <span class="at">levels =</span> month_levels)</span>
-<span id="cb53-2"><a href="introducción-a-r.html#cb53-2" aria-hidden="true" tabindex="-1"></a>factor01</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="introducción-a-r.html#cb53-1"></a>factor01 &lt;-<span class="st"> </span><span class="kw">factor</span>(vect01, <span class="dt">levels =</span> month_levels)</span>
+<span id="cb53-2"><a href="introducción-a-r.html#cb53-2"></a>factor01</span></code></pre></div>
 <pre><code>## [1] Dec Apr Jan Mar Jan Mar
 ## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="introducción-a-r.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(factor01)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="introducción-a-r.html#cb55-1"></a><span class="kw">sort</span>(factor01)</span></code></pre></div>
 <pre><code>## [1] Jan Jan Mar Mar Apr Dec
 ## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
 <p>Cualquier valor no fijado en el conjunto será convertido a <code>NA</code> de forma silenciosa:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="introducción-a-r.html#cb57-1" aria-hidden="true" tabindex="-1"></a>factor02 <span class="ot">&lt;-</span> <span class="fu">factor</span>(vect02, <span class="at">levels =</span> month_levels)</span>
-<span id="cb57-2"><a href="introducción-a-r.html#cb57-2" aria-hidden="true" tabindex="-1"></a>factor02</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="introducción-a-r.html#cb57-1"></a>factor02 &lt;-<span class="st"> </span><span class="kw">factor</span>(vect02, <span class="dt">levels =</span> month_levels)</span>
+<span id="cb57-2"><a href="introducción-a-r.html#cb57-2"></a>factor02</span></code></pre></div>
 <pre><code>## [1] Dec  Apr  &lt;NA&gt; Mar  Jan  Mar 
 ## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
 <p>Si quieres una advertencia, puedes usar readr::parse_factor() (segmentar un factor, en inglés):</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="introducción-a-r.html#cb59-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">parse_factor</span>(vect02, <span class="at">levels =</span> month_levels)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="introducción-a-r.html#cb59-1"></a>readr<span class="op">::</span><span class="kw">parse_factor</span>(vect02, <span class="dt">levels =</span> month_levels)</span></code></pre></div>
 <pre><code>## Warning: 1 parsing failure.
 ## row col           expected actual
 ##   3  -- value in level set    Jam</code></pre>
@@ -663,49 +679,49 @@ Si quieres aprender más sobre factores, te recomendamos leer el artículo de Am
 ## 1     3    NA value in level set Jam   
 ## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
 <p>Si omites los niveles, se van a definir a partir de los datos en orden alfabético:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="introducción-a-r.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(vect01)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="introducción-a-r.html#cb62-1"></a><span class="kw">factor</span>(vect01)</span></code></pre></div>
 <pre><code>## [1] Dec Apr Jan Mar Jan Mar
 ## Levels: Apr Dec Jan Mar</code></pre>
 <p>A veces es preferible que el orden de los niveles se corresponda con su primera aparición en los datos. Puedes hacer esto cuando creas el factor, al definir los niveles con <code>unique(x)</code> o después con <code>fct_inorder()</code>.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introducción-a-r.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(vect01, <span class="at">levels =</span> <span class="fu">unique</span>(vect01))</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introducción-a-r.html#cb64-1"></a><span class="kw">factor</span>(vect01, <span class="dt">levels =</span> <span class="kw">unique</span>(vect01))</span></code></pre></div>
 <pre><code>## [1] Dec Apr Jan Mar Jan Mar
 ## Levels: Dec Apr Jan Mar</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="introducción-a-r.html#cb66-1" aria-hidden="true" tabindex="-1"></a>forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(<span class="fu">factor</span>(vect01))</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="introducción-a-r.html#cb66-1"></a>forcats<span class="op">::</span><span class="kw">fct_inorder</span>(<span class="kw">factor</span>(vect01))</span></code></pre></div>
 <pre><code>## [1] Dec Apr Jan Mar Jan Mar
 ## Levels: Dec Apr Jan Mar</code></pre>
 </div>
-<div id="matrix" class="section level3" number="2.11.4">
+<div id="matrix" class="section level3">
 <h3><span class="header-section-number">2.11.4</span> Matrix</h3>
 <p style="text-align: justify;">
 Una matriz es una <code>estructura bidimensional</code>. Las filas son horizontales y las columnas son verticales. <code>Una matriz de 4 por 3 (4 x 3), por ejemplo, tiene 4 filas y 3 columnas</code>. Las matrices se crean comúnmente usando tablas de datos numéricos como las de una hoja de cálculo de <code>Excel</code> o un archivo <code>csv</code>.
 </p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="introducción-a-r.html#cb68-1" aria-hidden="true" tabindex="-1"></a>vector01</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="introducción-a-r.html#cb68-1"></a>vector01</span></code></pre></div>
 <pre><code>## [1]  1  2  4  7 10 11 12 19 26</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="introducción-a-r.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(vector01)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="introducción-a-r.html#cb70-1"></a><span class="kw">dim</span>(vector01)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>Dado que la variable es un vector, no tiene un atributo <code>dim</code> (entonces es simplemente NULL).</p>
 <p>¿Qué ocurre si le damos a <code>vector01</code> un atributo <code>dim</code>?</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="introducción-a-r.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(vector01) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb72-2"><a href="introducción-a-r.html#cb72-2" aria-hidden="true" tabindex="-1"></a>vector01</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="introducción-a-r.html#cb72-1"></a><span class="kw">dim</span>(vector01) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb72-2"><a href="introducción-a-r.html#cb72-2"></a>vector01</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    7   12
 ## [2,]    2   10   19
 ## [3,]    4   11   26</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="introducción-a-r.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vector01)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="introducción-a-r.html#cb74-1"></a><span class="kw">class</span>(vector01)</span></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
 <p style="text-align: justify;">
 El ejemplo que utilizamos hasta ahora tenía la intención de ilustrar la idea de que una matriz es simplemente un vector con un atributo de dimensión.
 </p>
 <p>Un método más directo para crear la misma matriz utiliza la función matrix.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="introducción-a-r.html#cb76-1" aria-hidden="true" tabindex="-1"></a>matrix01 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(vector01, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span>
-<span id="cb76-2"><a href="introducción-a-r.html#cb76-2" aria-hidden="true" tabindex="-1"></a>matrix01</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="introducción-a-r.html#cb76-1"></a>matrix01 &lt;-<span class="st"> </span><span class="kw">matrix</span>(vector01, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> T)</span>
+<span id="cb76-2"><a href="introducción-a-r.html#cb76-2"></a>matrix01</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    4
 ## [2,]    7   10   11
 ## [3,]   12   19   26</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="introducción-a-r.html#cb78-1" aria-hidden="true" tabindex="-1"></a>arboles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Tipuana tipu&quot;</span>, <span class="st">&quot;Myrsine andina&quot;</span>, <span class="st">&quot;Salix humboldtiana&quot;</span>)</span>
-<span id="cb78-2"><a href="introducción-a-r.html#cb78-2" aria-hidden="true" tabindex="-1"></a>matrix02 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(arboles, matrix01) <span class="co"># column bind o juntar por columna.</span></span>
-<span id="cb78-3"><a href="introducción-a-r.html#cb78-3" aria-hidden="true" tabindex="-1"></a>matrix02</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="introducción-a-r.html#cb78-1"></a>arboles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tipuana tipu&quot;</span>, <span class="st">&quot;Myrsine andina&quot;</span>, <span class="st">&quot;Salix humboldtiana&quot;</span>)</span>
+<span id="cb78-2"><a href="introducción-a-r.html#cb78-2"></a>matrix02 &lt;-<span class="st"> </span><span class="kw">cbind</span>(arboles, matrix01) <span class="co"># column bind o juntar por columna.</span></span>
+<span id="cb78-3"><a href="introducción-a-r.html#cb78-3"></a>matrix02</span></code></pre></div>
 <pre><code>##      arboles                            
 ## [1,] &quot;Tipuana tipu&quot;       &quot;1&quot;  &quot;2&quot;  &quot;4&quot; 
 ## [2,] &quot;Myrsine andina&quot;     &quot;7&quot;  &quot;10&quot; &quot;11&quot;
@@ -713,16 +729,16 @@ El ejemplo que utilizamos hasta ahora tenía la intención de ilustrar la idea d
 <p style="text-align: justify;">
 Esto se llama <strong>coerción implícita</strong> porque no lo hemos pedido. Solo sucedió. Sin embargo, todavía se desea trabajar con diferentes tipos de datos.
 </p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="introducción-a-r.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(matrix02)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="introducción-a-r.html#cb80-1"></a><span class="kw">class</span>(matrix02)</span></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="introducción-a-r.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matrix02)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="introducción-a-r.html#cb82-1"></a><span class="kw">dim</span>(matrix02)</span></code></pre></div>
 <pre><code>## [1] 3 4</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="introducción-a-r.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matrix02)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="introducción-a-r.html#cb84-1"></a><span class="kw">rownames</span>(matrix02)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="introducción-a-r.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(matrix02)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="introducción-a-r.html#cb86-1"></a><span class="kw">colnames</span>(matrix02)</span></code></pre></div>
 <pre><code>## [1] &quot;arboles&quot; &quot;&quot;        &quot;&quot;        &quot;&quot;</code></pre>
 </div>
-<div id="data-frame" class="section level3" number="2.11.5">
+<div id="data-frame" class="section level3">
 <h3><span class="header-section-number">2.11.5</span> Data Frame</h3>
 <p style="text-align: justify;">
 Un data frame es una estructura de datos bidimensional similar a una matriz, pero funciona de manera muy diferente. Si bien un data frame parece una tabla simple, de hecho es una lista de vectores de la misma longitud. Para los nuevos usuarios de R, las matrices y los data frames parecen similares. La principal diferencia es que un data frame permite tipos de datos mixtos (por ejemplo, numérico, lógico, caracter). Esto les permite almacenar diferentes tipos de variables, lo cual es muy útil en el análisis estadístico. Por ejemplo, en un análisis de regresión. Las matrices se usan principalmente para almacenar datos numéricos, y se pueden usar para álgebra matricial.
@@ -733,37 +749,37 @@ Matrices y Data Frames, ambos representan tipos de datos <strong>rectangulares</
 <p style="text-align: justify;">
 La principal diferencia, es que las <strong>matrices</strong> solo pueden contener una única clase de datos (al igual que los vectores), mientras que los <strong>dataframes</strong> pueden consistir de muchas clases diferentes de datos.
 </p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="introducción-a-r.html#cb88-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># se crea un data frame (df)</span></span>
-<span id="cb88-2"><a href="introducción-a-r.html#cb88-2" aria-hidden="true" tabindex="-1"></a>df01 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(arboles, matrix01)</span>
-<span id="cb88-3"><a href="introducción-a-r.html#cb88-3" aria-hidden="true" tabindex="-1"></a>df01</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="introducción-a-r.html#cb88-1"></a> <span class="co"># se crea un data frame (df)</span></span>
+<span id="cb88-2"><a href="introducción-a-r.html#cb88-2"></a>df01 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(arboles, matrix01)</span>
+<span id="cb88-3"><a href="introducción-a-r.html#cb88-3"></a>df01</span></code></pre></div>
 <pre><code>##              arboles X1 X2 X3
 ## 1       Tipuana tipu  1  2  4
 ## 2     Myrsine andina  7 10 11
 ## 3 Salix humboldtiana 12 19 26</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="introducción-a-r.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df01)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="introducción-a-r.html#cb90-1"></a><span class="kw">class</span>(df01)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="introducción-a-r.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># podemos cambiar el nombre a las variables (columnas)</span></span>
-<span id="cb92-2"><a href="introducción-a-r.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df01) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;nombre_cientifico&quot;</span>, <span class="st">&quot;circunferencia&quot;</span>, <span class="st">&quot;diametro_copa&quot;</span>, <span class="st">&quot;altura&quot;</span> )</span>
-<span id="cb92-3"><a href="introducción-a-r.html#cb92-3" aria-hidden="true" tabindex="-1"></a>df01</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="introducción-a-r.html#cb92-1"></a><span class="co"># podemos cambiar el nombre a las variables (columnas)</span></span>
+<span id="cb92-2"><a href="introducción-a-r.html#cb92-2"></a><span class="kw">colnames</span>(df01) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;nombre_cientifico&quot;</span>, <span class="st">&quot;circunferencia&quot;</span>, <span class="st">&quot;diametro_copa&quot;</span>, <span class="st">&quot;altura&quot;</span> )</span>
+<span id="cb92-3"><a href="introducción-a-r.html#cb92-3"></a>df01</span></code></pre></div>
 <pre><code>##    nombre_cientifico circunferencia diametro_copa altura
 ## 1       Tipuana tipu              1             2      4
 ## 2     Myrsine andina              7            10     11
 ## 3 Salix humboldtiana             12            19     26</code></pre>
-<div id="conjunto-de-datos-en-r" class="section level4" number="2.11.5.1">
+<div id="conjunto-de-datos-en-r" class="section level4">
 <h4><span class="header-section-number">2.11.5.1</span> Conjunto de datos en R</h4>
 <p style="text-align: justify;">
 Varios conjuntos de datos tabulados o datasets se icluyen en la instalación de R (en el paquete datasets) y por defecto se ecuentran cargados para su uso. la funcion <code>data()</code> lista todos los <code>datasets de R</code>.
 </p>
 <p>Trabajemos con el dataset <code>iris</code> <strong>(Edgar Anderson’s Iris Data)</strong></p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="introducción-a-r.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="introducción-a-r.html#cb94-1"></a><span class="kw">str</span>(iris)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
 ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
 ##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
 ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="introducción-a-r.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># todas las observaciones de la columna &#39;Species&#39;</span></span>
-<span id="cb96-2"><a href="introducción-a-r.html#cb96-2" aria-hidden="true" tabindex="-1"></a>iris[, <span class="st">&quot;Species&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="introducción-a-r.html#cb96-1"></a><span class="co"># todas las observaciones de la columna &#39;Species&#39;</span></span>
+<span id="cb96-2"><a href="introducción-a-r.html#cb96-2"></a>iris[, <span class="st">&quot;Species&quot;</span>]</span></code></pre></div>
 <pre><code>##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
 ##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
 ##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
@@ -790,8 +806,8 @@ Varios conjuntos de datos tabulados o datasets se icluyen en la instalación de 
 ## [139] virginica  virginica  virginica  virginica  virginica  virginica 
 ## [145] virginica  virginica  virginica  virginica  virginica  virginica 
 ## Levels: setosa versicolor virginica</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="introducción-a-r.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se utiliza el caracter ‘$’ para acceder a los campos o columnas.</span></span>
-<span id="cb98-2"><a href="introducción-a-r.html#cb98-2" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Species</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="introducción-a-r.html#cb98-1"></a><span class="co"># Se utiliza el caracter ‘$’ para acceder a los campos o columnas.</span></span>
+<span id="cb98-2"><a href="introducción-a-r.html#cb98-2"></a>iris<span class="op">$</span>Species</span></code></pre></div>
 <pre><code>##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
 ##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
 ##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
@@ -819,7 +835,7 @@ Varios conjuntos de datos tabulados o datasets se icluyen en la instalación de 
 ## [145] virginica  virginica  virginica  virginica  virginica  virginica 
 ## Levels: setosa versicolor virginica</code></pre>
 <p>Cuando queremos extraer datos del data frame según una condicion, esto se complica.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="introducción-a-r.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>, ])</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="introducción-a-r.html#cb100-1"></a><span class="kw">head</span>(iris[iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>, ])</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -830,7 +846,7 @@ Varios conjuntos de datos tabulados o datasets se icluyen en la instalación de 
 <p style="text-align: justify;">
 Así mismo, si se desea obtener las observaciones donde el ancho del sépalo sea menor o igual a 3 y la especie sea “setosa”.
 </p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="introducción-a-r.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris[iris[, <span class="st">&quot;Sepal.Width&quot;</span>] <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> iris[, <span class="st">&quot;Species&quot;</span>] <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>, ])</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="introducción-a-r.html#cb102-1"></a><span class="kw">head</span>(iris[iris[, <span class="st">&quot;Sepal.Width&quot;</span>] <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span>iris[, <span class="st">&quot;Species&quot;</span>] <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>, ])</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 2           4.9         3.0          1.4         0.2  setosa
 ## 9           4.4         2.9          1.4         0.2  setosa
@@ -839,10 +855,10 @@ Así mismo, si se desea obtener las observaciones donde el ancho del sépalo sea
 ## 26          5.0         3.0          1.6         0.2  setosa
 ## 39          4.4         3.0          1.3         0.2  setosa</code></pre>
 </div>
-<div id="subsetting" class="section level4" number="2.11.5.2">
+<div id="subsetting" class="section level4">
 <h4><span class="header-section-number">2.11.5.2</span> Subsetting</h4>
 <p>La función <code>subset</code> nos facilita filtrar datos cuando queremos que se cumplan ciertas condiciones.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="introducción-a-r.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(iris, Sepal.Width <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="introducción-a-r.html#cb104-1"></a><span class="kw">subset</span>(iris, Sepal.Width <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>)</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 2           4.9         3.0          1.4         0.2  setosa
 ## 9           4.4         2.9          1.4         0.2  setosa
@@ -858,21 +874,21 @@ Así mismo, si se desea obtener las observaciones donde el ancho del sépalo sea
 <p>La tendencia en la comunidad R para el tratamiento de datos, comprende el uso de <a href="https://www.tidyverse.org/"><u><strong>tidyverse</strong></u></a>.</p>
 </div>
 </div>
-<div id="listas" class="section level3" number="2.11.6">
+<div id="listas" class="section level3">
 <h3><span class="header-section-number">2.11.6</span> Listas</h3>
 <p style="text-align: justify;">
 A diferencia de un vector, una lista es una colección de elementos que pueden ser de diferente tipo. Los componentes de una lista son típicamente pares <strong>clave-valor (key-value)</strong>. El siguiente ejemplo muestra cómo se puede almacenar un punto (con coordenas) en una lista.
 </p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="introducción-a-r.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Los elementos de la lista generalmente se acceden por nombre</span></span>
-<span id="cb106-2"><a href="introducción-a-r.html#cb106-2" aria-hidden="true" tabindex="-1"></a>coordenadas <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">15</span>)</span>
-<span id="cb106-3"><a href="introducción-a-r.html#cb106-3" aria-hidden="true" tabindex="-1"></a>coordenadas</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="introducción-a-r.html#cb106-1"></a><span class="co"># Los elementos de la lista generalmente se acceden por nombre</span></span>
+<span id="cb106-2"><a href="introducción-a-r.html#cb106-2"></a>coordenadas &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">10</span>, <span class="dt">y =</span> <span class="dv">15</span>)</span>
+<span id="cb106-3"><a href="introducción-a-r.html#cb106-3"></a>coordenadas</span></code></pre></div>
 <pre><code>## $x
 ## [1] 10
 ## 
 ## $y
 ## [1] 15</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="introducción-a-r.html#cb108-1" aria-hidden="true" tabindex="-1"></a>point <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">id =</span> <span class="dv">123</span>, <span class="at">coord =</span> coordenadas, <span class="at">spatial.reference =</span> <span class="st">&quot;WGS_84&quot;</span>)</span>
-<span id="cb108-2"><a href="introducción-a-r.html#cb108-2" aria-hidden="true" tabindex="-1"></a>point</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="introducción-a-r.html#cb108-1"></a>point &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">id =</span> <span class="dv">123</span>, <span class="dt">coord =</span> coordenadas, <span class="dt">spatial.reference =</span> <span class="st">&quot;WGS_84&quot;</span>)</span>
+<span id="cb108-2"><a href="introducción-a-r.html#cb108-2"></a>point</span></code></pre></div>
 <pre><code>## $id
 ## [1] 123
 ## 
@@ -886,25 +902,25 @@ A diferencia de un vector, una lista es una colección de elementos que pueden s
 ## 
 ## $spatial.reference
 ## [1] &quot;WGS_84&quot;</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="introducción-a-r.html#cb110-1" aria-hidden="true" tabindex="-1"></a>point<span class="sc">$</span>id</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="introducción-a-r.html#cb110-1"></a>point<span class="op">$</span>id</span></code></pre></div>
 <pre><code>## [1] 123</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="introducción-a-r.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># También podemos acceder a sus elementos de la siguiente manera</span></span>
-<span id="cb112-2"><a href="introducción-a-r.html#cb112-2" aria-hidden="true" tabindex="-1"></a>point[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="introducción-a-r.html#cb112-1"></a><span class="co"># También podemos acceder a sus elementos de la siguiente manera</span></span>
+<span id="cb112-2"><a href="introducción-a-r.html#cb112-2"></a>point[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## $id
 ## [1] 123</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="introducción-a-r.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(point[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="introducción-a-r.html#cb114-1"></a><span class="kw">class</span>(point[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="introducción-a-r.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para obtener el valor del elemento de la lista, use corchetes dobles</span></span>
-<span id="cb116-2"><a href="introducción-a-r.html#cb116-2" aria-hidden="true" tabindex="-1"></a>point[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="introducción-a-r.html#cb116-1"></a><span class="co"># Para obtener el valor del elemento de la lista, use corchetes dobles</span></span>
+<span id="cb116-2"><a href="introducción-a-r.html#cb116-2"></a>point[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## [1] 123</code></pre>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="introducción-a-r.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(point[[<span class="dv">1</span>]])</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="introducción-a-r.html#cb118-1"></a><span class="kw">class</span>(point[[<span class="dv">1</span>]])</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p style="text-align: justify;">
 La lista, en el ejemplo, tiene tres elementos de diferentes tipos de datos. <code>id</code> es numérico, <code>coord</code> es otra lista y <code>spatial.reference</code> es una cadena de caracteres. La lista <code>coord</code> contiene dos elementos numéricos, <code>x</code> e <code>y</code>. Generalmente, se accede a los elementos de la lista usando su nombre, en lugar de número. En particular, muchas estructuras de datos tienen elementos con nombre a los que se puede acceder utilizando los operadores <code>$</code> o <code>@</code>.
 </p>
 </div>
 </div>
-<div id="lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds" class="section level2" number="2.12">
+<div id="lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds" class="section level2">
 <h2><span class="header-section-number">2.12</span> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</h2>
 <p style="text-align: justify;">
 En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</strong> podemos importar conjuntos de datos o datasets con el asistente de importación. No es recomendable cuando debemos importar varios archivos o si se van a leer archivos grandes. Para lo cual es más eficiente usar código.
@@ -913,12 +929,12 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <img width="600" src="https://bookdown.org/chescosalgado/intro_r/img/manual_import.png
 ">
 </p>
-<div id="csv" class="section level3" number="2.12.1">
+<div id="csv" class="section level3">
 <h3><span class="header-section-number">2.12.1</span> CSV</h3>
 <p>Si conocemos la estructura de nuestros datos (por ejemplo, la primera fila es el título de las columnas o es un archivo separado por comas), Se pueden utilizar las funciones <strong><code>read.csv</code> (librería base) o <code>read_csv</code> (librería readr, de tidyverse)</strong>:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="introducción-a-r.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
-<span id="cb120-2"><a href="introducción-a-r.html#cb120-2" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;file.csv&#39;</span>)</span>
-<span id="cb120-3"><a href="introducción-a-r.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data01)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="introducción-a-r.html#cb120-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
+<span id="cb120-2"><a href="introducción-a-r.html#cb120-2"></a>data01 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;file.csv&#39;</span>)</span>
+<span id="cb120-3"><a href="introducción-a-r.html#cb120-3"></a><span class="kw">head</span>(data01)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -926,10 +942,10 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="introducción-a-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;tibble&#39;</span></span>
-<span id="cb122-2"><a href="introducción-a-r.html#cb122-2" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;file.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="introducción-a-r.html#cb122-1"></a><span class="co"># datos será un &#39;tibble&#39;</span></span>
+<span id="cb122-2"><a href="introducción-a-r.html#cb122-2"></a>data01 &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&#39;file.csv&#39;</span>)</span></code></pre></div>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   Sepal.Length = col_double(),
 ##   Sepal.Width = col_double(),
@@ -937,7 +953,7 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 ##   Petal.Width = col_double(),
 ##   Species = col_character()
 ## )</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="introducción-a-r.html#cb124-1" aria-hidden="true" tabindex="-1"></a>data01</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="introducción-a-r.html#cb124-1"></a>data01</span></code></pre></div>
 <pre><code>## # A tibble: 150 x 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
@@ -951,52 +967,56 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 ##  8          5           3.4          1.5         0.2 setosa 
 ##  9          4.4         2.9          1.4         0.2 setosa 
 ## 10          4.9         3.1          1.5         0.1 setosa 
-## # … with 140 more rows</code></pre>
+## # ... with 140 more rows</code></pre>
 <p>En otros casos, cuando <code>";"</code> es utilizado como el separador de campo y <code>","</code> para el punto decimal, se utiliza una variante de estas funciones.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="introducción-a-r.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
-<span id="cb126-2"><a href="introducción-a-r.html#cb126-2" aria-hidden="true" tabindex="-1"></a>data02 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;file.csv&#39;</span>, <span class="at">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="at">header =</span> T)</span>
-<span id="cb126-3"><a href="introducción-a-r.html#cb126-3" aria-hidden="true" tabindex="-1"></a>data02 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;file.csv&#39;</span>, <span class="at">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="at">header =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="introducción-a-r.html#cb126-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
+<span id="cb126-2"><a href="introducción-a-r.html#cb126-2"></a>data02 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;file.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="dt">header =</span> T)</span>
+<span id="cb126-3"><a href="introducción-a-r.html#cb126-3"></a>data02 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;file.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="dt">header =</span> F)</span></code></pre></div>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="introducción-a-r.html#cb127-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(<span class="at">x =</span> data02, <span class="at">file =</span> <span class="st">&quot;csv_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="introducción-a-r.html#cb127-1"></a>readr<span class="op">::</span><span class="kw">write_csv</span>(<span class="dt">x =</span> data02, <span class="dt">file =</span> <span class="st">&quot;csv_data.csv&quot;</span>)</span></code></pre></div>
 </div>
-<div id="excel" class="section level3" number="2.12.2">
+<div id="excel" class="section level3">
 <h3><span class="header-section-number">2.12.2</span> EXCEL</h3>
 <p>Es posible leer datos en la forma <code>.xls</code> o <code>.xlsx</code>. Existen distintos paquetes que nos permiten hacerlo:</p>
 <ul>
 <li>El paquete <strong>readxl</strong> contiene la función <code>read_excel</code>.</li>
 <li>El paquete <strong>xlsx</strong> y la función <code>read.xlsx</code></li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="introducción-a-r.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
-<span id="cb128-2"><a href="introducción-a-r.html#cb128-2" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&#39;file.xls&#39;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
-<span id="cb128-3"><a href="introducción-a-r.html#cb128-3" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> xlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(<span class="at">file =</span> <span class="st">&quot;file.xls&quot;</span>, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="introducción-a-r.html#cb128-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
+<span id="cb128-2"><a href="introducción-a-r.html#cb128-2"></a>data03 &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&#39;file.xls&#39;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb128-3"><a href="introducción-a-r.html#cb128-3"></a>data03 &lt;-<span class="st"> </span>xlsx<span class="op">::</span><span class="kw">read.xlsx</span>(<span class="dt">file =</span> <span class="st">&quot;file.xls&quot;</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## java.home option:</code></pre>
+<pre><code>## JAVA_HOME environment variable: C:\Program Files (x86)\Java\jre1.8.0_271</code></pre>
+<pre><code>## Warning in fun(libname, pkgname): Java home setting is INVALID, it will be ignored.
+## Please do NOT set it unless you want to override system settings.</code></pre>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="introducción-a-r.html#cb129-1" aria-hidden="true" tabindex="-1"></a>xlsx<span class="sc">::</span><span class="fu">write.xlsx</span>(</span>
-<span id="cb129-2"><a href="introducción-a-r.html#cb129-2" aria-hidden="true" tabindex="-1"></a>  data03, <span class="st">&quot;xlsx_data.xlsx&quot;</span>, <span class="at">sheetName =</span> <span class="st">&quot;Sheet1&quot;</span>, </span>
-<span id="cb129-3"><a href="introducción-a-r.html#cb129-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">append =</span> <span class="cn">FALSE</span></span>
-<span id="cb129-4"><a href="introducción-a-r.html#cb129-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="introducción-a-r.html#cb132-1"></a>xlsx<span class="op">::</span><span class="kw">write.xlsx</span>(</span>
+<span id="cb132-2"><a href="introducción-a-r.html#cb132-2"></a>  data03, <span class="st">&quot;xlsx_data.xlsx&quot;</span>, <span class="dt">sheetName =</span> <span class="st">&quot;Sheet1&quot;</span>, </span>
+<span id="cb132-3"><a href="introducción-a-r.html#cb132-3"></a>  <span class="dt">col.names =</span> <span class="ot">TRUE</span>, <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">append =</span> <span class="ot">FALSE</span></span>
+<span id="cb132-4"><a href="introducción-a-r.html#cb132-4"></a>)</span></code></pre></div>
 </div>
-<div id="rds" class="section level3" number="2.12.3">
+<div id="rds" class="section level3">
 <h3><span class="header-section-number">2.12.3</span> RDS</h3>
 <p>R proporciona dos formatos de archivo propios para almacenar datos, <strong>.RDS</strong> y <strong>.RData</strong> . Los archivos <strong>RDS</strong> pueden almacenar <strong>un solo objeto R</strong> y los archivos <strong>RData</strong> pueden almacenar <strong>varios objetos R</strong>.</p>
 <p>Puede abrir un archivo RDS con <code>readRDS</code>:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="introducción-a-r.html#cb130-1" aria-hidden="true" tabindex="-1"></a>data04 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;file.RDS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="introducción-a-r.html#cb133-1"></a>data04 &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;file.RDS&quot;</span>)</span></code></pre></div>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="introducción-a-r.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data04, <span class="at">file =</span> <span class="st">&quot;rds_data.RDS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="introducción-a-r.html#cb134-1"></a><span class="kw">saveRDS</span>(data04, <span class="dt">file =</span> <span class="st">&quot;rds_data.RDS&quot;</span>)</span></code></pre></div>
 </div>
-<div id="rdata" class="section level3" number="2.12.4">
+<div id="rdata" class="section level3">
 <h3><span class="header-section-number">2.12.4</span> RDATA</h3>
 <p>La escritura de estos datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="introducción-a-r.html#cb132-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb132-2"><a href="introducción-a-r.html#cb132-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb132-3"><a href="introducción-a-r.html#cb132-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb132-4"><a href="introducción-a-r.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(a, b, c, <span class="at">file =</span> <span class="st">&quot;stuff.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="introducción-a-r.html#cb135-1"></a>a &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb135-2"><a href="introducción-a-r.html#cb135-2"></a>b &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb135-3"><a href="introducción-a-r.html#cb135-3"></a>c &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb135-4"><a href="introducción-a-r.html#cb135-4"></a><span class="kw">save</span>(a, b, c, <span class="dt">file =</span> <span class="st">&quot;stuff.RData&quot;</span>)</span></code></pre></div>
 <p>Puede abrir un archivo RData con <code>load</code>:</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="introducción-a-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;stuff.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="introducción-a-r.html#cb136-1"></a><span class="kw">load</span>(<span class="st">&quot;stuff.RData&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="ejercicios" class="section level2" number="2.13">
+<div id="ejercicios" class="section level2">
 <h2><span class="header-section-number">2.13</span> Ejercicios:</h2>
-<div id="ejercicio-1" class="section level3" number="2.13.1">
+<div id="ejercicio-1" class="section level3">
 <h3><span class="header-section-number">2.13.1</span> Ejercicio 1:</h3>
 <ul>
 <li>Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.</li>
@@ -1006,7 +1026,7 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <p>Cuantos registros y columnas tiene?</p>
 <p>Imprimir la columna Magnitude y luego el registro numero 10 de esa columna</p>
 </div>
-<div id="ejercicio-2" class="section level3" number="2.13.2">
+<div id="ejercicio-2" class="section level3">
 <h3><span class="header-section-number">2.13.2</span> Ejercicio 2:</h3>
 <ul>
 <li>Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.</li>
@@ -1017,7 +1037,7 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <p>Convertir al distrito “Los Olivos” en el de más extrema pobreza la variable Incidencia. Luego explorar los datos.</p>
 <p>Crear un data frame que tenga todos los distritos de la región Ancash e Ica sin población en extrema pobreza</p>
 </div>
-<div id="ejercicio-3" class="section level3" number="2.13.3">
+<div id="ejercicio-3" class="section level3">
 <h3><span class="header-section-number">2.13.3</span> Ejercicio 3:</h3>
 <ul>
 <li><p>Nota 1: Recuerden cargar todas las librerias necesarias en caso no lo hayan hecho.</p></li>

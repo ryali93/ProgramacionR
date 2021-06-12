@@ -184,6 +184,56 @@ while (inicio <= 5) {
 }
 ```
 
+### Control de flujo
+#### break
+Se usa una declaración `break` dentro de un bucle (repeat, for, while) para detener las iteraciones y hacer fluir el control fuera del bucle.
+
+En una situación de bucle anidado, donde hay un bucle dentro de otro bucle, esta declaración sale del bucle más interno que se está evaluando.
+
+```{r eval=FALSE}
+if (test_expression) {
+  break
+}
+```
+Nota: la instrucción break también se puede usar dentro de la rama `else` de la instrucción `if` ... `else`.
+
+```{r}
+x <- 1:5
+for (val in x) {
+  if (val == 3){
+    break
+    }
+  print(val)
+}
+```
+En este ejemplo, iteramos sobre el vector x, que tiene números consecutivos del 1 al 5.
+
+Dentro del ciclo `for` hemos usado una condición `if` para romper si el valor actual es igual a 3.
+
+Como podemos ver en la salida, el bucle termina cuando encuentra la declaración `break`.
+
+#### next
+Una declaración `next` es útil cuando queremos omitir la iteración actual de un ciclo sin terminarlo. Al encontrar el siguiente, R omite una evaluación adicional y comienza la siguiente iteración del ciclo.
+
+```{r eval=FALSE}
+if (test_condition) {
+  next
+}
+```
+
+```{r}
+x <- 1:5
+for (val in x) {
+  if (val == 3){
+    next
+    }
+  print(val)
+}
+```
+En el ejemplo anterior, usamos la siguiente declaración dentro de una condición para verificar si el valor es igual a 3.
+
+Si el valor es igual a 3, la evaluación actual se detiene (el valor no se imprime) pero el ciclo continúa con la siguiente iteración.
+
 ## Funciones
 <p style='text-align: justify;'>Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.</p>
 

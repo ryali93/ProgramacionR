@@ -3,6 +3,7 @@ title: "Programación"
 author: "Yali-Samaniego Roy & Prudencio-Paredes Fernando"
 date: "`r Sys.Date()`"
 documentclass: krantz
+bibliography: [packages.bib]
 biblio-style: apalike
 link-citations: yes
 colorlinks: yes
