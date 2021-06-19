@@ -180,3 +180,8 @@ next
 agrupación-por-múltiples-variables
 transformaciones-agrupadas-y-filtros
 desagrupar
+ejercicio-01
+ejercicios-2
+parte-1
+parte-2
+parte-3

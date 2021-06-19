@@ -15,11 +15,13 @@ mainfont: Palatino
 site: bookdown::bookdown_site
 output:
   html_document:
+    extra_dependencies: ["systeme"]
     toc: true
     toc_depth: 1
     toc_float:
       collapsed: false
       smooth_scroll: false
+  
 ---
 
 ```{=html}
