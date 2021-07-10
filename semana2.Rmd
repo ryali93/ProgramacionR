@@ -1490,7 +1490,7 @@ Aquí **`geom_smooth()`** separa los automóviles en tres líneas en función de
 
 **ggplot2 proporciona más de 40 geoms** y los paquetes de extensión proporcionan aún más (consulta [https://exts.ggplot2.tidyverse.org/gallery/](https://exts.ggplot2.tidyverse.org/gallery/) para obtener una muestra). La mejor forma de obtener un panorama completo sobre las posibilidades que brinda ggplot2 es consultando la hoja de referencia (o **cheatsheet**), que puedes encontrar en [https://rstudio.com/resources/cheatsheets/](https://rstudio.com/resources/cheatsheets/) (en la parte baja de la página encontrarás la versión en español). Para obtener más información sobre un tipo dado de geoms, usa la ayuda: **`?geom_smooth`**.
 
-Muchos **geoms**, como **geom_smooth()**, usan un único objeto geométrico para mostrar múltiples filas de datos. Con estos geoms, puedes asignar la estética de group (grupo) a una variable categórica para graficar múltiples objetos. ggplot2 representará un objeto distinto por cada valor único de la variable de agrupamiento. En la práctica, ggplot2 agrupará automáticamente los datos para estos geoms siempre que se asigne una estética a una variable discreta (como en el ejemplo del tipo de línea o linetype). Es conveniente confiar en esta característica porque la estética del grupo en sí misma no agrega una leyenda o características distintivas a los geoms.
+Muchos **geoms**, como **geom_smooth()**, usan un único objeto geométrico para mostrar múltiples filas de datos. Con estos geoms, **puedes asignar la estética de group (grupo) a una variable categórica para graficar múltiples objetos**. ggplot2 representará un objeto distinto por cada valor único de la variable de agrupamiento. En la práctica, ggplot2 agrupará automáticamente los datos para estos geoms siempre que se asigne una estética a una variable discreta (como en el ejemplo del tipo de línea o linetype). Es conveniente confiar en esta característica porque la estética del grupo en sí misma no agrega una leyenda o características distintivas a los geoms.
 
 ```{r}
 ggplot(data = millas) +
@@ -1514,7 +1514,7 @@ ggplot(data = millas) +
   geom_smooth(mapping = aes(x = cilindrada, y = autopista))
 ```
 
-Esto introduce, sin embargo, cierta duplicación en nuestro código. Imagina que deseas cambiar el eje y para mostrar cilindrada en lugar de autopista. Necesitarías cambiar la variable en dos lugares y podrías olvidarte de actualizar uno. Puedes evitar este tipo de repetición pasando un conjunto de mapeos a `ggplot()`. ggplot2 tratará estos mapeos como mapeos globales que se aplican a cada geom en el gráfico. En otras palabras, este código producirá la misma gráfica que el código anterior:
+Esto introduce, sin embargo, cierta **duplicación en nuestro código**. Imagina que **deseas cambiar** el eje **y** para mostrar cilindrada en lugar de autopista. **Necesitarías cambiar la variable en dos lugares y podrías olvidarte de actualizar uno**. Puedes evitar este tipo de repetición **pasando un conjunto de mapeos a `ggplot()`**. ggplot2 tratará estos mapeos como **mapeos globales* que se aplican a cada geom en el gráfico. En otras palabras, este código producirá la misma gráfica que el código anterior:
 
 ```{r}
 ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
@@ -1522,7 +1522,7 @@ ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
   geom_smooth()
 ```
 
-Si colocas mapeos en una función geom, ggplot2 los tratará como mapeos locales para la capa. Estas asignaciones serán usadas para extender o sobrescribir los mapeos globales solo para esa capa. Esto permite mostrar diferentes estéticas en diferentes capas.
+**Si colocas mapeos en una función geom, ggplot2 los tratará como mapeos locales para la capa**. Estas asignaciones serán usadas para extender o sobrescribir los mapeos globales solo para esa capa. Esto permite mostrar diferentes estéticas en diferentes capas.
 
 ```{r}
 ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
@@ -1537,8 +1537,6 @@ ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
   geom_point(mapping = aes(color = clase)) +
   geom_smooth(data = filter(millas, clase == "subcompacto"), se = FALSE)
 ```
-
-(Aprenderás cómo funciona **`filter()`** en el próximo capítulo: por ahora, solo recuerda que este comando selecciona los automóviles subcompactos).
 
 <span style="color:blue">**Ejercicios**</span>
 
@@ -1581,41 +1579,41 @@ ggplot() +
 
 
 ### Transformaciones estadísticas
-A continuación, echemos un vistazo a un gráfico de barras. Los gráficos de barras parecen simples, pero son interesantes porque revelan algo sutil sobre los gráficos. Considera un gráfico de barras básico, como uno realizado con geom_bar(). El siguiente gráfico muestra la cantidad total de diamantes en el conjunto de datos diamantes, agrupados por la variable corte. El conjunto de datos diamantes se encuentra en el paquete datos y contiene información sobre ~ 54000 diamantes, incluido el precio, el quilate, el color, la claridad y el corte de cada uno. El gráfico muestra que hay más diamantes disponibles con cortes de alta calidad que con cortes de baja calidad.
+A continuación, echemos un vistazo a un **gráfico de barras**. Los gráficos de barras parecen simples, pero son interesantes porque revelan algo sutil sobre los gráficos. Considera un gráfico de barras básico, como uno realizado con **`geom_bar()`**. El siguiente gráfico muestra la cantidad total de diamantes en el **conjunto de datos diamantes**, agrupados por la **variable corte**. El conjunto de datos diamantes se encuentra en el paquete datos y contiene información sobre ~ 54000 diamantes, **incluido el precio, el quilate, el color, la claridad y el corte de cada uno**. El gráfico muestra que hay más diamantes disponibles con cortes de alta calidad que con cortes de baja calidad.
 
 ```{r}
 ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte))
 ```
 
-En el eje x, el gráfico muestra corte, una variable de diamantes. En el eje y muestra el recuento (count), ¡pero el recuento no es una variable en diamantes! ¿De dónde viene? Muchos gráficos, como los diagramas de dispersión (scatterplots), grafican los valores brutos de un conjunto de datos. Otros gráficos, como los de barras, calculan nuevos valores para presentar:
+En el eje x, el gráfico muestra **corte**, una variable de diamantes. En el eje y muestra el **recuento (count)**, ¡pero el recuento no es una variable en diamantes! **¿De dónde viene?** Muchos gráficos, como los diagramas de dispersión (scatterplots), grafican los valores brutos de un conjunto de datos. Otros gráficos, como los de barras, calculan nuevos valores para presentar:
 
-Los gráficos de barras, los histogramas y los polígonos de frecuencia almacenan los datos y luego grafican los conteos por contenedores (bins), es decir, el número de puntos que caen en cada contenedor.
+- Los gráficos de barras, los histogramas y los polígonos de frecuencia almacenan los datos y luego grafican los conteos por contenedores (bins), es decir, el número de puntos que caen en cada contenedor.
 
-Los gráficos de líneas suavizadas (smoothers) ajustan un modelo a los datos y luego grafican las predicciones del modelo.
+- Los gráficos de líneas suavizadas (smoothers) ajustan un modelo a los datos y luego grafican las predicciones del modelo.
 
-Los diagramas de caja (boxplots) calculan un resumen robusto de la distribución y luego muestran una caja con formato especial.
+- Los diagramas de caja (boxplots) calculan un resumen robusto de la distribución y luego muestran una caja con formato especial.
 
-El algoritmo utilizado para calcular nuevos valores para un gráfico se llama stat, abreviatura en inglés de transformación estadística (statistical transformation). La siguiente figura describe cómo funciona este proceso con geom_bar().
+El algoritmo utilizado para calcular nuevos valores para un gráfico se llama **stat**, abreviatura en inglés de transformación estadística (statistical transformation). La siguiente figura describe cómo funciona este proceso con geom_bar().
 
 <p align="center">
   <img width="900" src="https://es.r4ds.hadley.nz/diagrams_w_text_as_path/es/visualization-stat-bar.svg">
 </p>
 
-Puedes aprender acerca de qué stat usa cada geom inspeccionando el valor predeterminado para el argumento stat. Por ejemplo, ?geom_bar muestra que el valor predeterminado para stat es “count”, lo que significa que geom_bar() usa stat_count(). stat_count() está documentado en la misma página que geom_bar() y si te desplazas hacia abajo puedes encontrar una sección llamada “Computed variables” (Variables calculadas). Ahí se describe cómo calcula dos nuevas variables: count y prop.
+Puedes aprender acerca de qué **stat usa cada geom** inspeccionando el valor predeterminado para el argumento stat. Por ejemplo, `?geom_bar` muestra que el **valor predeterminado para stat es “count”**, lo que significa que `geom_bar()` **usa `stat_count()`**. `stat_count()` está documentado en la misma página que geom_bar() y si te desplazas hacia abajo puedes encontrar una sección llamada “Computed variables” (Variables calculadas). Ahí se describe cómo calcula dos **nuevas variables: count y prop**.
 
-Por lo general, puedes usar geoms y estadísticas de forma intercambiable. Por ejemplo, puedes volver a crear la gráfica anterior usando stat_count() en lugar de geom_bar():
+Por lo general, puedes usar geoms y estadísticas de forma intercambiable. Por ejemplo, puedes volver a crear la gráfica anterior usando **`stat_count()`** en lugar de **`geom_bar()`**:
 
 ```{r}
 ggplot(data = diamantes) +
   stat_count(mapping = aes(x = corte))
 ```
 
-Esto funciona porque cada geom tiene una estadística predeterminada y cada estadística tiene un geom predeterminado. Esto significa que generalmente puedes usar geoms sin preocuparte por la transformación estadística subyacente.
+Esto funciona porque **cada geom tiene una estadística predeterminada y cada estadística tiene un geom predeterminado**. Esto significa que generalmente **puedes usar geoms sin preocuparte por la transformación estadística subyacente**.
 
 Hay tres razones por las que podrías necesitar usar una estadística explícitamente:
 
-1. Es posible que desees anular la estadística predeterminada. En el siguiente código, cambiamos en geom_bar() la estadística recuento (“count”, el valor predeterminado) a identidad (“identity”). Esto nos permite asignar la altura de las barras a los valores brutos de una variable **y**. Desafortunadamente, cuando las personas hablan de gráficos de barras de manera informal, podrían estar refiriéndose a este tipo de gráfico de barras, en el que la altura de la barra ya está presente en los datos, o bien, al gráfico de barras anterior, en el que la altura de la barra se determina contando filas.
+1. **Es posible que desees anular la estadística predeterminada**. En el siguiente código, cambiamos en geom_bar() la estadística recuento (“count”, el valor predeterminado) a identidad **(“identity”)**. Esto nos permite asignar la altura de las barras a los valores brutos de una variable **y**. Desafortunadamente, cuando las personas hablan de gráficos de barras de manera informal, podrían estar refiriéndose a este tipo de gráfico de barras, en el que la altura de la barra ya está presente en los datos, o bien, al gráfico de barras anterior, en el que la altura de la barra se determina contando filas.
 
 ```{r}
 demo <- tribble(
@@ -1631,18 +1629,18 @@ ggplot(data = demo) +
   geom_bar(mapping = aes(x = corte, y = freq), stat = "identity")
 ```
 
-(No te preocupes si nunca has visto <- o tribble(). Puede que seas capaz de adivinar su significado por el contexto y ¡pronto aprenderás qué es lo que hacen exactamente!)
+(No te preocupes si nunca has visto **<-** o **tribble()**. Puede que seas capaz de adivinar su significado por el contexto y ¡pronto aprenderás qué es lo que hacen exactamente!)
 
-2. Es posible que desees anular el mapeo predeterminado de las variables transformadas a las estéticas. Por ejemplo, es posible que desees mostrar un gráfico de barras de proporciones, en lugar de un recuento:
+2. **Es posible que desees anular el mapeo predeterminado** de las variables transformadas a las estéticas. Por ejemplo, es posible que desees mostrar un gráfico de **barras de proporciones**, en lugar de un recuento:
 
 ```{r}
 ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte, y = stat(prop), group = 1))
 ```
 
-Para encontrar las variables calculadas por stat, busca la sección de ayuda titulada **“Compute Variables”**.
+Para encontrar las variables calculadas por **stat**, busca la sección de ayuda titulada **“Compute Variables”**.
 
-3. Es posible que desees resaltar la transformación estadística en tu código. Por ejemplo, puedes usar stat_summary(), que resume los valores de y para cada valor único de x, para así resaltar el resumen que se está computando:
+3. Es posible que desees resaltar la transformación estadística en tu código. Por ejemplo, puedes usar **stat_summary()**, que resume los valores de **y** para cada valor único de x, para así resaltar el resumen que se está computando:
 
 ```{r}
 ggplot(data = diamantes) +
@@ -1654,7 +1652,7 @@ ggplot(data = diamantes) +
   )
 ```
 
-ggplot2 proporciona más de 20 transformaciones estadísticas para que uses. Cada stat es una función, por lo que puedes obtener ayuda de la manera habitual, por ejemplo: ?stat_bin. Para ver una lista completa de transformaciones estadísticas disponibles para ggplot2, consulta la hoja de referencia.
+**ggplot2 proporciona más de 20 transformaciones estadísticas para que uses**. Cada **stat** es una función, por lo que puedes obtener ayuda de la manera habitual, por ejemplo: `?stat_bin`. Para ver una lista completa de transformaciones estadísticas disponibles para ggplot2, consulta la hoja de referencia.
 
 <span style="color:blue">**Ejercicios**</span>
 
@@ -1677,7 +1675,7 @@ ggplot(data = diamantes) +
 ```
 
 ### Ajustes de posición
-Hay una pieza más de magia asociada con los gráficos de barras. Puedes colorear un gráfico de barras usando tanto la estética de color como la más útil fill (relleno):
+**Hay una pieza más de magia asociada** con los gráficos de barras. Puedes colorear un gráfico de barras usando tanto la estética de color como la **más útil fill** (relleno):
 
 ```{r}
 ggplot(data = diamantes) +
@@ -1687,16 +1685,16 @@ ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte, fill = corte))
 ```
 
-Mira lo que sucede si asignas la estética de relleno (fill) a otra variable, como claridad: las barras se apilan automáticamente. Cada rectángulo de color representa una combinación de corte y claridad.
+Mira lo que sucede si **asignas la estética de relleno (fill) a otra variable**, como claridad: **las barras se apilan automáticamente.** Cada rectángulo de color representa una **combinación de corte y claridad.**
 
 ```{r}
 ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte, fill = claridad))
 ```
 
-El apilamiento se realiza automáticamente mediante el ajuste de posición especificado por el argumento position. Si no deseas un gráfico de barras apiladas ("stack"), puedes usar una de las otras tres opciones: "identity", "dodge" o "fill".
+El apilamiento se realiza automáticamente mediante el ajuste de posición especificado por el argumento position. **Si no deseas un gráfico de barras apiladas ("stack")**, puedes usar una de las otras tres opciones: **"identity", "dodge" o "fill"**.
 
-- position = "identity" colocará cada objeto exactamente donde cae en el contexto del gráfico. Esto no es muy útil al momento de graficar barras, ya que las superpone. Para ver esa superposición, debemos hacer que las barras sean ligeramente transparentes configurando el alpha a un valor pequeño, o completamente transparente al establecer fill = NA.
+- **position = "identity" colocará cada objeto exactamente donde cae en el contexto del gráfico**. Esto no es muy útil al momento de graficar barras, ya que las superpone. Para ver esa superposición, debemos hacer que las barras sean ligeramente transparentes configurando el alpha a un valor pequeño, o completamente transparente al establecer fill = NA.
 
 ```{r}
 ggplot(data = diamantes, mapping = aes(x = corte, fill = claridad)) +
@@ -1706,38 +1704,38 @@ ggplot(data = diamantes, mapping = aes(x = corte, colour = claridad)) +
   geom_bar(fill = NA, position = "identity")
 ```
 
-El ajuste de position = identity es más útil para geoms 2D, como puntos, donde es la opción predeterminada.
+El ajuste de **position = identity** es más útil para geoms 2D, como puntos, donde es la opción predeterminada.
 
-- position = "fill" funciona como el apilamiento de position = "stack", pero hace que cada conjunto de barras apiladas tenga la misma altura. Esto hace que sea más fácil comparar proporciones entre grupos.
+- **position = "fill"** funciona como el apilamiento de **position = "stack"**, pero hace que cada conjunto de barras apiladas tenga la misma altura. Esto hace que sea más fácil comparar proporciones entre grupos.
 
 ```{r}
 ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte, fill = claridad), position = "fill")
 ```
 
-- position = "dodge" coloca los objetos superpuestos uno al lado del otro. Esto hace que sea más fácil comparar valores individuales.
+- **position = "dodge"** coloca los objetos superpuestos uno al lado del otro. Esto hace que sea más fácil comparar valores individuales.
 
 ```{r}
 ggplot(data = diamantes) +
   geom_bar(mapping = aes(x = corte, fill = claridad), position = "dodge")
 ```
 
-Hay otro tipo de ajuste que no es útil para gráficos de barras, pero que puede ser muy útil para diagramas de dispersión. Recuerda nuestro primer diagrama de dispersión. ¿Notaste que mostraba solo 126 puntos, a pesar de que hay 234 observaciones en el conjunto de datos?
+Hay otro tipo de ajuste que no es útil para gráficos de barras, pero que puede ser muy útil para diagramas de dispersión. Recuerda nuestro primer diagrama de dispersión. **¿Notaste que mostraba solo 126 puntos, a pesar de que hay 234 observaciones en el conjunto de datos?**
 
 <p align="center">
   <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-43-1.png">
 </p>
 
-Los valores de las variables autopista y cilindrada se redondean de modo que los puntos aparecen en una cuadrícula y muchos se superponen entre sí. Este problema se conoce como solapamiento (overplotting). Esta disposición hace que sea difícil ver dónde está la masa de datos. ¿Los puntos de datos se distribuyen equitativamente a lo largo de la gráfica, o hay una combinación especial de autopista y cilindrada que contiene 109 valores?
+Los valores de las variables **autopista y cilindrada** se redondean de modo que los puntos aparecen en una cuadrícula y **muchos se superponen entre sí**. Este problema se conoce como solapamiento **(overplotting)**. Esta disposición hace que sea difícil ver dónde está la masa de datos. ¿Los puntos de datos se distribuyen equitativamente a lo largo de la gráfica, o hay una combinación especial de autopista y cilindrada que contiene 109 valores?
 
-Puedes evitar esto estableciendo el ajuste de posición en “jitter”. position = "jitter" agrega una pequeña cantidad de ruido aleatorio a cada punto. Esto dispersa los puntos, ya que es poco probable que dos puntos reciban la misma cantidad de ruido aleatorio.
+**Puedes evitar esto** estableciendo el ajuste de posición en “jitter”. **position = "jitter"** agrega una pequeña cantidad de ruido aleatorio a cada punto. **Esto dispersa los puntos**, ya que es poco probable que dos puntos reciban la misma cantidad de ruido aleatorio.
 
 ```{r}
 ggplot(data = millas) +
   geom_point(mapping = aes(x = cilindrada, y = autopista), position = "jitter")
 ```
 
-Agregar aleatoriedad a los puntos puede parecer una forma extraña de mejorar tu gráfico. Si bien hace que sea menos preciso a escalas pequeñas, lo hace ser más revelador a gran escala. Como esta es una operación tan útil, ggplot2 incluye una abreviatura de geom_point(position = "jitter"): geom_jitter().
+**Agregar aleatoriedad a los puntos puede parecer una forma extraña de mejorar tu gráfico**. Si bien hace que sea menos preciso a escalas pequeñas, lo hace ser más revelador a gran escala. Como esta es una operación tan útil, ggplot2 incluye una abreviatura de geom_point(position = "jitter"): geom_jitter().
 
 Para obtener más información sobre ajustes de posición, busca la página de ayuda asociada con cada ajuste: ?position_dodge, ?position_fill, ?position_identity, ?position_jitter y ?position_stack.
 
@@ -1759,7 +1757,7 @@ ggplot(data = millas, mapping = aes(x = ciudad, y = autopista)) +
 ### Sistemas de coordenadas
 Los sistemas de coordenadas son probablemente la parte más complicada de ggplot2. El sistema predeterminado es el sistema de coordenadas cartesianas, donde las posiciones x e y actúan independientemente para determinar la ubicación de cada punto. Hay varios otros sistemas de coordenadas que ocasionalmente son útiles.
 
-- coord_flip() cambia los ejes x e y. Esto es útil, por ejemplo, si quieres diagramas de caja horizontales. También es útil para etiquetas largas: es difícil ajustarlas sin que se superpongan en el eje x.
+- **coord_flip() cambia los ejes x e y**. Esto es útil, por ejemplo, si quieres **diagramas de caja horizontales**. También es útil para etiquetas largas: es difícil ajustarlas sin que se superpongan en el eje x.
 
 ```{r}
 ggplot(data = millas, mapping = aes(x = clase, y = autopista)) +
@@ -1770,7 +1768,7 @@ ggplot(data = millas, mapping = aes(x = clase, y = autopista)) +
   coord_flip()
 ```
 
-- oord_quickmap() establece correctamente la relación de aspecto para los mapas. Esto es muy importante si gráficas datos espaciales con ggplot2 (tema para el que, desafortunadamente, no contamos con espacio para desarrollar en este libro).
+- **coord_quickmap() establece correctamente la relación de aspecto para los mapas**. Esto es muy importante si graficas datos espaciales con ggplot2 (tema para el que, desafortunadamente, no contamos con espacio para desarrollar en este libro).
 
 ```{r}
 nz <- map_data("nz")
@@ -1783,7 +1781,7 @@ ggplot(nz, aes(long, lat, group = group)) +
   coord_quickmap()
 ```
 
-- coord_polar() usa coordenadas polares. Las coordenadas polares revelan una conexión interesante entre un gráfico de barras y un gráfico de Coxcomb.
+- **coord_polar() usa coordenadas polares**. Las coordenadas polares revelan una conexión interesante entre un gráfico de barras y un gráfico de Coxcomb.
 
 ```{r}
 bar <- ggplot(data = diamantes) +
