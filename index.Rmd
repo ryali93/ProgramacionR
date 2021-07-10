@@ -21,7 +21,8 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-  
+  pdf_document:
+    toc: true
 ---
 
 ```{=html}
