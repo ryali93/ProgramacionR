@@ -200,3 +200,15 @@ transformaciones-estadísticas
 ajustes-de-posición
 sistemas-de-coordenadas
 la-gramática-de-gráficos-en-capas
+introducción-a-datos-espaciales-1
+introducción-a-datos-espaciales-2
+introducción-a-datos-espaciales-3
+introducción-a-datos-espaciales-4
+datos-vectoriales
+datos-raster
+qué-es-osgeo
+qué-es-ogc
+qué-es-osgeo-1
+qué-es-gdal
+características-principales
+qué-es-proj
