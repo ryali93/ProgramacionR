@@ -1,0 +1,122 @@
+# Ejercicios: ggplot2
+
+Cargar la data *millas* del paquete **datos**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+library(datos)
+```
+
+
+## Parte 1: Ggplot base
+- Ejecuta ggplot(data = millas). ¿Qué observas?
+- ¿Cuántas filas hay en millas? ¿Cuántas columnas?
+- ¿Qué describe la variable traccion? Lee la ayuda de ?millas para encontrar la respuesta.
+- Realiza un gráfico de dispersión de autopista versus cilindros.
+- ¿Qué sucede cuando haces un gráfico de dispersión (scatterplot) de clase versus traccion? ¿Por qué no es útil este gráfico?
+
+## Parte 2: Mapeos estéticos
+- ¿Qué no va bien en este código? ¿Por qué hay puntos que no son azules?
+```{r}
+ ggplot(data = millas) +
+   geom_point(mapping = aes(x = cilindrada, y = autopista, color = "blue"))
+```
+
+- ¿Qué variables en millas son categóricas? ¿Qué variables son continuas? (Pista: escribe ?millas para leer la documentación de ayuda para este conjunto de datos). ¿Cómo puedes ver esta información cuando ejecutas millas?
+- Asigna una variable continua a color, size, y shape. ¿Cómo se comportan estas estéticas de manera diferente para variables categóricas y variables continuas?
+- ¿Qué ocurre si asignas o mapeas la misma variable a múltiples estéticas?
+- ¿Qué hace la estética stroke? ¿Con qué formas trabaja? (Pista: consulta ?geom_point)
+- ¿Qué ocurre si se asigna o mapea una estética a algo diferente del nombre de una variable, como aes(color = cilindrada < 5)?
+
+## Parte 3: Facetas
+- ¿Qué ocurre si intentas separar en facetas una variable continua?
+- ¿Qué significan las celdas vacías que aparecen en el gráfico generado usando `facet_grid(traccion ~ cilindros)`? ¿Cómo se relacionan con este gráfico?
+```{r eval=FALSE, include=TRUE}
+ggplot(data = millas) +
+  geom_point(mapping = aes(x = traccion, y = cilindros))
+```
+
+- ¿Qué grafica el siguiente código? ¿Qué hace . ?
+```{r eval=FALSE, include=TRUE}
+ggplot(data = millas) +
+  geom_point(mapping = aes(x = cilindrada, y = autopista)) +
+  facet_grid(traccion ~ .)
+
+ggplot(data = millas) +
+  geom_point(mapping = aes(x = cilindrada, y = autopista)) +
+  facet_grid(. ~ cilindros)
+```
+
+- Mira de nuevo el primer gráfico en facetas presentado en esta sección:
+```{r eval=FALSE, include=TRUE}
+ggplot(data = millas) +
+  geom_point(mapping = aes(x = cilindrada, y = autopista)) +
+  facet_wrap(~ clase, nrow = 2)
+```
+
+¿Cuáles son las ventajas de separar en facetas en lugar de aplicar una estética de color? ¿Cuáles son las desventajas? ¿Cómo cambiaría este balance si tuvieras un conjunto de datos más grande?
+- Lee `?facet_wrap`. ¿Qué hace nrow? ¿Qué hace ncol? ¿Qué otras opciones controlan el diseño de los paneles individuales? ¿Por qué `facet_grid()` no tiene argumentos nrow y ncol?
+- Cuando usas `facet_grid()`, generalmente deberías poner la variable con un mayor número de niveles únicos en las columnas. ¿Por qué?
+
+## Parte 4: Objetos geométricos
+- ¿Qué geom usarías para generar un gráfico de líneas? ¿Y para un diagrama de caja? ¿Y para un histograma? ¿Y para un gráfico de área?
+- Ejecuta este código en tu mente y predice cómo se verá el output. Luego, ejecuta el código en R y verifica tus predicciones.
+```{r eval=FALSE, include=TRUE}
+ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista, color = traccion)) +
+  geom_point() +
+  geom_smooth(se = FALSE)
+```
+
+- ¿Qué muestra show.legend = FALSE? ¿Qué pasa si lo quitas? ¿Por qué crees que lo utilizamos antes en el capítulo?
+- ¿Qué hace el argumento se en geom_smooth()?
+- ¿Se verán distintos estos gráficos? ¿Por qué sí o por qué no?
+```{r eval=FALSE, include=TRUE}
+ggplot(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot() +
+  geom_point(data = millas, mapping = aes(x = cilindrada, y = autopista)) +
+  geom_smooth(data = millas, mapping = aes(x = cilindrada, y = autopista))
+```
+
+- Recrea el código R necesario para generar los siguientes gráficos:
+<p align="center">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-1.png">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-2.png">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-3.png">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-4.png">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-5.png">
+  <img width="600" src="https://es.r4ds.hadley.nz/03-visualize_files/figure-html/unnamed-chunk-30-6.png">
+</p>
+
+## Parte 5: Gráficos estadísticos
+- ¿Cuál es el geom predeterminado asociado con stat_summary()? ¿Cómo podrías reescribir el gráfico anterior para usar esa función geom en lugar de la función stat?
+- ¿Qué hace geom_col()? ¿En qué se diferencia de geom_bar()?
+- La mayoría de los geoms y las transformaciones estadísticas vienen en pares que casi siempre se usan en conjunto. Lee la documentación y haz una lista de todos los pares. ¿Qué tienen en común?
+- ¿Qué variables calcula stat_smooth()? ¿Qué parámetros controlan su comportamiento?
+- En nuestro gráfico de barras de proporción necesitamos establecer group = 1. ¿Por qué? En otras palabras, ¿cuál es el problema con estos dos gráficos?
+
+## Parte 6: Ajuste de posición
+- ¿Cuál es el problema con este gráfico? ¿Cómo podrías mejorarlo?
+```{r}
+ggplot(data = millas, mapping = aes(x = ciudad, y = autopista)) +
+  geom_point()
+```
+
+- ¿Qué parámetros de geom_jitter() controlan la cantidad de ruido?
+- Compara y contrasta geom_jitter() con geom_count()
+- ¿Cuál es el ajuste de posición predeterminado de geom_boxplot()? Crea una visualización del conjunto de datos de millas que lo demuestre.
+
+## Parte 7: Sistema de coordenadas
+- Convierte un gráfico de barras apiladas en un gráfico circular usando coord_polar().
+- ¿Qué hace labs()? Lee la documentación.
+- ¿Cuál es la diferencia entre coord_quickmap() y coord_map()?
+- ¿Qué te dice la gráfica siguiente sobre la relación entre ciudad y autopista? ¿Por qué es coord_fixed() importante? ¿Qué hace geom_abline()?
+```{r}
+ggplot(data = millas, mapping = aes(x = ciudad, y = autopista)) +
+  geom_point() +
+  geom_abline() +
+  coord_fixed()
+```
+

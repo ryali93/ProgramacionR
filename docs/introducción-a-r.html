@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Introducción a R | Programación</title>
   <meta name="description" content="2 Introducción a R | Programación" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Introducción a R | Programación" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
 
 
-<meta name="date" content="2021-08-07" />
+<meta name="date" content="2022-01-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +32,10 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="programando-con-r.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="estilo-tidyverse.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -187,101 +187,120 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="programando-con-r.html"><a href="programando-con-r.html"><i class="fa fa-check"></i><b>3</b> Programando con R</a>
+<li class="chapter" data-level="3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Estilo tidyverse</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#operadores-relacionales-y-lógicos"><i class="fa fa-check"></i><b>3.1</b> Operadores relacionales y lógicos</a></li>
-<li class="chapter" data-level="3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#consultas-lógicas"><i class="fa fa-check"></i><b>3.2</b> Consultas lógicas</a></li>
-<li class="chapter" data-level="3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo"><i class="fa fa-check"></i><b>3.3</b> Control de flujo</a>
+<li class="chapter" data-level="3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.1</b> Data Transformation con dplyr</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#condicionales-if-else"><i class="fa fa-check"></i><b>3.3.1</b> Condicionales (if, else)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#bucles-while-for"><i class="fa fa-check"></i><b>3.3.2</b> Bucles (while, for)</a></li>
-<li class="chapter" data-level="3.3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo-1"><i class="fa fa-check"></i><b>3.3.3</b> Control de flujo</a></li>
+<li class="chapter" data-level="3.1.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#nycfights13"><i class="fa fa-check"></i><b>3.1.1</b> nycfights13</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#dplyr-básico"><i class="fa fa-check"></i><b>3.1.2</b> dplyr Básico</a></li>
+<li class="chapter" data-level="3.1.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.1.3</b> Filtrar filas con filter()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#reordenar-las-filas-con-arrange"><i class="fa fa-check"></i><b>3.1.4</b> Reordenar las filas con arrange()</a></li>
+<li class="chapter" data-level="3.1.5" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.1.5</b> Seleccionar columnas con select()</a></li>
+<li class="chapter" data-level="3.1.6" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#añadir-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.1.6</b> Añadir nuevas variables con mutate()</a></li>
+<li class="chapter" data-level="3.1.7" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#resúmenes-agrupados-con-summarise"><i class="fa fa-check"></i><b>3.1.7</b> Resúmenes agrupados con summarise()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones"><i class="fa fa-check"></i><b>3.4</b> Funciones</a>
+<li class="chapter" data-level="3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#combinación-de-múltiples-operaciones-con-el-pipe"><i class="fa fa-check"></i><b>3.2</b> Combinación de múltiples operaciones con el pipe</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="programando-con-r.html"><a href="programando-con-r.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4.1</b> Ejercicios</a></li>
+<li class="chapter" data-level="3.2.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#valores-faltantes"><i class="fa fa-check"></i><b>3.2.1</b> Valores faltantes</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones-de-la-familia-apply"><i class="fa fa-check"></i><b>3.5</b> Funciones de la familia apply</a>
+<li class="chapter" data-level="3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#funciones-de-resumen-útiles"><i class="fa fa-check"></i><b>3.3</b> Funciones de resumen útiles</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="programando-con-r.html"><a href="programando-con-r.html#apply"><i class="fa fa-check"></i><b>3.5.1</b> apply():</a></li>
-<li class="chapter" data-level="3.5.2" data-path="programando-con-r.html"><a href="programando-con-r.html#tapply"><i class="fa fa-check"></i><b>3.5.2</b> tapply()</a></li>
-<li class="chapter" data-level="3.5.3" data-path="programando-con-r.html"><a href="programando-con-r.html#lapply"><i class="fa fa-check"></i><b>3.5.3</b> lapply()</a></li>
-<li class="chapter" data-level="3.5.4" data-path="programando-con-r.html"><a href="programando-con-r.html#sapply"><i class="fa fa-check"></i><b>3.5.4</b> sapply()</a></li>
-<li class="chapter" data-level="3.5.5" data-path="programando-con-r.html"><a href="programando-con-r.html#vapply"><i class="fa fa-check"></i><b>3.5.5</b> vapply()</a></li>
-<li class="chapter" data-level="3.5.6" data-path="programando-con-r.html"><a href="programando-con-r.html#rapply"><i class="fa fa-check"></i><b>3.5.6</b> rapply()</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos"><i class="fa fa-check"></i><b>3.6</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="3.6.1" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>3.6.1</b> Gráficos de dispersión</a></li>
-<li class="chapter" data-level="3.6.2" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-líneas"><i class="fa fa-check"></i><b>3.6.2</b> Gráficos de líneas</a></li>
-</ul></li>
-<li class="chapter" data-level="3.7" data-path="programando-con-r.html"><a href="programando-con-r.html#estilo-tidyverse"><i class="fa fa-check"></i><b>3.7</b> Estilo tidyverse</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="programando-con-r.html"><a href="programando-con-r.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.7.1</b> Data Transformation con dplyr</a></li>
-</ul></li>
-<li class="chapter" data-level="3.8" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-con-ggplot"><i class="fa fa-check"></i><b>3.8</b> Gráficos con ggplot</a>
-<ul>
-<li class="chapter" data-level="3.8.1" data-path="programando-con-r.html"><a href="programando-con-r.html#introducción"><i class="fa fa-check"></i><b>3.8.1</b> Introducción</a></li>
-<li class="chapter" data-level="3.8.2" data-path="programando-con-r.html"><a href="programando-con-r.html#primeros-pasos"><i class="fa fa-check"></i><b>3.8.2</b> Primeros pasos</a></li>
-<li class="chapter" data-level="3.8.3" data-path="programando-con-r.html"><a href="programando-con-r.html#mapeos-estéticos"><i class="fa fa-check"></i><b>3.8.3</b> Mapeos estéticos</a></li>
-<li class="chapter" data-level="3.8.4" data-path="programando-con-r.html"><a href="programando-con-r.html#problemas-comunes"><i class="fa fa-check"></i><b>3.8.4</b> Problemas comunes</a></li>
-<li class="chapter" data-level="3.8.5" data-path="programando-con-r.html"><a href="programando-con-r.html#separar-en-facetas"><i class="fa fa-check"></i><b>3.8.5</b> Separar en facetas</a></li>
-<li class="chapter" data-level="3.8.6" data-path="programando-con-r.html"><a href="programando-con-r.html#objetos-geométricos"><i class="fa fa-check"></i><b>3.8.6</b> Objetos geométricos</a></li>
-<li class="chapter" data-level="3.8.7" data-path="programando-con-r.html"><a href="programando-con-r.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>3.8.7</b> Transformaciones estadísticas</a></li>
-<li class="chapter" data-level="3.8.8" data-path="programando-con-r.html"><a href="programando-con-r.html#ajustes-de-posición"><i class="fa fa-check"></i><b>3.8.8</b> Ajustes de posición</a></li>
-<li class="chapter" data-level="3.8.9" data-path="programando-con-r.html"><a href="programando-con-r.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>3.8.9</b> Sistemas de coordenadas</a></li>
-<li class="chapter" data-level="3.8.10" data-path="programando-con-r.html"><a href="programando-con-r.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>3.8.10</b> La gramática de gráficos en capas</a></li>
+<li class="chapter" data-level="3.3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#agrupación-por-múltiples-variables"><i class="fa fa-check"></i><b>3.3.1</b> Agrupación por múltiples variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#desagrupar"><i class="fa fa-check"></i><b>3.3.2</b> Desagrupar</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#transformaciones-agrupadas-y-filtros"><i class="fa fa-check"></i><b>3.3.3</b> Transformaciones agrupadas (y filtros)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>4</b> Rmarkdown</a>
+<li class="chapter" data-level="4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html"><i class="fa fa-check"></i><b>4</b> Gráficos con ggplot</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
-<li class="chapter" data-level="4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>4.2</b> Sintaxis de Markdown</a></li>
-<li class="chapter" data-level="4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>4.3</b> Inclusión de código R</a>
+<li class="chapter" data-level="4.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#prerrequisitos"><i class="fa fa-check"></i><b>4.2</b> Prerrequisitos</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos-1"><i class="fa fa-check"></i><b>4.3.1</b> Gráficos</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>4.3.2</b> Opciones de bloques de código</a></li>
+<li class="chapter" data-level="4.2.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#primeros-pasos"><i class="fa fa-check"></i><b>4.2.1</b> Primeros pasos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#el-data-frame-millas"><i class="fa fa-check"></i><b>4.2.2</b> El data frame millas</a></li>
+<li class="chapter" data-level="4.2.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#creando-un-gráfico-con-ggplot"><i class="fa fa-check"></i><b>4.2.3</b> Creando un gráfico con ggplot</a></li>
+<li class="chapter" data-level="4.2.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#una-plantilla-de-gráficos"><i class="fa fa-check"></i><b>4.2.4</b> Una plantilla de gráficos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>4.4</b> Tablas</a></li>
-<li class="chapter" data-level="4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>4.5</b> Cabecera YAML</a></li>
-<li class="chapter" data-level="4.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>4.6</b> Spin</a></li>
-<li class="chapter" data-level="4.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>4.7</b> Extensiones RMarkdown de pandoc</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>5</b> Control de versiones</a>
+<li class="chapter" data-level="4.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#mapeos-estéticos"><i class="fa fa-check"></i><b>4.3</b> Mapeos estéticos</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>5.1</b> Git</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>5.1.1</b> Configuración</a></li>
+<li class="chapter" data-level="4.3.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#problemas-comunes"><i class="fa fa-check"></i><b>4.3.1</b> Problemas comunes</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>5.2</b> Inicializando un repositorio</a></li>
-<li class="chapter" data-level="5.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>5.3</b> Commiting</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>5.3.1</b> Historial de registros</a></li>
-<li class="chapter" data-level="5.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>5.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+<li class="chapter" data-level="4.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#separar-en-facetas"><i class="fa fa-check"></i><b>4.4</b> Separar en facetas</a></li>
+<li class="chapter" data-level="4.5" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#objetos-geométricos"><i class="fa fa-check"></i><b>4.5</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.6" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>4.6</b> Transformaciones estadísticas</a></li>
+<li class="chapter" data-level="4.7" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#ajustes-de-posición"><i class="fa fa-check"></i><b>4.7</b> Ajustes de posición</a></li>
+<li class="chapter" data-level="4.8" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>4.8</b> Sistemas de coordenadas</a></li>
+<li class="chapter" data-level="4.9" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>4.9</b> La gramática de gráficos en capas</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>5.4</b> Sincronizar RStudio y GitHub</a></li>
-<li class="chapter" data-level="5.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>5.5</b> Pull request</a></li>
-<li class="chapter" data-level="5.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>5.6</b> Merge conflicts</a></li>
-<li class="chapter" data-level="5.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>5.7</b> Resumen</a>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Rmarkdown</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>5.7.1</b> ¿Cómo puedo hacer un README?</a></li>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>5.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>5.3</b> Inclusión de código R</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos"><i class="fa fa-check"></i><b>5.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>5.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>5.4</b> Tablas</a></li>
+<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>5.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="5.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>5.6</b> Spin</a></li>
+<li class="chapter" data-level="5.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>5.7</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>6</b> Control de versiones</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>6.1</b> Git</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>6.1.1</b> Configuración</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>6.2</b> Inicializando un repositorio</a></li>
+<li class="chapter" data-level="6.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>6.3</b> Commiting</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>6.3.1</b> Historial de registros</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>6.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>6.4</b> Sincronizar RStudio y GitHub</a></li>
+<li class="chapter" data-level="6.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>6.5</b> Pull request</a></li>
+<li class="chapter" data-level="6.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>6.6</b> Merge conflicts</a></li>
+<li class="chapter" data-level="6.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>6.7</b> Resumen</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>6.7.1</b> ¿Cómo puedo hacer un README?</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>6</b> Introducción a datos espaciales</a>
+<li class="chapter" data-level="7" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>7</b> Introducción a datos espaciales</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-1"><i class="fa fa-check"></i><b>6.1</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-2"><i class="fa fa-check"></i><b>6.2</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-3"><i class="fa fa-check"></i><b>6.3</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-4"><i class="fa fa-check"></i><b>6.4</b> Introducción a datos espaciales</a></li>
+<li class="chapter" data-level="7.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Datos Vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-raster"><i class="fa fa-check"></i><b>7.2</b> Datos Raster</a></li>
+<li class="chapter" data-level="7.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-ogc"><i class="fa fa-check"></i><b>7.3</b> ¿Qué es OGC?</a></li>
+<li class="chapter" data-level="7.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-osgeo"><i class="fa fa-check"></i><b>7.4</b> ¿Qué es OSGeo?</a></li>
+<li class="chapter" data-level="7.5" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-gdal"><i class="fa fa-check"></i><b>7.5</b> ¿Qué es GDAL?</a></li>
+<li class="chapter" data-level="7.6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-proj"><i class="fa fa-check"></i><b>7.6</b> ¿Qué es Proj?</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ejercicios-2.html"><a href="ejercicios-2.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<li class="chapter" data-level="8" data-path="ejercicios-1.html"><a href="ejercicios-1.html"><i class="fa fa-check"></i><b>8</b> Ejercicios</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-1"><i class="fa fa-check"></i><b>7.1</b> Parte 1</a></li>
-<li class="chapter" data-level="7.2" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-2"><i class="fa fa-check"></i><b>7.2</b> Parte 2</a></li>
-<li class="chapter" data-level="7.3" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-3"><i class="fa fa-check"></i><b>7.3</b> Parte 3</a></li>
+<li class="chapter" data-level="8.1" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-1"><i class="fa fa-check"></i><b>8.1</b> Parte 1</a></li>
+<li class="chapter" data-level="8.2" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-2"><i class="fa fa-check"></i><b>8.2</b> Parte 2</a></li>
+<li class="chapter" data-level="8.3" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-3"><i class="fa fa-check"></i><b>8.3</b> Parte 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html"><i class="fa fa-check"></i><b>9</b> Ejercicios: tidyverse</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-1-dplyr---filter"><i class="fa fa-check"></i><b>9.1</b> Parte 1: Dplyr - filter</a></li>
+<li class="chapter" data-level="9.2" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-2-dplyr---arrange"><i class="fa fa-check"></i><b>9.2</b> Parte 2: Dplyr - arrange</a></li>
+<li class="chapter" data-level="9.3" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-3-dplyr---select"><i class="fa fa-check"></i><b>9.3</b> Parte 3: Dplyr - select</a></li>
+<li class="chapter" data-level="9.4" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-4-dplyr---mutate"><i class="fa fa-check"></i><b>9.4</b> Parte 4: Dplyr - mutate</a></li>
+<li class="chapter" data-level="9.5" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-5-dplyr---group-by-summarize"><i class="fa fa-check"></i><b>9.5</b> Parte 5: Dplyr - group by &amp; summarize</a></li>
+<li class="chapter" data-level="9.6" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-7-dplyr---transformaciones-agrupadas"><i class="fa fa-check"></i><b>9.6</b> Parte 7: Dplyr - transformaciones agrupadas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html"><i class="fa fa-check"></i><b>10</b> Ejercicios: ggplot2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-1-ggplot-base"><i class="fa fa-check"></i><b>10.1</b> Parte 1: Ggplot base</a></li>
+<li class="chapter" data-level="10.2" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-2-mapeos-estéticos"><i class="fa fa-check"></i><b>10.2</b> Parte 2: Mapeos estéticos</a></li>
+<li class="chapter" data-level="10.3" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-3-facetas"><i class="fa fa-check"></i><b>10.3</b> Parte 3: Facetas</a></li>
+<li class="chapter" data-level="10.4" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-4-objetos-geométricos"><i class="fa fa-check"></i><b>10.4</b> Parte 4: Objetos geométricos</a></li>
+<li class="chapter" data-level="10.5" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-5-gráficos-estadísticos"><i class="fa fa-check"></i><b>10.5</b> Parte 5: Gráficos estadísticos</a></li>
+<li class="chapter" data-level="10.6" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-6-ajuste-de-posición"><i class="fa fa-check"></i><b>10.6</b> Parte 6: Ajuste de posición</a></li>
+<li class="chapter" data-level="10.7" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-7-sistema-de-coordenadas"><i class="fa fa-check"></i><b>10.7</b> Parte 7: Sistema de coordenadas</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
+<li><a href="https://classroom.google.com/u/2/c/NDEyMDI3NDcyNDk4" target="blank">Classroom del curso</a></li>
 <li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li> 
 
 </ul>
@@ -376,7 +395,7 @@ Jeroen Ooms mantiene la versión actual de Rtools. El profesor Brian Ripley y Du
 </ul>
 <p style='text-align: justify;'>
 <ul>
-<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕗 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
+<li>Es considerado como un <strong><u>entorno de desarrollo integrado (GUI)</u></strong> 🕧 que combina un interfaz muy intuitiva con herramientas de código muy potentes que permiten sacar el máximo provecho a R.
 </p></li>
 </ul>
 <p style='text-align: justify;'>
@@ -990,16 +1009,15 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="introducción-a-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;tibble&#39;</span></span>
 <span id="cb122-2"><a href="introducción-a-r.html#cb122-2" aria-hidden="true" tabindex="-1"></a>data01 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&#39;data/file.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## Rows: 150 Columns: 5</code></pre>
+<pre><code>## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr (1): Species
+## dbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width</code></pre>
 <pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   Sepal.Length = col_double(),
-##   Sepal.Width = col_double(),
-##   Petal.Length = col_double(),
-##   Petal.Width = col_double(),
-##   Species = col_character()
-## )</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="introducción-a-r.html#cb124-1" aria-hidden="true" tabindex="-1"></a>data01</span></code></pre></div>
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="introducción-a-r.html#cb126-1" aria-hidden="true" tabindex="-1"></a>data01</span></code></pre></div>
 <pre><code>## # A tibble: 150 x 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
@@ -1013,12 +1031,12 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 ##  8          5           3.4          1.5         0.2 setosa 
 ##  9          4.4         2.9          1.4         0.2 setosa 
 ## 10          4.9         3.1          1.5         0.1 setosa 
-## # … with 140 more rows</code></pre>
+## # ... with 140 more rows</code></pre>
 <p>En otros casos, cuando <code>";"</code> es utilizado como el separador de campo y <code>","</code> para el punto decimal, se utiliza una variante de estas funciones.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="introducción-a-r.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
-<span id="cb126-2"><a href="introducción-a-r.html#cb126-2" aria-hidden="true" tabindex="-1"></a>data02 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;data/file.csv&#39;</span>, <span class="at">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="at">header =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="introducción-a-r.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
+<span id="cb128-2"><a href="introducción-a-r.html#cb128-2" aria-hidden="true" tabindex="-1"></a>data02 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;data/file.csv&#39;</span>, <span class="at">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="at">header =</span> T)</span></code></pre></div>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="introducción-a-r.html#cb127-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(<span class="at">x =</span> data02, <span class="at">file =</span> <span class="st">&quot;data/csv_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="introducción-a-r.html#cb129-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(<span class="at">x =</span> data02, <span class="at">file =</span> <span class="st">&quot;data/csv_data.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="excel" class="section level3" number="2.12.2">
 <h3><span class="header-section-number">2.12.2</span> EXCEL</h3>
@@ -1027,32 +1045,32 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
 <li>El paquete <strong>readxl</strong> contiene la función <code>read_excel</code>.</li>
 <li>El paquete <strong>xlsx</strong> y la función <code>read.xlsx</code></li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="introducción-a-r.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
-<span id="cb128-2"><a href="introducción-a-r.html#cb128-2" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;data/file.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
-<span id="cb128-3"><a href="introducción-a-r.html#cb128-3" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> xlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(<span class="at">file =</span> <span class="st">&quot;data/file.xls&quot;</span>, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="introducción-a-r.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># datos será un &#39;data frame&#39;</span></span>
+<span id="cb130-2"><a href="introducción-a-r.html#cb130-2" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;data/file.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb130-3"><a href="introducción-a-r.html#cb130-3" aria-hidden="true" tabindex="-1"></a>data03 <span class="ot">&lt;-</span> xlsx<span class="sc">::</span><span class="fu">read.xlsx</span>(<span class="at">file =</span> <span class="st">&quot;data/file.xls&quot;</span>, <span class="dv">1</span>)</span></code></pre></div>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="introducción-a-r.html#cb129-1" aria-hidden="true" tabindex="-1"></a>xlsx<span class="sc">::</span><span class="fu">write.xlsx</span>(</span>
-<span id="cb129-2"><a href="introducción-a-r.html#cb129-2" aria-hidden="true" tabindex="-1"></a>  data03, <span class="st">&quot;data/xlsx_data.xlsx&quot;</span>, <span class="at">sheetName =</span> <span class="st">&quot;Sheet1&quot;</span>, </span>
-<span id="cb129-3"><a href="introducción-a-r.html#cb129-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">append =</span> <span class="cn">FALSE</span></span>
-<span id="cb129-4"><a href="introducción-a-r.html#cb129-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="introducción-a-r.html#cb131-1" aria-hidden="true" tabindex="-1"></a>xlsx<span class="sc">::</span><span class="fu">write.xlsx</span>(</span>
+<span id="cb131-2"><a href="introducción-a-r.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  data03, <span class="st">&quot;data/xlsx_data.xlsx&quot;</span>, <span class="at">sheetName =</span> <span class="st">&quot;Sheet1&quot;</span>, </span>
+<span id="cb131-3"><a href="introducción-a-r.html#cb131-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="cn">TRUE</span>, <span class="at">append =</span> <span class="cn">FALSE</span></span>
+<span id="cb131-4"><a href="introducción-a-r.html#cb131-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="rds" class="section level3" number="2.12.3">
 <h3><span class="header-section-number">2.12.3</span> RDS</h3>
 <p>R proporciona dos formatos de archivo propios para almacenar datos, <strong>.RDS</strong> y <strong>.RData</strong> . Los archivos <strong>RDS</strong> pueden almacenar <strong>un solo objeto R</strong> y los archivos <strong>RData</strong> pueden almacenar <strong>varios objetos R</strong>.</p>
 <p>Puede abrir un archivo RDS con <code>readRDS</code>:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="introducción-a-r.html#cb130-1" aria-hidden="true" tabindex="-1"></a>data04 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/file.RDS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="introducción-a-r.html#cb132-1" aria-hidden="true" tabindex="-1"></a>data04 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/file.RDS&quot;</span>)</span></code></pre></div>
 <p>La escritura de datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="introducción-a-r.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data04, <span class="at">file =</span> <span class="st">&quot;data/rds_data.RDS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="introducción-a-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data04, <span class="at">file =</span> <span class="st">&quot;data/rds_data.RDS&quot;</span>)</span></code></pre></div>
 </div>
 <div id="rdata" class="section level3" number="2.12.4">
 <h3><span class="header-section-number">2.12.4</span> RDATA</h3>
 <p>La escritura de estos datos se realiza de la siguiente manera:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="introducción-a-r.html#cb132-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb132-2"><a href="introducción-a-r.html#cb132-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb132-3"><a href="introducción-a-r.html#cb132-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb132-4"><a href="introducción-a-r.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(a, b, c, <span class="at">file =</span> <span class="st">&quot;data/stuff.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="introducción-a-r.html#cb134-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb134-2"><a href="introducción-a-r.html#cb134-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb134-3"><a href="introducción-a-r.html#cb134-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb134-4"><a href="introducción-a-r.html#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(a, b, c, <span class="at">file =</span> <span class="st">&quot;data/stuff.RData&quot;</span>)</span></code></pre></div>
 <p>Puede abrir un archivo RData con <code>load</code>:</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="introducción-a-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/stuff.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="introducción-a-r.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/stuff.RData&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="ejercicios" class="section level2" number="2.13">
@@ -1100,11 +1118,10 @@ En la pestaña en Entorno <strong>(Environment)</strong> de <strong>RStudio</str
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="programando-con-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="estilo-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1141,6 +1158,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bookdownproj.pdf", "bookdownproj.epub", "bookdownproj.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
@@ -1148,7 +1169,6 @@ gitbook.start({
 "toolbar": {
 "position": "fixed"
 },
-"search": true,
 "info": true
 });
 });

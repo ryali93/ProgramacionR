@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Rmarkdown | Programación</title>
-  <meta name="description" content="4 Rmarkdown | Programación" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <title>5 Rmarkdown | Programación</title>
+  <meta name="description" content="5 Rmarkdown | Programación" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Rmarkdown | Programación" />
+  <meta property="og:title" content="5 Rmarkdown | Programación" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Rmarkdown | Programación" />
+  <meta name="twitter:title" content="5 Rmarkdown | Programación" />
   
   
   
@@ -24,17 +24,18 @@
 <meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
 
 
-<meta name="date" content="2021-08-07" />
+<meta name="date" content="2022-01-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="programando-con-r.html"/>
+<link rel="prev" href="gráficos-con-ggplot.html"/>
 <link rel="next" href="control-de-versiones.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -209,101 +209,120 @@ div.csl-indent {
 <li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="programando-con-r.html"><a href="programando-con-r.html"><i class="fa fa-check"></i><b>3</b> Programando con R</a>
+<li class="chapter" data-level="3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Estilo tidyverse</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#operadores-relacionales-y-lógicos"><i class="fa fa-check"></i><b>3.1</b> Operadores relacionales y lógicos</a></li>
-<li class="chapter" data-level="3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#consultas-lógicas"><i class="fa fa-check"></i><b>3.2</b> Consultas lógicas</a></li>
-<li class="chapter" data-level="3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo"><i class="fa fa-check"></i><b>3.3</b> Control de flujo</a>
+<li class="chapter" data-level="3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.1</b> Data Transformation con dplyr</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="programando-con-r.html"><a href="programando-con-r.html#condicionales-if-else"><i class="fa fa-check"></i><b>3.3.1</b> Condicionales (if, else)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="programando-con-r.html"><a href="programando-con-r.html#bucles-while-for"><i class="fa fa-check"></i><b>3.3.2</b> Bucles (while, for)</a></li>
-<li class="chapter" data-level="3.3.3" data-path="programando-con-r.html"><a href="programando-con-r.html#control-de-flujo-1"><i class="fa fa-check"></i><b>3.3.3</b> Control de flujo</a></li>
+<li class="chapter" data-level="3.1.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#nycfights13"><i class="fa fa-check"></i><b>3.1.1</b> nycfights13</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#dplyr-básico"><i class="fa fa-check"></i><b>3.1.2</b> dplyr Básico</a></li>
+<li class="chapter" data-level="3.1.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.1.3</b> Filtrar filas con filter()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#reordenar-las-filas-con-arrange"><i class="fa fa-check"></i><b>3.1.4</b> Reordenar las filas con arrange()</a></li>
+<li class="chapter" data-level="3.1.5" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.1.5</b> Seleccionar columnas con select()</a></li>
+<li class="chapter" data-level="3.1.6" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#añadir-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.1.6</b> Añadir nuevas variables con mutate()</a></li>
+<li class="chapter" data-level="3.1.7" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#resúmenes-agrupados-con-summarise"><i class="fa fa-check"></i><b>3.1.7</b> Resúmenes agrupados con summarise()</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones"><i class="fa fa-check"></i><b>3.4</b> Funciones</a>
+<li class="chapter" data-level="3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#combinación-de-múltiples-operaciones-con-el-pipe"><i class="fa fa-check"></i><b>3.2</b> Combinación de múltiples operaciones con el pipe</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="programando-con-r.html"><a href="programando-con-r.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4.1</b> Ejercicios</a></li>
+<li class="chapter" data-level="3.2.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#valores-faltantes"><i class="fa fa-check"></i><b>3.2.1</b> Valores faltantes</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="programando-con-r.html"><a href="programando-con-r.html#funciones-de-la-familia-apply"><i class="fa fa-check"></i><b>3.5</b> Funciones de la familia apply</a>
+<li class="chapter" data-level="3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#funciones-de-resumen-útiles"><i class="fa fa-check"></i><b>3.3</b> Funciones de resumen útiles</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="programando-con-r.html"><a href="programando-con-r.html#apply"><i class="fa fa-check"></i><b>3.5.1</b> apply():</a></li>
-<li class="chapter" data-level="3.5.2" data-path="programando-con-r.html"><a href="programando-con-r.html#tapply"><i class="fa fa-check"></i><b>3.5.2</b> tapply()</a></li>
-<li class="chapter" data-level="3.5.3" data-path="programando-con-r.html"><a href="programando-con-r.html#lapply"><i class="fa fa-check"></i><b>3.5.3</b> lapply()</a></li>
-<li class="chapter" data-level="3.5.4" data-path="programando-con-r.html"><a href="programando-con-r.html#sapply"><i class="fa fa-check"></i><b>3.5.4</b> sapply()</a></li>
-<li class="chapter" data-level="3.5.5" data-path="programando-con-r.html"><a href="programando-con-r.html#vapply"><i class="fa fa-check"></i><b>3.5.5</b> vapply()</a></li>
-<li class="chapter" data-level="3.5.6" data-path="programando-con-r.html"><a href="programando-con-r.html#rapply"><i class="fa fa-check"></i><b>3.5.6</b> rapply()</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos"><i class="fa fa-check"></i><b>3.6</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="3.6.1" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>3.6.1</b> Gráficos de dispersión</a></li>
-<li class="chapter" data-level="3.6.2" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-de-líneas"><i class="fa fa-check"></i><b>3.6.2</b> Gráficos de líneas</a></li>
-</ul></li>
-<li class="chapter" data-level="3.7" data-path="programando-con-r.html"><a href="programando-con-r.html#estilo-tidyverse"><i class="fa fa-check"></i><b>3.7</b> Estilo tidyverse</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="programando-con-r.html"><a href="programando-con-r.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.7.1</b> Data Transformation con dplyr</a></li>
-</ul></li>
-<li class="chapter" data-level="3.8" data-path="programando-con-r.html"><a href="programando-con-r.html#gráficos-con-ggplot"><i class="fa fa-check"></i><b>3.8</b> Gráficos con ggplot</a>
-<ul>
-<li class="chapter" data-level="3.8.1" data-path="programando-con-r.html"><a href="programando-con-r.html#introducción"><i class="fa fa-check"></i><b>3.8.1</b> Introducción</a></li>
-<li class="chapter" data-level="3.8.2" data-path="programando-con-r.html"><a href="programando-con-r.html#primeros-pasos"><i class="fa fa-check"></i><b>3.8.2</b> Primeros pasos</a></li>
-<li class="chapter" data-level="3.8.3" data-path="programando-con-r.html"><a href="programando-con-r.html#mapeos-estéticos"><i class="fa fa-check"></i><b>3.8.3</b> Mapeos estéticos</a></li>
-<li class="chapter" data-level="3.8.4" data-path="programando-con-r.html"><a href="programando-con-r.html#problemas-comunes"><i class="fa fa-check"></i><b>3.8.4</b> Problemas comunes</a></li>
-<li class="chapter" data-level="3.8.5" data-path="programando-con-r.html"><a href="programando-con-r.html#separar-en-facetas"><i class="fa fa-check"></i><b>3.8.5</b> Separar en facetas</a></li>
-<li class="chapter" data-level="3.8.6" data-path="programando-con-r.html"><a href="programando-con-r.html#objetos-geométricos"><i class="fa fa-check"></i><b>3.8.6</b> Objetos geométricos</a></li>
-<li class="chapter" data-level="3.8.7" data-path="programando-con-r.html"><a href="programando-con-r.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>3.8.7</b> Transformaciones estadísticas</a></li>
-<li class="chapter" data-level="3.8.8" data-path="programando-con-r.html"><a href="programando-con-r.html#ajustes-de-posición"><i class="fa fa-check"></i><b>3.8.8</b> Ajustes de posición</a></li>
-<li class="chapter" data-level="3.8.9" data-path="programando-con-r.html"><a href="programando-con-r.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>3.8.9</b> Sistemas de coordenadas</a></li>
-<li class="chapter" data-level="3.8.10" data-path="programando-con-r.html"><a href="programando-con-r.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>3.8.10</b> La gramática de gráficos en capas</a></li>
+<li class="chapter" data-level="3.3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#agrupación-por-múltiples-variables"><i class="fa fa-check"></i><b>3.3.1</b> Agrupación por múltiples variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#desagrupar"><i class="fa fa-check"></i><b>3.3.2</b> Desagrupar</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#transformaciones-agrupadas-y-filtros"><i class="fa fa-check"></i><b>3.3.3</b> Transformaciones agrupadas (y filtros)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>4</b> Rmarkdown</a>
+<li class="chapter" data-level="4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html"><i class="fa fa-check"></i><b>4</b> Gráficos con ggplot</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
-<li class="chapter" data-level="4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>4.2</b> Sintaxis de Markdown</a></li>
-<li class="chapter" data-level="4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>4.3</b> Inclusión de código R</a>
+<li class="chapter" data-level="4.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#prerrequisitos"><i class="fa fa-check"></i><b>4.2</b> Prerrequisitos</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos-1"><i class="fa fa-check"></i><b>4.3.1</b> Gráficos</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>4.3.2</b> Opciones de bloques de código</a></li>
+<li class="chapter" data-level="4.2.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#primeros-pasos"><i class="fa fa-check"></i><b>4.2.1</b> Primeros pasos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#el-data-frame-millas"><i class="fa fa-check"></i><b>4.2.2</b> El data frame millas</a></li>
+<li class="chapter" data-level="4.2.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#creando-un-gráfico-con-ggplot"><i class="fa fa-check"></i><b>4.2.3</b> Creando un gráfico con ggplot</a></li>
+<li class="chapter" data-level="4.2.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#una-plantilla-de-gráficos"><i class="fa fa-check"></i><b>4.2.4</b> Una plantilla de gráficos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>4.4</b> Tablas</a></li>
-<li class="chapter" data-level="4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>4.5</b> Cabecera YAML</a></li>
-<li class="chapter" data-level="4.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>4.6</b> Spin</a></li>
-<li class="chapter" data-level="4.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>4.7</b> Extensiones RMarkdown de pandoc</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>5</b> Control de versiones</a>
+<li class="chapter" data-level="4.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#mapeos-estéticos"><i class="fa fa-check"></i><b>4.3</b> Mapeos estéticos</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>5.1</b> Git</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>5.1.1</b> Configuración</a></li>
+<li class="chapter" data-level="4.3.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#problemas-comunes"><i class="fa fa-check"></i><b>4.3.1</b> Problemas comunes</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>5.2</b> Inicializando un repositorio</a></li>
-<li class="chapter" data-level="5.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>5.3</b> Commiting</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>5.3.1</b> Historial de registros</a></li>
-<li class="chapter" data-level="5.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>5.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+<li class="chapter" data-level="4.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#separar-en-facetas"><i class="fa fa-check"></i><b>4.4</b> Separar en facetas</a></li>
+<li class="chapter" data-level="4.5" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#objetos-geométricos"><i class="fa fa-check"></i><b>4.5</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.6" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>4.6</b> Transformaciones estadísticas</a></li>
+<li class="chapter" data-level="4.7" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#ajustes-de-posición"><i class="fa fa-check"></i><b>4.7</b> Ajustes de posición</a></li>
+<li class="chapter" data-level="4.8" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>4.8</b> Sistemas de coordenadas</a></li>
+<li class="chapter" data-level="4.9" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>4.9</b> La gramática de gráficos en capas</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>5.4</b> Sincronizar RStudio y GitHub</a></li>
-<li class="chapter" data-level="5.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>5.5</b> Pull request</a></li>
-<li class="chapter" data-level="5.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>5.6</b> Merge conflicts</a></li>
-<li class="chapter" data-level="5.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>5.7</b> Resumen</a>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Rmarkdown</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>5.7.1</b> ¿Cómo puedo hacer un README?</a></li>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>5.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>5.3</b> Inclusión de código R</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos"><i class="fa fa-check"></i><b>5.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>5.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>5.4</b> Tablas</a></li>
+<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>5.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="5.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>5.6</b> Spin</a></li>
+<li class="chapter" data-level="5.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>5.7</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>6</b> Control de versiones</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>6.1</b> Git</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>6.1.1</b> Configuración</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>6.2</b> Inicializando un repositorio</a></li>
+<li class="chapter" data-level="6.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>6.3</b> Commiting</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>6.3.1</b> Historial de registros</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>6.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>6.4</b> Sincronizar RStudio y GitHub</a></li>
+<li class="chapter" data-level="6.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>6.5</b> Pull request</a></li>
+<li class="chapter" data-level="6.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>6.6</b> Merge conflicts</a></li>
+<li class="chapter" data-level="6.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>6.7</b> Resumen</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>6.7.1</b> ¿Cómo puedo hacer un README?</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>6</b> Introducción a datos espaciales</a>
+<li class="chapter" data-level="7" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>7</b> Introducción a datos espaciales</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-1"><i class="fa fa-check"></i><b>6.1</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-2"><i class="fa fa-check"></i><b>6.2</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-3"><i class="fa fa-check"></i><b>6.3</b> Introducción a datos espaciales</a></li>
-<li class="chapter" data-level="6.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#introducción-a-datos-espaciales-4"><i class="fa fa-check"></i><b>6.4</b> Introducción a datos espaciales</a></li>
+<li class="chapter" data-level="7.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Datos Vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-raster"><i class="fa fa-check"></i><b>7.2</b> Datos Raster</a></li>
+<li class="chapter" data-level="7.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-ogc"><i class="fa fa-check"></i><b>7.3</b> ¿Qué es OGC?</a></li>
+<li class="chapter" data-level="7.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-osgeo"><i class="fa fa-check"></i><b>7.4</b> ¿Qué es OSGeo?</a></li>
+<li class="chapter" data-level="7.5" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-gdal"><i class="fa fa-check"></i><b>7.5</b> ¿Qué es GDAL?</a></li>
+<li class="chapter" data-level="7.6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-proj"><i class="fa fa-check"></i><b>7.6</b> ¿Qué es Proj?</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ejercicios-2.html"><a href="ejercicios-2.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<li class="chapter" data-level="8" data-path="ejercicios-1.html"><a href="ejercicios-1.html"><i class="fa fa-check"></i><b>8</b> Ejercicios</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-1"><i class="fa fa-check"></i><b>7.1</b> Parte 1</a></li>
-<li class="chapter" data-level="7.2" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-2"><i class="fa fa-check"></i><b>7.2</b> Parte 2</a></li>
-<li class="chapter" data-level="7.3" data-path="ejercicios-2.html"><a href="ejercicios-2.html#parte-3"><i class="fa fa-check"></i><b>7.3</b> Parte 3</a></li>
+<li class="chapter" data-level="8.1" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-1"><i class="fa fa-check"></i><b>8.1</b> Parte 1</a></li>
+<li class="chapter" data-level="8.2" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-2"><i class="fa fa-check"></i><b>8.2</b> Parte 2</a></li>
+<li class="chapter" data-level="8.3" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-3"><i class="fa fa-check"></i><b>8.3</b> Parte 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html"><i class="fa fa-check"></i><b>9</b> Ejercicios: tidyverse</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-1-dplyr---filter"><i class="fa fa-check"></i><b>9.1</b> Parte 1: Dplyr - filter</a></li>
+<li class="chapter" data-level="9.2" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-2-dplyr---arrange"><i class="fa fa-check"></i><b>9.2</b> Parte 2: Dplyr - arrange</a></li>
+<li class="chapter" data-level="9.3" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-3-dplyr---select"><i class="fa fa-check"></i><b>9.3</b> Parte 3: Dplyr - select</a></li>
+<li class="chapter" data-level="9.4" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-4-dplyr---mutate"><i class="fa fa-check"></i><b>9.4</b> Parte 4: Dplyr - mutate</a></li>
+<li class="chapter" data-level="9.5" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-5-dplyr---group-by-summarize"><i class="fa fa-check"></i><b>9.5</b> Parte 5: Dplyr - group by &amp; summarize</a></li>
+<li class="chapter" data-level="9.6" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-7-dplyr---transformaciones-agrupadas"><i class="fa fa-check"></i><b>9.6</b> Parte 7: Dplyr - transformaciones agrupadas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html"><i class="fa fa-check"></i><b>10</b> Ejercicios: ggplot2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-1-ggplot-base"><i class="fa fa-check"></i><b>10.1</b> Parte 1: Ggplot base</a></li>
+<li class="chapter" data-level="10.2" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-2-mapeos-estéticos"><i class="fa fa-check"></i><b>10.2</b> Parte 2: Mapeos estéticos</a></li>
+<li class="chapter" data-level="10.3" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-3-facetas"><i class="fa fa-check"></i><b>10.3</b> Parte 3: Facetas</a></li>
+<li class="chapter" data-level="10.4" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-4-objetos-geométricos"><i class="fa fa-check"></i><b>10.4</b> Parte 4: Objetos geométricos</a></li>
+<li class="chapter" data-level="10.5" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-5-gráficos-estadísticos"><i class="fa fa-check"></i><b>10.5</b> Parte 5: Gráficos estadísticos</a></li>
+<li class="chapter" data-level="10.6" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-6-ajuste-de-posición"><i class="fa fa-check"></i><b>10.6</b> Parte 6: Ajuste de posición</a></li>
+<li class="chapter" data-level="10.7" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-7-sistema-de-coordenadas"><i class="fa fa-check"></i><b>10.7</b> Parte 7: Sistema de coordenadas</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://classroom.google.com/u/3/c/MzQxNzA3MDAzODE5" target="blank">Classroom del curso</a></li>
+<li><a href="https://classroom.google.com/u/2/c/NDEyMDI3NDcyNDk4" target="blank">Classroom del curso</a></li>
 <li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li> 
 
 </ul>
@@ -323,10 +342,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmarkdown" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Rmarkdown</h1>
-<div id="introducción-1" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Introducción</h2>
+<div id="rmarkdown" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Rmarkdown</h1>
+<div id="introducción-1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introducción</h2>
 <p>Este documento se ha generado empleando Markdown y R.
 RMarkdown es recomendable para difundir análisis realizados con R en formato HTML, PDF y DOCX (Word), entre otros.</p>
 <p>Markdown se diseñó inicialmente para la creación de páginas web a partir de documentos de texto de forma sencilla y rápida. Es lo que se conoce como un lenguaje de marcado ligero, tiene unas reglas sintácticas muy simples y se busca principalmente la facilidad de lectura. Posteriormente se fueron añadiendo funcionalidades, por ejemplo para incluir opciones de publicación en muchos otros formatos.</p>
@@ -350,8 +369,8 @@ RMarkdown es recomendable para difundir análisis realizados con R en formato HT
 <li>Extensiones RMarkdown de Pandoc: <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex" class="uri">https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html%23raw-tex</a>.</li>
 </ul>
 </div>
-<div id="sintaxis-de-markdown" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Sintaxis de Markdown</h2>
+<div id="sintaxis-de-markdown" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Sintaxis de Markdown</h2>
 <p>Como ya se comentó la sintaxis de Markdown es muy secilla.
 El texto no marcado se renderiza como texto normal aunque es necesario dejar una línea en blanco para
 insertar un salto de línea. Las principales reglas de Markdown se sumarizan en la siguiente tabla:</p>
@@ -486,8 +505,8 @@ o sangría de 4 espacios</code></pre></td>
 </table>
 <p>Es muy recomendable dejar siempre una linea de separación entre elementos distintos consecutivos.</p>
 </div>
-<div id="codigormd" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Inclusión de código R</h2>
+<div id="codigormd" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Inclusión de código R</h2>
 <p>Se puede incluir código R entre los delimitadores <code>```{r}</code> y <code>```</code>. Por defecto, se mostrará el código, se evaluará y se mostrarán los resultados justo a continuación. Por ejemplo el siguiente código:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="rmarkdown.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb23-2"><a href="rmarkdown.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="in">head(mtcars[1:3])</span></span>
@@ -512,8 +531,8 @@ o sangría de 4 espacios</code></pre></td>
 ##  Max.   :33.90   Max.   :8.000   Max.   :472.0</code></pre>
 <p>En <em>RStudio</em> pulsando “Ctrl + Alt + I” o en el icono correspondiente se incluye un trozo de código.</p>
 <p>También se puede incluir código en línea empleando <strong>r código</strong>, por ejemplo <strong>r 2 + 2</strong> produce 4.</p>
-<div id="gráficos-1" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Gráficos</h3>
+<div id="gráficos" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Gráficos</h3>
 <p>Si el código genera un gráfico, este se incluirá en el documento justo después de donde fué generado(por defecto). Por ejemplo el siguiente gráfico:</p>
 <p><img src="bookdownproj_files/figure-html/figura1-1.png" width="672" /></p>
 <p>se generó empleando:</p>
@@ -522,8 +541,8 @@ o sangría de 4 espacios</code></pre></td>
 <span id="cb28-3"><a href="rmarkdown.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>aunque no se mostró previamente el código al haber establecido la opción <code>```{r, echo=FALSE}</code>.</p>
 </div>
-<div id="opcodigo" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Opciones de bloques de código</h3>
+<div id="opcodigo" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Opciones de bloques de código</h3>
 <p>Los trozos de código pueden tener nombre y opciones, se establecen en la cabecera de la forma <code>```{r nombre, op1, op2}</code>. Para un listado de las opciones disponibles ver <a href="http://yihui.name/knitr/options" class="uri">http://yihui.name/knitr/options</a> (en la <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Sección 2.6</a> del libro de RMarkdown se incluye un resumen).
 En <em>RStudio</em> se puede pulsar en los iconos en la parte superior derecha del bloque de código para establecer opciones, ejecutar todo el código anterior o sólo el correspondiente trozo.</p>
 <p>Algunas opciones sobre evaluación y resultados:</p>
@@ -556,8 +575,8 @@ se suele incluir uno de configuración al principio del documento, por ejemplo:<
 <span id="cb29-3"><a href="rmarkdown.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 </div>
-<div id="tablas" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Tablas</h2>
+<div id="tablas" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Tablas</h2>
 <p>Las tablas en Markdown son de la forma:</p>
 <pre><code>| First Header  | Second Header |
 | ------------- | ------------- |
@@ -625,18 +644,18 @@ se suele incluir uno de configuración al principio del documento, por ejemplo:<
 <span id="cb31-4"><a href="rmarkdown.html#cb31-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Otros paquetes proporcionan opciones adicionales: xtable, stargazer, pander, tables y ascii.</p>
 </div>
-<div id="yaml" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Cabecera YAML</h2>
+<div id="yaml" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Cabecera YAML</h2>
 <p>En un fichero RMarkdown se puede incluir metadatos en una cabecera en formato YAML (YAML Ain’t Markup Language, <a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>), comenzando y terminando con tres guiones <code>---</code>.
 Los metadatos de YAML son típicamente opciones de renderizado consitentes en pares de etiquetas y valores separados por dos puntos.
 Por ejemplo:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb32-1"><a href="rmarkdown.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb32-2"><a href="rmarkdown.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Creación de contenidos con RMarkdown&quot;</span></span>
 <span id="cb32-3"><a href="rmarkdown.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Roy Yali&quot;</span></span>
-<span id="cb32-4"><a href="rmarkdown.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2021-08-07</span></span>
+<span id="cb32-4"><a href="rmarkdown.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2022-01-03</span></span>
 <span id="cb32-5"><a href="rmarkdown.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
 <span id="cb32-6"><a href="rmarkdown.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>Aunque no siempre es necesario, se recomienda que los valores de texto se introduzcan entre comillas (se puede incluir código R en línea, como por ejemplo 2021-08-07 para obtener la fecha actual). Para valores lógicos se puede emplear <code>yes/true</code> y <code>no/false</code> para verdadero y falso, respectivamente.</p>
+<p>Aunque no siempre es necesario, se recomienda que los valores de texto se introduzcan entre comillas (se puede incluir código R en línea, como por ejemplo 2022-01-03 para obtener la fecha actual). Para valores lógicos se puede emplear <code>yes/true</code> y <code>no/false</code> para verdadero y falso, respectivamente.</p>
 <p>Los valores pueden ser vectores, por ejemplo las siguientes opciones son equivalentes:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb33-1"><a href="rmarkdown.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">packages.bib</span><span class="kw">]</span></span></code></pre></div>
 <div class="sourceCode" id="cb34"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb34-1"><a href="rmarkdown.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span></span>
@@ -664,7 +683,7 @@ Por ejemplo:</p>
 <span id="cb37-6"><a href="rmarkdown.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Universidade da Coruña&quot;</span></span>
 <span id="cb37-7"><a href="rmarkdown.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Tomás R. Cotos Yáñez (tcotos@uvigo.es)&quot;</span></span>
 <span id="cb37-8"><a href="rmarkdown.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Universidade de Vigo&quot;</span></span>
-<span id="cb37-9"><a href="rmarkdown.html#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2021-08-07&quot;</span></span>
+<span id="cb37-9"><a href="rmarkdown.html#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2022-01-03&quot;</span></span>
 <span id="cb37-10"><a href="rmarkdown.html#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="fu">logo</span><span class="kw">:</span><span class="at"> rmarkdown.png</span></span>
 <span id="cb37-11"><a href="rmarkdown.html#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb37-12"><a href="rmarkdown.html#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
@@ -688,8 +707,8 @@ se tiene información detallada sobre las opciones de los distintos formatos de 
 (sobre ficheros HTML <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">aquí</a>
 y sobre PDF/LaTeX <a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html">aquí</a>).</p>
 </div>
-<div id="spin" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Spin</h2>
+<div id="spin" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Spin</h2>
 <p>Una forma rápida de crear este tipo de informes a partir de un fichero de código R es emplear la funcion
 <code>spin</code> del paquete <em>knitr</em> (ver p.e. <a href="http://yihui.name/knitr/demo/stitch" class="uri">http://yihui.name/knitr/demo/stitch</a>).</p>
 <p>Para ello se debe comentar todo lo que no sea código R de una forma especial:</p>
@@ -718,8 +737,8 @@ la forma:</p>
 <span id="cb40-7"><a href="rmarkdown.html#cb40-7" aria-hidden="true" tabindex="-1"></a>#&#39;      keep_tex: true</span>
 <span id="cb40-8"><a href="rmarkdown.html#cb40-8" aria-hidden="true" tabindex="-1"></a>#&#39; ---</span></code></pre></div>
 </div>
-<div id="extensiones-rmarkdown-de-pandoc" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Extensiones RMarkdown de pandoc</h2>
+<div id="extensiones-rmarkdown-de-pandoc" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Extensiones RMarkdown de pandoc</h2>
 <p>Como ya se comentó, RMarkdown utiliza la sintaxis extendida proporcionada por Pandoc.
 Por ejemplo, se pueden añadir sub<sub>índices</sub> y super<sup>índices</sup> con <code>sub~índices~</code> y <code>super^índices^</code>,<br />
 y notas al pie con <code>^[texto]</code>.</p>
@@ -768,12 +787,11 @@ se mostrará en un entorno flotante y se puede ajustar la posición empleando la
           </div>
         </div>
       </div>
-<a href="programando-con-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gráficos-con-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="control-de-versiones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -810,6 +828,10 @@ gitbook.start({
 "text": null
 },
 "download": ["bookdownproj.pdf", "bookdownproj.epub", "bookdownproj.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
@@ -817,7 +839,6 @@ gitbook.start({
 "toolbar": {
 "position": "fixed"
 },
-"search": true,
 "info": true
 });
 });

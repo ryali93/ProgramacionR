@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Ejercicios | Programación</title>
+  <meta name="description" content="8 Ejercicios | Programación" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Ejercicios | Programación" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Ejercicios | Programación" />
+  
+  
+  
+
+<meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
+
+
+<meta name="date" content="2022-01-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción-a-datos-espaciales.html"/>
+<link rel="next" href="ejercicios-tidyverse.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Programación</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso</a></li>
+<li class="chapter" data-level="2" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-r-rstudio-y-rtools"><i class="fa fa-check"></i><b>2.1</b> Instalación de R, RStudio y RTools</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#r"><i class="fa fa-check"></i><b>2.1.1</b> R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Rstudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rtools"><i class="fa fa-check"></i><b>2.1.3</b> RTools</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-r"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-rstudio"><i class="fa fa-check"></i><b>2.3</b> ¿Qué es RStudio?</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-otros-ides-existen-para-r"><i class="fa fa-check"></i><b>2.4</b> ¿Qué otros IDE’s existen para R?</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#diferencias-entre-paquetes-y-librerías"><i class="fa fa-check"></i><b>2.5</b> Diferencias entre paquetes y librerías</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-lenguajes-de-programación"><i class="fa fa-check"></i><b>2.6</b> Tipos de lenguajes de programación</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-compilado"><i class="fa fa-check"></i><b>2.6.1</b> Lenguaje compilado</a></li>
+<li class="chapter" data-level="2.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-interpretado"><i class="fa fa-check"></i><b>2.6.2</b> Lenguaje interpretado</a></li>
+<li class="chapter" data-level="2.6.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-intermedio"><i class="fa fa-check"></i><b>2.6.3</b> Lenguaje intermedio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#paradigmas-de-programación"><i class="fa fa-check"></i><b>2.7</b> Paradigmas de programación</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-orientado-a-objetos"><i class="fa fa-check"></i><b>2.7.1</b> Programación Orientado a Objetos</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-funcional"><i class="fa fa-check"></i><b>2.7.2</b> Programación Funcional</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ambiente-de-trabajo-en-rstudio"><i class="fa fa-check"></i><b>2.8</b> Ambiente de trabajo en RStudio</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#mi-primer-hello-world"><i class="fa fa-check"></i><b>2.9</b> Mi primer “Hello world”</a></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos-en-r"><i class="fa fa-check"></i><b>2.10</b> Tipos de datos en R</a></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructuras-de-datos"><i class="fa fa-check"></i><b>2.11</b> Tipos de estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#asignación-de-objetos"><i class="fa fa-check"></i><b>2.11.1</b> Asignación de objetos</a></li>
+<li class="chapter" data-level="2.11.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#vector"><i class="fa fa-check"></i><b>2.11.2</b> Vector</a></li>
+<li class="chapter" data-level="2.11.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#factor"><i class="fa fa-check"></i><b>2.11.3</b> Factor</a></li>
+<li class="chapter" data-level="2.11.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#matrix"><i class="fa fa-check"></i><b>2.11.4</b> Matrix</a></li>
+<li class="chapter" data-level="2.11.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Data Frame</a></li>
+<li class="chapter" data-level="2.11.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#listas"><i class="fa fa-check"></i><b>2.11.6</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#csv"><i class="fa fa-check"></i><b>2.12.1</b> CSV</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#excel"><i class="fa fa-check"></i><b>2.12.2</b> EXCEL</a></li>
+<li class="chapter" data-level="2.12.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rds"><i class="fa fa-check"></i><b>2.12.3</b> RDS</a></li>
+<li class="chapter" data-level="2.12.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rdata"><i class="fa fa-check"></i><b>2.12.4</b> RDATA</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.13.1</b> Ejercicio 1:</a></li>
+<li class="chapter" data-level="2.13.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.13.2</b> Ejercicio 2:</a></li>
+<li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Estilo tidyverse</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.1</b> Data Transformation con dplyr</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#nycfights13"><i class="fa fa-check"></i><b>3.1.1</b> nycfights13</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#dplyr-básico"><i class="fa fa-check"></i><b>3.1.2</b> dplyr Básico</a></li>
+<li class="chapter" data-level="3.1.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.1.3</b> Filtrar filas con filter()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#reordenar-las-filas-con-arrange"><i class="fa fa-check"></i><b>3.1.4</b> Reordenar las filas con arrange()</a></li>
+<li class="chapter" data-level="3.1.5" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.1.5</b> Seleccionar columnas con select()</a></li>
+<li class="chapter" data-level="3.1.6" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#añadir-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.1.6</b> Añadir nuevas variables con mutate()</a></li>
+<li class="chapter" data-level="3.1.7" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#resúmenes-agrupados-con-summarise"><i class="fa fa-check"></i><b>3.1.7</b> Resúmenes agrupados con summarise()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#combinación-de-múltiples-operaciones-con-el-pipe"><i class="fa fa-check"></i><b>3.2</b> Combinación de múltiples operaciones con el pipe</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#valores-faltantes"><i class="fa fa-check"></i><b>3.2.1</b> Valores faltantes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#funciones-de-resumen-útiles"><i class="fa fa-check"></i><b>3.3</b> Funciones de resumen útiles</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#agrupación-por-múltiples-variables"><i class="fa fa-check"></i><b>3.3.1</b> Agrupación por múltiples variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#desagrupar"><i class="fa fa-check"></i><b>3.3.2</b> Desagrupar</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#transformaciones-agrupadas-y-filtros"><i class="fa fa-check"></i><b>3.3.3</b> Transformaciones agrupadas (y filtros)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html"><i class="fa fa-check"></i><b>4</b> Gráficos con ggplot</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#prerrequisitos"><i class="fa fa-check"></i><b>4.2</b> Prerrequisitos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#primeros-pasos"><i class="fa fa-check"></i><b>4.2.1</b> Primeros pasos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#el-data-frame-millas"><i class="fa fa-check"></i><b>4.2.2</b> El data frame millas</a></li>
+<li class="chapter" data-level="4.2.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#creando-un-gráfico-con-ggplot"><i class="fa fa-check"></i><b>4.2.3</b> Creando un gráfico con ggplot</a></li>
+<li class="chapter" data-level="4.2.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#una-plantilla-de-gráficos"><i class="fa fa-check"></i><b>4.2.4</b> Una plantilla de gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#mapeos-estéticos"><i class="fa fa-check"></i><b>4.3</b> Mapeos estéticos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#problemas-comunes"><i class="fa fa-check"></i><b>4.3.1</b> Problemas comunes</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#separar-en-facetas"><i class="fa fa-check"></i><b>4.4</b> Separar en facetas</a></li>
+<li class="chapter" data-level="4.5" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#objetos-geométricos"><i class="fa fa-check"></i><b>4.5</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.6" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>4.6</b> Transformaciones estadísticas</a></li>
+<li class="chapter" data-level="4.7" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#ajustes-de-posición"><i class="fa fa-check"></i><b>4.7</b> Ajustes de posición</a></li>
+<li class="chapter" data-level="4.8" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>4.8</b> Sistemas de coordenadas</a></li>
+<li class="chapter" data-level="4.9" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>4.9</b> La gramática de gráficos en capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Rmarkdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>5.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>5.3</b> Inclusión de código R</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos"><i class="fa fa-check"></i><b>5.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>5.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>5.4</b> Tablas</a></li>
+<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>5.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="5.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>5.6</b> Spin</a></li>
+<li class="chapter" data-level="5.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>5.7</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>6</b> Control de versiones</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>6.1</b> Git</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>6.1.1</b> Configuración</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>6.2</b> Inicializando un repositorio</a></li>
+<li class="chapter" data-level="6.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>6.3</b> Commiting</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>6.3.1</b> Historial de registros</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>6.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>6.4</b> Sincronizar RStudio y GitHub</a></li>
+<li class="chapter" data-level="6.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>6.5</b> Pull request</a></li>
+<li class="chapter" data-level="6.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>6.6</b> Merge conflicts</a></li>
+<li class="chapter" data-level="6.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>6.7</b> Resumen</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>6.7.1</b> ¿Cómo puedo hacer un README?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>7</b> Introducción a datos espaciales</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Datos Vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-raster"><i class="fa fa-check"></i><b>7.2</b> Datos Raster</a></li>
+<li class="chapter" data-level="7.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-ogc"><i class="fa fa-check"></i><b>7.3</b> ¿Qué es OGC?</a></li>
+<li class="chapter" data-level="7.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-osgeo"><i class="fa fa-check"></i><b>7.4</b> ¿Qué es OSGeo?</a></li>
+<li class="chapter" data-level="7.5" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-gdal"><i class="fa fa-check"></i><b>7.5</b> ¿Qué es GDAL?</a></li>
+<li class="chapter" data-level="7.6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-proj"><i class="fa fa-check"></i><b>7.6</b> ¿Qué es Proj?</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ejercicios-1.html"><a href="ejercicios-1.html"><i class="fa fa-check"></i><b>8</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-1"><i class="fa fa-check"></i><b>8.1</b> Parte 1</a></li>
+<li class="chapter" data-level="8.2" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-2"><i class="fa fa-check"></i><b>8.2</b> Parte 2</a></li>
+<li class="chapter" data-level="8.3" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-3"><i class="fa fa-check"></i><b>8.3</b> Parte 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html"><i class="fa fa-check"></i><b>9</b> Ejercicios: tidyverse</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-1-dplyr---filter"><i class="fa fa-check"></i><b>9.1</b> Parte 1: Dplyr - filter</a></li>
+<li class="chapter" data-level="9.2" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-2-dplyr---arrange"><i class="fa fa-check"></i><b>9.2</b> Parte 2: Dplyr - arrange</a></li>
+<li class="chapter" data-level="9.3" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-3-dplyr---select"><i class="fa fa-check"></i><b>9.3</b> Parte 3: Dplyr - select</a></li>
+<li class="chapter" data-level="9.4" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-4-dplyr---mutate"><i class="fa fa-check"></i><b>9.4</b> Parte 4: Dplyr - mutate</a></li>
+<li class="chapter" data-level="9.5" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-5-dplyr---group-by-summarize"><i class="fa fa-check"></i><b>9.5</b> Parte 5: Dplyr - group by &amp; summarize</a></li>
+<li class="chapter" data-level="9.6" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-7-dplyr---transformaciones-agrupadas"><i class="fa fa-check"></i><b>9.6</b> Parte 7: Dplyr - transformaciones agrupadas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html"><i class="fa fa-check"></i><b>10</b> Ejercicios: ggplot2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-1-ggplot-base"><i class="fa fa-check"></i><b>10.1</b> Parte 1: Ggplot base</a></li>
+<li class="chapter" data-level="10.2" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-2-mapeos-estéticos"><i class="fa fa-check"></i><b>10.2</b> Parte 2: Mapeos estéticos</a></li>
+<li class="chapter" data-level="10.3" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-3-facetas"><i class="fa fa-check"></i><b>10.3</b> Parte 3: Facetas</a></li>
+<li class="chapter" data-level="10.4" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-4-objetos-geométricos"><i class="fa fa-check"></i><b>10.4</b> Parte 4: Objetos geométricos</a></li>
+<li class="chapter" data-level="10.5" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-5-gráficos-estadísticos"><i class="fa fa-check"></i><b>10.5</b> Parte 5: Gráficos estadísticos</a></li>
+<li class="chapter" data-level="10.6" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-6-ajuste-de-posición"><i class="fa fa-check"></i><b>10.6</b> Parte 6: Ajuste de posición</a></li>
+<li class="chapter" data-level="10.7" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-7-sistema-de-coordenadas"><i class="fa fa-check"></i><b>10.7</b> Parte 7: Sistema de coordenadas</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://classroom.google.com/u/2/c/NDEyMDI3NDcyNDk4" target="blank">Classroom del curso</a></li>
+<li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li> 
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Programación</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios-1" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Ejercicios</h1>
+<div id="parte-1" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Parte 1</h2>
+<p>Cargar las variables almacenadas en el siguiente archivo <a href="https://goo.gl/uDzU8v">Rdata</a></p>
+<p><strong>1. Calcula los valores numéricos aproximados de </strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\frac{0.3 \cdot 0.15}{0.3 \cdot 0.15 + 0.2 \cdot 0.8 + 0.5 \cdot 0.12}\)</span></li>
+<li><span class="math inline">\(\frac{5^6}{6!} e^{-5}\)</span></li>
+<li><span class="math inline">\(\begin{pmatrix} 20 \\ 7 \end{pmatrix} 0.4^7 0.6^{13}\)</span></li>
+</ol>
+<p><strong>2. Realizar la siguiente suma</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(1+2+3+...+1000\)</span></li>
+<li><span class="math inline">\(1+2+4+8+16+...+1024\)</span></li>
+</ol>
+<p><strong>3. El vector <code>grupo</code> representa el grupo al que pertenece una serie de alumnos</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuántos elementos tiene?</li>
+<li>¿En qué posiciones del vector está la letra “A?”</li>
+</ol>
+<p><strong>4. El vector <code>nota</code> representa la nota de un examen de los alumnos que están en los grupos del vector <code>grupo</code>.</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuanto suman todas las notas?</li>
+<li>¿Cual es la media aritmética de todas las notas?</li>
+<li>¿En qué posiciones están las notas mayores de <em>7.0</em>?</li>
+<li>Visualiza las notas ordenadas de mayor a menor</li>
+<li>¿En qué posición está la nota máxima?</li>
+</ol>
+<p><strong>5. A partir de los vectores <code>grupo</code> y <code>nota</code> definidos.</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Suma las notas de los 10 primeros alumnos del vector</li>
+<li>¿Cuántos alumnos hay del grupo <em>C</em>?</li>
+<li>¿Cuántos alumnos han aprobado?</li>
+<li>¿Cuántos alumnos del grupo <em>B</em> han aprobado?</li>
+<li>¿Qué porcentaje de alumnos del grupo <em>C</em> han aprobado?</li>
+<li>¿De qué grupos son la máxima y mínima notas de toda la muestra?</li>
+<li>Nota media de los alumnos de grupo <em>A</em> y <em>B</em>, juntos, considerando sólo a los que han aprobado.</li>
+</ol>
+<p><strong>6. Calcula el percentil 66 de las notas de todos los alumnos, y también de los alumnos del grupo C.</strong></p>
+<p><strong>7. Un alumno tiene una nota de 4.9. ¿Qué porcentaje, del total de alumnos, tiene una nota menor o igual que la suya? ¿Y qué porcentaje tiene una nota mayor o igual que la suya?</strong></p>
+<p><strong>8. Realiza el gráfico de diagramas de caja de las notas de cada grupo, para poder comparar el nivel de cada uno de ellos.</strong></p>
+<p><strong>9. Si la variable <code>conc</code> recoge la concentración de plomo (en ppm) en el aire de cierta zona durante un día completo</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál ha sido la concentración máxima?</li>
+<li>¿En cuántos de los muestreos se ha superado la concentración de 40.0 ppm?</li>
+<li>¿Cuál ha sido la concentración media del día?</li>
+<li>¿Cuáles fueron las 10 mediciones más bajas del día?</li>
+<li>Si la primera medida fue a las 00:00. ¿A qué hora del día se alcanzó la concentración máxima?</li>
+</ol>
+</div>
+<div id="parte-2" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Parte 2</h2>
+<p><strong>1. 1.Graficar los puntos <span class="math inline">\((1,1),(2,4),(3,6),(4,8),(5,25),(6,36),(7,49),(8,61),(9,81),(10,100)\)</span> en un plano utilizando RStudio.</strong></p>
+<p><strong>2. Ingresar la matriz A en RStudio</strong>
+<span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \\ 3 &amp; 6 &amp; 9 \\ 4 &amp; 8 &amp; 12 \end{pmatrix}\)</span></p>
+<p><strong>3. Ingresar la matriz identidad de tamaño 3</strong>
+<span class="math inline">\(I = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}\)</span></p>
+<p><strong>4. Crea una función que cree una matriz nula ingresando las dimensiones</strong></p>
+<p><strong>5. Modificar la matriz <code>diag(4)</code>, para que se parezca a la matriz B</strong>
+<span class="math inline">\(B = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 4 \end{pmatrix}\)</span></p>
+<p><strong>6. Obtener la matriz transpuesta de A (ejercicio 2)</strong></p>
+<p><strong>7. Realizar las siguientes operaciones <span class="math inline">\(A + B\)</span>, <span class="math inline">\(A - B\)</span>, <span class="math inline">\(3B\)</span> y <span class="math inline">\(AB\)</span></strong></p>
+<p><strong>8. Crea una función para calcular <span class="math inline">\(P^6\)</span></strong>
+<span class="math inline">\(P = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ -2 &amp; 4 &amp; -2 \\ 1 &amp; 0 &amp; 1 \end{pmatrix}\)</span></p>
+<p><strong>9. Resolver el sistema de ecuaciones</strong>
+<span class="math inline">\(3x - y + z = -1\\9x - 2y + z = -9\\3x + y - 2z = -9\)</span></p>
+<p><strong>10. Utilizando la ayuda de R, investigue para qué sirven las funciones <code>eigen()</code> y <code>det()</code></strong></p>
+<p><strong>11. Considerando las matrices</strong></p>
+<p>$$</p>
+B=
+<span class="math display">\[\begin{pmatrix} 
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+2 &amp; 4 &amp; 6 &amp; 8 &amp; 10 \\
+3 &amp; 6 &amp; 9 &amp; 12 &amp; 15 \\
+4 &amp; 8 &amp; 12 &amp; 16 &amp; 20 \\
+5 &amp; 10 &amp; 15 &amp; 20 &amp; 25 \\
+6 &amp; 12 &amp; 18 &amp; 24 &amp; 30 \\
+7 &amp; 14 &amp; 21 &amp; 28 &amp; 35 \\
+8 &amp; 16 &amp; 24 &amp; 32 &amp; 40 \\
+9 &amp; 18 &amp; 27 &amp; 36 &amp; 45 \\
+10 &amp; 20 &amp; 30 &amp; 40 &amp; 50
+\end{pmatrix}\]</span>
+A =
+<span class="math display">\[\begin{pmatrix}
+  0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+  1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+  0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+  0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+  1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+\end{pmatrix}\]</span>
+<p>$$</p>
+<p>Calcular <span class="math inline">\(A \cdot B - A B^t\)</span></p>
+<p><strong>12. Considere</strong>
+<span class="math inline">\(\hat\beta = (X^t \cdot X)^{-1} \cdot X^t \cdot Y\)</span></p>
+<p>Determine la matriz <span class="math inline">\(\hat\beta\)</span></p>
+<p>$$</p>
+x=
+<span class="math display">\[\begin{pmatrix}1 &amp; 1\\ 1 &amp; -1\\ 1 &amp; 0\\ 1 &amp; 1\\ 1 &amp; 2\\ \end{pmatrix}\]</span>
+y =
+<span class="math display">\[\begin{pmatrix}0\\0\\1\\1\\3\\\end{pmatrix}\]</span>
+<p>$$</p>
+<p><strong>13. Corre el siguiente código para cargar los vectores <code>year</code> y <code>co2</code></strong> en memoria</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ejercicios-1.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(co2)</span>
+<span id="cb1-2"><a href="ejercicios-1.html#cb1-2" aria-hidden="true" tabindex="-1"></a>means <span class="ot">=</span> <span class="fu">aggregate</span>(co2, <span class="at">FUN=</span>mean)</span>
+<span id="cb1-3"><a href="ejercicios-1.html#cb1-3" aria-hidden="true" tabindex="-1"></a>year <span class="ot">=</span> <span class="fu">as.vector</span>(<span class="fu">time</span>(means))</span>
+<span id="cb1-4"><a href="ejercicios-1.html#cb1-4" aria-hidden="true" tabindex="-1"></a>co2 <span class="ot">=</span> <span class="fu">as.vector</span>(means)</span></code></pre></div>
+<ul>
+<li>El vector <code>co2</code> contiene medidas de <span class="math inline">\(CO_2\)</span> en la atmósfera, en unidades de <em>ppm</em>, durante el periodo 1959-1997. El vector <code>year</code> contiene sus años correspondientes.</li>
+<li>Calcular un vector de diferencias de <span class="math inline">\(CO_2\)</span> entre años consecutivos, que sería:
+<ul>
+<li><span class="math inline">\(CO_2\)</span> en 1960 menos <span class="math inline">\(CO_2\)</span> en 1959</li>
+<li><span class="math inline">\(CO_2\)</span> en 1961 menos <span class="math inline">\(CO_2\)</span> en 1960</li>
+<li>y así sucesivamente…</li>
+</ul></li>
+<li>Crear un <strong>plot</strong> con lineas y puntos mostrando las diferencias consecutivas de <span class="math inline">\(CO_2\)</span> en función del tiempo (1960, 1961, etc…), en <strong>negrita</strong></li>
+<li>La diferencia de concentración de <span class="math inline">\(CO_2\)</span> entre 2020 y 2019 fue igual a 2.64. Agregar un punto rojo representando esa diferencia al plot ya creado (usar una forma diferente, como <code>pch=4</code>)</li>
+</ul>
+<p><strong>14. </strong></p>
+<ul>
+<li>Lee el archivo <code>rainfall.csv</code> como un <code>data.frame</code></li>
+<li>Calcula e imprime un vector con los nombres de las estaciones donde al menos uno de los meses tiene una precipitación superior a 180mm.</li>
+</ul>
+</div>
+<div id="parte-3" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Parte 3</h2>
+<p><strong>15. Manipule los dataframe según se solicite</strong></p>
+<p>Se tiene el conjuntos de datos de precipitación diaria (período 1980 - 2013) de ciertas estaciones meteorológicas (<strong>raingaugeDataset.csv</strong>), donde cada una de estas están asociadas a un código único (<strong>p.e. qc00000208</strong>). Asimismo, se tiene una lista con los nombres, códigos, coordenadas y elevación de cada una de las estaciones (<strong>listRaingauge.csv</strong>).</p>
+<p>A cada grupo le corresponde la siguiente estación:</p>
+<ul>
+<li><strong>Grupo 01</strong>: MALLARES</li>
+<li><strong>Grupo 02</strong>: TABACONAS</li>
+<li><strong>Grupo 03</strong>: PUERTO PIZARRO</li>
+<li><strong>Grupo 04</strong>: MORROPON</li>
+<li><strong>Grupo 05</strong>: SAN MIGUEL</li>
+<li><strong>Grupo 06</strong>: CHULUCANAS</li>
+<li><strong>Grupo 07</strong>: LAMBAYEQUE</li>
+<li><strong>Grupo 08</strong>: EL LIMON</li>
+<li><strong>Grupo 09</strong>: EL SALTO</li>
+<li><strong>Grupo 10</strong>: CHUSIS</li>
+</ul>
+<p>De lo descrito anteriormente, se solicita:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine la cantidad de <strong>missing values</strong> de la serie de tiempo a paso diario.</li>
+<li>Calcule la serie de tiempo de precipitación <strong>acumulada mensual</strong> (si el # de días con missing values, en un mes, supera el 10%, la precipitación acumulada mensual será considerado como un <strong><code>NA</code></strong>).</li>
+<li>Determine la cantidad de <strong>missing values</strong> de la serie de tiempo a paso mensual.</li>
+<li>Cree una función que calcule, a partir de los datos de preicpitación mensual, la <strong>climatología (Ene-Dic)</strong> para el <strong>período 1980-2010</strong>.</li>
+<li>Poltear (boxplot) la variabilidad de los valores mensuales (Ene-Dic) para el período 1980-2013.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción-a-datos-espaciales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdownproj.pdf", "bookdownproj.epub", "bookdownproj.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

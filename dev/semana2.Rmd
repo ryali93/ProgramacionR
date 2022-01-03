@@ -1,0 +1,432 @@
+# Programando con R
+```{r setup, include=FALSE}
+library("tidyverse")
+```
+
+## Operadores relacionales y lógicos
+
+Los operadores de comparación o relacionales están diseñados para comparar objetos. El resultado de estas comparaciones son de tipo booleano. La siguiente tabla resume los operadores relacionales de R.
+
+```{r}
+x <- c(1, 2, 3, 4)
+```
+
+| Operador | Resultado | Comparación |
+|:---:|:-----:|:----:|
+| `x > 3` | `c(F, F, F, T, T)`  | Mayor que |
+| `x >= 3` |  `c(F, F, T, T, T)`  | Mayor o igual que |
+| `x < 3` | `c(T, T, F, F, F)`  | Menor que |
+| `x <= 3` |  `c(T, T, T, F, F)`  | Menor o igual que |
+| `x == 3` |  `c(F, F, T, F, F)`  | Igual a |
+| `x != 3` |  `c(T, T, F, T, T)`  | Diferente de |
+| `x = 3` |   | Igual que <- |
+
+Se puede utilizar `%in%` para preguntar si uno o varios elementos se encuentran en otro, devolviendo lógicos.
+
+```{r eval=FALSE}
+1 %in% c(1, 2, 3, 4) 
+1 %in% c(2, 3, 4)
+c(3,4,5,6) %in% c(2, 3, 4) 
+```
+
+Los operadores booleanos o lógicos en R se utilizan para especificar múltiples condiciones entre objetos. Estas comparaciones devuelven valores `TRUE` o `FALSE`.
+
+Puedes combinar evaluaciones lógicas con **&**, **|**, **xor**, **!**, **any**, y
+**all**
+
+```{r eval=FALSE}
+x > 2 & x < 9
+```
+
+| Operador | Evaluación |
+|:---:|:-----:
+| `a & b` | Tanto a como b son VERDADEROS |
+| `a | b` | Al menos uno de a y b es VERDADERO (o) |
+| `xor(a, b)` | a es VERDADERO o b es VERDADERO, pero no ambos |
+| `!a` |  No a (VERDADERO va a FALSO, FALSO va a VERDADERO) |
+| `any(a, b, c)` |  Al menos uno de a, b o c es VERDADERO |
+| `all(a, b, c)` |  Cada uno de a, b y c es VERDADERO |
+
+## Consultas lógicas
+Combinar pruebas lógicas con subconjuntos es una práctica común
+
+```{r}
+x_ceros <- diamonds$x == 0
+diamonds[x_ceros, ]
+```
+
+```{r}
+# Ver resultados
+diamonds[diamonds$x > 10, ]
+# Guardar un nuevo data.frame
+big <- diamonds[diamonds$x > 10, ]
+# Sobreescribir el dataset existente (Cuidado!)
+diamonds <- diamonds[diamonds$x < 10, ]
+```
+
+## Control de flujo
+
+¿Quieres saltar este capítulo? Hazlo si puedes responder estas preguntas.
+
+- Cuál es la diferencia entre `if` e `ifelse()`?
+- En el siguiente código, cuál será el valor de  `y` si `x` es `TRUE`? Y cuál sería si `x` es `FALSE`? Y cuál si `x` es `NA`?
+
+```{r eval=FALSE}
+y <- if (x) 3
+```
+
+<p style='text-align: justify;'>Los comandos de control de flujo son una forma de modificar la secuencia de ejecución del código. Existen 2 herramientas principales de flujo de control: Opciones y bucles. Las opciones, como las declaraciones condicionales `if` y las llamadas `switch()`, permiten ejecutar código diferente según la entrada. Los bucles, como `for` y `while`, le permiten ejecutar código repetidamente, generalmente con opciones cambiantes.</p>
+
+### Condicionales (if, else)
+La toma de decisiones es una parte importante de la programación. Esto se puede lograr en la programación R usando la nomenclatura condicional if else.
+
+```{r eval=FALSE}
+if (expresion) {
+  declaracion1
+} else {
+  declaracion2
+}
+```
+
+- Si expresion es `TRUE`, la instrucción se ejecuta. Pero si es `FALSO`, no pasa nada.
+- Aquí, expresion puede ser un vector lógico o numérico, pero solo se tiene en cuenta el primer elemento.
+- En el caso del vector numérico, cero se toma como `FALSO`, el resto como VERDADERO.
+- La parte **else** es opcional y solo se evalúa si **expresion** es `FALSE`.
+- Es importante tener en cuenta que **else** debe estar en la misma línea que las llaves de cierre de la instrucción if.
+
+```{r}
+x <- 0
+if (x < 0) {
+  print("Numero negativo")
+} else if (x > 0) {
+  print("Numero positivo")
+} else {
+  print("Cero")
+}
+```
+
+Comparación entre Python y R
+
+```{python}
+## PYTHON
+temp = [15, 22, 30]
+suelo = ["seco", "humedo", "charcos"]
+valtemp = temp[0]
+valsuelo = suelo[2]
+if 12<= valtemp < 22 and valsuelo =="seco": 
+  print("Cielo despejado")
+elif valtemp == 22 or valsuelo == "humedo":
+  print("lluvia leve")
+elif valtemp > 22 and valsuelo =="charcos":
+  print("lluvia severa")
+else:
+  print(" Faltan datos")
+```
+
+
+```{r}
+## R
+temp <- c(15, 22, 30)
+suelo <- c("seco", "humedo", "charcos")
+valtemp <- temp[1]
+valsuelo <- suelo[3]
+if (valtemp %in% 12:22 & valsuelo == "seco") {
+  print("\nCielo despejado")
+} else if (valtemp == 22 | valsuelo == "humedo") {
+  print("\nlluvia leve")
+} else if (valtemp > 22 & valsuelo == "charcos") {
+  print("\nlluvia severa")
+} else {
+  print("\nFaltan datos")
+}
+```
+
+### Bucles (while, for)
+<p style='text-align: justify;'>Los bucles son una de las estructuras fundamentales en la programación. Los bucles permiten iterar sobre cada elemento en una secuencia, uno a la vez, y hacer algo con esos elementos.</p>
+
+#### for
+<p style='text-align: justify;'>Un bucle **for** es muy valioso cuando necesitamos iterar sobre una lista de elementos o un rango de números. Loop se puede usar para iterar sobre una lista, marco de datos, vector, matriz o cualquier otro objeto. Los tirantes y el corchete son obligatorios.</p>
+```{r eval=FALSE}
+for (valor in secuencia)
+{
+  cuerpo
+}
+```
+
+```{r}
+# Creando un vector de frutas
+frutas <- c("Apple", "Orange", "Passion fruit", "Banana")
+# Declarando el bucle for
+for (i in frutas) {
+  print(i)
+}
+```
+
+#### while
+Un bucle **while** es una declaración que continúa ejecutándose **mientras** se cumple una condición. La sintaxis para un ciclo while es la siguiente:
+
+```{r eval=FALSE}
+while (condición) {
+  cuerpo
+}
+```
+
+```{r}
+# creando la expresión con valor 1
+inicio <- 1
+# Creando el loop
+while (inicio <= 5) {
+  # Ver donde estamos
+  cat("Este es el ciclo número ", inicio)
+  # Agregar 1 a la variable inicio despues de cada iteracion
+  inicio <- inicio + 1
+  print(inicio)
+}
+```
+
+### Control de flujo
+#### break
+Se usa una declaración `break` dentro de un bucle (repeat, for, while) para detener las iteraciones y hacer fluir el control fuera del bucle.
+
+En una situación de bucle anidado, donde hay un bucle dentro de otro bucle, esta declaración sale del bucle más interno que se está evaluando.
+
+```{r eval=FALSE}
+if (test_expression) {
+  break
+}
+```
+Nota: la instrucción break también se puede usar dentro de la rama `else` de la instrucción `if` ... `else`.
+
+```{r}
+x <- 1:5
+for (val in x) {
+  if (val == 3){
+    break
+    }
+  print(val)
+}
+```
+En este ejemplo, iteramos sobre el vector x, que tiene números consecutivos del 1 al 5.
+
+Dentro del ciclo `for` hemos usado una condición `if` para romper si el valor actual es igual a 3.
+
+Como podemos ver en la salida, el bucle termina cuando encuentra la declaración `break`.
+
+#### next
+Una declaración `next` es útil cuando queremos omitir la iteración actual de un ciclo sin terminarlo. Al encontrar el siguiente, R omite una evaluación adicional y comienza la siguiente iteración del ciclo.
+
+```{r eval=FALSE}
+if (test_condition) {
+  next
+}
+```
+
+```{r}
+x <- 1:5
+for (val in x) {
+  if (val == 3){
+    next
+    }
+  print(val)
+}
+```
+En el ejemplo anterior, usamos la siguiente declaración dentro de una condición para verificar si el valor es igual a 3.
+
+Si el valor es igual a 3, la evaluación actual se detiene (el valor no se imprime) pero el ciclo continúa con la siguiente iteración.
+
+## Funciones
+<p style='text-align: justify;'>Una función, en un entorno de programación, es un conjunto de instrucciones. Un programador crea una función para evitar repetir la misma tarea o reducir la complejidad.</p>
+
+Una función debería ser:
+
+- Escrito para llevar a cabo una tarea específica
+- Puede o no incluir argumentos
+- Contener un cuerpo
+- Puede o no devolver uno o más valores
+
+```{r eval=FALSE}
+function(argumentos) {
+  # cuerpo de la funcion
+  resultado <- cuerpo
+
+  return(resultado)
+}
+```
+
+Ejemplo:
+```{r}
+a <- 5
+b <- 6
+suma <- function(valor1, valor2) {
+  resultado <- valor1 + valor2
+  return(resultado)
+}
+suma(a, b)
+```
+
+### Ejercicios
+
+#### Ejercicio 1:
+
+<p style='text-align: justify;'>Cree una función que, dado un vector, imprima por pantalla la media y la desviación estándar, opcionalmente también imprimirá la mediana.</p>
+
+#### Ejercicio 2:
+
+- Agregar un argumento adicional, llamado `print_info`, que sea `TRUE` por defecto
+- Crea una condicional alrededor de la función `print()`, la cual debe ser ejecutada sólo si `print_info` es `TRUE`
+- Prueba el código
+
+```{r eval=FALSE}
+# Finaliza la funcion pow_two()
+pow_two <- function(x) {
+  y <- x^2
+  print(paste(x, "to the power two equals", y))
+  return(y)
+}
+```
+
+## Funciones de la familia apply
+Los apply: apply, tapply, lapply, sapply, vapply, rapply
+<p style='text-align: justify;'>Entonces, ¿cuáles son estas maravillosas funciones de aplicación y cómo funcionan? Creo que la mejor manera de descubrir cualquier cosa en R es aprender mediante la experimentación, utilizando datos y funciones vergonzosamente triviales.</p>
+
+If you fire up your R console, type “??apply” and scroll down to the functions in the base package, you’ll see something like this:
+
+```{r eval=FALSE}
+d <- read.csv("data/earthquakes.csv")
+str(d)
+head(d)
+```
+
+### apply():
+Crea resúmenes sobre los ejes. 1: Sobre filas, 2: Sobre columnas
+
+```{r eval=FALSE}
+apply(d[, 2:5], 2, mean, na.rm = T)
+apply(d[, 2:5], 2, median, na.rm = T)
+apply(d[, 2:5], 2, summary)
+```
+
+### tapply()
+Esta función trabaja sobre matrices o tablas desiguales y usa una variable de agrupamiento o índice.
+
+```{r eval=FALSE}
+unique(d$Source)
+tapply(d$Magnitude, d$Latitude, mean, na.rm = T)
+tapply(d$Magnitude, d$Source, mean, na.rm = T)
+with(d, tapply(Magnitude, Latitude, mean, na.rm = T))
+with(d, tapply(Magnitude, Longitude, summary))
+with(d, tapply(Magnitude, Source, summary))
+```
+
+### lapply()
+Esta función es aplicable a vectores y listas y permite generar resúmenes como listas
+
+```{r eval=FALSE}
+str(d)
+head(d)
+lapply(d, mean, na.rm = T)
+lapply(data.frame(a = 10:20, b = 15:25), mean)
+d[1:6, ]
+d[1:6, c(12, 2:5)]
+lapply(d[, c(12, 2:5)], mean, na.rm = T)
+lapply(d[, c(12, 2:5)], summary, na.rm = T)
+```
+
+### sapply() 
+Crea resúmenes como vector o tabla
+
+```{r eval=FALSE}
+levels(as.factor(d$Source))
+sapply(d[, c(12, 2:5)], mean, na.rm = T)
+sapply(d[, c(12, 2:5)], summary, na.rm = T)
+
+funcion_nueva <- function(x) {
+  sapply(d[d$Source == x, c(12, 2:5)], summary)
+}
+levels(as.factor(d$Source))
+sapply(levels(as.factor(d$Source)), funcion_nueva, simplify = F)
+```
+
+### vapply()
+Similar al anterior, pero devuelve una salida predeterminada (puede ser más práctico)
+```{r eval=FALSE}
+vapply(d[, c(12, 2:5)], mean, na.rm = T, c("Mean" = 0))
+vapply(d[, c(12, 2:5)], fivenum, na.rm = T, c("Min." = 0, "1st Qu." = 0, "Median" = 0, "3rd Qu." = 0, "Max." = 0))
+```
+
+### rapply()
+Similar al anterior, per devuelve una salida que conserva la estructura original
+```{r eval=FALSE}
+rapply(d[, 2:5], summary)
+rapply(d[, 2:5], summary, how = "list")
+```
+* Para profundizar, se recomienda seguir esta [Fuente](https://nsaunders.wordpress.com/2010/08/20/a-brief-introduction-to-apply-in-r/)
+
+## Gráficos
+
+### Gráficos de dispersión
+```{r}
+# Scatter plots
+x <- 1:12
+y <- c(27, 28, 26, 22, 19, 16, 14, 13, 14, 16, 20, 23)
+estaciones <- c(rep("verano", 2), rep("otoño", 3), rep("invierno", 3), rep("primavera", 3), "verano")
+
+df <- data.frame(x, y, estaciones)
+
+plot(
+  df$x, df$y,
+  type = "o", pch = 14, xlab = "Mes",
+  ylab = "Temperatura [°C]", main = "Lima, Temperatura mensual promedio"
+)
+```
+
+### Gráficos de líneas
+```{r}
+plot(
+  df$x, df$y,
+  type = "o", pch = 20, xlab = "Mes",
+  ylab = "Temperatura [°C]", main = "Lima, Temperatura mensual promedio", col = "#F47E40"
+)
+
+df["colores"] <- c(rep("black", 2), rep("green", 3), rep("red", 3), rep("blue", 3), "red")
+legend("top",
+  legend = levels(factor(estaciones)),
+  col = c("black", "green", "red", "blue"),
+  pch = c(16, 17, 18)
+)
+```
+
+```{r}
+data(cars)
+plot(
+  cars$speed, cars$dist,
+  xlab = "Velocidad",
+  ylab = "Distancia", main = "Velocidad vs distancia"
+)
+```
+
+```{r}
+# Histogram
+# hist(cars$speed)
+# hist(cars$speed, breaks = 10)
+hist(cars$dist, freq = T, col = "skyblue", labels = T)
+```
+
+```{r}
+breaks_hist <- hist(cars$dist, breaks = 20, plot = FALSE)$breaks
+hist(cars$dist, breaks = breaks_hist, col = "blue1")
+```
+
+```{r}
+equakes <- read.csv("data/earthquakes.csv")
+# Boxplot
+boxplot(cars$speed, cars$dist)
+boxplot(`Magnitude` ~ `Source`, equakes, col = palette(rainbow(2)))
+```
+
+```{r}
+# Multiples plots en un grafico
+dev.new()
+dev.off()
+par(mfrow = c(2, 2))
+```

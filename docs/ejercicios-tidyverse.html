@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Ejercicios: tidyverse | Programación</title>
+  <meta name="description" content="9 Ejercicios: tidyverse | Programación" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Ejercicios: tidyverse | Programación" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Ejercicios: tidyverse | Programación" />
+  
+  
+  
+
+<meta name="author" content="Yali-Samaniego Roy &amp; Prudencio-Paredes Fernando" />
+
+
+<meta name="date" content="2022-01-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ejercicios-1.html"/>
+<link rel="next" href="ejercicios-ggplot2.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Programación</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso</a></li>
+<li class="chapter" data-level="2" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-r-rstudio-y-rtools"><i class="fa fa-check"></i><b>2.1</b> Instalación de R, RStudio y RTools</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#r"><i class="fa fa-check"></i><b>2.1.1</b> R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Rstudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rtools"><i class="fa fa-check"></i><b>2.1.3</b> RTools</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-r"><i class="fa fa-check"></i><b>2.2</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-es-rstudio"><i class="fa fa-check"></i><b>2.3</b> ¿Qué es RStudio?</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#qué-otros-ides-existen-para-r"><i class="fa fa-check"></i><b>2.4</b> ¿Qué otros IDE’s existen para R?</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#diferencias-entre-paquetes-y-librerías"><i class="fa fa-check"></i><b>2.5</b> Diferencias entre paquetes y librerías</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-lenguajes-de-programación"><i class="fa fa-check"></i><b>2.6</b> Tipos de lenguajes de programación</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-compilado"><i class="fa fa-check"></i><b>2.6.1</b> Lenguaje compilado</a></li>
+<li class="chapter" data-level="2.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-interpretado"><i class="fa fa-check"></i><b>2.6.2</b> Lenguaje interpretado</a></li>
+<li class="chapter" data-level="2.6.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lenguaje-intermedio"><i class="fa fa-check"></i><b>2.6.3</b> Lenguaje intermedio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#paradigmas-de-programación"><i class="fa fa-check"></i><b>2.7</b> Paradigmas de programación</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-orientado-a-objetos"><i class="fa fa-check"></i><b>2.7.1</b> Programación Orientado a Objetos</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#programación-funcional"><i class="fa fa-check"></i><b>2.7.2</b> Programación Funcional</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ambiente-de-trabajo-en-rstudio"><i class="fa fa-check"></i><b>2.8</b> Ambiente de trabajo en RStudio</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#mi-primer-hello-world"><i class="fa fa-check"></i><b>2.9</b> Mi primer “Hello world”</a></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos-en-r"><i class="fa fa-check"></i><b>2.10</b> Tipos de datos en R</a></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructuras-de-datos"><i class="fa fa-check"></i><b>2.11</b> Tipos de estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#asignación-de-objetos"><i class="fa fa-check"></i><b>2.11.1</b> Asignación de objetos</a></li>
+<li class="chapter" data-level="2.11.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#vector"><i class="fa fa-check"></i><b>2.11.2</b> Vector</a></li>
+<li class="chapter" data-level="2.11.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#factor"><i class="fa fa-check"></i><b>2.11.3</b> Factor</a></li>
+<li class="chapter" data-level="2.11.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#matrix"><i class="fa fa-check"></i><b>2.11.4</b> Matrix</a></li>
+<li class="chapter" data-level="2.11.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frame"><i class="fa fa-check"></i><b>2.11.5</b> Data Frame</a></li>
+<li class="chapter" data-level="2.11.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#listas"><i class="fa fa-check"></i><b>2.11.6</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#lectura-escritura-de-datos-.csv-.xlsx-.rdata-.rds"><i class="fa fa-check"></i><b>2.12</b> Lectura / escritura de datos (.csv, .xlsx, .RData, .rds)</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#csv"><i class="fa fa-check"></i><b>2.12.1</b> CSV</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#excel"><i class="fa fa-check"></i><b>2.12.2</b> EXCEL</a></li>
+<li class="chapter" data-level="2.12.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rds"><i class="fa fa-check"></i><b>2.12.3</b> RDS</a></li>
+<li class="chapter" data-level="2.12.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#rdata"><i class="fa fa-check"></i><b>2.12.4</b> RDATA</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicios"><i class="fa fa-check"></i><b>2.13</b> Ejercicios:</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-1"><i class="fa fa-check"></i><b>2.13.1</b> Ejercicio 1:</a></li>
+<li class="chapter" data-level="2.13.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-2"><i class="fa fa-check"></i><b>2.13.2</b> Ejercicio 2:</a></li>
+<li class="chapter" data-level="2.13.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#ejercicio-3"><i class="fa fa-check"></i><b>2.13.3</b> Ejercicio 3:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html"><i class="fa fa-check"></i><b>3</b> Estilo tidyverse</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#data-transformation-con-dplyr"><i class="fa fa-check"></i><b>3.1</b> Data Transformation con dplyr</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#nycfights13"><i class="fa fa-check"></i><b>3.1.1</b> nycfights13</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#dplyr-básico"><i class="fa fa-check"></i><b>3.1.2</b> dplyr Básico</a></li>
+<li class="chapter" data-level="3.1.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.1.3</b> Filtrar filas con filter()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#reordenar-las-filas-con-arrange"><i class="fa fa-check"></i><b>3.1.4</b> Reordenar las filas con arrange()</a></li>
+<li class="chapter" data-level="3.1.5" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.1.5</b> Seleccionar columnas con select()</a></li>
+<li class="chapter" data-level="3.1.6" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#añadir-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.1.6</b> Añadir nuevas variables con mutate()</a></li>
+<li class="chapter" data-level="3.1.7" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#resúmenes-agrupados-con-summarise"><i class="fa fa-check"></i><b>3.1.7</b> Resúmenes agrupados con summarise()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#combinación-de-múltiples-operaciones-con-el-pipe"><i class="fa fa-check"></i><b>3.2</b> Combinación de múltiples operaciones con el pipe</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#valores-faltantes"><i class="fa fa-check"></i><b>3.2.1</b> Valores faltantes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#funciones-de-resumen-útiles"><i class="fa fa-check"></i><b>3.3</b> Funciones de resumen útiles</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#agrupación-por-múltiples-variables"><i class="fa fa-check"></i><b>3.3.1</b> Agrupación por múltiples variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#desagrupar"><i class="fa fa-check"></i><b>3.3.2</b> Desagrupar</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estilo-tidyverse.html"><a href="estilo-tidyverse.html#transformaciones-agrupadas-y-filtros"><i class="fa fa-check"></i><b>3.3.3</b> Transformaciones agrupadas (y filtros)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html"><i class="fa fa-check"></i><b>4</b> Gráficos con ggplot</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#prerrequisitos"><i class="fa fa-check"></i><b>4.2</b> Prerrequisitos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#primeros-pasos"><i class="fa fa-check"></i><b>4.2.1</b> Primeros pasos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#el-data-frame-millas"><i class="fa fa-check"></i><b>4.2.2</b> El data frame millas</a></li>
+<li class="chapter" data-level="4.2.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#creando-un-gráfico-con-ggplot"><i class="fa fa-check"></i><b>4.2.3</b> Creando un gráfico con ggplot</a></li>
+<li class="chapter" data-level="4.2.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#una-plantilla-de-gráficos"><i class="fa fa-check"></i><b>4.2.4</b> Una plantilla de gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#mapeos-estéticos"><i class="fa fa-check"></i><b>4.3</b> Mapeos estéticos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#problemas-comunes"><i class="fa fa-check"></i><b>4.3.1</b> Problemas comunes</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#separar-en-facetas"><i class="fa fa-check"></i><b>4.4</b> Separar en facetas</a></li>
+<li class="chapter" data-level="4.5" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#objetos-geométricos"><i class="fa fa-check"></i><b>4.5</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.6" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#transformaciones-estadísticas"><i class="fa fa-check"></i><b>4.6</b> Transformaciones estadísticas</a></li>
+<li class="chapter" data-level="4.7" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#ajustes-de-posición"><i class="fa fa-check"></i><b>4.7</b> Ajustes de posición</a></li>
+<li class="chapter" data-level="4.8" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#sistemas-de-coordenadas"><i class="fa fa-check"></i><b>4.8</b> Sistemas de coordenadas</a></li>
+<li class="chapter" data-level="4.9" data-path="gráficos-con-ggplot.html"><a href="gráficos-con-ggplot.html#la-gramática-de-gráficos-en-capas"><i class="fa fa-check"></i><b>4.9</b> La gramática de gráficos en capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Rmarkdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introducción-1"><i class="fa fa-check"></i><b>5.1</b> Introducción</a></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#sintaxis-de-markdown"><i class="fa fa-check"></i><b>5.2</b> Sintaxis de Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#codigormd"><i class="fa fa-check"></i><b>5.3</b> Inclusión de código R</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rmarkdown.html"><a href="rmarkdown.html#gráficos"><i class="fa fa-check"></i><b>5.3.1</b> Gráficos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rmarkdown.html"><a href="rmarkdown.html#opcodigo"><i class="fa fa-check"></i><b>5.3.2</b> Opciones de bloques de código</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#tablas"><i class="fa fa-check"></i><b>5.4</b> Tablas</a></li>
+<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#yaml"><i class="fa fa-check"></i><b>5.5</b> Cabecera YAML</a></li>
+<li class="chapter" data-level="5.6" data-path="rmarkdown.html"><a href="rmarkdown.html#spin"><i class="fa fa-check"></i><b>5.6</b> Spin</a></li>
+<li class="chapter" data-level="5.7" data-path="rmarkdown.html"><a href="rmarkdown.html#extensiones-rmarkdown-de-pandoc"><i class="fa fa-check"></i><b>5.7</b> Extensiones RMarkdown de pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-de-versiones.html"><a href="control-de-versiones.html"><i class="fa fa-check"></i><b>6</b> Control de versiones</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#git"><i class="fa fa-check"></i><b>6.1</b> Git</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#configuración"><i class="fa fa-check"></i><b>6.1.1</b> Configuración</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#inicializando-un-repositorio"><i class="fa fa-check"></i><b>6.2</b> Inicializando un repositorio</a></li>
+<li class="chapter" data-level="6.3" data-path="control-de-versiones.html"><a href="control-de-versiones.html#commiting"><i class="fa fa-check"></i><b>6.3</b> Commiting</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#historial-de-registros"><i class="fa fa-check"></i><b>6.3.1</b> Historial de registros</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-de-versiones.html"><a href="control-de-versiones.html#conectando-repositorio-local-con-repositorio-en-github"><i class="fa fa-check"></i><b>6.3.2</b> Conectando repositorio local con repositorio en Github</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="control-de-versiones.html"><a href="control-de-versiones.html#sincronizar-rstudio-y-github"><i class="fa fa-check"></i><b>6.4</b> Sincronizar RStudio y GitHub</a></li>
+<li class="chapter" data-level="6.5" data-path="control-de-versiones.html"><a href="control-de-versiones.html#pull-request"><i class="fa fa-check"></i><b>6.5</b> Pull request</a></li>
+<li class="chapter" data-level="6.6" data-path="control-de-versiones.html"><a href="control-de-versiones.html#merge-conflicts"><i class="fa fa-check"></i><b>6.6</b> Merge conflicts</a></li>
+<li class="chapter" data-level="6.7" data-path="control-de-versiones.html"><a href="control-de-versiones.html#resumen"><i class="fa fa-check"></i><b>6.7</b> Resumen</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="control-de-versiones.html"><a href="control-de-versiones.html#cómo-puedo-hacer-un-readme"><i class="fa fa-check"></i><b>6.7.1</b> ¿Cómo puedo hacer un README?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html"><i class="fa fa-check"></i><b>7</b> Introducción a datos espaciales</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Datos Vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#datos-raster"><i class="fa fa-check"></i><b>7.2</b> Datos Raster</a></li>
+<li class="chapter" data-level="7.3" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-ogc"><i class="fa fa-check"></i><b>7.3</b> ¿Qué es OGC?</a></li>
+<li class="chapter" data-level="7.4" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-osgeo"><i class="fa fa-check"></i><b>7.4</b> ¿Qué es OSGeo?</a></li>
+<li class="chapter" data-level="7.5" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-gdal"><i class="fa fa-check"></i><b>7.5</b> ¿Qué es GDAL?</a></li>
+<li class="chapter" data-level="7.6" data-path="introducción-a-datos-espaciales.html"><a href="introducción-a-datos-espaciales.html#qué-es-proj"><i class="fa fa-check"></i><b>7.6</b> ¿Qué es Proj?</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ejercicios-1.html"><a href="ejercicios-1.html"><i class="fa fa-check"></i><b>8</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-1"><i class="fa fa-check"></i><b>8.1</b> Parte 1</a></li>
+<li class="chapter" data-level="8.2" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-2"><i class="fa fa-check"></i><b>8.2</b> Parte 2</a></li>
+<li class="chapter" data-level="8.3" data-path="ejercicios-1.html"><a href="ejercicios-1.html#parte-3"><i class="fa fa-check"></i><b>8.3</b> Parte 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html"><i class="fa fa-check"></i><b>9</b> Ejercicios: tidyverse</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-1-dplyr---filter"><i class="fa fa-check"></i><b>9.1</b> Parte 1: Dplyr - filter</a></li>
+<li class="chapter" data-level="9.2" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-2-dplyr---arrange"><i class="fa fa-check"></i><b>9.2</b> Parte 2: Dplyr - arrange</a></li>
+<li class="chapter" data-level="9.3" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-3-dplyr---select"><i class="fa fa-check"></i><b>9.3</b> Parte 3: Dplyr - select</a></li>
+<li class="chapter" data-level="9.4" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-4-dplyr---mutate"><i class="fa fa-check"></i><b>9.4</b> Parte 4: Dplyr - mutate</a></li>
+<li class="chapter" data-level="9.5" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-5-dplyr---group-by-summarize"><i class="fa fa-check"></i><b>9.5</b> Parte 5: Dplyr - group by &amp; summarize</a></li>
+<li class="chapter" data-level="9.6" data-path="ejercicios-tidyverse.html"><a href="ejercicios-tidyverse.html#parte-7-dplyr---transformaciones-agrupadas"><i class="fa fa-check"></i><b>9.6</b> Parte 7: Dplyr - transformaciones agrupadas</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html"><i class="fa fa-check"></i><b>10</b> Ejercicios: ggplot2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-1-ggplot-base"><i class="fa fa-check"></i><b>10.1</b> Parte 1: Ggplot base</a></li>
+<li class="chapter" data-level="10.2" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-2-mapeos-estéticos"><i class="fa fa-check"></i><b>10.2</b> Parte 2: Mapeos estéticos</a></li>
+<li class="chapter" data-level="10.3" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-3-facetas"><i class="fa fa-check"></i><b>10.3</b> Parte 3: Facetas</a></li>
+<li class="chapter" data-level="10.4" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-4-objetos-geométricos"><i class="fa fa-check"></i><b>10.4</b> Parte 4: Objetos geométricos</a></li>
+<li class="chapter" data-level="10.5" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-5-gráficos-estadísticos"><i class="fa fa-check"></i><b>10.5</b> Parte 5: Gráficos estadísticos</a></li>
+<li class="chapter" data-level="10.6" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-6-ajuste-de-posición"><i class="fa fa-check"></i><b>10.6</b> Parte 6: Ajuste de posición</a></li>
+<li class="chapter" data-level="10.7" data-path="ejercicios-ggplot2.html"><a href="ejercicios-ggplot2.html#parte-7-sistema-de-coordenadas"><i class="fa fa-check"></i><b>10.7</b> Parte 7: Sistema de coordenadas</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://classroom.google.com/u/2/c/NDEyMDI3NDcyNDk4" target="blank">Classroom del curso</a></li>
+<li><a href="https://github.com/ryali93/ProgramacionR/" target="blank">Repositorio en Github</a></li> 
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Programación</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios-tidyverse" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Ejercicios: tidyverse</h1>
+<p>Cargar la data de <strong>nycfights13</strong></p>
+<div id="parte-1-dplyr---filter" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Parte 1: Dplyr - filter</h2>
+<ol style="list-style-type: decimal">
+<li>Encuentra todos los vuelos que:</li>
+</ol>
+<ul>
+<li>Tuvieron un retraso de llegada de dos o más horas</li>
+<li>Volaron a Houston (IAH oHOU)</li>
+<li>Fueron operados por United, American o Delta</li>
+<li>Partieron en invierno del hemisferio sur (julio, agosto y septiembre)</li>
+<li>Llegaron más de dos horas tarde, pero no salieron tarde</li>
+<li>Se retrasaron por lo menos una hora, pero repusieron más de 30 minutos en vuelo</li>
+<li>Partieron entre la medianoche y las 6 a.m. (incluyente)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Otra función de <strong><code>dplyr</code></strong> que es útil para usar filtros es <code>between()</code>. ¿Qué hace? ¿Puedes usarla para simplificar el código necesario para responder a los desafíos anteriores?</li>
+<li>¿Cuántos vuelos tienen datos faltantes en horario_salida? ¿Qué otras variables tienen valores faltantes? ¿Qué representan estas filas?</li>
+<li>¿Por qué <code>NA^0</code> no es faltante? ¿Por qué <code>NA | TRUE</code> no es faltante? ¿Por qué <code>FALSE &amp; NA</code> no es faltante? ¿Puedes descubrir la regla general? (¡<code>NA * 0</code> es un contraejemplo complicado!)</li>
+</ol>
+</div>
+<div id="parte-2-dplyr---arrange" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Parte 2: Dplyr - arrange</h2>
+<ol style="list-style-type: decimal">
+<li>¿Cómo podrías usar <code>arrange()</code> para ordenar todos los valores faltantes al comienzo? (Sugerencia: usa <code>is.na()</code>).</li>
+<li>Ordena vuelos para encontrar los vuelos más retrasados. Encuentra los vuelos que salieron más temprano.</li>
+<li>Ordena vuelos para encontrar los vuelos más rápidos (que viajaron a mayor velocidad).</li>
+<li>¿Cuáles vuelos viajaron más lejos? ¿Cuál viajó más cerca?</li>
+</ol>
+</div>
+<div id="parte-3-dplyr---select" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Parte 3: Dplyr - select</h2>
+<ol style="list-style-type: decimal">
+<li>Haz una lluvia de ideas sobre tantas maneras como sea posible para seleccionar <code>dep_time</code>, <code>dep_delay</code>, <code>arr_time</code>, and <code>arr_delay</code> de <strong>flights</strong>.</li>
+<li>¿Qué sucede si incluyes el nombre de una variable varias veces en una llamada a <code>select()</code>?</li>
+<li>¿Qué hace la función <code>any_of()</code>? ¡¿Por qué podría ser útil en conjunto con este vector?</li>
+</ol>
+</div>
+<div id="parte-4-dplyr---mutate" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Parte 4: Dplyr - mutate</h2>
+<ol style="list-style-type: decimal">
+<li>Las variables horario_salida y salida_programada tienen un formato conveniente para leer, pero es difícil realizar cualquier cálculo con ellas porque no son realmente números continuos. Transfórmalas hacia un formato más conveniente como número de minutos desde la medianoche.</li>
+<li>Compara tiempo_vuelo con horario_llegada - horario_salida. ¿Qué esperas ver? ¿Qué ves? ¿Qué necesitas hacer para arreglarlo?</li>
+<li>Compara horario_salida, salida_programada, y atraso_salida. ¿Cómo esperarías que esos tres números estén relacionados?</li>
+<li>Encuentra los 10 vuelos más retrasados utilizando una función de ordenamiento. ¿Cómo quieres manejar los empates? Lee atentamente la documentación de min_rank().</li>
+<li>¿Qué devuelve 1:3 + 1:10? ¿Por qué?</li>
+<li>¿Qué funciones trigonométricas proporciona R?</li>
+</ol>
+</div>
+<div id="parte-5-dplyr---group-by-summarize" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Parte 5: Dplyr - group by &amp; summarize</h2>
+<ol style="list-style-type: decimal">
+<li>Haz una lluvia de ideas de al menos 5 formas diferentes de evaluar las características de un retraso típico de un grupo de vuelos. Considera los siguientes escenarios:</li>
+</ol>
+<ul>
+<li>Un vuelo llega 15 minutos antes 50% del tiempo, y 15 minutos tarde 50% del tiempo.</li>
+<li>Un vuelo llega siempre 10 minutos tarde.</li>
+<li>Un vuelo llega 30 minutos antes 50% del tiempo, y 30 minutos tarde 50% del tiempo.</li>
+<li>Un vuelo llega a tiempo en el 99% de los casos. 1% de las veces llega 2 horas tarde.
+¿Qué es más importante: retraso de la llegada o demora de salida?</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Sugiere un nuevo enfoque que te dé el mismo output que no_cancelados %&gt;% count(destino) y no_cancelado %&gt;% count(codigo_cola, wt = distancia) (sin usar count()).</li>
+<li>Nuestra definición de vuelos cancelados (is.na(atraso_salida) | is.na (atraso_llegada)) es un poco subóptima. ¿Por qué? ¿Cuál es la columna más importante?</li>
+<li>Mira la cantidad de vuelos cancelados por día. ¿Hay un patrón? ¿La proporción de vuelos cancelados está relacionada con el retraso promedio?</li>
+<li>¿Qué compañía tiene los peores retrasos? Desafío: ¿puedes desenredar el efecto de malos aeropuertos vs. el efecto de malas aerolíneas? ¿Por qué o por qué no? (Sugerencia: piensa en vuelos %&gt;% group_by(aerolinea, destino) %&gt;% summarise(n()))</li>
+<li>¿Qué hace el argumento sort a count(). ¿Cuándo podrías usarlo?</span></li>
+</ol>
+</div>
+<div id="parte-7-dplyr---transformaciones-agrupadas" class="section level2" number="9.6">
+<h2><span class="header-section-number">9.6</span> Parte 7: Dplyr - transformaciones agrupadas</h2>
+<ol style="list-style-type: decimal">
+<li>Remítete a las listas de funciones útiles de mutación y filtrado. Describe cómo cambia cada operación cuando las combinas con la agrupación.</li>
+<li>¿Qué avión (codigo_cola) tiene el peor registro de tiempo?</li>
+<li>¿A qué hora del día deberías volar si quieres evitar lo más posible los retrasos?</li>
+<li>Para cada destino, calcula los minutos totales de demora. Para cada vuelo, calcula la proporción de la demora total para su destino.</li>
+<li>Los retrasos suelen estar temporalmente correlacionados: incluso una vez que el problema que causó el retraso inicial se ha resuelto, los vuelos posteriores se retrasan para permitir que salgan los vuelos anteriores. Usando lag(), explora cómo el retraso de un vuelo está relacionado con el retraso del vuelo inmediatamente anterior.</li>
+<li>Mira cada destino. ¿Puedes encontrar vuelos sospechosamente rápidos? (es decir, vuelos que representan un posible error de entrada de datos). Calcula el tiempo en el aire de un vuelo relativo al vuelo más corto a ese destino. ¿Cuáles vuelos se retrasaron más en el aire?</li>
+<li>Encuentra todos los destinos que son volados por al menos dos operadores. Usa esta información para clasificar a las aerolíneas.</li>
+<li>Para cada avión, cuenta el número de vuelos antes del primer retraso de más de 1 hora.</span></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ejercicios-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdownproj.pdf", "bookdownproj.epub", "bookdownproj.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

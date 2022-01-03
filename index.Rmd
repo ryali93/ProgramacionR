@@ -70,7 +70,7 @@ rm(list = ls())
 
 # Introducción al curso
 
-![Tus días a partir de ahora](https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71eEjdm71yL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png){width=50%}
+![](https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71eEjdm71yL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png){width=50%}
 
 El objetivo principal de la primera mitad de este curso es aprender a programar en R. Sin embargo, además de aprender a programar, esperamos guiarlos en el aprendizaje de otras habilidades relacionadas con la ciencia abierta.
 
